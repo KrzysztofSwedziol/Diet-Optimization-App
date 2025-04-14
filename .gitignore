@@ -1,0 +1,12 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ip
+*.bin
+*.lock
+out/
+
+# VSCode
+.vscode/
+.history/
