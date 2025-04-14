@@ -10,10 +10,10 @@ name: Dyeti build package
 on:
   push:
     paths:
-      - "dyeti-backedn/**"
+      - "dyeti-backend/**"
   pull_request:
     paths:
-      - "dyeti-backedn/**"
+      - "dyeti-backend/**"
   
 
 jobs:
