@@ -9,9 +9,15 @@ name: Dyeti build package
 
 on:
   push:
+    branches:
+      - main
+      - develop
     paths:
       - "dyeti-backend/**"
   pull_request:
+    branches:
+      - main
+      - develop
     paths:
       - "dyeti-backend/**"
 
