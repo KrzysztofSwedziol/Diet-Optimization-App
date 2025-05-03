@@ -9,5 +9,4 @@ public class DyetiBackendApplication {
     public static void main(final String[] args) {
         SpringApplication.run(DyetiBackendApplication.class, args);
     }
-
 }
