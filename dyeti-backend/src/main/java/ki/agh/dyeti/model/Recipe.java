@@ -13,15 +13,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Recipe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    private String recipeName;
-    private String description;
-    private String steps;
+  private String recipeName;
+  private String description;
+  private String steps;
 
-    @ManyToOne
-    @JoinColumn(name = "creator_id")
-    private User creator;
+  @ManyToOne
+  @JoinColumn(name = "creator_id")
+  private User creator;
 }

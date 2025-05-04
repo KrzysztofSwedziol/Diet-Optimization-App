@@ -19,11 +19,9 @@ import lombok.NoArgsConstructor;
 @IdClass(PlansProductsId.class)
 public class PlansProducts {
 
-    @Id
-    private Integer planId;
+  @Id private Integer planId;
 
-    @Id
-    private Integer productId;
+  @Id private Integer productId;
 
-    private Double quantity;
+  private Double quantity;
 }

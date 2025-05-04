@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class DyetiBackendApplicationTests {
 
-    @Test
-    void contextLoads() {}
+  @Test
+  void contextLoads() {
+    // testy
+  }
 }

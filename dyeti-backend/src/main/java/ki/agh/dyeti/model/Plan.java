@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Plan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    private String planName;
-    private java.time.LocalDateTime planDate;
-    private Integer energyReq;
-    private Integer proteinReq;
-    private Integer fatReq;
-    private Integer carbsReq;
+  private String planName;
+  private java.time.LocalDateTime planDate;
+  private Integer energyReq;
+  private Integer proteinReq;
+  private Integer fatReq;
+  private Integer carbsReq;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private User user;
 }
