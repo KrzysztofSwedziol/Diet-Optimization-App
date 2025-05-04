@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PlansProductsId implements Serializable {
-    private int plansId;
-    private int productsId;
+    private Integer planId;
+    private Integer productId;
 }
