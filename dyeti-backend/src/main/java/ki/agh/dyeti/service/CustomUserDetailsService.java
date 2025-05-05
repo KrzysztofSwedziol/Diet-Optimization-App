@@ -15,9 +15,10 @@ import org.springframework.stereotype.Service;
 public class CustomUserDetailsService implements UserDetailsService {
   private final UserRepository userRepository;
   private final PasswordEncoder passwordEncoder;
+
   public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
     this.userRepository = userRepository;
-      this.passwordEncoder = passwordEncoder;
+    this.passwordEncoder = passwordEncoder;
   }
 
   @Override
@@ -35,7 +36,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     if (userRepository.findByEmail(request.getEmail()).isPresent()) {
       throw new UsernameNotFoundException("Email already exists");
     }
-    User user = User.builder()
+    User user =
+        User.builder()
             .username(request.getUsername())
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword()))
