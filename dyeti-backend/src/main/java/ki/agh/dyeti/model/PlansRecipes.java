@@ -19,7 +19,9 @@ import lombok.NoArgsConstructor;
 @IdClass(PlansRecipesId.class)
 public class PlansRecipes {
 
-  @Id private Integer planId;
+    @Id
+    private Long planId;
 
-  @Id private Integer recipeId;
+    @Id
+    private Long recipeId;
 }

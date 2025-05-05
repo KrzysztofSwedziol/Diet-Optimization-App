@@ -5,10 +5,10 @@ package ki.agh.dyeti.model;
 // albo uzupełnienie o pełniejszą implementacje
 // i dodanie wszytskich potrzebnych rodzaji porcji
 public enum PortionType {
-  CUP,
-  ML,
-  GRAM,
-  TBS, // tablespoon
-  TS, // teaspoon
-  PIECE,
+    CUP,
+    ML,
+    GRAM,
+    TBS, // tablespoon
+    TS, // teaspoon
+    PIECE,
 }

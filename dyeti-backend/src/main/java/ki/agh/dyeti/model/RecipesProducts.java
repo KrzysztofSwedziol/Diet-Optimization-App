@@ -19,10 +19,12 @@ import lombok.NoArgsConstructor;
 @IdClass(RecipesProductsId.class)
 public class RecipesProducts {
 
-  @Id private Integer recipeId;
+    @Id
+    private Long recipeId;
 
-  @Id private Integer productId;
+    @Id
+    private Long productId;
 
-  private Double quantity;
-  private PortionType portionType;
+    private Double quantity;
+    private PortionType portionType;
 }

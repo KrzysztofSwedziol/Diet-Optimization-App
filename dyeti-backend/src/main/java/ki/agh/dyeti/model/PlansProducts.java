@@ -19,9 +19,11 @@ import lombok.NoArgsConstructor;
 @IdClass(PlansProductsId.class)
 public class PlansProducts {
 
-  @Id private Integer planId;
+    @Id
+    private Long planId;
 
-  @Id private Integer productId;
+    @Id
+    private Long productId;
 
-  private Double quantity;
+    private Double quantity;
 }
