@@ -20,30 +20,30 @@ import org.springframework.security.core.userdetails.UserDetails;
 @AllArgsConstructor
 public final class User implements UserDetails {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private String username;
-  private String email;
-  private String password;
-  private Integer age;
-  private Gender gender;
-  private Integer height;
-  private Integer weight;
-  private Integer energyReq;
-  private Integer proteinReq;
-  private Integer carbsReq;
-  private Integer fatReq;
+    private String username;
+    private String email;
+    private String password;
+    private Integer age;
+    private Gender gender;
+    private Integer height;
+    private Integer weight;
+    private Integer energyReq;
+    private Integer proteinReq;
+    private Integer carbsReq;
+    private Integer fatReq;
 
-  @Enumerated(EnumType.STRING)
-  private Role role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-  private List<Plan> plans;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Plan> plans;
 
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
-  }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+    }
 }

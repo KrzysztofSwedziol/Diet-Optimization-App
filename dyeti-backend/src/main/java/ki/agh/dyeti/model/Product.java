@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Product {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private boolean uncountable;
-  private String productName;
-  private Integer kcal100g;
-  private Integer protein100g;
-  private Integer carbs100g;
-  private Integer fat100g;
+    private boolean uncountable;
+    private String productName;
+    private Integer kcal100g;
+    private Integer protein100g;
+    private Integer carbs100g;
+    private Integer fat100g;
 }

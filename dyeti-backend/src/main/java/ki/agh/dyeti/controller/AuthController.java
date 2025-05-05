@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-  private final CustomUserDetailsService customUserDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
 
-  public AuthController(CustomUserDetailsService customUserDetailsService) {
-    this.customUserDetailsService = customUserDetailsService;
-  }
+    public AuthController(CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
 
-  @PostMapping("/register")
-  public ResponseEntity<UserDTO> registerUser(@RequestBody @Valid RegisterRequest registerRequest) {
-    return ResponseEntity.ok(customUserDetailsService.register(registerRequest));
-  }
+    @PostMapping("/register")
+    public ResponseEntity<UserDTO> registerUser(@RequestBody @Valid RegisterRequest registerRequest) {
+        return ResponseEntity.ok(customUserDetailsService.register(registerRequest));
+    }
 }
