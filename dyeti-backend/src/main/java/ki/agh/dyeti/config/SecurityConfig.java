@@ -30,8 +30,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
+                /*
+                tu są rzeczy które nie wymagają zalogowania żeby do nich mieć dostęp
+                więc jak będziecie coś robić co chcecie żeby był dostęp bez logowania
+                to tu trzeba dodać to powinno też działać jak dacie "/**"
+                */
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login", "/auth/register")
                         .permitAll()
+                        //albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
                         .anyRequest()
                         .authenticated())
                 .formLogin(form -> form.loginProcessingUrl("/auth/login")
