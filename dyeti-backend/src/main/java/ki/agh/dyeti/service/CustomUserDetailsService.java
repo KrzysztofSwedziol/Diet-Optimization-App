@@ -28,6 +28,10 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
     }
 
+    public User getUserByUsername(String username) {
+        return (User) loadUserByUsername(username);
+    }
+
     public UserDTO register(RegisterRequest request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             throw new UsernameNotFoundException("Username already exists");
