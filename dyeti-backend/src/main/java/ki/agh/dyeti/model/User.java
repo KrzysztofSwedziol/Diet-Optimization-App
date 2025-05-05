@@ -3,6 +3,7 @@ package ki.agh.dyeti.model;
 import jakarta.persistence.*;
 import java.util.Collection;
 import java.util.List;
+import ki.agh.dyeti.model.util.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,13 +22,13 @@ public final class User implements UserDetails {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  private Long id;
 
   private String username;
   private String email;
   private String password;
   private Integer age;
-  private Boolean gender;
+  private Gender gender;
   private Integer height;
   private Integer weight;
   private Integer energyReq;
