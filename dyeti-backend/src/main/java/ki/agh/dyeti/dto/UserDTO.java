@@ -18,8 +18,7 @@ public record UserDTO(
         Integer proteinReq,
         Integer carbsReq,
         Integer fatReq,
-        Role role
-) {
+        Role role) {
     public static UserDTO fromUser(User user) {
         return UserDTO.builder()
                 .id(user.getId())
