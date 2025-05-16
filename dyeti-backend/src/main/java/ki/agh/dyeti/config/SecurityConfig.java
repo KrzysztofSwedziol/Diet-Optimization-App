@@ -14,6 +14,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
@@ -29,7 +32,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
+        http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .csrf(AbstractHttpConfigurer::disable)
                 /*
                 tu są rzeczy które nie wymagają zalogowania żeby do nich mieć dostęp
                 więc jak będziecie coś robić co chcecie żeby był dostęp bez logowania
@@ -71,5 +75,28 @@ public class SecurityConfig {
         provider.setUserDetailsService(userDetailsService);
         provider.setPasswordEncoder(passwordEncoder);
         return new ProviderManager(provider);
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        /*
+           Narazie dałem zgodę na wszystko ale jak już będziemy mieli jakiś frontend
+           to można udzielić zgodę tylko na dane originsy metody headery itp plus
+           rozbić to na więcej configów
+        */
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        /*
+            tu określamy do jakich endpointów stosujemy ten config
+            można potem dodać drugi i określić go explicite do czego używamy np.
+            admin config do /admin public config do /public itp
+        */
+
+        source.registerCorsConfiguration("/**", config);
+        return source;
     }
 }
