@@ -1,7 +1,11 @@
 package ki.agh.dyeti.service;
 
+import jakarta.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 import ki.agh.dyeti.dto.UserDTO;
 import ki.agh.dyeti.dto.request.RegisterRequest;
+import ki.agh.dyeti.exception.UserAlreadyHasElevatedRoleException;
 import ki.agh.dyeti.model.Role;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.repository.UserRepository;
@@ -32,6 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return (User) loadUserByUsername(username);
     }
 
+    @Transactional
     public UserDTO register(RegisterRequest request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             throw new UsernameNotFoundException("Username already exists");
@@ -45,6 +50,26 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
+        userRepository.save(user);
+        return UserDTO.fromUser(user);
+    }
+
+    public List<UserDTO> getAllAdmins() {
+        return userRepository.findAllByRole(Role.ADMIN).stream()
+                .map(UserDTO::fromUser)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public UserDTO grantAdminRole(Long userId) {
+        User user = userRepository
+                .findById(userId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + userId));
+        if (user.getRole() != Role.USER) {
+            throw new UserAlreadyHasElevatedRoleException(userId, user.getRole().name());
+        }
+        user.setRole(Role.ADMIN);
+        userRepository.save(user);
         return UserDTO.fromUser(user);
     }
 }

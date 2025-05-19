@@ -42,6 +42,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login", "/auth/register")
                         .permitAll()
                         // albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
+                        .requestMatchers("/admin/**")
+                        .hasAnyRole("ADMIN", "OWNER")
                         .anyRequest()
                         .authenticated())
                 .formLogin(form -> form.loginProcessingUrl("/auth/login")

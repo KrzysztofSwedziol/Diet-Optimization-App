@@ -31,4 +31,9 @@ public final class GlobalExceptionHandler {
         error.put("errorMessage", message);
         return ResponseEntity.status(status).body(error);
     }
+
+    @ExceptionHandler(UserAlreadyHasElevatedRoleException.class)
+    public ResponseEntity<?> handleElevatedRole(UserAlreadyHasElevatedRoleException ex) {
+        return errorResponse("role", ex.getMessage(), HttpStatus.CONFLICT);
+    }
 }
