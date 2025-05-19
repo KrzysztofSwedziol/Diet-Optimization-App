@@ -26,9 +26,27 @@ public class AdminController {
         return userService.getAllAdmins();
     }
 
+    @GetMapping("/users")
+    @PreAuthorize("hasAnyRole('ADMIN','OWNER')")
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @GetMapping("/all")
+    @PreAuthorize("hasAnyRole('ADMIN','OWNER')")
+    public List<UserDTO> getAll() {
+        return userService.getAll();
+    }
+
     @PatchMapping("/grant")
     @PreAuthorize("hasRole('OWNER')")
     public UserDTO grantAdminAuthority(@RequestParam("userId") Long userId) {
         return userService.grantAdminRole(userId);
+    }
+
+    @PatchMapping("/revoke")
+    @PreAuthorize("hasRole('OWNER')")
+    public UserDTO revokeAdminAuthority(@RequestParam("userId") Long userId) {
+        return userService.revokeAdminRole(userId);
     }
 }

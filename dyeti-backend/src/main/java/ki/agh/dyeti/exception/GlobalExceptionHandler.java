@@ -15,6 +15,11 @@ public final class GlobalExceptionHandler {
         return errorResponse("username", ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<?> handleUserNotFound(UserNotFoundException ex) {
+        return errorResponse("username", ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(EmailAlreadyUsedException.class)
     public ResponseEntity<?> handleEmailAlreadyUsed(EmailAlreadyUsedException ex) {
         return errorResponse("email", ex.getMessage(), HttpStatus.CONFLICT);
@@ -32,8 +37,8 @@ public final class GlobalExceptionHandler {
         return ResponseEntity.status(status).body(error);
     }
 
-    @ExceptionHandler(UserAlreadyHasElevatedRoleException.class)
-    public ResponseEntity<?> handleElevatedRole(UserAlreadyHasElevatedRoleException ex) {
+    @ExceptionHandler(InvalidRoleChangeException.class)
+    public ResponseEntity<?> handleElevatedRole(InvalidRoleChangeException ex) {
         return errorResponse("role", ex.getMessage(), HttpStatus.CONFLICT);
     }
 }

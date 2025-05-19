@@ -3,9 +3,11 @@ package ki.agh.dyeti.service;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import ki.agh.dyeti.dto.UserDTO;
 import ki.agh.dyeti.dto.request.RegisterRequest;
-import ki.agh.dyeti.exception.UserAlreadyHasElevatedRoleException;
+import ki.agh.dyeti.exception.InvalidRoleChangeException;
+import ki.agh.dyeti.exception.UserNotFoundException;
 import ki.agh.dyeti.model.Role;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.repository.UserRepository;
@@ -54,22 +56,43 @@ public class CustomUserDetailsService implements UserDetailsService {
         return UserDTO.fromUser(user);
     }
 
-    public List<UserDTO> getAllAdmins() {
-        return userRepository.findAllByRole(Role.ADMIN).stream()
+    public List<UserDTO> getAllByRole(Role role) {
+        return userRepository.findAllByRole(role).stream()
                 .map(UserDTO::fromUser)
                 .collect(Collectors.toList());
     }
 
+    public List<UserDTO> getAllAdmins() {
+        return getAllByRole(Role.ADMIN);
+    }
+
+    public List<UserDTO> getAllUsers() {
+        return getAllByRole(Role.USER);
+    }
+
+    public List<UserDTO> getAll() {
+        return Stream.concat(getAllUsers().stream(), getAllAdmins().stream()).collect(Collectors.toList());
+    }
+
     @Transactional
     public UserDTO grantAdminRole(Long userId) {
-        User user = userRepository
-                .findById(userId)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + userId));
-        if (user.getRole() != Role.USER) {
-            throw new UserAlreadyHasElevatedRoleException(userId, user.getRole().name());
+        return changeUserRole(userId, Role.USER, Role.ADMIN);
+    }
+
+    @Transactional
+    public UserDTO revokeAdminRole(Long userId) {
+        return changeUserRole(userId, Role.ADMIN, Role.USER);
+    }
+
+    private UserDTO changeUserRole(Long userId, Role expectedCurrentRole, Role newRole) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
+
+        if (user.getRole() != expectedCurrentRole) {
+            throw new InvalidRoleChangeException(userId, user.getRole().name(), expectedCurrentRole.name());
         }
-        user.setRole(Role.ADMIN);
-        userRepository.save(user);
-        return UserDTO.fromUser(user);
+
+        user.setRole(newRole);
+        User saved = userRepository.save(user);
+        return UserDTO.fromUser(saved);
     }
 }
