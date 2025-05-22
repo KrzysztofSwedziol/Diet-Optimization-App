@@ -44,17 +44,14 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "src/**/*.{css,scss}": [
       "stylelint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "src/**/*.{md,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
