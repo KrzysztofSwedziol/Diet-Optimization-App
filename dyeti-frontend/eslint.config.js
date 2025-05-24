@@ -6,7 +6,6 @@ import prettier from "eslint-config-prettier"
 import reactHooks from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
-import security from "eslint-plugin-security"
 
 export default defineConfig([
   // {
@@ -49,7 +48,10 @@ export default defineConfig([
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.json',
+        project: [
+          './tsconfig.app.json',   // contains your app sources
+          './tsconfig.node.json'   // contains your vite.config.ts, etc.
+        ],
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
@@ -74,10 +76,13 @@ export default defineConfig([
       ...pluginReact.configs['jsx-runtime'].rules,
       ...importPlugin.configs.recommended.rules,
     },
-
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
 
   },
-  security.configs.recommended,
   prettier
   // tseslint.config(
   //   { files: ['**/*.{tsx,ts}'] },
