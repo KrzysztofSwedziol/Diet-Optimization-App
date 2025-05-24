@@ -2,7 +2,8 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-prettier/recommended",
-    "stylelint-config-standard-scss"
+    "stylelint-config-standard-scss",
+    "stylelint-config-clean-order"
   ],
   "plugins": [
     "stylelint-order"
@@ -18,80 +19,6 @@
       ],
       {
         "unspecified": "bottom"
-      }
-    ],
-    "order/properties-order": [
-      {
-        "groupName": "Custom Properties",
-        "properties": [
-          "/^--/"
-        ],
-        "emptyLineBefore": "always"
-      },
-      {
-        "groupName": "Layout",
-        "properties": [
-          "display",
-          "position",
-          "top",
-          "right",
-          "bottom",
-          "left",
-          "z-index"
-        ],
-        "emptyLineBefore": "always"
-      },
-      {
-        "groupName": "Box Model",
-        "properties": [
-          "width",
-          "height",
-          "margin",
-          "margin-top",
-          "margin-right",
-          "margin-bottom",
-          "margin-left",
-          "padding",
-          "padding-top",
-          "padding-right",
-          "padding-bottom",
-          "padding-left"
-        ],
-        "emptyLineBefore": "always"
-      },
-      {
-        "groupName": "Typografia",
-        "properties": [
-          "font",
-          "font-family",
-          "font-size",
-          "font-weight",
-          "line-height",
-          "letter-spacing",
-          "text-align",
-          "text-decoration",
-          "color"
-        ],
-        "emptyLineBefore": "always"
-      },
-      {
-        "groupName": "Appearance",
-        "properties": [
-          "background",
-          "background-color",
-          "background-image",
-          "border",
-          "border-radius",
-          "box-shadow",
-          "opacity",
-          "transition",
-          "transform"
-        ],
-        "emptyLineBefore": "always"
-      },
-      {
-        "unspecified": "bottom",
-        "emptyLineBefore": "never"
       }
     ]
   },
