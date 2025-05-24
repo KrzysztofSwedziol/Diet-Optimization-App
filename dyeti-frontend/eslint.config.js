@@ -6,6 +6,7 @@ import prettier from "eslint-config-prettier"
 import reactHooks from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import security from "eslint-plugin-security"
 
 export default defineConfig([
   // {
@@ -76,6 +77,7 @@ export default defineConfig([
 
 
   },
+  security.configs.recommended,
   prettier
   // tseslint.config(
   //   { files: ['**/*.{tsx,ts}'] },
