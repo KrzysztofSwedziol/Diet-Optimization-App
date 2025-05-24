@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint:js": "eslint . ",
-    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:js": "eslint . --max-warnings 0",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\" --max-warnings 0\"",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "eslint --fix",
     "preview": "vite preview",
