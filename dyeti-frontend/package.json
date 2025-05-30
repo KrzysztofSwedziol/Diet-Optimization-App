@@ -8,8 +8,10 @@
     "build": "tsc -b && vite build",
     "lint:js": "eslint . --max-warnings 0",
     "lint:css": "stylelint \"src/**/*.{css,scss}\" --max-warnings 0",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:json",
     "lint:fix": "eslint --fix",
+    "lint:json": "prettier --check \"**/*.{md,json}\"",
+    "lint:json:fix": "prettier --write \"**/*.{md,json}\"",
     "preview": "vite preview",
     "prepare": "cd .. && husky dyeti-frontend/.husky"
   },
@@ -54,7 +56,7 @@
       "stylelint --fix",
       "prettier --write"
     ],
-    "src/**/*.{md,json}": [
+    "**/*.{md,json}": [
       "prettier --write"
     ]
   }
