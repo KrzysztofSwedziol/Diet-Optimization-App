@@ -1,4 +1,4 @@
-name: Dyeti build frontend
+name: Dyeti bDuild frontend
 
 on:
   push:
@@ -34,6 +34,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+          cache-dependency-path: dyeti-frontend/package-lock.json
 
       - name: Install dependencies
         run: npm ci
