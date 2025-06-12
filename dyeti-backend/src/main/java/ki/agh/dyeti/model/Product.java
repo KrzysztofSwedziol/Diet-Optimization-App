@@ -17,10 +17,25 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean uncountable;
-    private String productName;
-    private Integer kcal100g;
-    private Integer protein100g;
-    private Integer carbs100g;
-    private Integer fat100g;
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "unit_id", nullable = false)
+    private Unit unit;
+
+    @Column(name = "grams_per_unit")
+    private Double gramsPerUnit;
+
+    @Column(name = "kcal_100g")
+    private Double kcal100g;
+
+    @Column(name = "protein_100g")
+    private Double protein100g;
+
+    @Column(name = "carbs_100g")
+    private Double carbs100g;
+
+    @Column(name = "fat_100g")
+    private Double fat100g;
 }
