@@ -16,7 +16,7 @@ const common = {
     xl: '1280px',
   },
   typography: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: 'Inter, sans-serif',
     fontSize: {
       xs: '0.5rem',
       sm: '0.75rem',
@@ -49,7 +49,7 @@ export const lightTheme = {
       900: '#08414D',
     },
     neutrals: {
-      1100: '#F5F7F9',
+      100: '#F5F7F9',
       200: '#E4E8EB',
       300: '#D1D6DB',
       400: '#B0B7BE',
@@ -101,7 +101,7 @@ export const darkTheme = {
       900: '#08414D',
     },
     neutrals: {
-      1100: '#F5F7F9',
+      100: '#F5F7F9',
       200: '#E4E8EB',
       300: '#D1D6DB',
       400: '#B0B7BE',

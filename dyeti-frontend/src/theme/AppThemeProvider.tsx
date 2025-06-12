@@ -4,7 +4,10 @@ import { lightTheme, darkTheme } from './index.ts';
 import { GlobalStyle } from './GlobalStyle.tsx';
 
 type Mode = 'light' | 'dark';
-const ThemeContext = createContext<{ mode: Mode; toggle: () => void }>({ mode: 'light', toggle: () => {} });
+const ThemeContext = createContext<{ mode: Mode; toggle: () => void }>({
+  mode: 'light',
+  toggle: () => {},
+});
 
 export const useThemeMode = () => useContext(ThemeContext);
 
@@ -14,8 +17,10 @@ export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   return (
     <ThemeContext.Provider value={{ mode, toggle: () => setMode(m => (m === 'light' ? 'dark' : 'light')) }}>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
     </ThemeContext.Provider>
   );
 };
