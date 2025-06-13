@@ -1,8 +1,9 @@
 const common = {
   borderRadius: {
-    small: '4px',
-    medium: '8px',
-    large: '16px',
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+    xl: '16px',
   },
   borderWidth: {
     thin: '1px',
@@ -14,6 +15,16 @@ const common = {
     md: '768px',
     lg: '1024px',
     xl: '1280px',
+  },
+  buttonPadding: {
+    sm: '6px 12px',
+    md: '10px 20px',
+    lg: '14px 28px',
+  },
+  shadows: {
+    sm: '0px 1px 2px rgba(0, 0, 0, 0.1)',
+    md: '0px 2px 5px rgba(0, 0, 0, 0.3)',
+    lg: '0px 10px 15px rgba(0, 0, 0, 0.6)',
   },
   typography: {
     fontFamily: 'Inter, sans-serif',
