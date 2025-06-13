@@ -15,6 +15,7 @@ interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: IconPosition;
   reversed?: boolean;
   disabled?: boolean;
+  animation?: boolean;
 }
 
 export const AppButton: React.FC<AppButtonProps> = ({
@@ -25,6 +26,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
   iconPosition = 'left',
   reversed = false,
   disabled = false,
+  animation = false,
   onClick,
 }) => {
   const theme = useTheme();
@@ -60,7 +62,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
       type="button"
       disabled={disabled}
       onClick={handleClick}
-      className={disabled ? '' : 'button-pulse'}
+      className={disabled || !animation ? '' : 'button-pulse'}
     >
       {icon && iconPosition === 'left' && icon}
       {children}

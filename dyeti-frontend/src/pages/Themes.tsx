@@ -172,7 +172,9 @@ const Themes = () => {
           <div>
             <h3>Reversed</h3>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <AppButton reversed>Default</AppButton>
+              <AppButton animation reversed>
+                Default animated
+              </AppButton>
               <AppButton reversed icon={<FontAwesomeIcon icon={faCircleUser} />}>
                 Icon + Reversed
               </AppButton>
@@ -190,7 +192,7 @@ const Themes = () => {
 
           <div>
             <h3>Full Width</h3>
-            <AppButton fullWidth style={{ width: '100%' }}>
+            <AppButton animation fullWidth style={{ width: '100%' }}>
               Full Width Button
             </AppButton>
           </div>
