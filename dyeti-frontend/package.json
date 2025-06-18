@@ -17,6 +17,9 @@
     "prepare": "cd .. && husky dyeti-frontend/.husky"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "eslint-plugin-prettier": "^5.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

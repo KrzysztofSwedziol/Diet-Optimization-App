@@ -1,6 +1,9 @@
 import { useTheme } from 'styled-components';
 
 import { useThemeMode } from '../theme/AppThemeProvider.tsx';
+import { AppButton } from '../components/AppButton.tsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
 const Themes = () => {
   const { toggle } = useThemeMode();
@@ -14,7 +17,7 @@ const Themes = () => {
         onClick={toggle}
         style={{
           padding: '0.5rem 1rem',
-          borderRadius: borderRadius.medium,
+          borderRadius: borderRadius.md,
           borderWidth: borderWidth.normal,
           borderStyle: 'solid',
           borderColor: colors.primary[500],
@@ -141,6 +144,68 @@ const Themes = () => {
             </div>
           );
         })}
+      </section>
+      <section>
+        <h2>AppButton Examples</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div>
+            <h3>Sizes</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton size={'sm'}>Small</AppButton>
+              <AppButton size={'md'}>Medium</AppButton>
+              <AppButton size={'lg'}>Large</AppButton>
+            </div>
+          </div>
+
+          <div>
+            <h3>With Icon</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton icon={<FontAwesomeIcon icon={faCircleUser} />} iconPosition="left">
+                Left Icon
+              </AppButton>
+              <AppButton icon={<FontAwesomeIcon icon={faCircleUser} />} iconPosition="right">
+                Right Icon
+              </AppButton>
+            </div>
+          </div>
+
+          <div>
+            <h3>Reversed</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton animation reversed>
+                Default animated
+              </AppButton>
+              <AppButton reversed icon={<FontAwesomeIcon icon={faCircleUser} />}>
+                Icon + Reversed
+              </AppButton>
+            </div>
+          </div>
+          <div>
+            <h3>Disabled</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton disabled>Disabled</AppButton>
+              <AppButton disabled icon={<FontAwesomeIcon icon={faCircleUser} />}>
+                With Icon
+              </AppButton>
+            </div>
+          </div>
+
+          <div>
+            <h3>Full Width</h3>
+            <AppButton animation fullWidth style={{ width: '100%' }}>
+              Full Width Button
+            </AppButton>
+          </div>
+          <div>
+            <h3>Custom style</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton style={{ width: '50%', color: 'red', borderColor: 'red' }}>Width 50% color</AppButton>
+              <AppButton style={{ width: '25%', color: 'white', borderColor: 'white', backgroundColor: 'black' }}>
+                Width 25% color
+              </AppButton>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
