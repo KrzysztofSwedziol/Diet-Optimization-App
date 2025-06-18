@@ -196,6 +196,15 @@ const Themes = () => {
               Full Width Button
             </AppButton>
           </div>
+          <div>
+            <h3>Custom style</h3>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <AppButton style={{ width: '50%', color: 'red', borderColor: 'red' }}>Width 50% color</AppButton>
+              <AppButton style={{ width: '25%', color: 'white', borderColor: 'white', backgroundColor: 'black' }}>
+                Width 25% color
+              </AppButton>
+            </div>
+          </div>
         </div>
       </section>
     </div>
