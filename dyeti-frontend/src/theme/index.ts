@@ -17,9 +17,9 @@ const common = {
     xl: '1280px',
   },
   buttonPadding: {
-    sm: '6px 12px',
-    md: '10px 20px',
-    lg: '14px 28px',
+    sm: '6px 15px',
+    md: '10px 40px',
+    lg: '14px 60px',
   },
   shadows: {
     sm: '0px 1px 2px rgba(0, 0, 0, 0.1)',

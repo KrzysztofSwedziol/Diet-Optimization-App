@@ -19,3 +19,38 @@
 .button-pulse:hover {
   animation: pulse-loop 1.5s linear infinite both;
 }
+
+.button {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: var(--justify, center);
+
+  margin: auto;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+
+  font-size: var(--font-size);
+  line-height: 1;
+  color: var(--text-color);
+
+  opacity: 1;
+  background: var(--button-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.full {
+  width: 100%;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button:hover {
+  border-color: var(--hover-bg);
+}

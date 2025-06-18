@@ -27,6 +27,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
   reversed = false,
   disabled = false,
   animation = false,
+  fullWidth = false,
   onClick,
 }) => {
   const theme = useTheme();
@@ -34,35 +35,35 @@ export const AppButton: React.FC<AppButtonProps> = ({
   const backgroundColor = reversed ? theme.colors.primary[100] : theme.colors.primary[600];
   const textColor = reversed ? theme.colors.primary[600] : theme.colors.primary[100];
   const padding = theme.buttonPadding[size];
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;
     if (onClick) onClick(e);
   };
 
+  const classNames = ['button', animation ? 'button-pulse' : '', fullWidth ? 'full' : '', disabled ? 'disabled' : '']
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <button
-      style={{
-        padding: padding,
-        margin: 'auto',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: justifyContent,
-        alignItems: 'center',
-        fontSize: theme.typography.fontSize[size],
-        lineHeight: 1,
-        gap: '10px',
-        opacity: disabled ? 0.6 : 1,
-        boxShadow: theme.shadows.md,
-        background: backgroundColor,
-        borderRadius: theme.borderRadius.lg,
-        color: textColor,
-        cursor: disabled ? 'not-allowed' : 'pointer',
-        ...style,
-      }}
       type="button"
       disabled={disabled}
       onClick={handleClick}
-      className={disabled || !animation ? '' : 'button-pulse'}
+      className={classNames}
+      style={
+        {
+          ...style,
+          '--hover-bg': textColor,
+          '--button-bg': backgroundColor,
+          '--text-color': textColor,
+          '--padding': padding,
+          '--box-shadow': theme.shadows.md,
+          '--font-size': theme.typography.fontSize[size],
+          '--justify': justifyContent,
+          '--border-radius': theme.borderRadius.lg,
+        } as React.CSSProperties
+      }
     >
       {icon && iconPosition === 'left' && icon}
       {children}
