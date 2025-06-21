@@ -1,6 +1,7 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
+import ki.agh.dyeti.model.util.Ownable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Product {
+public class Product implements Ownable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,4 +39,8 @@ public class Product {
 
     @Column(name = "fat_100g")
     private Double fat100g;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private User owner;
 }
