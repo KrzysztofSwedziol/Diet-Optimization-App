@@ -41,4 +41,19 @@ public final class GlobalExceptionHandler {
     public ResponseEntity<?> handleElevatedRole(InvalidRoleChangeException ex) {
         return errorResponse("role", ex.getMessage(), HttpStatus.CONFLICT);
     }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<?> handleAccessDenied(AccessDeniedException ex) {
+        return errorResponse("", ex.getMessage(), HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> handleResourceNotFound(ResourceNotFoundException ex) {
+        return errorResponse("", ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<?> handleIllegalState(IllegalStateException ex) {
+        return errorResponse("", "Internal server error", HttpStatus.CONFLICT);
+    }
 }
