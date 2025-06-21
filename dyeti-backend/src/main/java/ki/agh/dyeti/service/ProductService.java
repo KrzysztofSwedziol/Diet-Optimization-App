@@ -39,6 +39,8 @@ public class ProductService {
         Product product = productRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
+        resourceAccessValidator.validateOwnership(product);
+
         return ProductDTO.fromEntity(product);
     }
 
