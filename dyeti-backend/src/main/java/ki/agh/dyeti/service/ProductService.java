@@ -1,5 +1,7 @@
 package ki.agh.dyeti.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import ki.agh.dyeti.dto.ProductDTO;
 import ki.agh.dyeti.dto.request.ProductRequestDTO;
 import ki.agh.dyeti.exception.ResourceNotFoundException;
@@ -13,9 +15,6 @@ import ki.agh.dyeti.security.CurrentUserProvider;
 import ki.agh.dyeti.security.ResourceAccessValidator;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
@@ -24,11 +23,10 @@ public class ProductService {
     private final CurrentUserProvider currentUserProvider;
 
     public ProductService(
-        ProductRepository productRepository,
-        UnitRepository unitRepository,
-        ResourceAccessValidator resourceAccessValidator,
-        CurrentUserProvider currentUserProvider
-    ) {
+            ProductRepository productRepository,
+            UnitRepository unitRepository,
+            ResourceAccessValidator resourceAccessValidator,
+            CurrentUserProvider currentUserProvider) {
         this.productRepository = productRepository;
         this.unitRepository = unitRepository;
         this.resourceAccessValidator = resourceAccessValidator;
@@ -36,8 +34,9 @@ public class ProductService {
     }
 
     public ProductDTO getProduct(Long id) {
-        Product product = productRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
+        Product product = productRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(product);
 
@@ -45,41 +44,41 @@ public class ProductService {
     }
 
     public List<ProductDTO> getAllProducts() {
-        User user = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User user = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (user.getRole() == Role.ADMIN) {
             return productRepository.findAll().stream()
-                .map(ProductDTO::fromEntity)
-                .collect(Collectors.toList());
+                    .map(ProductDTO::fromEntity)
+                    .collect(Collectors.toList());
         }
 
         return productRepository.findAllByOwnerIsNullOrOwner(user).stream()
-            .map(ProductDTO::fromEntity)
-            .collect(Collectors.toList());
+                .map(ProductDTO::fromEntity)
+                .collect(Collectors.toList());
     }
 
     public ProductDTO createProduct(ProductRequestDTO productRequestDTO) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
-        Unit unit = unitRepository.findById(productRequestDTO.unitId())
-            .orElseThrow(() ->
-                new ResourceNotFoundException(
-                    "Unit with id " + productRequestDTO.unitId() + " not found"
-                )
-            );
+        Unit unit = unitRepository
+                .findById(productRequestDTO.unitId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Unit with id " + productRequestDTO.unitId() + " not found"));
 
         Product product = Product.builder()
-            .name(productRequestDTO.name())
-            .unit(unit)
-            .gramsPerUnit(productRequestDTO.gramsPerUnit())
-            .kcal100g(productRequestDTO.kcal100g())
-            .protein100g(productRequestDTO.protein100g())
-            .carbs100g(productRequestDTO.carbs100g())
-            .fat100g(productRequestDTO.fat100g())
-            .owner(currentUser)
-            .build();
+                .name(productRequestDTO.name())
+                .unit(unit)
+                .gramsPerUnit(productRequestDTO.gramsPerUnit())
+                .kcal100g(productRequestDTO.kcal100g())
+                .protein100g(productRequestDTO.protein100g())
+                .carbs100g(productRequestDTO.carbs100g())
+                .fat100g(productRequestDTO.fat100g())
+                .owner(currentUser)
+                .build();
 
         Product savedProduct = productRepository.save(product);
 
@@ -87,8 +86,9 @@ public class ProductService {
     }
 
     public ProductDTO updateProduct(Long id, ProductRequestDTO productRequestDTO) {
-        Product product = productRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
+        Product product = productRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(product);
 
@@ -96,8 +96,9 @@ public class ProductService {
             product.setName(productRequestDTO.name());
         }
         if (productRequestDTO.unitId() != null) {
-            Unit unit = unitRepository.findById(productRequestDTO.unitId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid unit ID"));
+            Unit unit = unitRepository
+                    .findById(productRequestDTO.unitId())
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid unit ID"));
             product.setUnit(unit);
         }
         if (productRequestDTO.gramsPerUnit() != null) {
@@ -121,8 +122,9 @@ public class ProductService {
     }
 
     public ProductDTO deleteProduct(Long id) {
-        Product product = productRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
+        Product product = productRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(product);
 

@@ -1,11 +1,10 @@
 package ki.agh.dyeti.security;
 
+import java.util.Optional;
 import ki.agh.dyeti.model.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public class CurrentUserProvider {

@@ -1,12 +1,11 @@
 package ki.agh.dyeti.config;
 
+import java.util.List;
 import ki.agh.dyeti.model.Unit;
 import ki.agh.dyeti.repository.UnitRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
 
 @Configuration
 public class DataInitializer {
@@ -15,14 +14,11 @@ public class DataInitializer {
     public ApplicationRunner initializeUnits(UnitRepository unitRepository) {
         return args -> {
             List<Unit> defaultUnits = List.of(
-                new Unit(null, "gram", "g"),
-                new Unit(null, "milliliter", "ml"),
-                new Unit(null, "piece", "pc")
-            );
+                    new Unit(null, "gram", "g"), new Unit(null, "milliliter", "ml"), new Unit(null, "piece", "pc"));
 
             defaultUnits.stream()
-                .filter(unit -> !unitRepository.existsByName(unit.getName()))
-                .forEach(unitRepository::save);
+                    .filter(unit -> !unitRepository.existsByName(unit.getName()))
+                    .forEach(unitRepository::save);
         };
     }
 }

@@ -1,11 +1,10 @@
 package ki.agh.dyeti.security;
 
+import java.util.Optional;
 import ki.agh.dyeti.exception.AccessDeniedException;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.model.util.Ownable;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class ResourceAccessValidator {
@@ -23,11 +22,9 @@ public class ResourceAccessValidator {
     public void validateOwnership(Ownable resource, String message) {
         Optional<User> currentUser = currentUserProvider.getCurrentUser();
 
-        if (
-            resource.getOwner() == null
-            || currentUser.isEmpty()
-            || !resource.getOwner().getId().equals(currentUser.get().getId())
-        ) {
+        if (resource.getOwner() == null
+                || currentUser.isEmpty()
+                || !resource.getOwner().getId().equals(currentUser.get().getId())) {
             throw new AccessDeniedException(message);
         }
     }

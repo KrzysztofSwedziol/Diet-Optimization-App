@@ -1,11 +1,10 @@
 package ki.agh.dyeti.controller;
 
+import java.util.List;
 import ki.agh.dyeti.dto.ProductDTO;
 import ki.agh.dyeti.dto.request.ProductRequestDTO;
 import ki.agh.dyeti.service.ProductService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
@@ -32,10 +31,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ProductDTO updateProduct(
-        @PathVariable Long id,
-        @RequestBody ProductRequestDTO productRequestDTO
-    ) {
+    public ProductDTO updateProduct(@PathVariable Long id, @RequestBody ProductRequestDTO productRequestDTO) {
         return productService.updateProduct(id, productRequestDTO);
     }
 
