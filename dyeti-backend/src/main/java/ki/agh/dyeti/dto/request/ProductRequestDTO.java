@@ -8,4 +8,5 @@ public record ProductRequestDTO(
     Double protein100g,
     Double carbs100g,
     Double fat100g
-) {}
+) {
+}

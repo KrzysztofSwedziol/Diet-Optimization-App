@@ -24,9 +24,9 @@ public class ResourceAccessValidator {
         Optional<User> currentUser = currentUserProvider.getCurrentUser();
 
         if (
-            resource.getOwner() == null ||
-            currentUser.isEmpty() ||
-            !resource.getOwner().getId().equals(currentUser.get().getId())
+            resource.getOwner() == null
+            || currentUser.isEmpty()
+            || !resource.getOwner().getId().equals(currentUser.get().getId())
         ) {
             throw new AccessDeniedException(message);
         }
