@@ -1,5 +1,6 @@
 package ki.agh.dyeti.service;
 
+import ki.agh.dyeti.dto.request.PlanRequestDTO;
 import ki.agh.dyeti.repository.PlanRepository;
 import ki.agh.dyeti.repository.PlansProductsRepository;
 import ki.agh.dyeti.repository.PlansRecipesRepository;
@@ -18,5 +19,11 @@ public class PlanService {
         this.planRepository = planRepository;
         this.plansProductsRepository = plansProductsRepository;
         this.plansRecipesRepository = plansRecipesRepository;
+    }
+
+    public void startPlanGeneration(PlanRequestDTO planRequestDTO, Long ownerId) {
+        // Fetch user preferences (create the endpoint first)
+        // Run optimization
+        // Save results
     }
 }

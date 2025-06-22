@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
-import ki.agh.dyeti.model.util.PlansProductsId;
+import ki.agh.dyeti.model.util.PlanProduct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@IdClass(PlansProductsId.class)
+@IdClass(PlanProduct.class)
 public class PlansProducts {
 
     @Id
