@@ -1,10 +1,9 @@
 package ki.agh.dyeti.controller;
 
+import java.util.List;
 import ki.agh.dyeti.dto.ProductPreferenceDTO;
 import ki.agh.dyeti.service.ProductPreferenceService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/preference")
