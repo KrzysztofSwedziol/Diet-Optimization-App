@@ -1,14 +1,13 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
+import java.util.List;
 import ki.agh.dyeti.model.util.Ownable;
 import ki.agh.dyeti.model.util.PlanProduct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Entity
 @Table(name = "plans")

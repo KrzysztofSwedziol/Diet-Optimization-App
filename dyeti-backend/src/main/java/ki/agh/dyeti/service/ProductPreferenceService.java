@@ -1,6 +1,9 @@
 package ki.agh.dyeti.service;
 
 import jakarta.transaction.Transactional;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import ki.agh.dyeti.dto.ProductPreferenceDTO;
 import ki.agh.dyeti.exception.AccessDeniedException;
 import ki.agh.dyeti.exception.ResourceNotFoundException;
@@ -15,10 +18,6 @@ import ki.agh.dyeti.security.CurrentUserProvider;
 import ki.agh.dyeti.security.ResourceAccessValidator;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 @Service
 public class ProductPreferenceService {
 
@@ -28,10 +27,10 @@ public class ProductPreferenceService {
     private final ResourceAccessValidator resourceAccessValidator;
 
     public ProductPreferenceService(
-        ProductPreferenceRepository productPreferenceRepository,
-        ProductRepository productRepository,
-        CurrentUserProvider currentUserProvider,
-        ResourceAccessValidator resourceAccessValidator) {
+            ProductPreferenceRepository productPreferenceRepository,
+            ProductRepository productRepository,
+            CurrentUserProvider currentUserProvider,
+            ResourceAccessValidator resourceAccessValidator) {
         this.productPreferenceRepository = productPreferenceRepository;
         this.productRepository = productRepository;
         this.currentUserProvider = currentUserProvider;
@@ -39,28 +38,30 @@ public class ProductPreferenceService {
     }
 
     public List<ProductPreferenceDTO> getAllProductPreferences() {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (currentUser.getRole() == Role.ADMIN) {
             return productPreferenceRepository.findAll().stream()
-                .map(ProductPreferenceDTO::fromEntity)
-                .collect(Collectors.toList());
+                    .map(ProductPreferenceDTO::fromEntity)
+                    .collect(Collectors.toList());
         }
 
         return productPreferenceRepository.findByOwnerId(currentUser.getId()).stream()
-            .map(ProductPreferenceDTO::fromEntity)
-            .collect(Collectors.toList());
+                .map(ProductPreferenceDTO::fromEntity)
+                .collect(Collectors.toList());
     }
 
     public List<ProductPreferenceDTO> getProductPreferencesByUserId(Long userId) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (currentUser.getRole() == Role.ADMIN || currentUser.getId().equals(userId)) {
             return productPreferenceRepository.findByOwnerId(currentUser.getId()).stream()
-                .map(ProductPreferenceDTO::fromEntity)
-                .collect(Collectors.toList());
+                    .map(ProductPreferenceDTO::fromEntity)
+                    .collect(Collectors.toList());
         }
 
         throw new AccessDeniedException("You do not have permission to access this resource");
@@ -68,17 +69,20 @@ public class ProductPreferenceService {
 
     @Transactional
     public ProductPreferenceDTO createProductPreference(ProductPreferenceDTO productPreferenceDTO) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
-        if (productPreferenceDTO.preference() == null || productPreferenceDTO.preference() <= 0 || productPreferenceDTO.preference() > 10) {
+        if (productPreferenceDTO.preference() == null
+                || productPreferenceDTO.preference() <= 0
+                || productPreferenceDTO.preference() > 10) {
             throw new IllegalArgumentException("Preference must be between 0 and 10");
         }
 
-        Product product = productRepository.findById(productPreferenceDTO.product().id())
-            .orElseThrow(() -> new IllegalArgumentException(
-                "Product with id " + productPreferenceDTO.product().id() + " does not exist"
-            ));
+        Product product = productRepository
+                .findById(productPreferenceDTO.product().id())
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Product with id " + productPreferenceDTO.product().id() + " does not exist"));
 
         ProductPreferenceId id = new ProductPreferenceId(currentUser.getId(), product.getId());
 
@@ -87,11 +91,11 @@ public class ProductPreferenceService {
         }
 
         ProductPreference productPreference = ProductPreference.builder()
-            .id(id)
-            .owner(currentUser)
-            .product(product)
-            .preference(productPreferenceDTO.preference())
-            .build();
+                .id(id)
+                .owner(currentUser)
+                .product(product)
+                .preference(productPreferenceDTO.preference())
+                .build();
 
         ProductPreference savedProductPreference = productPreferenceRepository.save(productPreference);
 
@@ -100,14 +104,16 @@ public class ProductPreferenceService {
 
     @Transactional
     public ProductPreferenceDTO updateProductPreference(ProductPreferenceDTO productPreferenceDTO) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
-        ProductPreferenceId id = new ProductPreferenceId(currentUser.getId(), productPreferenceDTO.product().id());
-        ProductPreference existingProductPreference = productPreferenceRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException(
-                "Product preference with id " + id + " does not exist"
-            ));
+        ProductPreferenceId id = new ProductPreferenceId(
+                currentUser.getId(), productPreferenceDTO.product().id());
+        ProductPreference existingProductPreference = productPreferenceRepository
+                .findById(id)
+                .orElseThrow(
+                        () -> new IllegalArgumentException("Product preference with id " + id + " does not exist"));
 
         existingProductPreference.setPreference(productPreferenceDTO.preference());
 
@@ -118,12 +124,15 @@ public class ProductPreferenceService {
 
     @Transactional
     public ProductPreferenceDTO deleteProductPreference(Long productId) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         ProductPreferenceId id = new ProductPreferenceId(currentUser.getId(), productId);
-        ProductPreference exisitingProductPreference = productPreferenceRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Product preference with id " + id + " does not exist"));
+        ProductPreference exisitingProductPreference = productPreferenceRepository
+                .findById(id)
+                .orElseThrow(
+                        () -> new ResourceNotFoundException("Product preference with id " + id + " does not exist"));
 
         resourceAccessValidator.validateOwnership(exisitingProductPreference);
 
@@ -133,12 +142,13 @@ public class ProductPreferenceService {
     }
 
     public Map<Product, Double> getProductPreferencesMapByUserId(Long userId) {
-        User currentUser = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
+        User currentUser = currentUserProvider
+                .getCurrentUser()
+                .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (currentUser.getRole() == Role.ADMIN || currentUser.getId().equals(userId)) {
             return productPreferenceRepository.findByOwnerId(userId).stream()
-                .collect(Collectors.toMap(ProductPreference::getProduct, ProductPreference::getPreference));
+                    .collect(Collectors.toMap(ProductPreference::getProduct, ProductPreference::getPreference));
         }
 
         throw new AccessDeniedException("You do not have permission to access this resource");

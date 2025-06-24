@@ -1,7 +1,5 @@
 package ki.agh.dyeti.model.util;
 
-import java.io.Serializable;
-
 import jakarta.persistence.*;
 import ki.agh.dyeti.model.Plan;
 import ki.agh.dyeti.model.Product;

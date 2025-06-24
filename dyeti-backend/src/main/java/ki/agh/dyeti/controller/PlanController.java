@@ -23,8 +23,8 @@ public class PlanController {
 
     @PostMapping("/generate")
     public ResponseEntity<String> generatePlan(@RequestBody PlanRequestDTO planRequest) {
-        User user = currentUserProvider.getCurrentUser()
-            .orElseThrow(() -> new RuntimeException("User not authenticated"));
+        User user =
+                currentUserProvider.getCurrentUser().orElseThrow(() -> new RuntimeException("User not authenticated"));
 
         planService.startPlanGeneration(planRequest, user.getId());
 
