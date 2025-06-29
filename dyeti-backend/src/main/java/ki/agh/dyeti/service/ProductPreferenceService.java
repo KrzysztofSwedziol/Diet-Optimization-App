@@ -74,8 +74,8 @@ public class ProductPreferenceService {
                 .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (productPreferenceDTO.preference() == null
-                || productPreferenceDTO.preference() <= 0
-                || productPreferenceDTO.preference() > 10) {
+                || productPreferenceDTO.preference() <= ProductPreference.LOWEST_PREFERENCE
+                || productPreferenceDTO.preference() > ProductPreference.HIGHEST_PREFERENCE) {
             throw new IllegalArgumentException("Preference must be between 0 and 10");
         }
 

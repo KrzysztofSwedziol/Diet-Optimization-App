@@ -16,6 +16,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProductPreference implements Ownable {
 
+    public static final double LOWEST_PREFERENCE = 0.0;
+    public static final double HIGHEST_PREFERENCE = 10.0;
+
     @EmbeddedId
     private ProductPreferenceId id;
 

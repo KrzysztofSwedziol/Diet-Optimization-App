@@ -16,6 +16,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Plan implements Ownable {
+
+    private static final int DESCRIPTION_LENGTH = 1000;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +26,7 @@ public class Plan implements Ownable {
     @Column(nullable = false)
     private String name;
 
-    @Column(length = 1000)
+    @Column(length = DESCRIPTION_LENGTH)
     private String description;
 
     private Double caloriesTarget;
@@ -38,7 +41,7 @@ public class Plan implements Ownable {
 
     @OneToMany(mappedBy = "plan", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
-    List<PlanProduct> products = new ArrayList<>();
+    private List<PlanProduct> products = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "owner_id")

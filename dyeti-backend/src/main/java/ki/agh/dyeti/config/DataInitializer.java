@@ -120,7 +120,7 @@ public class DataInitializer {
                             .id(id)
                             .owner(user)
                             .product(product)
-                            .preference(random.nextDouble() * 10) // preference between 0.0 and 10.0
+                            .preference(random.nextDouble() * ProductPreference.HIGHEST_PREFERENCE) // preference between 0.0 and 10.0
                             .build();
                 })
                 .toList();
