@@ -1,5 +1,6 @@
 package ki.agh.dyeti.controller;
 
+import java.util.List;
 import ki.agh.dyeti.dto.PlanDTO;
 import ki.agh.dyeti.dto.request.PlanRequestDTO;
 import ki.agh.dyeti.model.User;
@@ -7,8 +8,6 @@ import ki.agh.dyeti.security.CurrentUserProvider;
 import ki.agh.dyeti.service.PlanService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/plans")
@@ -33,7 +32,8 @@ public class PlanController {
 
     @GetMapping()
     public List<PlanDTO> getAllPlans() {
-        User user = currentUserProvider.getCurrentUser().orElseThrow(() -> new RuntimeException("User not authenticated"));
+        User user =
+                currentUserProvider.getCurrentUser().orElseThrow(() -> new RuntimeException("User not authenticated"));
 
         return planService.getAllPlans(user);
     }

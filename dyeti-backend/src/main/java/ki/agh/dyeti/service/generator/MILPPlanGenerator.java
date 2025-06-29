@@ -2,14 +2,13 @@ package ki.agh.dyeti.service.generator;
 
 import com.google.ortools.Loader;
 import com.google.ortools.linearsolver.*;
+import java.util.*;
 import ki.agh.dyeti.model.Plan;
-import ki.agh.dyeti.model.Product;
 import ki.agh.dyeti.model.PlanProduct;
+import ki.agh.dyeti.model.Product;
 import ki.agh.dyeti.model.util.PlanProductId;
 import ki.agh.dyeti.service.generator.util.NutritionPerUnit;
 import org.springframework.stereotype.Component;
-
-import java.util.*;
 
 @Component
 public class MILPPlanGenerator implements PlanGenerator {
@@ -27,8 +26,8 @@ public class MILPPlanGenerator implements PlanGenerator {
         Map<Product, MPVariable> productVariables = new HashMap<>();
         for (Product product : preferences.keySet()) {
             MPVariable variable = "piece".equals(product.getUnit().getName())
-                ? solver.makeIntVar(0.0, infinity, "x_" + product.getId())
-                : solver.makeNumVar(0.0, infinity, "x_" + product.getId());
+                    ? solver.makeIntVar(0.0, infinity, "x_" + product.getId())
+                    : solver.makeNumVar(0.0, infinity, "x_" + product.getId());
             productVariables.put(product, variable);
         }
 
@@ -79,11 +78,11 @@ public class MILPPlanGenerator implements PlanGenerator {
                 totalFats += quantity * nutritionPerUnit.getFats();
 
                 PlanProduct planProduct = PlanProduct.builder()
-                    .id(new PlanProductId(plan.getId(), product.getId()))
-                    .plan(plan)
-                    .product(product)
-                    .quantity(quantity)
-                    .build();
+                        .id(new PlanProductId(plan.getId(), product.getId()))
+                        .plan(plan)
+                        .product(product)
+                        .quantity(quantity)
+                        .build();
 
                 planProducts.add(planProduct);
             }

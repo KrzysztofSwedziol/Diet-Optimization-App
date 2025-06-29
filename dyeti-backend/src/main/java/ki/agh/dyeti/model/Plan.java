@@ -1,7 +1,6 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import ki.agh.dyeti.model.util.Ownable;
