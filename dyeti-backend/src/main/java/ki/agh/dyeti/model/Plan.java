@@ -1,9 +1,10 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 import ki.agh.dyeti.model.util.Ownable;
-import ki.agh.dyeti.model.util.PlanProduct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,7 +38,8 @@ public class Plan implements Ownable {
     private Double fats;
 
     @OneToMany(mappedBy = "plan", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<PlanProduct> products;
+    @Builder.Default
+    List<PlanProduct> products = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "owner_id")

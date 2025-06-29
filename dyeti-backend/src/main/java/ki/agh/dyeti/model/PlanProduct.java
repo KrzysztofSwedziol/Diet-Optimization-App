@@ -1,8 +1,7 @@
-package ki.agh.dyeti.model.util;
+package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
-import ki.agh.dyeti.model.Plan;
-import ki.agh.dyeti.model.Product;
+import ki.agh.dyeti.model.util.PlanProductId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,16 +15,17 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PlanProduct {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private PlanProductId id;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "plan_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("planId")
+    @JoinColumn(name = "plan_id", nullable = false)
     private Plan plan;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("productId")
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     @Column(nullable = false)

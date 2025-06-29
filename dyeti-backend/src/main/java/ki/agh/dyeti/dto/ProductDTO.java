@@ -13,6 +13,8 @@ public record ProductDTO(
         Double fat100g,
         Long ownerId) {
     public static ProductDTO fromEntity(Product product) {
+        Long ownerId = product.getOwner() != null ? product.getOwner().getId() : null;
+
         return new ProductDTO(
                 product.getId(),
                 product.getName(),
@@ -22,6 +24,6 @@ public record ProductDTO(
                 product.getProtein100g(),
                 product.getCarbs100g(),
                 product.getFat100g(),
-                product.getOwner().getId());
+                ownerId);
     }
 }
