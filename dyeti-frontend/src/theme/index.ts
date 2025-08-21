@@ -34,8 +34,10 @@ const common = {
       md: '1rem',
       lg: '1.25rem',
       xl: '1.5rem',
+      xxl: '2rem',
     },
     fontWeight: {
+      thin: 200,
       regular: 400,
       medium: 500,
       bold: 700,
