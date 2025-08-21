@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
-import './style/AppButton.css';
+import './AppButton.css';
 
 type Size = 'sm' | 'md' | 'lg';
 type IconPosition = 'left' | 'right';
@@ -18,7 +18,7 @@ interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   animation?: boolean;
 }
 
-export const AppButton: React.FC<AppButtonProps> = ({
+const AppButton: React.FC<AppButtonProps> = ({
   children,
   style,
   size = 'md',
@@ -71,3 +71,5 @@ export const AppButton: React.FC<AppButtonProps> = ({
     </button>
   );
 };
+
+export default AppButton;
