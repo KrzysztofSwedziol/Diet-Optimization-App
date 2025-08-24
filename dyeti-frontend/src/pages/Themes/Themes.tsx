@@ -1,7 +1,7 @@
 import { useTheme } from 'styled-components';
 
-import { useThemeMode } from '../theme/AppThemeProvider.tsx';
-import { AppButton } from '../components/AppButton.tsx';
+import { useThemeMode } from '../../theme/AppThemeProvider.tsx';
+import { AppButton } from '../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
