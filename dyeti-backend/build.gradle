@@ -26,7 +26,7 @@ spotless {
 		importOrder()
 		removeUnusedImports()
 		cleanthat()
-		palantirJavaFormat('2.39.0').formatJavadoc(true)
+		palantirJavaFormat().formatJavadoc(true)
 	}
 }
 checkstyle {
@@ -49,6 +49,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation group: 'com.google.ortools', name: 'ortools-java', version: '9.14.6206'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'

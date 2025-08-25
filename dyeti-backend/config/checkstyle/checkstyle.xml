@@ -69,7 +69,11 @@
   <!-- See https://checkstyle.org/checks/sizes/index.html -->
   <module name="FileLength"/>
   <module name="LineLength">
+    <property name="max" value="120"/>
     <property name="fileExtensions" value="java"/>
+<!--    Wyłączenie importów i metod z tego-->
+    <property name="ignorePattern" value="^package.*|^import.*|(public|private|protected).*?\\(.*\\).*"/>
+
   </module>
 
   <!-- Checks for whitespace                               -->
@@ -110,7 +114,7 @@
 
     <!-- Checks for imports                              -->
     <!-- See https://checkstyle.org/checks/imports/index.html -->
-    <module name="AvoidStarImport"/>
+<!--    <module name="AvoidStarImport"/>-->
     <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
     <module name="RedundantImport"/>
     <module name="UnusedImports">
@@ -133,7 +137,8 @@
     <module name="ParenPad"/>
     <module name="TypecastParenPad"/>
     <module name="WhitespaceAfter"/>
-    <module name="WhitespaceAround"/>
+    <!--This causes errors with spotless-->
+    <!--<module name="WhitespaceAround"/>-->
 
     <!-- Modifier Checks                                    -->
     <!-- See https://checkstyle.org/checks/modifier/index.html -->
@@ -152,7 +157,7 @@
     <!-- See https://checkstyle.org/checks/coding/index.html -->
     <module name="EmptyStatement"/>
     <module name="EqualsHashCode"/>
-    <module name="HiddenField"/>
+<!--    <module name="HiddenField"/>-->
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
     <module name="MagicNumber"/>
@@ -163,7 +168,7 @@
 
     <!-- Checks for class design                         -->
     <!-- See https://checkstyle.org/checks/design/index.html -->
-    <module name="DesignForExtension"/>
+<!--    <module name="DesignForExtension"/>-->
     <module name="FinalClass"/>
 <!--    <module name="HideUtilityClassConstructor"/>-->
     <module name="InterfaceIsType"/>
@@ -172,7 +177,7 @@
     <!-- Miscellaneous other checks.                   -->
     <!-- See https://checkstyle.org/checks/misc/index.html -->
     <module name="ArrayTypeStyle"/>
-    <module name="FinalParameters"/>
+<!--    <module name="FinalParameters"/>-->
     <module name="TodoComment"/>
     <module name="UpperEll"/>
 
