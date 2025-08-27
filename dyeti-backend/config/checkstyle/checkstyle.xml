@@ -137,7 +137,8 @@
     <module name="ParenPad"/>
     <module name="TypecastParenPad"/>
     <module name="WhitespaceAfter"/>
-    <module name="WhitespaceAround"/>
+    <!--This causes errors with spotless-->
+    <!--<module name="WhitespaceAround"/>-->
 
     <!-- Modifier Checks                                    -->
     <!-- See https://checkstyle.org/checks/modifier/index.html -->
