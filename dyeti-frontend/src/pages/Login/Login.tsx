@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import * as Ui from './Login.styles';
 import { useAuth } from '../../components/providers/AuthProvider.tsx';
+import Input from '../../components/Input/Input.tsx';
+import dyeti from '../../assets/dyeti.svg';
 
 const Login = () => {
   const { login } = useAuth(); // z providera
@@ -26,31 +28,38 @@ const Login = () => {
   return (
     <Ui.Container>
       <Ui.Card>
+        <Ui.LogoContainer>
+          <Ui.Logo src={dyeti} alt="DYeti logo" />
+        </Ui.LogoContainer>
         <Ui.Title>Welcome back!</Ui.Title>
         <Ui.Subtitle>Log in to view your diet plans, manage preferences, and more.</Ui.Subtitle>
 
         <form onSubmit={handleSubmit}>
-          <Ui.InputWrapper hasError={!!errors.email}>
-            <input type="email" placeholder="yeti@example.com" value={email} onChange={e => setEmail(e.target.value)} />
-            {errors.email && <span>{errors.email}</span>}
-          </Ui.InputWrapper>
+          <Input
+            label="EMAIL"
+            type="email"
+            placeholder="yeti@example.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            error={errors.email}
+          />
 
-          <Ui.InputWrapper hasError={!!errors.password}>
-            <input
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-            {errors.password && <span>{errors.password}</span>}
-          </Ui.InputWrapper>
+          <Input
+            label="PASSWORD"
+            type="password"
+            placeholder="••••••••"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            error={errors.password}
+          />
+          <Ui.OptionsContainer>
+            <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
 
-          <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
-
-          <Ui.RememberMe>
-            <input type="checkbox" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
-            Remember me
-          </Ui.RememberMe>
+            <Ui.RememberMe>
+              <input type="checkbox" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
+              Remember me
+            </Ui.RememberMe>
+          </Ui.OptionsContainer>
 
           {errors.global && <p style={{ color: '#EF4444' }}>{errors.global}</p>}
 

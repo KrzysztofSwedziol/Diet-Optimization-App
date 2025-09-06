@@ -4,64 +4,49 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 64px); // odejmuje navbar
-  background-color: ${({ theme }) => theme.colors.background};
+  min-height: calc(100vh - 64px);
+  background-color: ${({ theme }) => theme.colors.neutrals[100]};
   padding: 16px;
+  font-family: ${({ theme }) => theme.typography.fontFamily};
 `;
 
 export const Card = styled.div`
   width: 100%;
   max-width: 400px;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: ${({ theme }) => theme.shadows.lg};
   padding: 32px;
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: ${({ theme }) => theme.typography.fontSize.xxl};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   margin-bottom: 8px;
   color: ${({ theme }) => theme.colors.neutrals[900]};
 `;
-
+export const Logo = styled.img`
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+`;
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+`;
 export const Subtitle = styled.p`
-  font-size: 0.9rem;
+  font-size: ${({ theme }) => theme.typography.fontSize.md};
   color: ${({ theme }) => theme.colors.neutrals[600]};
   margin-bottom: 24px;
-`;
-
-export const InputWrapper = styled.div<{ hasError?: boolean }>`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-
-  input {
-    padding: 12px;
-    border: 1px solid ${({ hasError, theme }) => (hasError ? theme.colors.danger[500] : theme.colors.neutrals[300])};
-    border-radius: 8px;
-    font-size: 1rem;
-
-    &:focus {
-      outline: none;
-      border-color: ${({ theme }) => theme.colors.primary[700]};
-      box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.primary[700]};
-    }
-  }
-
-  span {
-    font-size: 0.8rem;
-    color: ${({ theme }) => theme.colors.danger[500]};
-    margin-top: 4px;
-  }
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
 `;
 
 export const ForgotPassword = styled.a`
-  font-size: 0.85rem;
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
   color: ${({ theme }) => theme.colors.primary[700]};
-  text-decoration: none;
-  margin-left: auto;
-  display: inline-block;
   margin-bottom: 16px;
 
   &:hover {
@@ -72,13 +57,20 @@ export const ForgotPassword = styled.a`
 export const RememberMe = styled.label`
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
-  color: ${({ theme }) => theme.colors.neutrals[600]};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
+  color: ${({ theme }) => theme.colors.neutrals[900]};
   margin-bottom: 16px;
 
   input {
     margin-right: 8px;
   }
+`;
+
+export const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Button = styled.button`
