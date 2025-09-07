@@ -43,6 +43,7 @@ public class DataInitializer {
     }
 
     private List<Product> initializeProducts(ProductRepository productRepository, Map<String, Unit> units) {
+        //noinspection MagicNumber
         List<Product> products = List.of(
                 new Product(
                         null,
