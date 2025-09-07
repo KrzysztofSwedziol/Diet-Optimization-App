@@ -1,14 +1,12 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
-import './AppButton.css';
+import { StyledButton } from './AppButton.styles.ts';
 
 type Size = 'sm' | 'md' | 'lg';
 type IconPosition = 'left' | 'right';
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
   fullWidth?: boolean;
   size?: Size;
   icon?: React.ReactNode;
@@ -20,7 +18,6 @@ interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const AppButton: React.FC<AppButtonProps> = ({
   children,
-  style,
   size = 'md',
   icon,
   iconPosition = 'left',
@@ -29,46 +26,43 @@ const AppButton: React.FC<AppButtonProps> = ({
   animation = false,
   fullWidth = false,
   onClick,
+  ...rest
 }) => {
   const theme = useTheme();
   const justifyContent = icon ? 'space-between' : 'center';
   const backgroundColor = reversed ? theme.colors.primary[100] : theme.colors.primary[600];
   const textColor = reversed ? theme.colors.primary[600] : theme.colors.primary[100];
   const padding = theme.buttonPadding[size];
+  const fontSize = theme.typography.fontSize[size];
+  const boxShadow = theme.shadows.md;
+  const borderRadius = theme.borderRadius.lg;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;
     if (onClick) onClick(e);
   };
 
-  const classNames = ['button', animation ? 'button-pulse' : '', fullWidth ? 'full' : '', disabled ? 'disabled' : '']
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <button
+    <StyledButton
       type="button"
-      disabled={disabled}
       onClick={handleClick}
-      className={classNames}
-      style={
-        {
-          ...style,
-          '--hover-bg': textColor,
-          '--button-bg': backgroundColor,
-          '--text-color': textColor,
-          '--padding': padding,
-          '--box-shadow': theme.shadows.md,
-          '--font-size': theme.typography.fontSize[size],
-          '--justify': justifyContent,
-          '--border-radius': theme.borderRadius.lg,
-        } as React.CSSProperties
-      }
+      disabled={disabled}
+      $fullWidth={fullWidth}
+      $disabled={disabled}
+      $animation={animation}
+      $background={backgroundColor}
+      $color={textColor}
+      $padding={padding}
+      $fontSize={fontSize}
+      $justify={justifyContent}
+      $boxShadow={boxShadow}
+      $borderRadius={borderRadius}
+      {...rest}
     >
       {icon && iconPosition === 'left' && icon}
       {children}
       {icon && iconPosition === 'right' && icon}
-    </button>
+    </StyledButton>
   );
 };
 
