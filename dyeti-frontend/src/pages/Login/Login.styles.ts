@@ -19,12 +19,6 @@ export const Card = styled.div`
   padding: 32px;
 `;
 
-export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.typography.fontSize.xxl};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  margin-bottom: 8px;
-  color: ${({ theme }) => theme.colors.neutrals[900]};
-`;
 export const Logo = styled.img`
   width: 50%;
   aspect-ratio: 1 / 1;
@@ -37,17 +31,10 @@ export const LogoContainer = styled.div`
   color: inherit;
   width: 100%;
 `;
-export const Subtitle = styled.p`
-  font-size: ${({ theme }) => theme.typography.fontSize.md};
-  color: ${({ theme }) => theme.colors.neutrals[600]};
-  margin-bottom: 24px;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-`;
 
 export const ForgotPassword = styled.a`
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
   color: ${({ theme }) => theme.colors.primary[700]};
-  margin-bottom: 16px;
 
   &:hover {
     text-decoration: underline;
@@ -58,8 +45,8 @@ export const RememberMe = styled.div`
   display: flex;
   align-items: center;
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   color: ${({ theme }) => theme.colors.neutrals[900]};
-  margin-bottom: 16px;
 
   input {
     margin-right: 8px;
@@ -71,28 +58,18 @@ export const OptionsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
 `;
 
-export const Button = styled.button`
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 12px;
-  background: ${({ theme }) => theme.colors.primary[600]};
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 16px;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary[700]};
-  }
+export const Error = styled.p`
+  color: ${({ theme }) => theme.colors.danger[500]};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
 `;
-
 export const Footer = styled.div`
   text-align: center;
-  font-size: 0.85rem;
+  margin-top: 8px;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
   color: ${({ theme }) => theme.colors.neutrals[600]};
 
   a {

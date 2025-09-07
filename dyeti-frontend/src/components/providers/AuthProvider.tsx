@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // 3. wrappery na mutacje – po sukcesie check się odświeży
   const login = async (username: string, password: string) => {
     await loginMutation.mutateAsync({ username, password });
-    // po mutacji react-query automatycznie odpali /auth/check (bo invalidacja w hooku)
   };
 
   const logout = async () => {
