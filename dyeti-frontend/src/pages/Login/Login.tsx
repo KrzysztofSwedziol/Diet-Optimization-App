@@ -27,7 +27,11 @@ const Login = () => {
       await login(username, password);
       navigate('/account');
     } catch (err) {
-      setErrors({ global: `Invalid email or password ${err.message}` });
+      if (err instanceof Error) {
+        setErrors({ global: `Invalid email or password: ${err.message}` });
+      } else {
+        setErrors({ global: 'An unknown error occurred' });
+      }
     }
   };
 
