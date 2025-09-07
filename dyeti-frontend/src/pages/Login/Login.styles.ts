@@ -54,7 +54,7 @@ export const ForgotPassword = styled.a`
   }
 `;
 
-export const RememberMe = styled.label`
+export const RememberMe = styled.div`
   display: flex;
   align-items: center;
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
