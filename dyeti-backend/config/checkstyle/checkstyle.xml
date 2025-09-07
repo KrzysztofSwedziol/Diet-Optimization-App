@@ -161,10 +161,16 @@
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
     <module name="MagicNumber"/>
+      <module name="SuppressionSingleFilter">
+          <property name="checks" value="MagicNumber"/>
+          <property name="files" value=".*DataInitializer\.java"/>
+      </module>
     <module name="MissingSwitchDefault"/>
     <module name="MultipleVariableDeclarations"/>
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
+
+
 
     <!-- Checks for class design                         -->
     <!-- See https://checkstyle.org/checks/design/index.html -->
