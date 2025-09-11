@@ -70,7 +70,6 @@ const Login = () => {
                 checked={rememberMe}
                 onChange={e => setRememberMe(e.target.checked)}
               />
-              <span className="custom-checkbox" />
               <label htmlFor="remember">Remember me</label>
             </Ui.RememberMe>
             <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
