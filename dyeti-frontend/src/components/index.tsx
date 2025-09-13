@@ -4,3 +4,4 @@ export { default as AppButton } from './AppButton/AppButton';
 export { default as Table } from './Table/Table';
 export { default as SortBy } from './SortBy/SortBy';
 export { default as SearchBar } from './SearchBar/SearchBar';
+export { default as Spinner } from './Spinner/Spinner';
