@@ -56,6 +56,11 @@
     <property name="optional" value="true"/>
   </module>
 
+  <module name="SuppressionSingleFilter">
+    <property name="checks" value="MagicNumber"/>
+    <property name="files" value=".*DataInitializer\.java"/>
+  </module>
+
   <!-- Checks whether files end with a new line.                        -->
   <!-- See https://checkstyle.org/checks/misc/newlineatendoffile.html -->
   <module name="NewlineAtEndOfFile"/>
@@ -96,12 +101,6 @@
   <!-- </module> -->
 
   <module name="TreeWalker">
-
-    <module name="SuppressionSingleFilter">
-      <property name="checks" value="MagicNumber"/>
-      <property name="files" value=".*DataInitializer\.java"/>
-    </module>
-
     <!-- Checks for Naming Conventions.                  -->
     <!-- See https://checkstyle.org/checks/naming/index.html -->
     <module name="ConstantName"/>
