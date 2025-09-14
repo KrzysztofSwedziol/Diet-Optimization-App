@@ -9,19 +9,16 @@ services:
       POSTGRES_USER: dyeti
       POSTGRES_PASSWORD: dyeti_pass
       POSTGRES_DB: dyeti_db
-      POSTGRES_HOST_AUTH_METHOD: trust # na ten moment bez uwierzytelniania, wyjebane
     ports:
-      - "5432:5432"
+      - "127.0.0.1:55433:5432" # exposed port musi być +49152 bo jak nie to zqwsze bedzie wrong password czy inny chuj
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init:/docker-entrypoint-initdb.d:ro
-      - ./data:/seed:ro   # <-- zmiana tutaj
-
+      - ./data:/seed:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U dyeti -d dyeti_db"]
       interval: 5s
       timeout: 3s
       retries: 10
-
 volumes:
   pgdata:
