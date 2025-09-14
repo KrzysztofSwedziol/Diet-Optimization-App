@@ -1,7 +1,6 @@
 package ki.agh.dyeti.config;
 
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import ki.agh.dyeti.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -89,7 +88,8 @@ public class SecurityConfig {
            rozbić to na więcej configów
         */
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+        config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

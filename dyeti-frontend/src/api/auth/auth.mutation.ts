@@ -1,6 +1,5 @@
 import { apiRequest } from '../axios';
-import { HttpMethod } from '../types';
-import { LoginRequest, LoginResponse, User } from './types';
+import { HttpMethod, LoginRequest, LoginResponse, LogoutResponse, RegisterRequest, User } from '../types';
 
 const logIn = async ({ username, password }: LoginRequest) => {
   const formData = new URLSearchParams();
@@ -13,17 +12,15 @@ const logIn = async ({ username, password }: LoginRequest) => {
 };
 
 const logOut = async () => {
-  return apiRequest<{ message: string }>(HttpMethod.POST, '/auth/logout');
+  return apiRequest<LogoutResponse>(HttpMethod.POST, '/auth/logout');
 };
 
-const register = async (data: { username: string; email: string; password: string }) => {
-  return apiRequest(HttpMethod.POST, '/auth/register', data);
+const register = async (data: RegisterRequest) => {
+  return apiRequest<User>(HttpMethod.POST, '/auth/register', data);
 };
 
 const checkAuth = async () => {
-  return apiRequest<User>(HttpMethod.GET, '/auth/check', undefined, {
-    withCredentials: true, // konieczne żeby wysłać JSESSIONID
-  });
+  return apiRequest<User>(HttpMethod.GET, '/auth/check');
 };
 
 const AUTH_MUTATION = {
