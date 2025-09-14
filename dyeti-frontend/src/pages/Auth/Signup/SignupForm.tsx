@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
-import Input from '../../../components/Input/Input.tsx';
+import Input from '../../../components/Inputs/Input/Input.tsx';
 import { AppButton } from '../../../components';
 import { useAuth } from '../../../components/providers/AuthProvider.tsx';
 import { useNavigate } from 'react-router-dom';
 import { Gender } from '../../../api/types.ts';
-import Select from '../../../components/Select/Select.tsx';
+import Select from '../../../components/Inputs/Select/Select.tsx';
 
 const SignupForm = () => {
   const { register } = useAuth();
