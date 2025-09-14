@@ -1,6 +1,6 @@
-import { User } from '../../api/auth/types.ts';
 import { createContext, useContext } from 'react';
 import { useCheckAuth, useLogIn, useLogOut, useRegister } from '../../api/auth/hooks';
+import { User } from '../../api/types.ts';
 
 type AuthContextType = {
   user: User | null;
