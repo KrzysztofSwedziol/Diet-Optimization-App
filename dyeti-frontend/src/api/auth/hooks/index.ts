@@ -3,8 +3,7 @@ import AUTH_MUTATION from '../auth.mutation';
 import AUTH_KEYS from '../auth.keys';
 
 import { apiRequest } from '../../axios.ts';
-import { HttpMethod } from '../../types.ts';
-import { User } from '../types.ts';
+import { HttpMethod, User } from '../../types.ts';
 
 export const useLogIn = () => {
   return useMutation({
