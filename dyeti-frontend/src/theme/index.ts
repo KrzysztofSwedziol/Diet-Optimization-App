@@ -25,7 +25,7 @@ const common = {
   shadows: {
     sm: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     md: '0px 2px 5px rgba(0, 0, 0, 0.3)',
-    lg: '0px 10px 15px rgba(0, 0, 0, 0.6)',
+    lg: '0px 10px 15px -3px rgba(0, 0, 0, 0.6)',
   },
   typography: {
     fontFamily: 'Inter, sans-serif',
