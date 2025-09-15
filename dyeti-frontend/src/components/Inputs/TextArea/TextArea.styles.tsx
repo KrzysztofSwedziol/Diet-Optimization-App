@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-
+//style of TextArea = Input = Select tbh
 export const InputTextArea = styled.textarea<{ hasError?: boolean }>`
   padding: 8px;
   margin-bottom: 8px;
