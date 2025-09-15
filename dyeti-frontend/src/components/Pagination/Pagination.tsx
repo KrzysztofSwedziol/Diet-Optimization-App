@@ -1,11 +1,11 @@
-import * as Ui from './TablePagination.styles';
+import * as Ui from './Pagination.styles';
 import type { Table } from '@tanstack/react-table';
 
 interface Props<TData> {
   table: Table<TData>;
 }
 
-const TablePagination = <TData,>({ table }: Props<TData>) => {
+const Pagination = <TData,>({ table }: Props<TData>) => {
   const pageCount = table.getPageCount();
   const currentIndex = table.getState().pagination.pageIndex;
 
@@ -20,7 +20,7 @@ const TablePagination = <TData,>({ table }: Props<TData>) => {
   const visiblePages = getVisiblePages();
 
   return (
-    <Ui.PaginationWrapper>
+    <Ui.Container>
       <Ui.PageLink disabled={!table.getCanPreviousPage()} onClick={() => table.setPageIndex(0)}>
         {'<<'}
       </Ui.PageLink>
@@ -44,8 +44,8 @@ const TablePagination = <TData,>({ table }: Props<TData>) => {
       <Ui.PageLink disabled={!table.getCanNextPage()} onClick={() => table.setPageIndex(pageCount - 1)}>
         {'>>'}
       </Ui.PageLink>
-    </Ui.PaginationWrapper>
+    </Ui.Container>
   );
 };
 
-export default TablePagination;
+export default Pagination;

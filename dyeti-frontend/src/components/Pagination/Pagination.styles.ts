@@ -1,6 +1,6 @@
 import { styled, css } from 'styled-components';
 
-export const PaginationWrapper = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
