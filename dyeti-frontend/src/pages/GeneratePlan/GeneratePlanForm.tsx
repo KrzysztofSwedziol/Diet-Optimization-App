@@ -11,7 +11,7 @@ const GeneratePlanForm = () => {
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: walidacja
+
     navigate('/plans/constraints');
   };
 

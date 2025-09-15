@@ -5,7 +5,7 @@ export const Picker = styled.div`
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  background: ${({ theme }) => theme.colors.primary[600]}; /* kapsuła */
+  background: ${({ theme }) => theme.colors.primary[600]};
   border-radius: 9999px;
   padding: 4px;
   height: 40px;
