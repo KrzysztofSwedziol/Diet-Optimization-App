@@ -21,6 +21,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductPreferenceService {
 
+    private static final int MIN_PREFERENCE_VALUE = 0;
+    private static final int MAX_PREFERENCE_VALUE = 10;
     private final ProductPreferenceRepository productPreferenceRepository;
     private final ProductRepository productRepository;
     private final CurrentUserProvider currentUserProvider;
@@ -74,9 +76,10 @@ public class ProductPreferenceService {
                 .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (productPreferenceDTO.preference() == null
-                || productPreferenceDTO.preference() <= 0
-                || productPreferenceDTO.preference() > 10) {
-            throw new IllegalArgumentException("Preference must be between 0 and 10");
+                || productPreferenceDTO.preference() <= MIN_PREFERENCE_VALUE
+                || productPreferenceDTO.preference() > MAX_PREFERENCE_VALUE) {
+            throw new IllegalArgumentException(
+                    "Preference must be between " + MIN_PREFERENCE_VALUE + " and " + MAX_PREFERENCE_VALUE);
         }
 
         Product product = productRepository
