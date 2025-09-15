@@ -1,18 +1,21 @@
 ## Krok po kroku
 
-### 1. 
+### 1. Uruchomić **Docker Desktop**  
 
+( albo **Rancher Desktop**, czy jakikolwiek inny orkiestrator, który ogarnia Dockera )
+
+### 2.
 w katalogu `\Diet-Optimization-App\miscellaneous\postgres-databse`
 
 ```bash
 docker compose build
 ```
-### 2.
+### 3.
 ```bash
 docker compose up -d
 ```
 
-### 3. ( dla testu czy sie nie wyjebało )
+### 4. ( dla testu czy sie nie wyjebało )
 wchodzenie do kontenera na windowsie:
 ```bash
 docker exec -it $(docker ps -q -f "name=dyeti-postgres") bash
@@ -22,8 +25,9 @@ i na linuxie / macu:
 ```bash
 docker exec -it "$(docker ps -q -f name=dyeti-postgres)" bash
 ```
+( wychodzi się przez komedne exit z terminala )
 
-### 4. łączenie sie z Intelij
+### 5. łączenie sie z Intelij
 
 kliknąć tu:  
 
@@ -49,7 +53,7 @@ Note:
 - 127.0.0.1 (nie localhost, bo zinterpretuje po swojemu i się wysra)
 - 55433 (taki duży, bo na mniejszych Bóg wie czemu nie chce działać)
 
-### 5. query
+### 6. query
 **plusik → Query Console**
  
 ```sql
@@ -57,3 +61,11 @@ select * from products
 ```
 
 Powinno się ładnie wypisać. Jak nie to chuj wam w dupe
+
+### 7.
+
+usunięcie i zburzenie kontenera:
+
+```bash
+docker compose down
+```
