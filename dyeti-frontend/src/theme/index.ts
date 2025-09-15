@@ -11,7 +11,8 @@ const common = {
     thick: '4px',
   },
   breakpoints: {
-    sm: '480px',
+    xs: '480px',
+    sm: '576px',
     md: '768px',
     lg: '1024px',
     xl: '1280px',
