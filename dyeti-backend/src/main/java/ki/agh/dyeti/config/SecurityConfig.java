@@ -89,7 +89,8 @@ public class SecurityConfig {
          * na więcej configów
          */
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
