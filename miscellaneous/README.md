@@ -46,7 +46,9 @@ I następnie tak uzupełnić:
 | Password | dyeti_pass               |
 | Port     | 55433                    |
 | Database | dyeti_db                 |
-| URL      | automatycznie się wygeneruje |
+| URL      | jdbc:postgresql://127.0.0.1:55433/dyeti_db |
+
+na screenie jest ssl disable, bez tego powinno działać, automatyczny URL powinen być okej
 
 ---
 Note:
@@ -60,12 +62,20 @@ Note:
 select * from products
 ```
 
-Powinno się ładnie wypisać. Jak nie to chuj wam w dupe
+Powinno się ładnie wypisać. Jeśli nie, to wejść do kontenera ( punkt 4 ) i ręcznie odpalić
+`03_load_data.sh`
+
+```bash
+cd docker-entrypoint-initdb.d
+```
+```bash
+sh 03_load_data.sh 
+```
 
 ### 7.
 
 usunięcie i zburzenie kontenera:
 
 ```bash
-docker compose down
+docker compose down -v
 ```
