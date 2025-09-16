@@ -3,7 +3,10 @@ package ki.agh.dyeti.config;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import ki.agh.dyeti.model.*;
+import ki.agh.dyeti.model.util.ProductPreferenceId;
+import ki.agh.dyeti.repository.ProductPreferenceRepository;
 import ki.agh.dyeti.repository.ProductRepository;
 import ki.agh.dyeti.repository.UnitRepository;
 import ki.agh.dyeti.repository.UserRepository;
@@ -21,11 +24,15 @@ public class DataInitializer {
 
     @Bean
     public ApplicationRunner initializeData(
-            UnitRepository unitRepository, ProductRepository productRepository, UserRepository userRepository) {
+            UnitRepository unitRepository,
+            ProductRepository productRepository,
+            UserRepository userRepository,
+            ProductPreferenceRepository preferenceRepository) {
         return args -> {
             Map<String, Unit> units = initializeUnits(unitRepository);
             List<Product> products = initializeProducts(productRepository, units);
             User testUser = initializeTestUser(userRepository);
+            initializePreferences(preferenceRepository, testUser, products);
         };
     }
 
@@ -43,7 +50,6 @@ public class DataInitializer {
     }
 
     private List<Product> initializeProducts(ProductRepository productRepository, Map<String, Unit> units) {
-        //noinspection MagicNumber
         List<Product> products = List.of(
                 new Product(
                         null,
@@ -100,5 +106,26 @@ public class DataInitializer {
         testUser.setUsername("test");
         testUser.setRole(Role.USER);
         return userRepository.save(testUser);
+    }
+
+    private void initializePreferences(
+            ProductPreferenceRepository preferenceRepository, User user, List<Product> products) {
+        Random random = new Random();
+
+        List<ProductPreference> preferences = products.stream()
+                .map(product -> {
+                    ProductPreferenceId id = new ProductPreferenceId(user.getId(), product.getId());
+
+                    return ProductPreference.builder()
+                            .id(id)
+                            .owner(user)
+                            .product(product)
+                            .preference(random.nextDouble()
+                                    * ProductPreference.HIGHEST_PREFERENCE) // preference between 0.0 and 10.0
+                            .build();
+                })
+                .toList();
+
+        preferenceRepository.saveAll(preferences);
     }
 }
