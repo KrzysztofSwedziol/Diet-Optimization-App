@@ -15,7 +15,7 @@ docker compose build
 docker compose up -d
 ```
 
-### 4. ( dla testu czy sie nie wyjebało )
+### 4. ( dla testu  )
 wchodzenie do kontenera na windowsie:
 ```bash
 docker exec -it $(docker ps -q -f "name=dyeti-postgres") bash
@@ -52,7 +52,7 @@ na screenie jest ssl disable, bez tego powinno działać, automatyczny URL powin
 
 ---
 Note:
-- 127.0.0.1 (nie localhost, bo zinterpretuje po swojemu i się wysra)
+- 127.0.0.1 (nie localhost, bo zinterpretuje po swojemu i się nie będzie działać)
 - 55433 (taki duży, bo na mniejszych Bóg wie czemu nie chce działać)
 
 ### 6. query
