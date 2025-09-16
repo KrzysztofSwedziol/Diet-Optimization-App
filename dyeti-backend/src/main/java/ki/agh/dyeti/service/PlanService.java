@@ -29,13 +29,14 @@ public class PlanService {
         this.planGenerator = planGenerator;
     }
 
-    public List<PlanDTO> getAllPlans(User user) {
-        if (user.getRole() == Role.ADMIN || user.getRole() == Role.OWNER) {
-            return planRepository.findAll().stream().map(PlanDTO::fromEntity).collect(Collectors.toList());
-        }
-        return planRepository.findByOwner(user).stream()
+    public List<PlanDTO> getUserPlans(Long userId) {
+        return planRepository.findByOwnerId(userId).stream()
                 .map(PlanDTO::fromEntity)
                 .collect(Collectors.toList());
+    }
+
+    public List<PlanDTO> getAllPlans() {
+        return planRepository.findAll().stream().map(PlanDTO::fromEntity).collect(Collectors.toList());
     }
 
     @Transactional
