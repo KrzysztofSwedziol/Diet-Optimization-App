@@ -1,4 +1,4 @@
-import { InputField } from './Input.styles.ts';
+import { InputField } from './Input.styles.tsx';
 import InputWrapper from '../InputWrapper.tsx';
 
 type Props = {

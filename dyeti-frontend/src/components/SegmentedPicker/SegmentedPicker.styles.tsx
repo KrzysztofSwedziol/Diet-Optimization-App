@@ -32,6 +32,13 @@ export const Pill = styled.button<{ $active?: boolean }>`
   &:hover {
     opacity: 0.9;
   }
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: revert;
+  }
 `;
 
 export const Knob = styled.span<{ $index: number; $count: number }>`

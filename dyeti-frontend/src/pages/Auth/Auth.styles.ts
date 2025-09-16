@@ -1,5 +1,10 @@
 import { styled } from 'styled-components';
 
+export const FormGrid = styled.form`
+  display: grid;
+  row-gap: 16px;
+`;
+
 export const Logo = styled.img`
   width: 50%;
   aspect-ratio: 1 / 1;

@@ -9,8 +9,8 @@ export const Card = styled.div`
 `;
 
 export const Row = styled.div`
-  display: grid;
-  grid-template-columns: 1fr max-content;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   padding: 8px 0;
