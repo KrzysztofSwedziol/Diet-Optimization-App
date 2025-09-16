@@ -19,7 +19,8 @@ public class PlanController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> generatePlan(@AuthenticationPrincipal User user, @RequestBody PlanRequestDTO planRequest) {
+    public ResponseEntity<String> generatePlan(
+            @AuthenticationPrincipal User user, @RequestBody PlanRequestDTO planRequest) {
         planService.startPlanGeneration(planRequest, user);
         return ResponseEntity.ok("Plan generation started");
     }
