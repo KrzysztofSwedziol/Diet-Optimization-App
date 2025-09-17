@@ -1,7 +1,7 @@
-import * as Ui from './Login.styles';
-import dyeti from '../../assets/dyeti.svg';
-import { PageTitle } from '../../components/Typography/PageTitle.tsx';
-import { PageDescription } from '../../components/Typography/PageDescription.tsx';
+import * as Ui from '../Auth.styles.ts';
+import dyeti from '../../../assets/dyeti.svg';
+import { PageTitle } from '../../../components/Typography/PageTitle.tsx';
+import { PageDescription } from '../../../components/Typography/PageDescription.tsx';
 import LoginForm from './LoginForm.tsx';
 
 const Login = () => {
