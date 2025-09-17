@@ -1,4 +1,4 @@
-import { InputContainer, InputLabel, InputError } from './Inputs.styles.tsx';
+import { InputContainer, InputLabel, InputError } from './Inputs.styles.ts';
 
 type Props = {
   label?: string;

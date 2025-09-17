@@ -1,7 +1,7 @@
 import InputWrapper from '../InputWrapper';
-import { Shell, Suffix } from './InputWithSuffix.styles';
+import { Shell, Suffix } from './InputWithSuffix.styles.ts';
 import React from 'react';
-import { InputField } from '../Input/Input.styles.tsx';
+import { InputField } from '../Input/Input.styles.ts';
 import type { Property } from 'csstype';
 
 type Props = {

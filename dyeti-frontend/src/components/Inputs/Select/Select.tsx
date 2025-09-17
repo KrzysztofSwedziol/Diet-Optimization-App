@@ -1,4 +1,4 @@
-import { SelectField } from './Select.styles.tsx';
+import { SelectField } from './Select.styles.ts';
 import InputWrapper from '../InputWrapper.tsx';
 
 type Option = {

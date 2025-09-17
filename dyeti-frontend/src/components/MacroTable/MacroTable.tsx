@@ -1,4 +1,4 @@
-import { Card, Row, Label } from './MacroTable.styles.tsx';
+import { Card, Row, Label } from './MacroTable.styles.ts';
 import InputWithSuffix from '../Inputs/InputWithSuffix/InputWithSuffix.tsx';
 import { MacroKey, MacroValues } from './types.tsx';
 

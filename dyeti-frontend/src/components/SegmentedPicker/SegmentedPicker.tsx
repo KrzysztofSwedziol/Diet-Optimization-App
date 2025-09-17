@@ -1,4 +1,4 @@
-import { Picker, Pill, Knob } from './SegmentedPicker.styles.tsx';
+import { Picker, Pill, Knob } from './SegmentedPicker.styles.ts';
 
 type Option = { value: string; label: string };
 

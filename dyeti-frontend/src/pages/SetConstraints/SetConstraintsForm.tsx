@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppButton } from '../../components';
-import * as Ui from './SetConstrints.styles.tsx';
+import * as Ui from './SetConstraints.styles.ts';
 import MacroTable from '../../components/MacroTable/MacroTable.tsx';
 import { MacroKey, MacroValues } from '../../components/MacroTable/types.tsx';
 import { Mode } from './types.ts';
