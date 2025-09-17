@@ -1,27 +1,24 @@
 import { createContext, useContext } from 'react';
 import { useCheckAuth, useLogIn, useLogOut, useRegister } from '../../api/auth/hooks';
-import { User } from '../../api/types.ts';
+import { Gender, User } from '../../api/types.ts';
 
 type AuthContextType = {
   user: User | null;
   isLoading: boolean;
   login: (username: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
-  register: (data: { username: string; email: string; password: string }) => Promise<void>;
+  register: (data: { username: string; email: string; password: string; gender: Gender }) => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  // 1. sprawdzamy sesję i pobieramy UserDTO (lub null)
   const { data: user, isLoading } = useCheckAuth();
 
-  // 2. mutacje (akcje)
   const loginMutation = useLogIn();
   const logoutMutation = useLogOut();
   const registerMutation = useRegister();
 
-  // 3. wrappery na mutacje – po sukcesie check się odświeży
   const login = async (username: string, password: string) => {
     await loginMutation.mutateAsync({ username, password });
   };
@@ -30,7 +27,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     await logoutMutation.mutateAsync();
   };
 
-  const register = async (data: { username: string; email: string; password: string }) => {
+  const register = async (data: { username: string; email: string; password: string; gender: Gender }) => {
     await registerMutation.mutateAsync(data);
   };
 

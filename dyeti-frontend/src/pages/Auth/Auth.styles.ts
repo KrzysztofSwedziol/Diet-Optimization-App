@@ -81,3 +81,14 @@ export const Footer = styled.div`
     }
   }
 `;
+
+export const Link = styled.a`
+  color: ${({ theme }) => theme.colors.primary[600]};
+  text-decoration: underline;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
