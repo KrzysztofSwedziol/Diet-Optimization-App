@@ -17,6 +17,7 @@ export type RegisterRequest = {
   username: string;
   email: string;
   password: string;
+  gender: Gender;
 };
 
 export type LogoutResponse = {
@@ -26,7 +27,6 @@ export type LogoutResponse = {
 export enum Gender {
   MALE = 'MALE',
   FEMALE = 'FEMALE',
-  OTHER = 'OTHER',
 }
 
 export enum Role {

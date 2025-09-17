@@ -14,7 +14,7 @@ export const InputLabel = styled.h1`
 `;
 
 export const InputField = styled.input<{ hasError?: boolean }>`
-  padding: 12px;
+  padding: 8px;
   color: ${({ theme }) => theme.colors.neutrals[900]};
   background: ${({ theme }) => theme.colors.primary[100]};
   border: ${({ theme }) => theme.borderWidth.normal} solid
