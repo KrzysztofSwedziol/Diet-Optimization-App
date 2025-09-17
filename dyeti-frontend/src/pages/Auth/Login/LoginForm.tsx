@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import * as Ui from './Login.styles';
-import Input from '../../components/Input/Input.tsx';
-import { AppButton } from '../../components';
-import { useAuth } from '../../components/providers/AuthProvider.tsx';
+import * as Ui from '../Auth.styles.ts';
+import Input from '../../../components/Input/Input.tsx';
+import { AppButton } from '../../../components';
+import { useAuth } from '../../../components/providers/AuthProvider.tsx';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {

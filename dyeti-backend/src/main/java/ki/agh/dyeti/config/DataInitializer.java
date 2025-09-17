@@ -87,7 +87,7 @@ public class DataInitializer {
                 new Product(null, "Tomato, roma", units.get("gram"), 1.0, 22.0, 0.696, 3.84, 0.425, null),
                 new Product(
                         null,
-                        "Bananas, ripe and slightly ripe, raw",
+                        "Bananas, ripe and slightly ripe, raw.",
                         units.get("piece"),
                         115.0,
                         97.0,

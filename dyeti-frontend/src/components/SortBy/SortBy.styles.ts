@@ -18,5 +18,6 @@ export const StyledSelect = styled.select`
   border-radius: 4px;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.typography.fontFamily};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
 `;
