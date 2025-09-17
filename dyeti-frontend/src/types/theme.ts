@@ -1,1 +1,1 @@
-export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';
+export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

@@ -2,7 +2,7 @@ import { type Table as TableType } from '@tanstack/react-table';
 import * as Ui from './Table.styles';
 import TableHead from './components/TableHead';
 import TableBody from './components/TableBody';
-import TablePagination from './components/TablePagination';
+import Pagination from '../Pagination/Pagination';
 
 interface Props<TData> {
   table: TableType<TData>;
@@ -17,7 +17,7 @@ const Table = <TData extends object>({ table, pagination }: Props<TData>) => {
         <TableBody rows={table.getRowModel().rows} />
       </Ui.StyledTable>
 
-      {pagination && <TablePagination table={table} />}
+      {pagination && <Pagination table={table} />}
     </Ui.Container>
   );
 };
