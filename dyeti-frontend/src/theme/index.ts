@@ -29,8 +29,9 @@ const common = {
   typography: {
     fontFamily: 'Inter, sans-serif',
     fontSize: {
-      xs: '0.5rem',
-      sm: '0.75rem',
+      xxs: '0.5rem',
+      xs: '0.75rem',
+      sm: '0.875rem',
       md: '1rem',
       lg: '1.25rem',
       xl: '1.5rem',
