@@ -64,6 +64,7 @@ public class UserController {
     public ResponseEntity<?> changePassword(
             @AuthenticationPrincipal User user, @RequestBody @Valid UserPasswordDTO userPasswordDTO) {
 
+
         try {
             userService.changePassword(user.getId(), userPasswordDTO);
             return ResponseEntity.ok(Map.of("message", "Password changed successfully"));
