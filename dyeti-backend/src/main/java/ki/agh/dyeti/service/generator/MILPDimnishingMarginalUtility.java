@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
 public class MILPDimnishingMarginalUtility implements PlanGenerator {
 
     //    The problem I had was that we cant use variable value in calculation of objective
-    //    for example we can't do : objective.setCoefficient(variable, f(variable) * preference *
-    // product.getGramsPerUnit())
+    //    for example we can't do : objective.setCoefficient
+    //    (variable, f(variable) * preference * product.getGramsPerUnit())
     //    and I needed that to implement law of dimnishing values so I'm simulating it with those segments and max int,
     //    now each product will have multiple variables with different coeficients according to the mentioned law
 
@@ -25,12 +25,13 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
     private static final int MAX_SEGMENTS_AMOUNT = 10;
     private static final double SEGMENT_SIZE = 50.0;
 
+    private static final double CONST_K0 = 0.8;
+    private static final double REF_CALORIE_DENSITY = 2.0;
+
     public double calculateVariableCoefficient(
             double calorieDensity, double preference, int segmentIndex, Product product) {
         // function : f(x) = 1 - e^(-k*x)
-        double constK0 = 0.8;
-        double refCalorieDensity = 2.0;
-        double k = constK0 * (calorieDensity / refCalorieDensity);
+        double k = CONST_K0 * (calorieDensity / REF_CALORIE_DENSITY);
         if (product.getGramsPerUnit() > 1) {
             double intervalStart = segmentIndex * product.getGramsPerUnit();
             double intervalEnd = intervalStart + product.getGramsPerUnit();
