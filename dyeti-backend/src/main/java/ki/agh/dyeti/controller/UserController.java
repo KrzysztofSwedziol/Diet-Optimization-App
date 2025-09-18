@@ -52,7 +52,6 @@ public class UserController {
         return userService.getAll();
     }
 
-
     @PatchMapping("/me")
     public UserDTO updateProfile(@AuthenticationPrincipal User user, @RequestBody UserDTO userDTO) {
         return userService.updateUserProfile(user, userDTO);
