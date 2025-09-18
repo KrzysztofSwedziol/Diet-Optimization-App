@@ -27,7 +27,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
 
-    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserMapper userMapper) {
+    public CustomUserDetailsService(
+            UserRepository userRepository, PasswordEncoder passwordEncoder, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.userMapper = userMapper;

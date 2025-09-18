@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Map;
 import ki.agh.dyeti.dto.UserDTO;
 import ki.agh.dyeti.dto.UserPasswordDTO;
-import ki.agh.dyeti.exception.InvalidPasswordException;
-import ki.agh.dyeti.exception.UserNotFoundException;
+import ki.agh.dyeti.model.Role;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.service.CustomUserDetailsService;
 import org.springframework.http.HttpStatus;
@@ -16,7 +15,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
     private final CustomUserDetailsService userService;
 
@@ -25,74 +24,70 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public User getCurrentUser(@AuthenticationPrincipal User user) {
-        return userService.getUserById(user.getId());
+    public UserDTO getCurrentUser(@AuthenticationPrincipal User user) {
+        return UserDTO.fromUser(userService.getUserById(user.getId()));
     }
 
-    @GetMapping("/id/{id}")
-    public User getUserById(@PathVariable long id) {
-        return userService.getUserById(id);
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/{id}")
+    public UserDTO getUserById(@PathVariable long id) {
+        return UserDTO.fromUser(userService.getUserById(id));
     }
 
-    @GetMapping("/email/{email}")
-    public User getUserByEmail(@PathVariable String email) {
-        return userService.getUserByEmail(email);
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/by-username/{username}")
+    public UserDTO getUserByUsername(@PathVariable String username) {
+        return UserDTO.fromUser(userService.getUserByUsername(username));
     }
 
-    @GetMapping("/{username}")
-    public User getUserByUsername(@PathVariable String username) {
-        return userService.getUserByUsername(username);
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/by-email/{email}")
+    public UserDTO getUserByEmail(@PathVariable String email) {
+        return UserDTO.fromUser(userService.getUserByEmail(email));
     }
 
-    @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping
     public List<UserDTO> getAllUsers() {
-        return userService.getAllUsers();
+        return userService.getAll();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/admins")
     public List<UserDTO> getAdminUsers() {
         return userService.getAllAdmins();
     }
 
-    @PatchMapping("/profile")
+    @PatchMapping("/me")
     public UserDTO updateProfile(@AuthenticationPrincipal User user, @RequestBody UserDTO userDTO) {
-        UserDTO updatedUserDTO = userService.updateUserProfile(user, userDTO);
-        return updatedUserDTO;
+        return userService.updateUserProfile(user, userDTO);
     }
 
-    @PatchMapping("/password")
+    @PostMapping("/{id}/password")
     public ResponseEntity<?> changePassword(
-            @AuthenticationPrincipal User user, @RequestBody @Valid UserPasswordDTO userPasswordDTO) {
+            @AuthenticationPrincipal User currentUser,
+            @PathVariable Long id,
+            @RequestBody @Valid UserPasswordDTO userPasswordDTO) {
 
-
-        try {
-            userService.changePassword(user.getId(), userPasswordDTO);
-            return ResponseEntity.ok(Map.of("message", "Password changed successfully"));
-        } catch (InvalidPasswordException ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", ex.getMessage()));
-        } catch (UserNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
+        if (!currentUser.getId().equals(id)
+                && !(currentUser.getRole() == Role.ADMIN || currentUser.getRole() == Role.OWNER)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", "Forbidden"));
         }
+
+        userService.changePassword(id, userPasswordDTO);
+        return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("/selfdeactivate")
+    @DeleteMapping("/me")
     public ResponseEntity<?> deactivateLoggedUser(@AuthenticationPrincipal User user) {
-        try {
-            userService.deactivateUser(user.getUsername());
-            return ResponseEntity.ok(Map.of("message", "User successfully deactivated"));
-        } catch (UserNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
-        }
+        userService.deactivateUser(user.getUsername());
+        return ResponseEntity.noContent().build();
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("deactivate/{username}")
+    @DeleteMapping("/{username}")
     public ResponseEntity<?> deactivateUserByUsername(@PathVariable String username) {
-        try {
-            userService.deactivateUser(username);
-            return ResponseEntity.ok(Map.of("message", "User successfully deactivated"));
-        } catch (UserNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
-        }
+        userService.deactivateUser(username);
+        return ResponseEntity.noContent().build();
     }
 }
