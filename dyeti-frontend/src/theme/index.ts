@@ -11,7 +11,8 @@ const common = {
     thick: '4px',
   },
   breakpoints: {
-    sm: '480px',
+    xs: '480px',
+    sm: '576px',
     md: '768px',
     lg: '1024px',
     xl: '1280px',
@@ -29,8 +30,9 @@ const common = {
   typography: {
     fontFamily: 'Inter, sans-serif',
     fontSize: {
-      xs: '0.5rem',
-      sm: '0.75rem',
+      xxs: '0.5rem',
+      xs: '0.75rem',
+      sm: '0.875rem',
       md: '1rem',
       lg: '1.25rem',
       xl: '1.5rem',
