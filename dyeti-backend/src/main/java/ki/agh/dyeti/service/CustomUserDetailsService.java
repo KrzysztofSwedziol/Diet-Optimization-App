@@ -11,6 +11,7 @@ import ki.agh.dyeti.exception.InvalidPasswordException;
 import ki.agh.dyeti.exception.InvalidRoleChangeException;
 import ki.agh.dyeti.exception.UserEmailNotFoundException;
 import ki.agh.dyeti.exception.UserNotFoundException;
+import ki.agh.dyeti.mapper.UserMapper;
 import ki.agh.dyeti.model.Role;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.repository.UserRepository;
@@ -24,10 +25,12 @@ import org.springframework.stereotype.Service;
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final UserMapper userMapper;
 
-    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userMapper = userMapper;
     }
 
     public User getUserById(long id) {
@@ -56,39 +59,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     public UserDTO updateUserProfile(User user, UserDTO userDTO) {
-        if (userDTO.username() != null) {
-            user.setUsername(userDTO.username());
-        }
-        if (userDTO.email() != null) {
-            user.setEmail(userDTO.email());
-        }
-        if (userDTO.age() != null) {
-            user.setAge(userDTO.age());
-        }
-        if (userDTO.gender() != null) {
-            user.setGender(userDTO.gender());
-        }
-        if (userDTO.height() != null) {
-            user.setHeight(userDTO.height());
-        }
-        if (userDTO.weight() != null) {
-            user.setWeight(userDTO.weight());
-        }
-        if (userDTO.energyReq() != null) {
-            user.setEnergyReq(userDTO.energyReq());
-        }
-        if (userDTO.proteinReq() != null) {
-            user.setProteinReq(userDTO.proteinReq());
-        }
-        if (userDTO.carbsReq() != null) {
-            user.setCarbsReq(userDTO.carbsReq());
-        }
-        if (userDTO.fatReq() != null) {
-            user.setFatReq(userDTO.fatReq());
-        }
-
+        userMapper.updateUserFromDto(userDTO, user);
         userRepository.save(user);
-        return UserDTO.fromUser(user);
+        return userMapper.toDto(user);
     }
 
     @Transactional
