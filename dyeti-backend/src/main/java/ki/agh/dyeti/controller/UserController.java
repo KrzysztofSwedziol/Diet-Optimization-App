@@ -52,11 +52,6 @@ public class UserController {
         return userService.getAll();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/admins")
-    public List<UserDTO> getAdminUsers() {
-        return userService.getAllAdmins();
-    }
 
     @PatchMapping("/me")
     public UserDTO updateProfile(@AuthenticationPrincipal User user, @RequestBody UserDTO userDTO) {
