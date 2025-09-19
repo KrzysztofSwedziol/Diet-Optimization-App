@@ -5,7 +5,6 @@ export const Card = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   box-shadow: ${({ theme }) => theme.shadows.md};
   padding: 16px;
-  margin: 8px 0 12px 0;
 `;
 
 export const Row = styled.div`

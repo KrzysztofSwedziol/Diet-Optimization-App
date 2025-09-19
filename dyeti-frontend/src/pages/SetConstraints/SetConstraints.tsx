@@ -1,24 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import SegmentedPicker from '../../components/SegmentedPicker/SegmentedPicker.tsx';
-import { useEffect, useRef, useState } from 'react';
-import { Mode, Values } from './types.ts';
+import { useEffect, useRef } from 'react';
+import { Mode } from './types.ts';
 import { MacroKey } from '../../components/MacroTable/types.tsx';
 import SetConstraintsForm from './SetConstraintsForm.tsx';
-import { INITIAL_CALORIES, KCAL_PER_G, MODE_OPTIONS, PROPORTIONS } from './constants.ts';
+import { KCAL_PER_G, MODE_OPTIONS, PROPORTIONS } from './constants.ts';
 import { calculateCalories, gramsFromCalories } from './utils.ts';
 import FullLayout from '../../components/Layout/FullLayout.tsx';
 import dyeti from '../../assets/dyeti-pencil.svg';
+import { usePlanGeneration } from '../../components/providers/PlanGenerationProvider/PlanGenerationProvider.tsx';
 
 const SetConstraints = () => {
   const navigate = useNavigate();
 
-  const [mode, setMode] = useState<Mode>('CALORIES');
-  const [values, setValues] = useState<Values>({
-    calories: INITIAL_CALORIES,
-    carbs: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.CARBS, KCAL_PER_G.CARBS, 0),
-    protein: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.PROTEIN, KCAL_PER_G.PROTEIN, 0),
-    fats: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.FATS, KCAL_PER_G.FATS, 0),
-  });
+  const { mode, setMode, values, setValues } = usePlanGeneration();
   const modeRef = useRef<Mode>(mode);
   useEffect(() => {
     modeRef.current = mode;

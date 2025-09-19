@@ -19,4 +19,8 @@ public class PlanService {
         this.plansProductsRepository = plansProductsRepository;
         this.plansRecipesRepository = plansRecipesRepository;
     }
+
+    public boolean existsByName(Long userId, String name) {
+        return planRepository.findPlanByPlanNameAndUserId(name, userId).isPresent();
+    }
 }
