@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import SetConstraintsLayout from './SetConstraintsLayout.tsx';
 import SegmentedPicker from '../../components/SegmentedPicker/SegmentedPicker.tsx';
 import { useEffect, useRef, useState } from 'react';
 import { Mode, Values } from './types.ts';
@@ -7,6 +6,8 @@ import { MacroKey } from '../../components/MacroTable/types.tsx';
 import SetConstraintsForm from './SetConstraintsForm.tsx';
 import { INITIAL_CALORIES, KCAL_PER_G, MODE_OPTIONS, PROPORTIONS } from './constants.ts';
 import { calculateCalories, gramsFromCalories } from './utils.ts';
+import FullLayout from '../../components/Layout/FullLayout.tsx';
+import dyeti from '../../assets/dyeti-pencil.svg';
 
 const SetConstraints = () => {
   const navigate = useNavigate();
@@ -53,20 +54,22 @@ const SetConstraints = () => {
 
   const next = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/plan/review');
+
+    navigate('/plans/method');
   };
 
   const back = () => navigate(-1);
 
   return (
-    <SetConstraintsLayout
+    <FullLayout
       title="Set Constraints"
       description="Define how much energy and nutrients you want in your daily plan. We'll handle the rest — intelligently optimizing your plan around these targets."
+      logo={{ src: dyeti, alt: 'Dyeti-pencil' }}
     >
       <SegmentedPicker options={MODE_OPTIONS} value={mode} onChange={val => setMode(val as Mode)} />
 
       <SetConstraintsForm onSubmit={next} values={values} onChange={onChangeValue} mode={mode} onBack={back} />
-    </SetConstraintsLayout>
+    </FullLayout>
   );
 };
 

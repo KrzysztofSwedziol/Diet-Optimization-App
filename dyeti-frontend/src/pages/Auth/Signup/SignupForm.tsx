@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
 import Input from '../../../components/Inputs/Input/Input.tsx';
 import { AppButton } from '../../../components';
-import { useAuth } from '../../../components/providers/AuthProvider.tsx';
+import { useAuth } from '../../../components/providers/AuthProvider/AuthProvider.tsx';
 import { useNavigate } from 'react-router-dom';
 import { Gender } from '../../../api/types.ts';
 import Select from '../../../components/Inputs/Select/Select.tsx';

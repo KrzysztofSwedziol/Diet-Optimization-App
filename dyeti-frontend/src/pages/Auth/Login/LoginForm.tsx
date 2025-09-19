@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
+import { FormGrid } from '../Auth.styles.ts';
 import Input from '../../../components/Inputs/Input/Input.tsx';
 import { AppButton } from '../../../components';
-import { useAuth } from '../../../components/providers/AuthProvider.tsx';
+import { useAuth } from '../../../components/providers/AuthProvider/AuthProvider.tsx';
 import { useNavigate } from 'react-router-dom';
-import { FormGrid } from '../Auth.styles.ts';
 
 const LoginForm = () => {
   const { login } = useAuth();
@@ -44,30 +44,31 @@ const LoginForm = () => {
         onChange={e => setUsername(e.target.value)}
         error={errors.username}
       />
+      <div>
+        <Input
+          label="PASSWORD"
+          type="password"
+          placeholder="••••••••"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          error={errors.password}
+        />
 
-      <Input
-        label="PASSWORD"
-        type="password"
-        placeholder="••••••••"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        error={errors.password}
-      />
-
-      <Ui.OptionsContainer>
-        <Ui.RememberMe>
-          <input type="checkbox" id="remember" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
-          <span className="custom-checkbox" />
-          <label htmlFor="remember">Remember me</label>
-        </Ui.RememberMe>
-        <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
-      </Ui.OptionsContainer>
-
-      <AppButton fullWidth animation type="submit">
-        Login
-      </AppButton>
-
-      {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
+        <Ui.OptionsContainer>
+          <Ui.RememberMe>
+            <input type="checkbox" id="remember" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
+            <span className="custom-checkbox" />
+            <label htmlFor="remember">Remember me</label>
+          </Ui.RememberMe>
+          <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
+        </Ui.OptionsContainer>
+      </div>
+      <div>
+        <AppButton fullWidth animation type="submit">
+          Login
+        </AppButton>
+        {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
+      </div>
     </FormGrid>
   );
 };
