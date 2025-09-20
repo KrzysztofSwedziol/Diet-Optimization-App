@@ -1,8 +1,9 @@
 import { createContext, useContext, useMemo, useState } from 'react';
-import type { Values, Mode } from '../../../pages/SetConstraints/types';
+import type { Mode } from '../../../pages/SetConstraints/types';
 
 import { gramsFromCalories } from '../../../pages/SetConstraints/utils';
 import { INITIAL_CALORIES, KCAL_PER_G, PROPORTIONS } from '../../../pages/SetConstraints/constants';
+import { MacroValues } from '../../MacroTable/types.tsx';
 
 type PlanGenerationContextType = {
   name: string;
@@ -12,8 +13,8 @@ type PlanGenerationContextType = {
   mode: Mode;
   setMode: (m: Mode) => void;
 
-  values: Values;
-  setValues: React.Dispatch<React.SetStateAction<Values>>;
+  macroValues: MacroValues;
+  setMacroValues: React.Dispatch<React.SetStateAction<MacroValues>>;
 };
 
 const PlanGenerationContext = createContext<PlanGenerationContextType | undefined>(undefined);
@@ -24,7 +25,7 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
 
   const [mode, setMode] = useState<Mode>('CALORIES'); // NEW
 
-  const [values, setValues] = useState<Values>({
+  const [macroValues, setMacroValues] = useState<MacroValues>({
     calories: INITIAL_CALORIES,
     carbs: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.CARBS, KCAL_PER_G.CARBS, 0),
     protein: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.PROTEIN, KCAL_PER_G.PROTEIN, 0),
@@ -32,8 +33,8 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
   });
 
   const value = useMemo(
-    () => ({ name, setName, description, setDescription, mode, setMode, values, setValues }),
-    [name, description, mode, values],
+    () => ({ name, setName, description, setDescription, mode, setMode, macroValues, setMacroValues }),
+    [name, description, mode, macroValues],
   );
 
   return <PlanGenerationContext.Provider value={value}>{children}</PlanGenerationContext.Provider>;

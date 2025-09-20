@@ -48,3 +48,22 @@ export type User = {
   fatReq: number | null;
   role: Role;
 };
+export type PlanGenerationRequest = {
+  name: string;
+  description?: string;
+  calories: number;
+  carbs: number;
+  proteins: number;
+  fats: number;
+};
+
+export type PlanApi = {
+  planName: string;
+  planDescription?: string | null;
+  planDate: string;
+  energyReq: number;
+  proteinReq: number;
+  carbsReq: number;
+  fatReq: number;
+};
+export type Plan = Omit<PlanApi, 'planDate'> & { planDate: Date };

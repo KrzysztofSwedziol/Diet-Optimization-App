@@ -18,6 +18,7 @@ public class Plan {
     private Long id;
 
     private String planName;
+    private String planDescription;
     private java.time.LocalDateTime planDate;
     private Integer energyReq;
     private Integer proteinReq;

@@ -13,7 +13,7 @@ import { usePlanGeneration } from '../../components/providers/PlanGenerationProv
 const SetConstraints = () => {
   const navigate = useNavigate();
 
-  const { mode, setMode, values, setValues } = usePlanGeneration();
+  const { mode, setMode, macroValues, setMacroValues } = usePlanGeneration();
   const modeRef = useRef<Mode>(mode);
   useEffect(() => {
     modeRef.current = mode;
@@ -23,28 +23,28 @@ const SetConstraints = () => {
     const currentMode = modeRef.current;
 
     if (currentMode === 'CALORIES') {
-      const cals = values.calories;
+      const cals = macroValues.calories;
       if (!Number.isFinite(cals) || cals < 0) return;
 
       const nextCarbs = gramsFromCalories(cals, PROPORTIONS.CARBS, KCAL_PER_G.CARBS, 0);
       const nextProtein = gramsFromCalories(cals, PROPORTIONS.PROTEIN, KCAL_PER_G.PROTEIN, 0);
       const nextFats = gramsFromCalories(cals, PROPORTIONS.FATS, KCAL_PER_G.FATS, 0);
 
-      if (values.carbs !== nextCarbs || values.protein !== nextProtein || values.fats !== nextFats) {
-        setValues(prev => ({ ...prev, carbs: nextCarbs, protein: nextProtein, fats: nextFats }));
+      if (macroValues.carbs !== nextCarbs || macroValues.protein !== nextProtein || macroValues.fats !== nextFats) {
+        setMacroValues(prev => ({ ...prev, carbs: nextCarbs, protein: nextProtein, fats: nextFats }));
       }
     } else {
-      const kcal = calculateCalories(values.carbs, values.protein, values.fats);
-      if (values.calories !== kcal) {
-        setValues(prev => ({ ...prev, calories: kcal }));
+      const kcal = calculateCalories(macroValues.carbs, macroValues.protein, macroValues.fats);
+      if (macroValues.calories !== kcal) {
+        setMacroValues(prev => ({ ...prev, calories: kcal }));
       }
     }
-  }, [values.calories, values.carbs, values.protein, values.fats]);
+  }, [macroValues.calories, macroValues.carbs, macroValues.protein, macroValues.fats]);
 
   const onChangeValue = (key: MacroKey, v: string | number) => {
     const num = typeof v === 'number' ? v : v.trim() === '' ? 0 : Number(v);
     if (!Number.isFinite(num)) return;
-    setValues(prev => ({ ...prev, [key]: num }));
+    setMacroValues(prev => ({ ...prev, [key]: num }));
   };
 
   const next = (e: React.FormEvent) => {
@@ -63,7 +63,13 @@ const SetConstraints = () => {
     >
       <SegmentedPicker options={MODE_OPTIONS} value={mode} onChange={val => setMode(val as Mode)} />
 
-      <SetConstraintsForm onSubmit={next} values={values} onChange={onChangeValue} mode={mode} onBack={back} />
+      <SetConstraintsForm
+        onSubmit={next}
+        macroValues={macroValues}
+        onChange={onChangeValue}
+        mode={mode}
+        onBack={back}
+      />
     </FullLayout>
   );
 };
