@@ -5,26 +5,43 @@ import SegmentedPicker from '../../components/SegmentedPicker/SegmentedPicker';
 import { AppButton } from '../../components';
 
 import * as Ui from './ChooseMethod.styles';
-import { GenerationMode, METHOD_OPTIONS } from './types';
-import FullLayout from '../../components/Layout/FullLayout.tsx';
+import { METHOD_OPTIONS } from './types';
+import FullLayout from '../../components/Layout/FullLayout';
 import dyeti from '../../assets/dyeti-pencil.svg';
+import { GenerationMode } from '../../api/types';
+import { usePlanGeneration } from '../../components/providers/PlanGenerationProvider/PlanGenerationProvider';
 
 const ChooseMethod = () => {
   const navigate = useNavigate();
   const [mode, setMode] = useState<GenerationMode>('PRODUCT');
+  const { isGenerating, generatePlan } = usePlanGeneration();
+  const [error, setError] = useState('');
 
   const isMealBased = mode === 'MEAL';
+
+  const onGenerate = async () => {
+    setError('');
+    const result = await generatePlan(mode);
+    if (result.ok) {
+      console.log(result.message);
+      navigate('/');
+      return;
+    }
+    setError(result.fieldErrors?.method ?? result.fieldErrors?.name ?? result.message);
+  };
 
   const copy =
     mode === 'PRODUCT'
       ? {
-          title: 'Product-Based',
-          text: "We'll select the best combination of individual products to meet your targets. Great for flexibility and grocery-focused planning.",
-        }
+        title: 'Product-Based',
+        text:
+          "We'll select the best combination of individual products to meet your targets. Great for flexibility and grocery-focused planning.",
+      }
       : {
-          title: 'Meal-Based',
-          text: "We'll build a full meal plan around your targets. Great if you prefer ready-to-cook meals with balanced macros.",
-        };
+        title: 'Meal-Based',
+        text:
+          "We'll build a full meal plan around your targets. Great if you prefer ready-to-cook meals with balanced macros.",
+      };
 
   return (
     <FullLayout
@@ -48,17 +65,19 @@ const ChooseMethod = () => {
           <AppButton reversed fullWidth type="button" onClick={() => navigate(-1)}>
             Back
           </AppButton>
-
-          <AppButton
-            fullWidth
-            type="button"
-            onClick={() => navigate('/')}
-            disabled={isMealBased}
-            aria-disabled={isMealBased}
-            title={isMealBased ? 'Coming soon' : undefined}
-          >
-            Generate
-          </AppButton>
+          <div>
+            <AppButton
+              fullWidth
+              type="button"
+              onClick={onGenerate}
+              disabled={isGenerating}
+              aria-disabled={isGenerating}
+              title={isMealBased ? 'Coming soon' : undefined}
+            >
+              {isGenerating ? 'Generating…' : 'Generate'}
+            </AppButton>
+            {error && <Ui.Error>{error}</Ui.Error>}
+          </div>
         </Ui.ButtonsGrid>
       </Ui.Wrapper>
     </FullLayout>

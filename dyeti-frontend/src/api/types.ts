@@ -53,7 +53,7 @@ export type PlanGenerationRequest = {
   description?: string;
   calories: number;
   carbs: number;
-  proteins: number;
+  protein: number;
   fats: number;
 };
 
@@ -67,3 +67,10 @@ export type PlanApi = {
   fatReq: number;
 };
 export type Plan = Omit<PlanApi, 'planDate'> & { planDate: Date };
+
+export type FieldErrors = Partial<Record<'name' | 'calories' | 'carbs' | 'protein' | 'fats' | 'method', string>>;
+export type GenerateResult =
+  | { ok: true; message: string }
+  | { ok: false; code: 'INVALID_INPUT' | 'UNSUPPORTED_METHOD' | 'NAME_TAKEN' | 'NETWORK'; message: string; fieldErrors?: FieldErrors };
+
+export type GenerationMode = 'PRODUCT' | 'MEAL';
