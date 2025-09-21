@@ -25,12 +25,20 @@ const PlansTable = ({ plans }: Props) => {
   return (
     <Ui.Container>
       <PlansFilters columns={columns} sorting={sorting} setSorting={setSorting} onSearch={handleSearch} />
-      <Ui.Grid>
-        {rows.map(plan => (
-          <PlanCard key={plan.id} plan={plan} />
-        ))}
-      </Ui.Grid>
-      <Pagination table={table} />
+      {rows.length === 0 ? (
+        <Ui.EmptyContainer>
+          <Ui.EmptyMessage>No plans found</Ui.EmptyMessage>
+        </Ui.EmptyContainer>
+      ) : (
+        <>
+          <Ui.Grid>
+            {rows.map(plan => (
+              <PlanCard key={plan.id} plan={plan} />
+            ))}
+          </Ui.Grid>
+          <Pagination table={table} />
+        </>
+      )}
     </Ui.Container>
   );
 };
