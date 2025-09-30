@@ -1,8 +1,7 @@
 import React from 'react';
-import { useTheme } from 'styled-components';
 import { StyledButton } from './AppButton.styles.ts';
 
-type Size = 'sm' | 'md' | 'lg';
+export type Size = 'sm' | 'md' | 'lg';
 type IconPosition = 'left' | 'right';
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -28,15 +27,6 @@ const AppButton: React.FC<AppButtonProps> = ({
   onClick,
   ...rest
 }) => {
-  const theme = useTheme();
-  const justifyContent = icon ? 'space-between' : 'center';
-  const backgroundColor = reversed ? theme.colors.primary[100] : theme.colors.primary[600];
-  const textColor = reversed ? theme.colors.primary[600] : theme.colors.primary[100];
-  const padding = theme.buttonPadding[size];
-  const fontSize = theme.typography.fontSize[size];
-  const boxShadow = theme.shadows.md;
-  const borderRadius = theme.borderRadius.lg;
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;
     if (onClick) onClick(e);
@@ -47,16 +37,11 @@ const AppButton: React.FC<AppButtonProps> = ({
       type="button"
       onClick={handleClick}
       disabled={disabled}
-      $fullWidth={fullWidth}
-      $disabled={disabled}
-      $animation={animation}
-      $background={backgroundColor}
-      $color={textColor}
-      $padding={padding}
-      $fontSize={fontSize}
-      $justify={justifyContent}
-      $boxShadow={boxShadow}
-      $borderRadius={borderRadius}
+      fullwidth={fullWidth}
+      animation={animation}
+      reversed={reversed}
+      icon={!!icon}
+      size={size}
       {...rest}
     >
       {icon && iconPosition === 'left' && icon}
