@@ -1,4 +1,4 @@
-name: Dyeti bDuild frontend
+name: Dyeti build frontend
 
 on:
   push:
