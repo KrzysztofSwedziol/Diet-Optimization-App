@@ -2,8 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import AUTH_MUTATION from '../auth.mutation';
 import AUTH_KEYS from '../auth.keys';
 
-import { apiRequest } from '../../axios.ts';
-import { HttpMethod, User } from '../../types.ts';
+import { User } from '../../types.ts';
 
 export const useLogIn = () => {
   return useMutation({
@@ -38,9 +37,11 @@ export const useRegister = () => {
 };
 
 export const useCheckAuth = () => {
-  return useQuery<User>({
+  return useQuery<User | null>({
     queryKey: AUTH_KEYS.CHECK,
-    queryFn: () => apiRequest<User>(HttpMethod.GET, '/auth/check'),
+    queryFn: AUTH_MUTATION.CHECK,
     retry: false,
+    refetchOnWindowFocus: false,
+    staleTime: 5 * 60 * 1000,
   });
 };
