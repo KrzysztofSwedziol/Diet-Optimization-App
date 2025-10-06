@@ -3,6 +3,7 @@ import dyeti from '@/assets/dyeti.svg';
 import { useAuth } from '@/components/providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { StatRow } from '@/pages/Account/StatRow.tsx';
 
 const Account = () => {
   const { user, isLoading } = useAuth();
@@ -15,7 +16,6 @@ const Account = () => {
   }, [isLoading, user, navigate]);
 
   if (isLoading || !user) return null; // avoid rendering while redirecting
-  console.log(user.age);
   return (
     <Ui.Container>
       <Ui.GridContainer>
@@ -23,6 +23,10 @@ const Account = () => {
           <Ui.LogoContainer>
             <Ui.Logo src={dyeti} alt="DYeti logo" />
           </Ui.LogoContainer>
+          <Ui.Username>{user.username}</Ui.Username>
+          <Ui.Email>{user.email}</Ui.Email>
+          <StatRow label={'MyProducts'} value={10} />
+          <StatRow label={'MyPlans '} value={10} />
         </Ui.AccountSidebar>
         <Ui.Container>…</Ui.Container>
       </Ui.GridContainer>
