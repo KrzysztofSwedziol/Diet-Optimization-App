@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import ki.agh.dyeti.model.*;
+import ki.agh.dyeti.model.util.Gender;
 import ki.agh.dyeti.model.util.ProductPreferenceId;
 import ki.agh.dyeti.repository.ProductPreferenceRepository;
 import ki.agh.dyeti.repository.ProductRepository;
@@ -30,8 +31,8 @@ public class DataInitializer {
             ProductPreferenceRepository preferenceRepository) {
         return args -> {
             Map<String, Unit> units = initializeUnits(unitRepository);
-            List<Product> products = initializeProducts(productRepository, units);
             User testUser = initializeTestUser(userRepository);
+            List<Product> products = initializeProducts(productRepository, units, testUser);
             initializePreferences(preferenceRepository, testUser, products);
         };
     }
@@ -49,7 +50,7 @@ public class DataInitializer {
         return unitMap;
     }
 
-    private List<Product> initializeProducts(ProductRepository productRepository, Map<String, Unit> units) {
+    private List<Product> initializeProducts(ProductRepository productRepository, Map<String, Unit> units, User user) {
         List<Product> products = List.of(
                 new Product(
                         null,
@@ -60,7 +61,7 @@ public class DataInitializer {
                         18.2,
                         0.0,
                         12.8,
-                        null),
+                        user),
                 new Product(null, "Egg, whole, raw, frozen", units.get("piece"), 50.0, 150.0, 12.3, 0.91, 10.3, null),
                 new Product(
                         null,
@@ -71,7 +72,7 @@ public class DataInitializer {
                         1.81,
                         16.0,
                         0.264,
-                        null),
+                        user),
                 new Product(
                         null,
                         "Rice, white, long grain, unenriched, raw",
@@ -81,7 +82,7 @@ public class DataInitializer {
                         7.04,
                         80.3,
                         1.03,
-                        null),
+                        user),
                 new Product(null, "Eggplant, raw", units.get("gram"), 1.0, 26.1, 0.852, 5.4, 0.12, null),
                 new Product(null, "Spinach, mature", units.get("gram"), 1.0, 27.6, 2.91, 2.64, 0.604, null),
                 new Product(null, "Tomato, roma", units.get("gram"), 1.0, 22.0, 0.696, 3.84, 0.425, null),
@@ -105,6 +106,10 @@ public class DataInitializer {
         testUser.setPassword(passwordEncoder.encode("password")); // Hash this in production
         testUser.setUsername("test");
         testUser.setRole(Role.USER);
+        testUser.setAge(24);
+        testUser.setGender(Gender.MALE);
+        testUser.setHeight(180);
+        testUser.setWeight(75);
         return userRepository.save(testUser);
     }
 
