@@ -1,6 +1,7 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
+import ki.agh.dyeti.model.util.Ownable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Recipe {
+public class Recipe implements Ownable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +23,6 @@ public class Recipe {
     private String steps;
 
     @ManyToOne
-    @JoinColumn(name = "creator_id")
-    private User creator;
+    @JoinColumn(name = "owner_id")
+    private User owner;
 }

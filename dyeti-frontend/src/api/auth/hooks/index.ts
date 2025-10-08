@@ -16,9 +16,8 @@ export const useLogIn = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.LOGIN,
-    mutationFn: AUTH_MUTATION.LOGIN, // returns LoginResponse (no user)
+    mutationFn: AUTH_MUTATION.LOGIN,
     onSuccess: async () => {
-      // immediately refresh user from /auth/check
       await qc.fetchQuery({ queryKey: AUTH_KEYS.CHECK, queryFn: AUTH_MUTATION.CHECK });
     },
   });
@@ -28,14 +27,8 @@ export const useRegister = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.REGISTER,
-    mutationFn: AUTH_MUTATION.REGISTER, // often returns created user (or not)
-    onSuccess: async (maybeUser: User | undefined) => {
-      if (maybeUser) {
-        qc.setQueryData<User | null>(AUTH_KEYS.CHECK, maybeUser);
-      } else {
-        await qc.fetchQuery({ queryKey: AUTH_KEYS.CHECK, queryFn: AUTH_MUTATION.CHECK });
-      }
-    },
+    mutationFn: AUTH_MUTATION.REGISTER,
+    onSuccess: user => qc.setQueryData(AUTH_KEYS.CHECK, user),
   });
 };
 

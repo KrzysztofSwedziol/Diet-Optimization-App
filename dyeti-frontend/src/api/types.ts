@@ -48,3 +48,10 @@ export type User = {
   fatReq: number | null;
   role: Role;
 };
+
+export type UserStats = {
+  productPrefsCount: number;
+  plansCount: number;
+  createdRecipesCount: number;
+  createdProductsCount: number;
+};
