@@ -51,6 +51,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
+                .gender(request.getGender())
                 .build();
         userRepository.save(user);
         return UserDTO.fromUser(user);
