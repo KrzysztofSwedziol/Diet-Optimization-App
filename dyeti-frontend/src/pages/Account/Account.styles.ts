@@ -16,12 +16,27 @@ export const GridContainer = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-template-columns: 1fr 3fr;
   }
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-columns: 1fr 5fr;
+  }
+`;
+export const StatsContainer = styled.div`
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary[900]};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.primary[700]};
+  }
 `;
 export const AccountSidebar = styled.div`
   background-color: ${({ theme }) => theme.colors.primary[500]};
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: calc(100vh - 64px);
   padding: 16px;
 `;
 export const Logo = styled.img`
@@ -80,6 +95,8 @@ export const StatLabel = styled.span`
 export const Pill = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  line-height: ${({ theme }) => theme.typography.fontWeight.bold};
   min-width: 38px;
   height: 28px;
   padding: 0 10px;
@@ -89,4 +106,13 @@ export const Pill = styled.div`
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
   text-align: center;
+`;
+
+export const FooterContainer = styled.div`
+  margin-top: auto;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid ${({ theme }) => theme.colors.primary[700]};
+  display: flex;
+  gap: 8px;
 `;
