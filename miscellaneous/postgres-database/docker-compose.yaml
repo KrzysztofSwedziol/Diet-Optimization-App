@@ -1,0 +1,24 @@
+services:
+  postgres:
+    build:
+      context: ./docker
+    image: dyeti/postgres16-jq
+    container_name: dyeti-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dyeti
+      POSTGRES_PASSWORD: dyeti_pass
+      POSTGRES_DB: dyeti_db
+    ports:
+      - "127.0.0.1:55433:5432" # exposed port is +49152, because non-ephemeral ports caused connection issues
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d:ro
+      - ./data:/seed:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dyeti -d dyeti_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  pgdata:
