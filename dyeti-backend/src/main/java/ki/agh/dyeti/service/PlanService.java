@@ -7,8 +7,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import ki.agh.dyeti.dto.PlanDTO;
 import ki.agh.dyeti.dto.request.PlanRequestDTO;
+import ki.agh.dyeti.dto.request.PlanUpdateDTO;
+import ki.agh.dyeti.exception.ResourceNotFoundException;
 import ki.agh.dyeti.model.*;
 import ki.agh.dyeti.repository.PlanRepository;
+import ki.agh.dyeti.security.ResourceAccessValidator;
 import ki.agh.dyeti.service.generator.PlanGenerator;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -18,14 +21,17 @@ public class PlanService {
 
     private final PlanRepository planRepository;
     private final ProductPreferenceService productPreferenceService;
+    private final ResourceAccessValidator resourceAccessValidator;
     private final PlanGenerator planGenerator;
 
     public PlanService(
             PlanRepository planRepository,
             ProductPreferenceService productPreferenceService,
+            ResourceAccessValidator resourceAccessValidator,
             PlanGenerator planGenerator) {
         this.planRepository = planRepository;
         this.productPreferenceService = productPreferenceService;
+        this.resourceAccessValidator = resourceAccessValidator;
         this.planGenerator = planGenerator;
     }
 
@@ -37,6 +43,47 @@ public class PlanService {
 
     public List<PlanDTO> getAllPlans() {
         return planRepository.findAll().stream().map(PlanDTO::fromEntity).collect(Collectors.toList());
+    }
+
+    public PlanDTO getPlan(Long id) {
+        Plan plan = planRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+
+        resourceAccessValidator.validateOwnership(plan);
+
+        return PlanDTO.fromEntity(plan);
+    }
+
+    public PlanDTO updatePlan(Long id, PlanUpdateDTO planUpdateDTO) {
+        Plan plan = planRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+
+        resourceAccessValidator.validateOwnership(plan);
+
+        if (planUpdateDTO.name() != null) {
+            plan.setName(planUpdateDTO.name());
+        }
+
+        if (planUpdateDTO.description() != null) {
+            plan.setDescription(planUpdateDTO.description());
+        }
+
+        Plan updated = planRepository.save(plan);
+        return PlanDTO.fromEntity(updated);
+    }
+
+    public PlanDTO deletePlan(Long id) {
+        Plan plan = planRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+
+        resourceAccessValidator.validateOwnership(plan);
+
+        planRepository.delete(plan);
+
+        return PlanDTO.fromEntity(plan);
     }
 
     @Transactional
