@@ -6,10 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import ki.agh.dyeti.dto.PlanDTO;
-import ki.agh.dyeti.dto.ProductDTO;
 import ki.agh.dyeti.dto.request.PlanRequestDTO;
 import ki.agh.dyeti.dto.request.PlanUpdateDTO;
-import ki.agh.dyeti.dto.request.ProductRequestDTO;
 import ki.agh.dyeti.exception.ResourceNotFoundException;
 import ki.agh.dyeti.model.*;
 import ki.agh.dyeti.repository.PlanRepository;
@@ -49,8 +47,8 @@ public class PlanService {
 
     public PlanDTO getPlan(Long id) {
         Plan plan = planRepository
-            .findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(plan);
 
@@ -59,8 +57,8 @@ public class PlanService {
 
     public PlanDTO updatePlan(Long id, PlanUpdateDTO planUpdateDTO) {
         Plan plan = planRepository
-            .findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(plan);
 
@@ -78,8 +76,8 @@ public class PlanService {
 
     public PlanDTO deletePlan(Long id) {
         Plan plan = planRepository
-            .findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
 
         resourceAccessValidator.validateOwnership(plan);
 

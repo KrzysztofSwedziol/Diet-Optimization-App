@@ -2,10 +2,8 @@ package ki.agh.dyeti.controller;
 
 import java.util.List;
 import ki.agh.dyeti.dto.PlanDTO;
-import ki.agh.dyeti.dto.ProductDTO;
 import ki.agh.dyeti.dto.request.PlanRequestDTO;
 import ki.agh.dyeti.dto.request.PlanUpdateDTO;
-import ki.agh.dyeti.dto.request.ProductRequestDTO;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.service.PlanService;
 import org.springframework.http.ResponseEntity;
