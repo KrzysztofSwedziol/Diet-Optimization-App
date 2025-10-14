@@ -1,11 +1,5 @@
-﻿#!/bin/bash
+﻿#!/bin/sh
 # Seed units and products from JSON into PostgreSQL
-
-# " noisy " shell for better debugging
-set -Eeuo pipefail
-shopt -s lastpipe
-PS4='+ [${BASH_SOURCE##*/}:${LINENO}] '
-set -x   # trace
 
 trap 'st=$?; echo "[seed] ERROR at ${BASH_SOURCE##*/}:${LINENO} → ${BASH_COMMAND} (exit=$st)" >&2' ERR
 
