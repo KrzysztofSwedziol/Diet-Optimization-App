@@ -1,4 +1,4 @@
-import * as Ui from '@/pages/Account/Account.styles.ts';
+import * as Ui from './AccountSidebar.styles.ts';
 import dyetiGirl from '@/assets/girl.svg';
 import dyetiBoy from '@/assets/dyeti-happy.svg';
 import { Gender, User } from '@/api/types.ts';

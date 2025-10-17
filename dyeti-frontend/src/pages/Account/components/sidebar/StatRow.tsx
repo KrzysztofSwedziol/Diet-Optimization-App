@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Ui from './Account.styles';
+import * as Ui from './AccountSidebar.styles.ts';
 
 type StatRowProps = {
   label: string;

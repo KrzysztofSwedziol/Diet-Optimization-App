@@ -7,13 +7,21 @@ type Props = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
+  paddingY?: number;
 };
 
-const Input = ({ label, type = 'text', placeholder, value, onChange, error }: Props) => {
+const Input = ({ label, type = 'text', placeholder, value, onChange, error, paddingY }: Props) => {
   return (
-    <InputWrapper hasError={!!error}>
+    <InputWrapper $haserror={!!error}>
       <InputLabel>{label}</InputLabel>
-      <InputField type={type} placeholder={placeholder} value={value} onChange={onChange} hasError={!!error} />
+      <InputField
+        paddingy={paddingY}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        $haserror={!!error}
+      />
       {error && <InputError>{error}</InputError>}
     </InputWrapper>
   );

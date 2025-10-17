@@ -1,5 +1,5 @@
-import * as Ui from './Account.styles.ts';
-import { StatRow } from '@/pages/Account/StatRow.tsx';
+import * as Ui from './AccountSidebar.styles.ts';
+import { StatRow } from '@/pages/Account/components/sidebar/StatRow.tsx';
 import { useUserStats } from '@/api/user/hooks';
 import { Spinner } from '@/components';
 
@@ -25,6 +25,9 @@ const SidebarStats = () => {
 
   return (
     <Ui.StatsContainer>
+      <Ui.Container>
+        <Ui.StatsLabel> Your Stats</Ui.StatsLabel>
+      </Ui.Container>
       <StatRow label="My Products" value={data.createdProductsCount} />
       <StatRow label="My Plans" value={data.plansCount} />
       <StatRow label="Added Products" value={data.productPrefsCount} />

@@ -1,5 +1,5 @@
 import { AppButton } from '@/components';
-import * as Ui from './Account.styles';
+import * as Ui from './AccountSidebar.styles.ts';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/components/providers/AuthProvider.tsx';
 

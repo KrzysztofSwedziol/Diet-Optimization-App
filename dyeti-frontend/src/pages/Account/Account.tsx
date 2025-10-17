@@ -2,7 +2,8 @@ import * as Ui from './Account.styles';
 import { useAuth } from '@/components/providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import AccountSidebar from '@/pages/Account/AccountSidebar.tsx';
+import AccountSidebar from '@/pages/Account/components/sidebar/AccountSidebar.tsx';
+import AccountTabs from '@/pages/Account/components/tabs/AccountTabs.tsx';
 
 const Account = () => {
   const { user, isLoading } = useAuth();
@@ -16,12 +17,12 @@ const Account = () => {
 
   if (isLoading || !user) return null; // avoid rendering while redirecting
   return (
-    <Ui.Container>
+    <Ui.PageContainer>
       <Ui.GridContainer>
         <AccountSidebar user={user} />
-        <Ui.Container>…</Ui.Container>
+        <AccountTabs user={user} />
       </Ui.GridContainer>
-    </Ui.Container>
+    </Ui.PageContainer>
   );
 };
 
