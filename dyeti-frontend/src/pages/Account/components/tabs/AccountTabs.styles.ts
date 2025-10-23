@@ -88,6 +88,7 @@ export const ProfileActions = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-column: 1 / 3;
   }
+  text-align: center;
   padding-top: 8px;
 `;
 export const PwdActions = styled.div`
@@ -103,6 +104,12 @@ export const PwdActions = styled.div`
 export const Error = styled.p`
   color: ${({ theme }) => theme.colors.danger[500]};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
+  margin: 0;
+`;
+export const Success = styled.p`
+  color: ${({ theme }) => theme.colors.success[500]};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
+  margin: 0;
 `;
 
 export const ProfileForm = styled.form`

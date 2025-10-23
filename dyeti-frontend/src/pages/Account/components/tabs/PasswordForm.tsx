@@ -2,8 +2,9 @@ import * as Ui from './AccountTabs.styles.ts';
 import Input from '@/components/Input/Input.tsx';
 import PasswordRequirements from '@/pages/Account/components/tabs/PasswordRequirements.tsx';
 import { AppButton } from '@/components';
-import { usePasswordRequirements } from '@/pages/Account/hooks/CheckPasswordReq.tsx';
+import { usePasswordRequirements } from '@/pages/Account/hooks/CheckPasswordReq.ts';
 import { useState } from 'react';
+import { useChangePassword } from '@/api/user/hooks';
 
 const PasswordForm = () => {
   const { requirements, handleNewPasswordChange, handleCurrentPasswordChange, handleConfirmPasswordChange } =
@@ -22,13 +23,31 @@ const PasswordForm = () => {
     newPassword: '',
     confirmPassword: '',
   });
-  const [pwdSubmitting, setPwdSubmitting] = useState(false);
   const [pwdGlobalError, setPwdGlobalError] = useState<string>('');
+  const [successMsg, setSuccessMsg] = useState<string>('');
+
+  const { mutateAsync, isPending } = useChangePassword();
 
   const handleChangePassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    setPwdSubmitting(true);
     setPwdGlobalError('');
+    const allTrue = (Object.values(requirements) as boolean[]).every(Boolean);
+    if (!allTrue) return;
+
+    try {
+      const res = await mutateAsync({
+        currentPassword: pwd.currentPassword,
+        newPassword: pwd.newPassword,
+      });
+      setSuccessMsg(res.message ?? 'Password changed');
+      setPwd({ currentPassword: '', newPassword: '', confirmPassword: '' });
+    } catch (err) {
+      if (err instanceof Error) {
+        setPwdGlobalError(`${err.message}`);
+      } else {
+        setPwdGlobalError('An unknown error occurred');
+      }
+    }
   };
   type Pwd = typeof pwd;
   const pwdActions: Record<keyof Pwd, (val: string, next: Pwd) => void> = {
@@ -45,7 +64,7 @@ const PasswordForm = () => {
   };
   return (
     <>
-      <Ui.PwdForm onSubmit={handleChangePassword}>
+      <Ui.PwdForm id="pwdForm" onSubmit={handleChangePassword}>
         <Ui.FormGridColumn>
           <Input
             label="CURRENT PASSWORD"
@@ -74,10 +93,11 @@ const PasswordForm = () => {
         </Ui.FormGridColumn>
       </Ui.PwdForm>
       <Ui.PwdActions>
-        <AppButton type="submit" disabled={pwdSubmitting}>
-          {pwdSubmitting ? 'Changing…' : 'Change password'}
+        <AppButton type="submit" disabled={isPending} form="pwdForm">
+          {isPending ? 'Changing…' : 'Change password'}
         </AppButton>
         {pwdGlobalError && <Ui.Error>{pwdGlobalError}</Ui.Error>}
+        {successMsg && <Ui.Success>{successMsg}</Ui.Success>}
         <PasswordRequirements requirements={requirements} />
       </Ui.PwdActions>
     </>

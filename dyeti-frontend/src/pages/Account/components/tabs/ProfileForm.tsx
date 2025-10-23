@@ -1,45 +1,25 @@
-import * as Ui from '@/pages/Account/components/tabs/AccountTabs.styles.ts';
-import Input from '@/components/Input/Input.tsx';
-import Select from '@/components/Select/Select.tsx';
-import { Gender, User } from '@/api/types.ts';
-import { useState } from 'react';
+import * as Ui from '@/pages/Account/components/tabs/AccountTabs.styles';
+import Input from '@/components/Input/Input';
+import Select from '@/components/Select/Select';
+import { Gender, User } from '@/api/types';
 import { AppButton } from '@/components';
-type Props = {
-  user: User;
-};
-const ProfileForm = ({ user }: Props) => {
-  const [profile, setProfile] = useState({
-    username: user?.username ?? '',
-    email: user?.email ?? '',
-    age: user?.age?.toString() ?? '',
-    gender: (user?.gender as string) ?? '',
-    height: user?.height?.toString() ?? '',
-    weight: user?.weight?.toString() ?? '',
-  });
-  const [profileErrors, setProfileErrors] = useState<Partial<typeof profile>>({});
-  const [profileGlobalError, setProfileGlobalError] = useState<string>('');
-  const onChangeProfile =
-    (key: keyof typeof profile) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-      const val = e.target.value;
-      setProfile(s => ({ ...s, [key]: val }));
-      // TODO: optional live field validation here
-    };
+import { useProfileForm } from '@/pages/Account/hooks/useProfileForm.ts';
 
-  const handleUpdateProfile = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setProfileErrors({});
-    setProfileGlobalError('');
-  };
+type Props = { user: User };
+
+const ProfileForm = ({ user }: Props) => {
+  const { profile, errors, globalError, successMsg, isPending, isDirty, onChange, onSubmit } = useProfileForm(user);
+
   return (
     <>
-      <Ui.ProfileForm onSubmit={handleUpdateProfile}>
+      <Ui.ProfileForm id="profileForm" onSubmit={onSubmit}>
         <Ui.FormGridColumn>
           <Input
             label="Username"
             placeholder="Your username"
             value={profile.username}
-            onChange={onChangeProfile('username')}
-            error={profileErrors.username}
+            onChange={onChange('username')}
+            error={errors.username}
             paddingY={12}
           />
           <Input
@@ -47,8 +27,8 @@ const ProfileForm = ({ user }: Props) => {
             type="email"
             placeholder="you@example.com"
             value={profile.email}
-            onChange={onChangeProfile('email')}
-            error={profileErrors.email}
+            onChange={onChange('email')}
+            error={errors.email}
             paddingY={12}
           />
           <Input
@@ -56,8 +36,8 @@ const ProfileForm = ({ user }: Props) => {
             type="number"
             placeholder="e.g. 28"
             value={profile.age}
-            onChange={onChangeProfile('age')}
-            error={profileErrors.age}
+            onChange={onChange('age')}
+            error={errors.age}
             paddingY={12}
           />
         </Ui.FormGridColumn>
@@ -67,20 +47,20 @@ const ProfileForm = ({ user }: Props) => {
             paddingY={12}
             label="GENDER"
             value={profile.gender}
-            onChange={onChangeProfile('gender')}
+            onChange={onChange('gender')}
             options={[
               { value: Gender.MALE, label: 'Male' },
               { value: Gender.FEMALE, label: 'Female' },
             ]}
-            error={profileErrors.gender}
+            error={errors.gender}
           />
           <Input
             label="Height (cm)"
             type="number"
             placeholder="e.g. 180"
             value={profile.height}
-            onChange={onChangeProfile('height')}
-            error={profileErrors.height}
+            onChange={onChange('height')}
+            error={errors.height}
             paddingY={12}
           />
           <Input
@@ -88,17 +68,19 @@ const ProfileForm = ({ user }: Props) => {
             type="number"
             placeholder="e.g. 75"
             value={profile.weight}
-            onChange={onChangeProfile('weight')}
-            error={profileErrors.weight}
+            onChange={onChange('weight')}
+            error={errors.weight}
             paddingY={12}
           />
         </Ui.FormGridColumn>
       </Ui.ProfileForm>
+
       <Ui.ProfileActions>
-        <AppButton type="submit" disabled={true}>
-          Update
+        <AppButton type="submit" form="profileForm" disabled={isPending || !isDirty}>
+          {isPending ? 'Updating…' : 'Update'}
         </AppButton>
-        {profileGlobalError && <Ui.Error>{profileGlobalError}</Ui.Error>}
+        {globalError && <Ui.Error>{globalError}</Ui.Error>}
+        {successMsg && <Ui.Success>{successMsg}</Ui.Success>}
       </Ui.ProfileActions>
     </>
   );

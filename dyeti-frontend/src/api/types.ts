@@ -2,11 +2,25 @@ export enum HttpMethod {
   GET = 'get',
   POST = 'post',
   PUT = 'put',
+  PATCH = 'patch',
   DELETE = 'delete',
 }
+export type ApiErrorBody = {
+  errorField: string;
+  errorMessage: string;
+};
+
+export type ApiError = {
+  status: number;
+  body: ApiErrorBody;
+};
 export type LoginRequest = {
   username: string;
   password: string;
+};
+
+export type GenericResponse = {
+  message: string;
 };
 
 export type LoginResponse = {
@@ -48,10 +62,23 @@ export type User = {
   fatReq: number | null;
   role: Role;
 };
+export type UpdateProfileRequest = {
+  username: string;
+  email: string;
+  age: number;
+  gender: Gender;
+  height: number;
+  weight: number;
+};
 
 export type UserStats = {
   productPrefsCount: number;
   plansCount: number;
   createdRecipesCount: number;
   createdProductsCount: number;
+};
+
+export type ChangePasswordRequest = {
+  currentPassword: string;
+  newPassword: string;
 };

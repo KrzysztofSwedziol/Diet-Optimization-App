@@ -1,5 +1,5 @@
 import Requirement from '@/pages/Account/components/tabs/Requirement.tsx';
-import { NewPwdReqState } from '@/pages/Account/hooks/CheckPasswordReq.tsx';
+import { NewPwdReqState } from '@/pages/Account/hooks/CheckPasswordReq.ts';
 
 type Props = {
   requirements: NewPwdReqState;
