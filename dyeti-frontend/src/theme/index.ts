@@ -111,6 +111,8 @@ export const lightTheme = {
 export const darkTheme = {
   ...common,
   colors: {
+    white: '#FFFFFF',
+    black: '#000000',
     background: '#1A1A1A',
     text: '#F5F5F5',
     primary: {
