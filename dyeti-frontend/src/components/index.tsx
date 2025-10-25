@@ -7,3 +7,5 @@ export { default as SortBy } from './SortBy/SortBy';
 export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as Spinner } from './Spinner/Spinner';
 export { default as Checkbox } from './Checkbox/Checkbox';
+export { PageTitle } from './Typography/PageTitle';
+export { PageDescription } from './Typography/PageDescription';
