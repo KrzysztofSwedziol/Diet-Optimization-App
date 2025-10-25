@@ -37,6 +37,7 @@ export const ForgotPassword = styled.a`
   color: ${({ theme }) => theme.colors.primary[700]};
 
   &:hover {
+    color: ${({ theme }) => theme.colors.primary[700]};
     text-decoration: underline;
   }
 `;
@@ -58,7 +59,7 @@ export const OptionsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin: 16px 0;
 `;
 
 export const Error = styled.p`

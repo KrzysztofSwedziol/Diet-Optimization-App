@@ -12,8 +12,10 @@ type Props = {
 const Input = ({ label, type = 'text', placeholder, value, onChange, error }: Props) => {
   return (
     <InputWrapper hasError={!!error}>
-      <InputLabel>{label}</InputLabel>
-      <InputField type={type} placeholder={placeholder} value={value} onChange={onChange} hasError={!!error} />
+      <InputLabel>
+        {label}
+        <InputField type={type} placeholder={placeholder} value={value} onChange={onChange} hasError={!!error} />
+      </InputLabel>
       {error && <InputError>{error}</InputError>}
     </InputWrapper>
   );

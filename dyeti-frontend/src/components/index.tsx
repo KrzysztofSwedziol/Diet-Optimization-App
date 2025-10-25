@@ -6,3 +6,4 @@ export { default as Pagination } from './Pagination/Pagination';
 export { default as SortBy } from './SortBy/SortBy';
 export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as Spinner } from './Spinner/Spinner';
+export { default as Checkbox } from './Checkbox/Checkbox';
