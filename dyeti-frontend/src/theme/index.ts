@@ -50,6 +50,8 @@ const common = {
 export const lightTheme = {
   ...common,
   colors: {
+    white: '#FFFFFF',
+    black: '#000000',
     background: '#FFFFFF',
     text: '#1A1A1A',
     primary: {
@@ -95,6 +97,13 @@ export const lightTheme = {
       700: '#E49124',
       800: '#D9742B',
       900: '#A25720',
+    },
+    progress: {
+      100: '#FF4B4B', // red
+      200: '#FF8C42', // orange
+      300: '#FFD93D', // yellow
+      400: '#B7E43F', // lime
+      500: '#4CAF50', // green
     },
   },
 };
@@ -147,6 +156,13 @@ export const darkTheme = {
       700: '#E49124',
       800: '#D9742B',
       900: '#A25720',
+    },
+    progress: {
+      100: '#FF5A5A', // lighter red
+      200: '#FF924A', // warm orange
+      300: '#FFD84D', // yellow
+      400: '#A8E63F', // lime
+      500: '#57C84D', // rich green
     },
   },
 };
