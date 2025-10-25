@@ -1,4 +1,8 @@
 :root {
+  scrollbar-gutter: stable;
+
+  overflow-y: scroll;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
