@@ -1,8 +1,8 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import prettier from "eslint-config-prettier"
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import prettier from 'eslint-config-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
@@ -17,19 +17,17 @@ export default defineConfig([
   //   files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
   //   languageOptions: { globals: globals.browser },
   // },
-  globalIgnores(["eslint.config.js"]),
+  globalIgnores(['eslint.config.js']),
 
   {
-    name: "JavaScript + React Rules",
-    files: ["**/*.{js,mjs,cjs,mts,cts,jsx}"],
+    name: 'JavaScript + React Rules',
+    files: ['**/*.{js,mjs,cjs,mts,cts,jsx}'],
     plugins: {
       react: pluginReact,
-      "react-hooks": reactHooks,
+      'react-hooks': reactHooks,
       import: importPlugin,
     },
-    extends:[
-      js.configs.recommended,
-    ],
+    extends: [js.configs.recommended],
     rules: {
       ...reactHooks.configs['recommended-latest'].rules,
       ...pluginReact.configs.recommended.rules,
@@ -43,15 +41,12 @@ export default defineConfig([
     },
   },
   {
-    name: "TypeScript + React Rules",
+    name: 'TypeScript + React Rules',
     files: ['**/*.{tsx,ts}'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: [
-          './tsconfig.app.json',
-          './tsconfig.node.json'
-        ],
+        project: ['./tsconfig.app.json', './tsconfig.node.json'],
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
@@ -62,15 +57,12 @@ export default defineConfig([
       globals: globals.browser,
     },
     plugins: {
-      "typescript-eslint": tseslint,
+      'typescript-eslint': tseslint,
       react: pluginReact,
-      "react-hooks": reactHooks,
+      'react-hooks': reactHooks,
       import: importPlugin,
     },
-    extends:[
-      tseslint.configs.recommended,
-      importPlugin.configs.typescript,
-    ],
+    extends: [tseslint.configs.recommended, importPlugin.configs.typescript],
     rules: {
       ...reactHooks.configs['recommended-latest'].rules,
       ...pluginReact.configs.recommended.rules,
@@ -81,18 +73,17 @@ export default defineConfig([
       react: {
         version: 'detect',
       },
-      "import/resolver": {
-        typescript: true,
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.app.json',
+        },
         node: true,
       },
-
     },
-
   },
-  prettier
+  prettier,
   // tseslint.config(
   //   { files: ['**/*.{tsx,ts}'] },
   //   js.configs.recommended,
   // ),
-
 ]);

@@ -54,6 +54,6 @@ public final class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalStateException.class)
     public ResponseEntity<?> handleIllegalState(IllegalStateException ex) {
-        return errorResponse("", "Internal server error", HttpStatus.CONFLICT);
+        return errorResponse("", ex.getMessage(), HttpStatus.CONFLICT);
     }
 }
