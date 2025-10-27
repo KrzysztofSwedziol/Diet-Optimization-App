@@ -12,28 +12,28 @@ const TabsBar = ({ section, setSection }: Props) => {
   return (
     <Ui.TabsBar>
       <Ui.Tab
-        $active={section == 'account'}
+        $active={section == 'details'}
         onClick={() => {
-          handleClick('account');
+          handleClick('details');
         }}
       >
-        Account Settings
+        Account Details
       </Ui.Tab>
       <Ui.Tab
-        $active={section == 'documents'}
+        $active={section == 'space'}
         onClick={() => {
-          handleClick('documents');
+          handleClick('space');
         }}
       >
-        Documents
+        My Space
       </Ui.Tab>
       <Ui.Tab
-        $active={section == 'notifications'}
+        $active={section == 'manage'}
         onClick={() => {
-          handleClick('notifications');
+          handleClick('manage');
         }}
       >
-        Notifications
+        Manage account
       </Ui.Tab>
     </Ui.TabsBar>
   );

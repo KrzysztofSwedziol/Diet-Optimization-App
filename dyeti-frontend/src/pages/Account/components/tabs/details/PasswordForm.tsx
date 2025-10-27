@@ -1,6 +1,6 @@
-import * as Ui from './AccountTabs.styles.ts';
+import * as Ui from '../AccountTabs.styles.ts';
 import Input from '@/components/Input/Input.tsx';
-import PasswordRequirements from '@/pages/Account/components/tabs/PasswordRequirements.tsx';
+import PasswordRequirements from '@/pages/Account/components/tabs/details/PasswordRequirements.tsx';
 import { AppButton } from '@/components';
 import { usePasswordRequirements } from '@/pages/Account/hooks/CheckPasswordReq.ts';
 import { useState } from 'react';

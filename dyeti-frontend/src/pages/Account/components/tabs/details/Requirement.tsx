@@ -1,4 +1,4 @@
-import * as Ui from './AccountTabs.styles.ts';
+import * as Ui from '../AccountTabs.styles.ts';
 
 type Props = {
   fulfilled: boolean;

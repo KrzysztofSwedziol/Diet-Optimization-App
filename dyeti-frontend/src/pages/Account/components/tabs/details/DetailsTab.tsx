@@ -1,11 +1,11 @@
-import * as Ui from './AccountTabs.styles.ts';
+import * as Ui from '../AccountTabs.styles.ts';
 import { User } from '@/api/types.ts';
 import ProfileForm from './ProfileForm.tsx';
-import PasswordForm from '@/pages/Account/components/tabs/PasswordForm.tsx';
+import PasswordForm from '@/pages/Account/components/tabs/details/PasswordForm.tsx';
 type Props = {
   user: User;
 };
-const SettingsTab = ({ user }: Props) => {
+const DetailsTab = ({ user }: Props) => {
   return (
     <Ui.SettingsGrid>
       <ProfileForm user={user} />
@@ -14,4 +14,4 @@ const SettingsTab = ({ user }: Props) => {
   );
 };
 
-export default SettingsTab;
+export default DetailsTab;

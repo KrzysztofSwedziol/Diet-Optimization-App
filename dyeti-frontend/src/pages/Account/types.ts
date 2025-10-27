@@ -1,1 +1,1 @@
-export type TabKey = 'account' | 'documents' | 'notifications';
+export type TabKey = 'details' | 'space' | 'manage';
