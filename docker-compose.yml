@@ -54,6 +54,7 @@ services:
       SPRING_DATASOURCE_USERNAME: dyeti
       SPRING_DATASOURCE_PASSWORD: dyeti_pass
       SPRING_PROFILES_ACTIVE: dev
+      JAVA_TOOL_OPTIONS: "-Dspring.devtools.restart.enabled=true"
     depends_on:
       postgres:
         condition: service_healthy

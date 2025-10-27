@@ -6,5 +6,6 @@ COPY gradle ./gradle
 RUN ./gradlew dependencies --no-daemon
 
 ENV SPRING_PROFILES_ACTIVE=dev
+ENV JAVA_TOOL_OPTIONS="-Dspring.devtools.restart.enabled=true"
 
-CMD ["./gradlew", "bootRun", "--no-daemon"]
+CMD ["./gradlew", "bootRun", "--continuous", "--no-daemon"]
