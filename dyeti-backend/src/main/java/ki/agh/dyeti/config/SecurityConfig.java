@@ -46,6 +46,13 @@ public class SecurityConfig {
                         .hasAnyRole("ADMIN", "OWNER")
                         .anyRequest()
                         .authenticated())
+                .exceptionHandling(
+                        exception -> exception.authenticationEntryPoint((request, response, authException) -> {
+                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                            response.getWriter().write("{\"error\": \"Unauthorized\"}");
+                            response.getWriter().flush();
+                        }))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .formLogin(form -> form.loginProcessingUrl("/auth/login")
                         .successHandler((request, response, authentication) -> {
                             response.setStatus(HttpServletResponse.SC_OK);
