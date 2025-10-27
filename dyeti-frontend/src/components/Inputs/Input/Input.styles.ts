@@ -1,18 +1,6 @@
 import { styled } from 'styled-components';
 
-export const SelectWrapper = styled.div<{ hasError?: boolean }>`
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-`;
-
-export const SelectLabel = styled.h1`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  margin: 2px;
-  color: ${({ theme }) => theme.colors.neutrals[900]};
-`;
-
-export const SelectField = styled.select<{ hasError?: boolean }>`
+export const InputField = styled.input<{ hasError?: boolean }>`
   padding: 8px;
   color: ${({ theme }) => theme.colors.neutrals[900]};
   background: ${({ theme }) => theme.colors.primary[100]};
@@ -20,8 +8,10 @@ export const SelectField = styled.select<{ hasError?: boolean }>`
     ${({ hasError, theme }) => (hasError ? theme.colors.danger[500] : theme.colors.neutrals[600])};
   border-radius: ${({ theme }) => theme.borderRadius.md};
   font-size: ${({ theme }) => theme.typography.fontSize.md};
-  cursor: pointer;
-
+  caret-color: ${({ theme }) => theme.colors.neutrals[700]};
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.neutrals[400]};
+  }
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary[700]};
@@ -31,11 +21,4 @@ export const SelectField = styled.select<{ hasError?: boolean }>`
   &:hover {
     box-shadow: ${({ theme }) => theme.shadows.md};
   }
-`;
-
-export const SelectError = styled.span`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.danger[500]};
-  margin: 2px;
-  font-style: italic;
 `;
