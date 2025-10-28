@@ -23,16 +23,19 @@ public class PlanService {
     private final ProductPreferenceService productPreferenceService;
     private final ResourceAccessValidator resourceAccessValidator;
     private final PlanGenerator planGenerator;
+    private final RecipeService recipeService;
 
     public PlanService(
             PlanRepository planRepository,
             ProductPreferenceService productPreferenceService,
             ResourceAccessValidator resourceAccessValidator,
-            PlanGenerator planGenerator) {
+            PlanGenerator planGenerator,
+            RecipeService recipeService) {
         this.planRepository = planRepository;
         this.productPreferenceService = productPreferenceService;
         this.resourceAccessValidator = resourceAccessValidator;
         this.planGenerator = planGenerator;
+        this.recipeService = recipeService;
     }
 
     public List<PlanDTO> getUserPlans(Long userId) {
@@ -115,5 +118,6 @@ public class PlanService {
 
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
+        recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
     }
 }

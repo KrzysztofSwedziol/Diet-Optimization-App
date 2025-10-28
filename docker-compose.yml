@@ -1,5 +1,9 @@
 version: "3.9"
-
+#docker compose down -v - do uzunięcia wszystkich volumów (przydatne)
+#docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
+#docker ps - tutaj w kontekście Ollamy. Ona na początku pokazuje unhealthy status ale jak już się użyje ollama-init i to się pobierze to jak
+#zresetuje się kontener Ollamy to ona już zobaczy ten model i będzie działać jak należy (to tylko do statusu co się ma zmienić
+#na healthy, sam kontener działa nawet bez tego i przyjmuje zapytania do LLMa).
 services:
   postgres:
     build:
@@ -32,11 +36,22 @@ services:
       - ollama_models:/root/.ollama
     restart: unless-stopped
     shm_size: '1g'
+    command: ["serve"]
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://localhost:11434/v1/models || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 5
+
+  ollama-init:
+    image: ollama/ollama:latest
+    container_name: ollama-init
+    depends_on:
+      - ollama
+    volumes:
+      - ollama_models:/root/.ollama
+    entrypoint: [ "bash", "-c", "sleep 5 && OLLAMA_HOST=http://ollama:11434 ollama pull mistral" ]
+    restart: "no"
 
   backend-dev:
     build:
