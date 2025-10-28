@@ -1,9 +1,10 @@
 import * as Ui from '@/pages/Account/components/tabs/AccountTabs.styles.ts';
-import Input from '@/components/Input/Input.tsx';
-import Select from '@/components/Select/Select.tsx';
+
 import { Gender, User } from '@/api/types.ts';
 import { AppButton } from '@/components';
 import { useProfileForm } from '@/pages/Account/hooks/useProfileForm.ts';
+import Input from '@/components/Inputs/Input/Input.tsx';
+import Select from '@/components/Inputs/Select/Select.tsx';
 
 type Props = { user: User };
 
