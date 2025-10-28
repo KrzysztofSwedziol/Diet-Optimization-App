@@ -1,9 +1,5 @@
 import * as Ui from '../AccountTabs.styles';
-type IconLike = React.ComponentType<{
-  size?: number | string;
-  className?: string;
-  'aria-hidden'?: boolean;
-}>;
+import { IconLike } from '@/pages/Account/types.ts';
 
 type Props = {
   to: string;

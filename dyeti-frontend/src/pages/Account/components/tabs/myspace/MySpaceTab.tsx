@@ -10,21 +10,8 @@ import {
   FiPlusCircle, // Add Recipe
   FiPlusSquare, // Add Product
 } from 'react-icons/fi';
-type IconLike = React.ComponentType<{
-  size?: number | string;
-  className?: string;
-  'aria-hidden'?: boolean;
-}>;
+import { CardCfg } from '@/pages/Account/types.ts';
 
-type CardCfg = {
-  key: string;
-  to: string;
-  icon: IconLike;
-  title: string;
-  description: string;
-};
-
-// extracted config
 const CARDS: readonly CardCfg[] = [
   {
     key: 'myPlans',
