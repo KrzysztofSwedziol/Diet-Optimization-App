@@ -1,9 +1,9 @@
 import { styled } from 'styled-components';
 
-export const InputContainer = styled.div<{ hasError?: boolean }>`
+export const InputContainer = styled.div<{ hasError?: boolean; width?: string }>`
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+  width: ${({ width }) => width || '100%'};
 `;
 
 export const InputLabel = styled.h1`

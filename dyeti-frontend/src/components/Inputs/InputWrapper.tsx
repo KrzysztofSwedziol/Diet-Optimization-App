@@ -1,14 +1,15 @@
-import { InputContainer, InputLabel, InputError } from './Inputs.styles.tsx';
+import { InputContainer, InputLabel, InputError } from './Inputs.styles.ts';
 
 type Props = {
-  label: string;
+  label?: string;
   error?: string;
+  width?: string;
   children: React.ReactNode;
 };
 
-const InputWrapper = ({ label, error, children }: Props) => (
-  <InputContainer hasError={!!error}>
-    <InputLabel>{label}</InputLabel>
+const InputWrapper = ({ label, error, width, children }: Props) => (
+  <InputContainer hasError={!!error} width={width}>
+    {label && <InputLabel>{label}</InputLabel>}
     {children}
     {error && <InputError>{error}</InputError>}
   </InputContainer>

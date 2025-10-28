@@ -4,6 +4,7 @@ import Input from '../../../components/Inputs/Input/Input.tsx';
 import { AppButton } from '../../../components';
 import { useAuth } from '../../../components/providers/AuthProvider.tsx';
 import { useNavigate } from 'react-router-dom';
+import { FormGrid } from '../Auth.styles.ts';
 
 const LoginForm = () => {
   const { login } = useAuth();
@@ -34,7 +35,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <FormGrid onSubmit={handleSubmit}>
       <Input
         label="USERNAME"
         type="text"
@@ -67,7 +68,7 @@ const LoginForm = () => {
       </AppButton>
 
       {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
-    </form>
+    </FormGrid>
   );
 };
 

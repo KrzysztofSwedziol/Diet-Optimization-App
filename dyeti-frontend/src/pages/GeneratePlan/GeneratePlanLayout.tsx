@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout/Layout.tsx';
 import { PageTitle } from '../../components/Typography/PageTitle';
 import { PageDescription } from '../../components/Typography/PageDescription';
-import * as Ui from './GeneratePlan.styles.tsx';
+import * as Ui from './GeneratePlan.styles.ts';
 
 type Props = {
   logo: { src: string; alt: string };
