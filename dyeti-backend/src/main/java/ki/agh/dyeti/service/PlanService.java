@@ -13,7 +13,6 @@ import ki.agh.dyeti.model.*;
 import ki.agh.dyeti.repository.PlanRepository;
 import ki.agh.dyeti.security.ResourceAccessValidator;
 import ki.agh.dyeti.service.generator.PlanGenerator;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -90,7 +89,6 @@ public class PlanService {
     }
 
     @Transactional
-    @Async
     public void startPlanGeneration(PlanRequestDTO planRequestDTO, User user) {
         Map<Product, Double> productPreferences =
                 productPreferenceService.getProductPreferencesMapByUserId(user.getId());

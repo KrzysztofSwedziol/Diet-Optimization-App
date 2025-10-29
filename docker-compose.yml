@@ -1,9 +1,6 @@
 version: "3.9"
-#docker compose down -v - do uzunięcia wszystkich volumów (przydatne)
+#docker compose down -v - do usunięcia wszystkich volumów (przydatne)
 #docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
-#docker ps - tutaj w kontekście Ollamy. Ona na początku pokazuje unhealthy status ale jak już się użyje ollama-init i to się pobierze to jak
-#zresetuje się kontener Ollamy to ona już zobaczy ten model i będzie działać jak należy (to tylko do statusu co się ma zmienić
-#na healthy, sam kontener działa nawet bez tego i przyjmuje zapytania do LLMa).
 services:
   postgres:
     build:
