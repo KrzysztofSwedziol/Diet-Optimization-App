@@ -49,7 +49,7 @@ public class LLMService {
     }
 
     public String recipeCreateAsk(Plan plan) throws IOException {
-        String basePrompt = readPromptFromResources();
+        String basePrompt = readPromptFromResources(RECIPE_PROMPT_FILE_PATH);
 
         String planText = plan.getProducts().stream()
                 .map(pp -> {
@@ -85,8 +85,8 @@ public class LLMService {
         return response;
     }
 
-    private String readPromptFromResources() throws IOException {
-        ClassPathResource resource = new ClassPathResource(RECIPE_PROMPT_FILE_PATH);
+    private String readPromptFromResources(String filePath) throws IOException {
+        ClassPathResource resource = new ClassPathResource(filePath);
         return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
     }
 }
