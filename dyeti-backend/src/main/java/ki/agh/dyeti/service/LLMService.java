@@ -1,5 +1,6 @@
 package ki.agh.dyeti.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -15,12 +16,14 @@ import org.springframework.web.client.RestTemplate;
 public class LLMService {
 
     private final RestTemplate restTemplate;
+    private final ObjectMapper objectMapper;
     private static final String URL = "http://ollama:11434/v1/completions";
     private static final String MODEL_NAME = "mistral";
     private static final String RECIPE_PROMPT_FILE_PATH = "LLM_resources/prompts/RecipePrompt";
 
-    public LLMService(RestTemplate restTemplate) {
+    public LLMService(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
+        this.objectMapper = objectMapper;
     }
 
     public String ask(String modelName, String prompt) {
@@ -53,7 +56,7 @@ public class LLMService {
                     Product product = pp.getProduct();
                     double gramsPerUnit = product.getGramsPerUnit();
                     double quantity = pp.getQuantity();
-                    String unit = product.getUnit() != null ? product.getUnit().getName() : "g"; // fallback
+                    String unit = product.getUnit() != null ? product.getUnit().getName() : "g";
 
                     String amount;
                     if (gramsPerUnit <= 1) {
@@ -62,9 +65,12 @@ public class LLMService {
                         amount = String.format("%.0f (grams per unit: %.0fg)", quantity, gramsPerUnit);
                     }
 
-                    return String.format(
-                            "{\"name\": \"%s\", \"amount\": \"%s\"}",
-                            escapeJson(product.getName()), escapeJson(amount));
+                    Map<String, String> obj = Map.of("name", product.getName(), "amount", amount);
+                    try {
+                        return objectMapper.writeValueAsString(obj);
+                    } catch (Exception e) {
+                        return "{\"name\":\"" + product.getName() + "\",\"amount\":\"" + amount + "\"}";
+                    }
                 })
                 .collect(Collectors.joining(",\n  "));
 
@@ -82,13 +88,5 @@ public class LLMService {
     private String readPromptFromResources() throws IOException {
         ClassPathResource resource = new ClassPathResource(RECIPE_PROMPT_FILE_PATH);
         return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-    }
-
-    private String escapeJson(String text) {
-        if (text == null) return "";
-        return text.replace("\\", "\\\\")
-                .replace("\"", "\\\"")
-                .replace("\n", "\\n")
-                .replace("\r", "\\r");
     }
 }

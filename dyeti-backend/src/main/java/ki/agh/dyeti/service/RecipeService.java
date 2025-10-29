@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 import ki.agh.dyeti.dto.RecipeDTO;
 import ki.agh.dyeti.model.Plan;
 import ki.agh.dyeti.model.Recipe;
@@ -36,6 +35,8 @@ public class RecipeService {
     public void generateRecipeBasedOnPlan(Plan plan, User user) {
         try {
             String llmResponse = llmService.recipeCreateAsk(plan);
+            System.out.println("Response from LLM : ");
+            System.out.println(llmResponse);
 
             if (llmResponse == null || llmResponse.isBlank()) {
                 throw new IllegalStateException("Empty response from LLM while generating recipe.");
@@ -56,47 +57,42 @@ public class RecipeService {
         }
     }
 
-    private Recipe parseRecipeFromJson(String json, User creator) {
+    private Recipe parseRecipeFromJson(String llmResponse, User user) {
         try {
-            json = json.trim();
+            JsonNode node = objectMapper.readTree(llmResponse);
 
-            if (json.startsWith("\"") && json.endsWith("\"")) {
-                json = json.substring(1, json.length() - 1)
-                        .replace("\\n", "\n")
-                        .replace("\\\"", "\"")
-                        .replace("\\\\", "\\");
-            }
-
-            JsonNode node = objectMapper.readTree(json);
-
-            String recipeName = node.path("recipeName").asText("Generated Recipe");
+            String name = node.path("recipeName").asText("Generated Recipe");
             String description = node.path("description").asText("");
-            String steps;
+            String steps = "";
 
-            JsonNode stepsNode = node.path("steps");
-            if (stepsNode.isArray()) {
-                steps = StreamSupport.stream(stepsNode.spliterator(), false)
-                        .map(JsonNode::asText)
-                        .collect(Collectors.joining("\n"));
-            } else {
-                steps = stepsNode.asText("");
+            // obsługa steps w 2 wariantach: tablica lub string
+            if (node.has("steps")) {
+                JsonNode stepsNode = node.get("steps");
+                if (stepsNode.isArray()) {
+                    StringBuilder sb = new StringBuilder();
+                    for (JsonNode step : stepsNode) {
+                        sb.append(step.asText()).append("\n");
+                    }
+                    steps = sb.toString().trim();
+                } else {
+                    steps = stepsNode.asText("");
+                }
             }
 
-            Recipe recipe = Recipe.builder()
-                    .recipeName(recipeName)
+            return Recipe.builder()
+                    .recipeName(name)
                     .description(description)
                     .steps(steps)
-                    .creator(creator)
+                    .creator(user)
                     .build();
 
-            return recipe;
-
         } catch (Exception e) {
+            e.printStackTrace();
             return Recipe.builder()
                     .recipeName("Generated Recipe")
                     .description("Recipe could not be parsed properly.")
-                    .steps(json)
-                    .creator(creator)
+                    .steps(llmResponse)
+                    .creator(user)
                     .build();
         }
     }
