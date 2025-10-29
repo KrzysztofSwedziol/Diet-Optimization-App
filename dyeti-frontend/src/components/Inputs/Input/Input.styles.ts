@@ -38,7 +38,7 @@ export const ToggleBtn = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.neutrals[700]};
+  color: ${({ theme }) => theme.colors.neutrals[900]};
 
   &:hover {
     opacity: 0.9;
