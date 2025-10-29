@@ -42,7 +42,7 @@ public class RecipeService {
                 throw new IllegalStateException("Empty response from LLM while generating recipe.");
             }
 
-            Recipe recipe = parseRecipeFromJson(llmResponse, user);
+            Recipe recipe = parseRecipeFromStringifiedJson(llmResponse, user);
             System.out.println("Recipe parsed successfully from json string to Recipe class");
 
             recipeRepository.save(recipe);
@@ -57,7 +57,7 @@ public class RecipeService {
         }
     }
 
-    private Recipe parseRecipeFromJson(String llmResponse, User user) {
+    private Recipe parseRecipeFromStringifiedJson(String llmResponse, User user) {
         try {
             JsonNode node = objectMapper.readTree(llmResponse);
 
@@ -65,7 +65,6 @@ public class RecipeService {
             String description = node.path("description").asText("");
             String steps = "";
 
-            // obsługa steps w 2 wariantach: tablica lub string
             if (node.has("steps")) {
                 JsonNode stepsNode = node.get("steps");
                 if (stepsNode.isArray()) {
@@ -98,7 +97,7 @@ public class RecipeService {
     }
 
     public List<RecipeDTO> getUserRecipes(Long userId) {
-        return recipeRepository.findAllByCreatorId(userId).stream()
+        return recipeRepository.findByCreatorId(userId).stream()
                 .map(RecipeDTO::fromEntity)
                 .collect(Collectors.toList());
     }
