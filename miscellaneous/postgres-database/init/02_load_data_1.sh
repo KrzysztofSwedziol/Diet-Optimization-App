@@ -1,7 +1,7 @@
 ﻿#!/bin/sh
 # Seed units and products from JSON into PostgreSQL
 
-trap 'st=$?; echo "[seed] ERROR at ${BASH_SOURCE##*/}:${LINENO} → ${BASH_COMMAND} (exit=$st)" >&2' ERR
+#trap 'st=$?; echo "[seed] ERROR at ${BASH_SOURCE##*/}:${LINENO} → ${BASH_COMMAND} (exit=$st)" >&2' ERR
 
 DB_USER="${POSTGRES_USER:?missing POSTGRES_USER}"
 DB_NAME="${POSTGRES_DB:?missing POSTGRES_DB}"
@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" -c "
 "
 
 # JSON → TSV → _stage_units
-jq -r '.[] | [(.measureUnitName // ""), (.measureUnitSymbol // "")] | @tsv' "$SEED_JSON" \
+jq -r '.[] | .unit as $u | [($u.name // ""), ($u.symbol // "")] | @tsv' "$SEED_JSON" \
 | sort -u \
 | psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" \
     -c "\copy _stage_units(name, symbol) from stdin with (format text, delimiter E'\t', null '')"
@@ -60,11 +60,11 @@ psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" -c "
 
 # JSON → TSV → _stage_products
 jq -r '
-  .[] |
+  .[] | .unit as $u |
   [
     (.name // ""),
-    (.measureUnitName // ""),
-    (.measureUnitSymbol // ""),
+    ($u.name // ""),
+    ($u.symbol // ""),
     (.gramsPerUnit // null),
     (.kcal100g // null),
     (.protein100g // null),
