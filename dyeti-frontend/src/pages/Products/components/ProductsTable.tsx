@@ -24,7 +24,7 @@ const ProductsTable = ({ products }: Props) => {
   return (
     <Ui.Container>
       <ProductsTableFilters columns={columns} sorting={sorting} setSorting={setSorting} onSearch={handleSearch} />
-      <Table table={table} pagination />
+      <Table table={table} pagination emptyMessage="No products found" />
     </Ui.Container>
   );
 };
