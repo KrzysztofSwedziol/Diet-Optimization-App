@@ -29,6 +29,14 @@ public class ProductPreferenceController {
         return productPreferenceService.createProductPreference(productPreferenceDTO);
     }
 
+    @PostMapping("/preferencelist")
+    public List<ProductPreferenceDTO> createProductPreferencesList(
+            @RequestBody List<ProductPreferenceDTO> preferences) {
+        return preferences.stream()
+                .map(productPreferenceService::createProductPreference)
+                .toList();
+    }
+
     @PutMapping()
     public ProductPreferenceDTO updateProductPreference(@RequestBody ProductPreferenceDTO productPreferenceDTO) {
         return productPreferenceService.updateProductPreference(productPreferenceDTO);
