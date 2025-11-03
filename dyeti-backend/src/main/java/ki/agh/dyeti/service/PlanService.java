@@ -116,6 +116,6 @@ public class PlanService {
 
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
-        recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
+        // recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
     }
 }

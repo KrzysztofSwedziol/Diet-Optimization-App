@@ -22,8 +22,8 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
     //    now each product will have multiple variables with different coeficients according to the mentioned law
 
     private static final int MAX_INT_AMOUNT = 15;
-    private static final int MAX_SEGMENTS_AMOUNT = 10;
-    private static final double SEGMENT_SIZE = 50.0;
+    private static final int MAX_SEGMENTS_AMOUNT = 20;
+    private static final double SEGMENT_SIZE = 25.0;
 
     private static final double CONST_K0 = 0.8;
     private static final double REF_CALORIE_DENSITY = 2.0;
@@ -64,7 +64,7 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
         Map<Product, List<MPVariable>> productVariables = new HashMap<>();
         for (Product product : preferences.keySet()) {
             List<MPVariable> variables = new ArrayList<>();
-            if ("piece".equals(product.getUnit().getName())) {
+            if (product.getGramsPerUnit() > 1) {
                 for (int i = 0; i < MAX_INT_AMOUNT; i++) {
                     MPVariable variable = solver.makeIntVar(0.0, 1.0, "x_" + product.getId() + "_" + i);
                     variables.add(variable);
@@ -88,7 +88,6 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
         for (Map.Entry<Product, List<MPVariable>> entry : productVariables.entrySet()) {
             Product product = entry.getKey();
             List<MPVariable> variables = entry.getValue();
-            boolean isCountable = "piece".equals(product.getUnit().getName());
 
             NutritionPerUnit nutritionPerUnit = new NutritionPerUnit(product);
             double gramsPerUnit = product.getGramsPerUnit();
