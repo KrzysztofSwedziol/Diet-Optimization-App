@@ -1,15 +1,18 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import type { Mode } from '../../../pages/SetConstraints/types';
-import { calculateCalories, gramsFromCalories } from '../../../pages/SetConstraints/utils';
-import { INITIAL_CALORIES, KCAL_PER_G, PROPORTIONS } from '../../../pages/SetConstraints/constants';
+import type { Mode } from '@/pages/SetConstraints/types.ts';
+import { calculateCalories, gramsFromCalories } from '@/pages/SetConstraints/utils.ts';
+import { INITIAL_CALORIES, KCAL_PER_G, PROPORTIONS } from '@/pages/SetConstraints/constants.ts';
 import type { MacroValues } from '../../MacroTable/types';
-import type { FieldErrors, GenerateResult, GenerationMode, PlanGenerationRequest } from '../../../api/types';
-import { useGenerateProductPlan } from '../../../api/plans/hooks';
+import type { FieldErrors, GenerateResult, GenerationMode, PlanGenerationRequest } from '@/api/types.ts';
+import { useGenerateProductPlan } from '@/api/plans/hooks';
 
 type PlanGenerationContextType = {
-  name: string; setName: (v: string) => void;
-  description: string; setDescription: (v: string) => void;
-  mode: Mode; setMode: (m: Mode) => void;
+  name: string;
+  setName: (v: string) => void;
+  description: string;
+  setDescription: (v: string) => void;
+  mode: Mode;
+  setMode: (m: Mode) => void;
 
   macroValues: MacroValues;
   setMacroValues: React.Dispatch<React.SetStateAction<MacroValues>>;
@@ -30,9 +33,9 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
 
   const [macroValues, setMacroValues] = useState<MacroValues>({
     calories: INITIAL_CALORIES,
-    carbs:   gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.CARBS,   KCAL_PER_G.CARBS,   0),
+    carbs: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.CARBS, KCAL_PER_G.CARBS, 0),
     protein: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.PROTEIN, KCAL_PER_G.PROTEIN, 0),
-    fats:    gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.FATS,    KCAL_PER_G.FATS,    0),
+    fats: gramsFromCalories(INITIAL_CALORIES, PROPORTIONS.FATS, KCAL_PER_G.FATS, 0),
   });
 
   const validateFields = useCallback(() => {
@@ -45,9 +48,9 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
     const isNum = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n);
 
     if (!isNum(calories) || calories < 0) fieldErrors.calories = 'Calories must be a non-negative number';
-    if (!isNum(carbs)    || carbs    < 0) fieldErrors.carbs    = 'Carbs must be a non-negative number';
-    if (!isNum(protein)  || protein  < 0) fieldErrors.protein  = 'Protein must be a non-negative number';
-    if (!isNum(fats)     || fats     < 0) fieldErrors.fats     = 'Fats must be a non-negative number';
+    if (!isNum(carbs) || carbs < 0) fieldErrors.carbs = 'Carbs must be a non-negative number';
+    if (!isNum(protein) || protein < 0) fieldErrors.protein = 'Protein must be a non-negative number';
+    if (!isNum(fats) || fats < 0) fieldErrors.fats = 'Fats must be a non-negative number';
 
     const TOL = 10;
     const recalc = calculateCalories(carbs, protein, fats);
@@ -87,10 +90,10 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
         const payload: PlanGenerationRequest = {
           name: name.trim(),
           description: description || undefined,
-          calories: macroValues.calories,
-          protein:  macroValues.protein,
-          carbs:    macroValues.carbs,
-          fats:     macroValues.fats,
+          caloriesTarget: macroValues.calories,
+          proteinTarget: macroValues.protein,
+          carbsTarget: macroValues.carbs,
+          fatsTarget: macroValues.fats,
         };
 
         await generateProductPlan(payload);
@@ -102,19 +105,23 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
         setIsGenerating(false);
       }
     },
-    [validateFields, name, description, macroValues, generateProductPlan]
+    [validateFields, name, description, macroValues, generateProductPlan],
   );
 
   const value = useMemo(
     () => ({
-      name, setName,
-      description, setDescription,
-      mode, setMode,
-      macroValues, setMacroValues,
+      name,
+      setName,
+      description,
+      setDescription,
+      mode,
+      setMode,
+      macroValues,
+      setMacroValues,
       isGenerating,
       generatePlan,
     }),
-    [name, description, mode, macroValues, isGenerating, generatePlan]
+    [name, description, mode, macroValues, isGenerating, generatePlan],
   );
 
   return <PlanGenerationContext.Provider value={value}>{children}</PlanGenerationContext.Provider>;

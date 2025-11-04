@@ -1,13 +1,11 @@
 import { apiRequest } from '../axios.ts';
-import { HttpMethod, Plan, PlanApi, PlanGenerationRequest } from '../types.ts';
-import { mapPlanDTO } from '../util.ts';
+import { HttpMethod, PlanGenerationRequest } from '../types.ts';
 
 export const checkPlanNameAvailability = (name: string) => {
   return apiRequest<boolean>(HttpMethod.GET, '/api/plans/available', null, { params: { name: name.trim() } });
 };
-export const generateProductBasePlan = async (data: PlanGenerationRequest): Promise<Plan> => {
-  const dto = await apiRequest<PlanApi>(HttpMethod.POST, '/api/plans/products/new', data);
-  return mapPlanDTO(dto);
+export const generateProductBasePlan = async (data: PlanGenerationRequest) => {
+  return await apiRequest<string>(HttpMethod.POST, '/api/plans', data);
 };
 
 const PLAN_MUTATION = {
