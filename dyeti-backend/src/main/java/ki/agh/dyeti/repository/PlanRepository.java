@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PlanRepository extends JpaRepository<Plan, Long> {
 
-    Optional<Plan> findPlanBYNameAndOwnerId(String planName, Long userId);
+    Optional<Plan> findPlanByNameAndOwnerId(String name, Long ownerId);
 
     List<Plan> findByOwnerId(Long ownerId);
 }
