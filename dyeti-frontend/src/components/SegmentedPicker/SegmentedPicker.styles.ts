@@ -19,12 +19,12 @@ export const Pill = styled.button<{ $active?: boolean }>`
   appearance: none;
 
   display: flex;
-  align-items: center; /* pionowe wyśrodkowanie */
-  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%; /* wysokość = wysokość tracka grida (40px - padding) */
-  padding: 0 18px; /* tylko poziomy padding */
-  border-radius: 9999px; /* żeby kształt był jak „pigułka” */
+  height: 100%;
+  padding: 0 18px;
+  border-radius: 9999px;
   line-height: 1;
 
   border: 0;
