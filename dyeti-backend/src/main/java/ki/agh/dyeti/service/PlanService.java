@@ -120,6 +120,6 @@ public class PlanService {
     }
 
     public boolean existsByName(Long userId, String name) {
-        return planRepository.findPlanByPlanNameAndUserId(name, userId).isPresent();
+        return planRepository.findPlanBYNameAndOwnerId(name, userId).isPresent();
     }
 }
