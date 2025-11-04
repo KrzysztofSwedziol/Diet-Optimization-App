@@ -5,7 +5,7 @@ import { AppButton } from '../../components';
 import { useNavigate } from 'react-router-dom';
 import * as Ui from '../Auth/Auth.styles.ts';
 import { useCheckAvailability } from '../../api/plans/hooks';
-import { usePlanGeneration } from '../../components/providers/PlanGenerationProvider/PlanGenerationProvider.tsx';
+import { usePlanGeneration } from '@/context';
 //TODO: Error can be added as part of App button also FormGrid can be separate component
 //TODO: Use isPending here and spinner from Eryk branch
 //TODO: Remove margins from AppButton

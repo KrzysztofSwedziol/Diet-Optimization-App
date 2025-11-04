@@ -1,4 +1,4 @@
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
 import {
   Home,
@@ -7,18 +7,13 @@ import {
   Themes,
   Login,
   Signup,
+  PlanDetails,
   GeneratePlan,
   SetConstraint,
   ChooseMethod,
-} from './pages/index.ts';
-import { PlanGenerationProvider } from './components/providers/PlanGenerationProvider/PlanGenerationProvider.tsx';
-function PlanGenScope() {
-  return (
-    <PlanGenerationProvider>
-      <Outlet />
-    </PlanGenerationProvider>
-  );
-}
+} from '@/pages';
+import { PlanGenerationLayout } from '@/components';
+
 function App() {
   return (
     <BrowserRouter>
@@ -26,11 +21,12 @@ function App() {
         <Route path={'/'} element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="/plans" element={<Plans />} />
+          <Route path="plans/:planId" element={<PlanDetails />} />
           <Route path="/products" element={<Products />} />
           <Route path="/themes" element={<Themes />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
-          <Route element={<PlanGenScope />}>
+          <Route element={<PlanGenerationLayout />}>
             <Route path="/plans/generate" element={<GeneratePlan />} />
             <Route path="/plans/constraints" element={<SetConstraint />} />
             <Route path="/plans/method" element={<ChooseMethod />} />

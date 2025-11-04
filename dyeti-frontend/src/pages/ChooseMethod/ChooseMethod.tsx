@@ -9,7 +9,7 @@ import { METHOD_OPTIONS } from './types';
 import FullLayout from '../../components/Layout/FullLayout';
 import dyeti from '../../assets/dyeti-pencil.svg';
 import { GenerationMode } from '../../api/types';
-import { usePlanGeneration } from '../../components/providers/PlanGenerationProvider/PlanGenerationProvider';
+import { usePlanGeneration } from '@/context';
 
 const ChooseMethod = () => {
   const navigate = useNavigate();
@@ -33,15 +33,13 @@ const ChooseMethod = () => {
   const copy =
     mode === 'PRODUCT'
       ? {
-        title: 'Product-Based',
-        text:
-          "We'll select the best combination of individual products to meet your targets. Great for flexibility and grocery-focused planning.",
-      }
+          title: 'Product-Based',
+          text: "We'll select the best combination of individual products to meet your targets. Great for flexibility and grocery-focused planning.",
+        }
       : {
-        title: 'Meal-Based',
-        text:
-          "We'll build a full meal plan around your targets. Great if you prefer ready-to-cook meals with balanced macros.",
-      };
+          title: 'Meal-Based',
+          text: "We'll build a full meal plan around your targets. Great if you prefer ready-to-cook meals with balanced macros.",
+        };
 
   return (
     <FullLayout

@@ -11,8 +11,18 @@ const getPlans = async () => {
   }
 };
 
-const QUERIES = {
-  GET_PLANS: getPlans,
+const getPlan = async (planId: number) => {
+  try {
+    const response = await apiRequest<Plan>(HttpMethod.GET, `/api/plans/${planId}`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export default QUERIES;
+const queries = {
+  getPlans,
+  getPlan,
+};
+
+export default queries;

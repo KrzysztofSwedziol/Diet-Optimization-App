@@ -9,7 +9,7 @@ import { KCAL_PER_G, MODE_OPTIONS, PROPORTIONS } from './constants.ts';
 import { calculateCalories, gramsFromCalories } from './utils.ts';
 import FullLayout from '../../components/Layout/FullLayout.tsx';
 import dyeti from '../../assets/dyeti-pencil.svg';
-import { usePlanGeneration } from '../../components/providers/PlanGenerationProvider/PlanGenerationProvider.tsx';
+import { usePlanGeneration } from '@/context';
 
 const SetConstraints = () => {
   const navigate = useNavigate();

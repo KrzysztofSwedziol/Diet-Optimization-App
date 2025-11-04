@@ -2,9 +2,9 @@ import { createContext, useCallback, useContext, useMemo, useState } from 'react
 import type { Mode } from '@/pages/SetConstraints/types.ts';
 import { calculateCalories, gramsFromCalories } from '@/pages/SetConstraints/utils.ts';
 import { INITIAL_CALORIES, KCAL_PER_G, PROPORTIONS } from '@/pages/SetConstraints/constants.ts';
-import type { MacroValues } from '../../MacroTable/types';
 import type { FieldErrors, GenerateResult, GenerationMode, PlanGenerationRequest } from '@/api/types.ts';
 import { useGenerateProductPlan } from '@/api/plans/hooks';
+import { MacroValues } from '@/components/MacroTable/types';
 
 type PlanGenerationContextType = {
   name: string;
@@ -91,7 +91,7 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
           name: name.trim(),
           description: description || undefined,
           caloriesTarget: macroValues.calories,
-          proteinTarget: macroValues.protein,
+          proteinsTarget: macroValues.protein,
           carbsTarget: macroValues.carbs,
           fatsTarget: macroValues.fats,
         };

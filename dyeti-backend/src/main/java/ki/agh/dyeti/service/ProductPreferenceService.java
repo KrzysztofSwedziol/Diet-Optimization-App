@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import ki.agh.dyeti.dto.ProductDTO;
 import ki.agh.dyeti.dto.ProductPreferenceDTO;
 import ki.agh.dyeti.exception.AccessDeniedException;
 import ki.agh.dyeti.exception.ResourceNotFoundException;
@@ -48,8 +49,14 @@ public class ProductPreferenceService {
                     .collect(Collectors.toList());
         }
 
-        return productPreferenceRepository.findByOwnerId(currentUser.getId()).stream()
-                .map(ProductPreferenceDTO::fromEntity)
+        List<Product> products = productRepository.findAllByOwnerIsNullOrOwner(currentUser);
+        Map<Long, Double> preferenceMap = productPreferenceRepository.findByOwnerId(currentUser.getId()).stream()
+                .collect(Collectors.toMap(
+                        preference -> preference.getProduct().getId(), ProductPreference::getPreference));
+
+        return products.stream()
+                .map(product -> new ProductPreferenceDTO(
+                        ProductDTO.fromEntity(product), preferenceMap.getOrDefault(product.getId(), 0.0)))
                 .collect(Collectors.toList());
     }
 
@@ -110,16 +117,19 @@ public class ProductPreferenceService {
 
         ProductPreferenceId id = new ProductPreferenceId(
                 currentUser.getId(), productPreferenceDTO.product().id());
-        ProductPreference existingProductPreference = productPreferenceRepository
+
+        return productPreferenceRepository
                 .findById(id)
-                .orElseThrow(
-                        () -> new IllegalArgumentException("Product preference with id " + id + " does not exist"));
-
-        existingProductPreference.setPreference(productPreferenceDTO.preference());
-
-        ProductPreference updatedProductPreference = productPreferenceRepository.save(existingProductPreference);
-
-        return ProductPreferenceDTO.fromEntity(updatedProductPreference);
+                .map(existingProductPreference -> {
+                    // Preference exists → update
+                    existingProductPreference.setPreference(productPreferenceDTO.preference());
+                    ProductPreference updated = productPreferenceRepository.save(existingProductPreference);
+                    return ProductPreferenceDTO.fromEntity(updated);
+                })
+                .orElseGet(() -> {
+                    // Preference does not exist → create
+                    return createProductPreference(productPreferenceDTO);
+                });
     }
 
     @Transactional

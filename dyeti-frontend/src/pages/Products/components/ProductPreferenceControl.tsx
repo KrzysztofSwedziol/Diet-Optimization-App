@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { useDebounce } from '@/hooks/useDebounce';
+import { useState } from 'react';
 import { ProductWithPreference } from '@/types';
 import { useUpdateProductPreference } from '@/api/product/hooks';
 import { clamp } from '@/utils/clamp';
 import * as Ui from './ProductPreferenceControl.styles';
+import { useDebouncedCallback } from '@tanstack/react-pacer';
 
 type Props = {
   productWithPreference: ProductWithPreference;
@@ -14,14 +14,18 @@ const ProductPreferenceControl = ({ productWithPreference }: Props) => {
   const { mutate: updateProductPreference } = useUpdateProductPreference();
 
   const [preference, setPreference] = useState(initialPreference);
-  const debouncedPreference = useDebounce(preference, 300);
 
-  useEffect(() => {
-    updateProductPreference({ productId: product.id, preference: debouncedPreference });
-  }, [debouncedPreference, product.id, updateProductPreference]);
+  const debouncedUpdatePreference = useDebouncedCallback(
+    (preference: number) => {
+      updateProductPreference({ productId: product.id, preference });
+    },
+    { wait: 500 },
+  );
 
   const handleChange = (value: number) => {
-    setPreference(clamp(value, 0, 10));
+    const clampedValue = clamp(value, 0, 10);
+    setPreference(clampedValue);
+    debouncedUpdatePreference(clampedValue);
   };
 
   return (

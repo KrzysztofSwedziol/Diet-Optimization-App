@@ -53,7 +53,7 @@ export type PlanGenerationRequest = {
   description?: string;
   caloriesTarget: number;
   carbsTarget: number;
-  proteinTarget: number;
+  proteinsTarget: number;
   fatsTarget: number;
 };
 

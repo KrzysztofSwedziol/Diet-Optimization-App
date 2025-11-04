@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
 import Input from '../../../components/Inputs/Input/Input.tsx';
-import { AppButton } from '../../../components';
-import { useAuth } from '../../../components/providers/AuthProvider/AuthProvider.tsx';
+import { AppButton, Checkbox } from '@/components';
+import { useAuth } from '@/context';
 import { useNavigate } from 'react-router-dom';
 import { Gender } from '../../../api/types.ts';
 import Select from '../../../components/Inputs/Select/Select.tsx';
@@ -107,19 +107,13 @@ const SignupForm = () => {
 
         <Ui.OptionsContainer>
           <Ui.RememberMe>
-            <input
-              type="checkbox"
-              id="terms"
-              checked={acceptedTerms}
-              onChange={e => setAcceptedTerms(e.target.checked)}
-            />
-            <label htmlFor="terms">
+            <Checkbox checked={acceptedTerms} onChange={e => setAcceptedTerms(e.target.checked)}>
               I have read and agree to the{' '}
               <Ui.Link href="/terms" target="_blank">
                 Terms of Service
               </Ui.Link>
               .
-            </label>
+            </Checkbox>
           </Ui.RememberMe>
         </Ui.OptionsContainer>
 
@@ -127,7 +121,7 @@ const SignupForm = () => {
         {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
       </div>
 
-      <AppButton fullWidth animation type="submit">
+      <AppButton fullWidth type="submit">
         Sign Up
       </AppButton>
     </FormGrid>
