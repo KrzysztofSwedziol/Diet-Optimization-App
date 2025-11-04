@@ -91,7 +91,7 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
           name: name.trim(),
           description: description || undefined,
           caloriesTarget: macroValues.calories,
-          proteinTarget: macroValues.protein,
+          proteinsTarget: macroValues.protein,
           carbsTarget: macroValues.carbs,
           fatsTarget: macroValues.fats,
         };
