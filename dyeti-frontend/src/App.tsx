@@ -1,7 +1,24 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
-import { Home, Plans, Products, Themes, Login, Signup, GeneratePlan, SetConstraint } from './pages/index.ts';
-
+import {
+  Home,
+  Plans,
+  Products,
+  Themes,
+  Login,
+  Signup,
+  GeneratePlan,
+  SetConstraint,
+  ChooseMethod,
+} from './pages/index.ts';
+import { PlanGenerationProvider } from './components/providers/PlanGenerationProvider/PlanGenerationProvider.tsx';
+function PlanGenScope() {
+  return (
+    <PlanGenerationProvider>
+      <Outlet />
+    </PlanGenerationProvider>
+  );
+}
 function App() {
   return (
     <BrowserRouter>
@@ -13,8 +30,11 @@ function App() {
           <Route path="/themes" element={<Themes />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
-          <Route path="/plans/generate" element={<GeneratePlan />} />
-          <Route path="/plans/constraints" element={<SetConstraint />} />
+          <Route element={<PlanGenScope />}>
+            <Route path="/plans/generate" element={<GeneratePlan />} />
+            <Route path="/plans/constraints" element={<SetConstraint />} />
+            <Route path="/plans/method" element={<ChooseMethod />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

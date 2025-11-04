@@ -6,11 +6,12 @@ import { apiRequest } from '../../axios.ts';
 import { HttpMethod, User } from '../../types.ts';
 
 export const useLogIn = () => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.LOGIN,
     mutationFn: AUTH_MUTATION.LOGIN,
     onSuccess: data => {
-      // TODO: Handle successful login
+      queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
       console.log('Login successful:', data.message);
     },
   });

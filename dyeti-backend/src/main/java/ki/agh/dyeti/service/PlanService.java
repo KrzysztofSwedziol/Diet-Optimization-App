@@ -118,4 +118,8 @@ public class PlanService {
         planRepository.save(generatedPlan);
         recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
     }
+
+    public boolean existsByName(Long userId, String name) {
+        return planRepository.findPlanByNameAndOwnerId(name, userId).isPresent();
+    }
 }
