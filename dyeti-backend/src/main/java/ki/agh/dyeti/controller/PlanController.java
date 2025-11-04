@@ -1,16 +1,17 @@
 package ki.agh.dyeti.controller;
 
 import jakarta.validation.constraints.NotBlank;
-import java.time.LocalDateTime;
+import java.util.List;
 import ki.agh.dyeti.dto.PlanDTO;
-import ki.agh.dyeti.dto.request.PlanGenerationRequestDTO;
-import ki.agh.dyeti.model.Plan;
+import ki.agh.dyeti.dto.request.PlanRequestDTO;
+import ki.agh.dyeti.dto.request.PlanUpdateDTO;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.service.PlanService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,24 +36,31 @@ public class PlanController {
         boolean exists = planService.existsByName(user.getId(), name.trim());
         return ResponseEntity.ok(!exists);
     }
-    // TODO: change it to actually generating plan,
-    // if you will renaming this endpoint remember to change it on frontend too both KEYS and mutation
-    @Validated
-    @PostMapping("/products/new")
-    public ResponseEntity<PlanDTO> generateNewPlan(
-            @RequestBody PlanGenerationRequestDTO request, @AuthenticationPrincipal User user) {
-        LocalDateTime now = LocalDateTime.now();
-        Plan plan = Plan.builder()
-                .planName(request.name())
-                .planDescription(request.description())
-                .planDate(now)
-                .energyReq(request.calories())
-                .proteinReq(request.protein())
-                .carbsReq(request.carbs())
-                .fatReq(request.fats())
-                .user(user)
-                .build();
-        PlanDTO generatedPlan = PlanDTO.fromEntity(plan);
-        return ResponseEntity.ok(generatedPlan);
+
+    @PostMapping()
+    public ResponseEntity<String> generatePlan(
+            @AuthenticationPrincipal User user, @RequestBody PlanRequestDTO planRequest) {
+        planService.startPlanGeneration(planRequest, user);
+        return ResponseEntity.ok("Plan generation started");
+    }
+
+    @GetMapping()
+    public List<PlanDTO> getUserPlans(@AuthenticationPrincipal User user) {
+        return planService.getUserPlans(user.getId());
+    }
+
+    @GetMapping("/{id}")
+    public PlanDTO getPlan(@PathVariable Long id) {
+        return planService.getPlan(id);
+    }
+
+    @PutMapping("/{id}")
+    public PlanDTO updatePlan(@PathVariable Long id, @RequestBody PlanUpdateDTO planRequest) {
+        return planService.updatePlan(id, planRequest);
+    }
+
+    @DeleteMapping("{id}")
+    public PlanDTO deletePlan(@PathVariable Long id) {
+        return planService.deletePlan(id);
     }
 }

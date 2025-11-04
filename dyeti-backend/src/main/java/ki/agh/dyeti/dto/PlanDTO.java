@@ -1,25 +1,35 @@
 package ki.agh.dyeti.dto;
 
-import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 import ki.agh.dyeti.model.Plan;
-// TODO: Synchronize it with new version of algo this is jus placeholder for my scope, add products here
 
 public record PlanDTO(
-        String planName,
-        String planDescription,
-        LocalDateTime planDate,
-        Integer energyReq,
-        Integer proteinReq,
-        Integer carbsReq,
-        Integer fatReq) {
+        Long id,
+        String name,
+        String description,
+        Double caloriesTarget,
+        Double proteinsTarget,
+        Double carbsTarget,
+        Double fatsTarget,
+        Double calories,
+        Double proteins,
+        Double carbs,
+        Double fats,
+        List<PlanProductDTO> products) {
     public static PlanDTO fromEntity(Plan plan) {
         return new PlanDTO(
-                plan.getPlanName(),
-                plan.getPlanDescription(),
-                plan.getPlanDate(),
-                plan.getEnergyReq(),
-                plan.getProteinReq(),
-                plan.getCarbsReq(),
-                plan.getFatReq());
+                plan.getId(),
+                plan.getName(),
+                plan.getDescription(),
+                plan.getCaloriesTarget(),
+                plan.getProteinsTarget(),
+                plan.getCarbsTarget(),
+                plan.getFatsTarget(),
+                plan.getCalories(),
+                plan.getProteins(),
+                plan.getCarbs(),
+                plan.getFats(),
+                plan.getProducts().stream().map(PlanProductDTO::fromEntity).collect(Collectors.toList()));
     }
 }

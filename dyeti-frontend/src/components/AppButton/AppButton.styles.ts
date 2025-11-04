@@ -1,4 +1,5 @@
 import { styled, keyframes, css } from 'styled-components';
+import { Size } from '@/components/AppButton/AppButton.tsx';
 
 const pulseLoop = keyframes`
     0% {
@@ -16,47 +17,44 @@ const pulseLoop = keyframes`
 `;
 
 export const StyledButton = styled.button<{
-  $fullWidth?: boolean;
-  $disabled?: boolean;
-  $animation?: boolean;
-  $background: string;
-  $color: string;
-  $padding: string;
-  $fontSize: string;
-  $justify: string;
-  $boxShadow: string;
-  $borderRadius: string;
+  fullwidth: boolean;
+  animation: boolean;
+  reversed: boolean;
+  icon: boolean;
+  size: Size;
 }>`
-  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
-
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  justify-content: ${({ $justify }) => $justify};
+
+  justify-content: ${({ icon }) => (icon ? 'space-between' : 'center')};
 
   margin: auto;
-  padding: ${({ $padding }) => $padding};
-  border-radius: ${({ $borderRadius }) => $borderRadius};
+  padding: ${({ theme, size }) => theme.buttonPadding[size]};
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
 
-  font-size: ${({ $fontSize }) => $fontSize};
+  font-size: ${({ theme, size }) => theme.typography.fontSize[size]};
   line-height: 1;
-  color: ${({ $color }) => $color};
+  color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : theme.colors.primary[100])};
 
-  opacity: ${({ $disabled }) => ($disabled ? 0.6 : 1)};
-  background: ${({ $background }) => $background};
-  box-shadow: ${({ $boxShadow }) => $boxShadow};
+  background: ${({ theme, reversed }) => (reversed ? theme.colors.primary[100] : theme.colors.primary[600])};
+  box-shadow: ${({ theme }) => theme.shadows.md};
 
-  ${({ $fullWidth }) => $fullWidth && 'width: 100%;'}
+  ${({ fullwidth }) => fullwidth && 'width: 100%;'}
 
   &:hover {
-    border-color: ${({ $color }) => $color};
+    border-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : theme.colors.primary[100])};
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 
-    ${({ $animation }) =>
-      $animation &&
+    ${({ animation }) =>
+      animation &&
       css`
         animation: ${pulseLoop} 1.5s linear infinite both;
       `}
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
