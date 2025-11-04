@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
-import Input from '../../../components/Input/Input.tsx';
 import { AppButton, Checkbox } from '@/components';
-import { useAuth } from '../../../components/providers/AuthProvider.tsx';
+import Input from '../../../components/Inputs/Input/Input.tsx';
+import { useAuth } from '@/context';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
@@ -34,7 +34,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Ui.FormGrid onSubmit={handleSubmit}>
       <Input
         label="USERNAME"
         type="text"
@@ -65,7 +65,7 @@ const LoginForm = () => {
       </AppButton>
 
       {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
-    </form>
+    </Ui.FormGrid>
   );
 };
 

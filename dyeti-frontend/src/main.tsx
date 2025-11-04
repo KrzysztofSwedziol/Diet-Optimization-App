@@ -4,7 +4,7 @@ import './index.css';
 import App from './App.tsx';
 import { AppThemeProvider } from './theme/AppThemeProvider.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { AuthProvider } from './components/providers/AuthProvider.tsx';
+import { AuthProvider } from '@/context';
 
 const queryClient = new QueryClient();
 

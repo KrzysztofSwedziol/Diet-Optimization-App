@@ -1,6 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
-import { Home, Plans, Products, Themes, Login, Signup, PlanDetails } from '@/pages';
+import {
+  Home,
+  Plans,
+  Products,
+  Themes,
+  Login,
+  Signup,
+  PlanDetails,
+  GeneratePlan,
+  SetConstraint,
+  ChooseMethod,
+} from '@/pages';
+import { PlanGenerationLayout } from '@/components';
 
 function App() {
   return (
@@ -14,6 +26,11 @@ function App() {
           <Route path="/themes" element={<Themes />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
+          <Route element={<PlanGenerationLayout />}>
+            <Route path="/plans/generate" element={<GeneratePlan />} />
+            <Route path="/plans/constraints" element={<SetConstraint />} />
+            <Route path="/plans/method" element={<ChooseMethod />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

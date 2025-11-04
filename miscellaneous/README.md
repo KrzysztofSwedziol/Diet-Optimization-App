@@ -69,7 +69,7 @@ Powinno się ładnie wypisać. Jeśli nie, to wejść do kontenera ( punkt 4 ) i
 cd docker-entrypoint-initdb.d
 ```
 ```bash
-sh 03_load_data.sh 
+sh 02_load_data_1.sh 
 ```
 
 ### 7.

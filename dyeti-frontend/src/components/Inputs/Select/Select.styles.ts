@@ -1,21 +1,6 @@
 import { styled } from 'styled-components';
 
-export const InputWrapper = styled.div<{ hasError?: boolean }>`
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-`;
-
-export const InputLabel = styled.label`
-  display: flex;
-  flex-direction: column;
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  letter-spacing: 0.09em;
-  color: ${({ theme }) => theme.colors.neutrals[900]};
-`;
-
-export const InputField = styled.input<{ hasError?: boolean }>`
+export const SelectField = styled.select<{ hasError?: boolean }>`
   padding: 8px;
   color: ${({ theme }) => theme.colors.neutrals[900]};
   background: ${({ theme }) => theme.colors.background};
@@ -31,11 +16,4 @@ export const InputField = styled.input<{ hasError?: boolean }>`
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary[700]};
   }
-`;
-
-export const InputError = styled.span`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.danger[500]};
-  margin: 2px;
-  font-style: italic;
 `;
