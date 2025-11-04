@@ -52,3 +52,5 @@ export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
     box-shadow: inset 1em 1em ${({ theme }) => theme.colors.neutrals[300]};
   }
 `;
+
+export const Content = styled.div``;

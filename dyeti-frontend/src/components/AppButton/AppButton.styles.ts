@@ -44,8 +44,8 @@ export const StyledButton = styled.button<{
   ${({ fullwidth }) => fullwidth && 'width: 100%;'}
 
   &:hover {
-    border-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : theme.colors.primary[100])};
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    border-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : 'transparent')};
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 
     ${({ animation }) =>
       animation &&
@@ -53,6 +53,7 @@ export const StyledButton = styled.button<{
         animation: ${pulseLoop} 1.5s linear infinite both;
       `}
   }
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
