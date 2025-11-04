@@ -24,7 +24,7 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
     private static final int MAX_SEGMENTS_AMOUNT = 20;
     private static final double SEGMENT_SIZE = 25.0;
 
-    private static final double CONST_K0 = 0.8;
+    private static final double CONST_K0 = 0.3;
     private static final double REF_CALORIE_DENSITY = 2.0;
 
     // for new variables to allow exceeding the boundaries
@@ -209,6 +209,7 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
         }
 
         Map<Product, List<MPVariable>> productVariables = this.createVariablesListsForProducts(preferences, solver);
+
         MPConstraint calorieConstraint = solver.makeConstraint(0.0, plan.getCaloriesTarget());
         MPConstraint proteinConstraint = solver.makeConstraint(0.0, plan.getProteinsTarget());
         MPConstraint carbohydrateConstraint = solver.makeConstraint(0.0, plan.getCarbsTarget());
@@ -225,8 +226,9 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
                 preferences,
                 objective);
 
-        // this.addExceedingMacroConstraints(calorieConstraint, proteinConstraint, carbohydrateConstraint,
-        // fatConstraint, plan, solver, objective);
+        this.addExceedingMacroConstraints(
+                calorieConstraint, proteinConstraint, carbohydrateConstraint, fatConstraint, plan, solver, objective);
+
         objective.setMaximization();
 
         if (solver.solve() != MPSolver.ResultStatus.OPTIMAL) {
