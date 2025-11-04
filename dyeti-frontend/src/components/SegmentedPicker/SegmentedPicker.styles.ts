@@ -4,24 +4,32 @@ export const Picker = styled.div`
   position: relative;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
+  grid-auto-columns: 1fr; /* wszystkie kolumny równej szerokości */
+  align-items: stretch; /* NIE center – rozciągamy w pionie */
   background: ${({ theme }) => theme.colors.primary[600]};
   border-radius: 9999px;
   padding: 4px;
   height: 40px;
   box-shadow: ${({ theme }) => theme.shadows.md};
-  margin: 10px 0 14px 0;
 `;
 
 export const Pill = styled.button<{ $active?: boolean }>`
   position: relative;
   z-index: 1;
   appearance: none;
+
+  display: flex;
+  align-items: center; /* pionowe wyśrodkowanie */
+  justify-content: center; /* poziome wyśrodkowanie */
+  width: 100%;
+  height: 100%; /* wysokość = wysokość tracka grida (40px - padding) */
+  padding: 0 18px; /* tylko poziomy padding */
+  border-radius: 9999px; /* żeby kształt był jak „pigułka” */
+  line-height: 1;
+
   border: 0;
   background: transparent;
   cursor: pointer;
-  padding: 8px 18px;
-  border-radius: 9999px;
 
   font-family: ${({ theme }) => theme.typography.fontFamily};
   font-size: ${({ theme }) => theme.typography.fontSize.md};
@@ -35,7 +43,6 @@ export const Pill = styled.button<{ $active?: boolean }>`
   &:focus {
     outline: none;
   }
-
   &:focus-visible {
     outline: revert;
   }

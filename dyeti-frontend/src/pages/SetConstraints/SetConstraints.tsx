@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import SegmentedPicker from '../../components/SegmentedPicker/SegmentedPicker.tsx';
 import { useEffect, useRef } from 'react';
 import { Mode } from './types.ts';
+import * as Ui from './SetConstraints.styles.ts';
 import { MacroKey } from '../../components/MacroTable/types.tsx';
 import SetConstraintsForm from './SetConstraintsForm.tsx';
 import { KCAL_PER_G, MODE_OPTIONS, PROPORTIONS } from './constants.ts';
@@ -39,7 +40,7 @@ const SetConstraints = () => {
         setMacroValues(prev => ({ ...prev, calories: kcal }));
       }
     }
-  }, [macroValues.calories, macroValues.carbs, macroValues.protein, macroValues.fats]);
+  }, [macroValues.calories, macroValues.carbs, macroValues.protein, macroValues.fats, setMacroValues]);
 
   const onChangeValue = (key: MacroKey, v: string | number) => {
     const num = typeof v === 'number' ? v : v.trim() === '' ? 0 : Number(v);
@@ -61,15 +62,17 @@ const SetConstraints = () => {
       description="Define how much energy and nutrients you want in your daily plan. We'll handle the rest — intelligently optimizing your plan around these targets."
       logo={{ src: dyeti, alt: 'Dyeti-pencil' }}
     >
-      <SegmentedPicker options={MODE_OPTIONS} value={mode} onChange={val => setMode(val as Mode)} />
+      <Ui.Container>
+        <SegmentedPicker options={MODE_OPTIONS} value={mode} onChange={val => setMode(val as Mode)} />
 
-      <SetConstraintsForm
-        onSubmit={next}
-        macroValues={macroValues}
-        onChange={onChangeValue}
-        mode={mode}
-        onBack={back}
-      />
+        <SetConstraintsForm
+          onSubmit={next}
+          macroValues={macroValues}
+          onChange={onChangeValue}
+          mode={mode}
+          onBack={back}
+        />
+      </Ui.Container>
     </FullLayout>
   );
 };
