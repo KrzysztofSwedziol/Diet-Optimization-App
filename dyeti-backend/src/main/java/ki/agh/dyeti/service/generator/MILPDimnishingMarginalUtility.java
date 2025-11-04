@@ -34,6 +34,8 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
     private static final double PROTEIN_SEGMENT_SIZE = 0.1;
     private static final double FATS_SEGMENT_SIZE = 0.08;
     private static final double CARBS_SEGMENT_SIZE = 0.06;
+    // exceeding boundary speed
+    private static final double BASE = 1.3;
 
     // create list of variables for every product - needed for dimnishing marginal utility law
     public Map<Product, List<MPVariable>> createVariablesListsForProducts(
@@ -115,8 +117,8 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
             double exceedingPreference = exceedingPreferences.get(i);
             double planTarget = planTargets.get(i);
             for (int j = 0; j < MAX_MACRO_SEGMENTS; j++) {
-                double curr_segment_size = exceedingPreference * planTarget;
-                MPVariable variableOver = solver.makeNumVar(0.0, curr_segment_size, "x_" + i + " y_" + j + "over");
+                double currSegmentSize = exceedingPreference * planTarget;
+                MPVariable variableOver = solver.makeNumVar(0.0, currSegmentSize, "x_" + i + " y_" + j + "over");
                 constraint.setCoefficient(variableOver, -1);
                 double variableCoef = this.calculateVariableExceedPenaltyCoeficient(j);
                 objective.setCoefficient(variableOver, variableCoef);
@@ -195,8 +197,7 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
 
     public double calculateVariableExceedPenaltyCoeficient(int segmentNumber) {
         // determines how fast penalty grows with next exceeds
-        double base = 1.3;
-        return -(Math.pow(base, segmentNumber) - 1.0);
+        return -(Math.pow(BASE, segmentNumber) - 1.0);
     }
 
     @Override
