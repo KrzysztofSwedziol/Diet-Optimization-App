@@ -20,22 +20,22 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
     // (variable, f(variable) * preference * product.getGramsPerUnit())
     // and I needed that to implement law of dimnishing values so I'm simulating it with those segments and max int,
     // now each product will have multiple variables with different coeficients according to the mentioned law
-    private static final int MAX_INT_AMOUNT = 15;
-    private static final int MAX_SEGMENTS_AMOUNT = 20;
-    private static final double SEGMENT_SIZE = 25.0;
+    private static final int MAX_INT_AMOUNT = 12;
+    private static final int MAX_SEGMENTS_AMOUNT = 10;
+    private static final double SEGMENT_SIZE = 50.0;
 
-    private static final double CONST_K0 = 0.3;
+    private static final double CONST_K0 = 0.001;
     private static final double REF_CALORIE_DENSITY = 2.0;
 
     // for new variables to allow exceeding the boundaries
     private static final int MAX_MACRO_SEGMENTS = 10;
-    // in percentages (how much we allow to exceed limits)
-    private static final double KCAL_SEGMENT_SIZE = 0.05;
-    private static final double PROTEIN_SEGMENT_SIZE = 0.1;
-    private static final double FATS_SEGMENT_SIZE = 0.08;
-    private static final double CARBS_SEGMENT_SIZE = 0.06;
-    // exceeding boundary speed
-    private static final double BASE = 1.3;
+    // in percentages (how much we allow to exceed limits per segment without changing coefficient)
+    private static final double KCAL_SEGMENT_SIZE = 0.0125;
+    private static final double PROTEIN_SEGMENT_SIZE = 0.0375;
+    private static final double FATS_SEGMENT_SIZE = 0.02;
+    private static final double CARBS_SEGMENT_SIZE = 0.015;
+    // How much exceeding boundaries is penalized
+    private static final double BASE = 1.2;
 
     // create list of variables for every product - needed for dimnishing marginal utility law
     public Map<Product, List<MPVariable>> createVariablesListsForProducts(
@@ -172,14 +172,14 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
 
     public double calculateVariableCoefficient(
             double calorieDensity, double preference, int segmentIndex, Product product) {
-        // function : f(x) = 1 - e^(-k*x)
+        // function : f(x) = log(1 + k*x)
         double k = CONST_K0 * (calorieDensity / REF_CALORIE_DENSITY);
         if (product.getGramsPerUnit() > 1) {
             double intervalStart = segmentIndex * product.getGramsPerUnit();
             double intervalEnd = intervalStart + product.getGramsPerUnit();
 
-            double integralStartValue = 1 - Math.exp(-k * intervalStart);
-            double integralEndValue = 1 - Math.exp(-k * intervalEnd);
+            double integralStartValue = Math.log(1 + k * intervalStart);
+            double integralEndValue = Math.log(1 + k * intervalEnd);
             double marginalUtilityPerUnit = (integralEndValue - integralStartValue);
             return preference * marginalUtilityPerUnit;
 
@@ -187,8 +187,8 @@ public class MILPDimnishingMarginalUtility implements PlanGenerator {
             double intervalStart = segmentIndex * SEGMENT_SIZE;
             double intervalEnd = intervalStart + SEGMENT_SIZE;
 
-            double integralStartValue = 1 - Math.exp(-k * intervalStart);
-            double integralEndValue = 1 - Math.exp(-k * intervalEnd);
+            double integralStartValue = Math.log(1 + k * intervalStart);
+            double integralEndValue = Math.log(1 + k * intervalEnd);
             // creating value per one gram of a product.
             double marginalUtilityPerUnit = (integralEndValue - integralStartValue) / SEGMENT_SIZE;
             return preference * marginalUtilityPerUnit;
