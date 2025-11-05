@@ -3,12 +3,12 @@ import InputWithSuffix from '../Inputs/InputWithSuffix/InputWithSuffix.tsx';
 import { MacroKey, MacroValues } from './types.tsx';
 
 type Props = {
-  values: MacroValues;
+  macroValues: MacroValues;
   onChange: (key: MacroKey, value: string) => void;
   disabledKeys?: MacroKey[];
 };
 
-const MacroTable = ({ values, onChange, disabledKeys = [] }: Props) => {
+const MacroTable = ({ macroValues, onChange, disabledKeys = [] }: Props) => {
   const isDisabled = (k: MacroKey) => disabledKeys.includes(k);
 
   return (
@@ -17,7 +17,7 @@ const MacroTable = ({ values, onChange, disabledKeys = [] }: Props) => {
         <Label>Calories</Label>
         <InputWithSuffix
           type="number"
-          value={values.calories}
+          value={macroValues.calories}
           onChange={e => onChange('calories', e.target.value)}
           placeholder="0"
           suffix="kcal"
@@ -31,7 +31,7 @@ const MacroTable = ({ values, onChange, disabledKeys = [] }: Props) => {
         <Label>Carbs</Label>
         <InputWithSuffix
           type="number"
-          value={values.carbs}
+          value={macroValues.carbs}
           onChange={e => onChange('carbs', e.target.value)}
           placeholder="0"
           suffix="g"
@@ -45,7 +45,7 @@ const MacroTable = ({ values, onChange, disabledKeys = [] }: Props) => {
         <Label>Protein</Label>
         <InputWithSuffix
           type="number"
-          value={values.protein}
+          value={macroValues.protein}
           onChange={e => onChange('protein', e.target.value)}
           placeholder="0"
           suffix="g"
@@ -59,7 +59,7 @@ const MacroTable = ({ values, onChange, disabledKeys = [] }: Props) => {
         <Label>Fats</Label>
         <InputWithSuffix
           type="number"
-          value={values.fats}
+          value={macroValues.fats}
           onChange={e => onChange('fats', e.target.value)}
           placeholder="0"
           suffix="g"

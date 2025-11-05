@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import * as Ui from './SearchBar.styles';
-import { useDebounce } from '@/hooks/useDebounce';
+import { useDebouncedCallback } from '@tanstack/react-pacer';
 
 type Props = {
   onSearch: (query: string) => void;
@@ -9,13 +9,14 @@ type Props = {
 
 const SearchBar = ({ onSearch, placeholder = 'Search...', ...props }: Props) => {
   const [query, setQuery] = useState('');
-  const debouncedQuery = useDebounce(query, 300);
-
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    onSearch(debouncedQuery);
-  }, [onSearch, debouncedQuery]);
+  const debouncedOnSearch = useDebouncedCallback(
+    (query: string) => {
+      onSearch(query);
+    },
+    { wait: 300 },
+  );
 
   const clearSearch = () => {
     setQuery('');
@@ -23,16 +24,15 @@ const SearchBar = ({ onSearch, placeholder = 'Search...', ...props }: Props) => 
     inputRef.current?.focus();
   };
 
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+    debouncedOnSearch(e.target.value);
+  };
+
   return (
     <Ui.Container {...props}>
       <Ui.SearchIcon />
-      <Ui.Input
-        ref={inputRef}
-        type="text"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        placeholder={placeholder}
-      />
+      <Ui.Input ref={inputRef} type="text" value={query} onChange={handleInputChange} placeholder={placeholder} />
       {query && (
         <Ui.ClearButton onClick={clearSearch}>
           <Ui.ClearIcon />

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import * as Ui from '../Auth.styles.ts';
+import { AppButton, Checkbox } from '@/components';
 import Input from '../../../components/Inputs/Input/Input.tsx';
-import { AppButton } from '../../../components';
-import { useAuth } from '../../../components/providers/AuthProvider.tsx';
+import { useAuth } from '@/context';
 import { useNavigate } from 'react-router-dom';
-import { FormGrid } from '../Auth.styles.ts';
 
 const LoginForm = () => {
   const { login } = useAuth();
@@ -24,7 +23,7 @@ const LoginForm = () => {
 
     try {
       await login(username, password);
-      navigate('/account');
+      navigate('/');
     } catch (err) {
       if (err instanceof Error) {
         setErrors({ global: `Invalid username or password: ${err.message}` });
@@ -35,11 +34,11 @@ const LoginForm = () => {
   };
 
   return (
-    <FormGrid onSubmit={handleSubmit}>
+    <Ui.FormGrid onSubmit={handleSubmit}>
       <Input
         label="USERNAME"
         type="text"
-        placeholder="yetiuser"
+        placeholder="Yeti123"
         value={username}
         onChange={e => setUsername(e.target.value)}
         error={errors.username}
@@ -56,19 +55,17 @@ const LoginForm = () => {
 
       <Ui.OptionsContainer>
         <Ui.RememberMe>
-          <input type="checkbox" id="remember" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
-          <span className="custom-checkbox" />
-          <label htmlFor="remember">Remember me</label>
+          <Checkbox label="Remember me" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />
         </Ui.RememberMe>
         <Ui.ForgotPassword href="/forgot-password">Forgot password?</Ui.ForgotPassword>
       </Ui.OptionsContainer>
 
-      <AppButton fullWidth animation type="submit">
+      <AppButton fullWidth type="submit">
         Login
       </AppButton>
 
       {errors.global && <Ui.Error>{errors.global}</Ui.Error>}
-    </FormGrid>
+    </Ui.FormGrid>
   );
 };
 

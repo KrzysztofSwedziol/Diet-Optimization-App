@@ -2,7 +2,6 @@ import InputWrapper from '../InputWrapper';
 import { Shell, Suffix } from './InputWithSuffix.styles.ts';
 import React from 'react';
 import { InputField } from '../Input/Input.styles.ts';
-import type { Property } from 'csstype';
 
 type Props = {
   label?: string;
@@ -13,7 +12,7 @@ type Props = {
   error?: string;
   width?: string;
   suffix?: string;
-  textAlign?: Property.TextAlign;
+  textAlign?: 'left' | 'right' | 'center' | 'justify';
   disabled?: boolean;
 };
 
