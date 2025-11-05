@@ -4,6 +4,7 @@ import { Gender, User } from '../../api/types.ts';
 
 type AuthContextType = {
   user: User | null;
+  isLoggedIn: boolean;
   isLoading: boolean;
   login: (username: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -14,6 +15,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const { data: user, isLoading } = useCheckAuth();
+  const isLoggedIn = !!user;
 
   const loginMutation = useLogIn();
   const logoutMutation = useLogOut();
@@ -35,6 +37,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     <AuthContext.Provider
       value={{
         user: user ?? null,
+        isLoggedIn,
         isLoading,
         login,
         logout,

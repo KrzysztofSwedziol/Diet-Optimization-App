@@ -10,3 +10,4 @@ export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as PlanGenerationLayout } from './PlanGenerationLayout/PlanGenerationLayout';
 export { PageTitle } from './Typography/PageTitle';
 export { PageDescription } from './Typography/PageDescription';
+export { default as ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
