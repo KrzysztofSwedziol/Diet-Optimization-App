@@ -11,6 +11,7 @@ const navItems: NavItem[] = [
   { route: '/', label: 'Home' },
   { route: '/plans', label: 'My Plans' },
   { route: '/products', label: 'Products' },
+  { route: '/account', label: 'Account' },
 ];
 
 const Navbar = () => {
