@@ -82,7 +82,7 @@ public class RecipeService {
                     .recipeName(name)
                     .description(description)
                     .steps(steps)
-                    .owner(user)
+                    .creator(user)
                     .build();
 
         } catch (Exception e) {
@@ -91,13 +91,13 @@ public class RecipeService {
                     .recipeName("Generated Recipe")
                     .description("Recipe could not be parsed properly.")
                     .steps(llmResponse)
-                    .owner(user)
+                    .creator(user)
                     .build();
         }
     }
 
     public List<RecipeDTO> getUserRecipes(Long userId) {
-        return recipeRepository.findByOwnerId(userId).stream()
+        return recipeRepository.findByCreatorId(userId).stream()
                 .map(RecipeDTO::fromEntity)
                 .collect(Collectors.toList());
     }

@@ -1,4 +1,5 @@
-import { SelectWrapper, SelectLabel, SelectField, SelectError } from './Select.styles';
+import { SelectField } from './Select.styles.ts';
+import InputWrapper from '../InputWrapper.tsx';
 
 type Option = {
   value: string;
@@ -8,17 +9,15 @@ type Option = {
 type Props = {
   label: string;
   value: string;
-  paddingY?: number;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   options: Option[];
   error?: string;
 };
 
-const Select = ({ paddingY, label, value, onChange, options, error }: Props) => {
+const Select = ({ label, value, onChange, options, error }: Props) => {
   return (
-    <SelectWrapper>
-      <SelectLabel>{label}</SelectLabel>
-      <SelectField paddingy={paddingY} value={value} onChange={onChange} $haserror={!!error}>
+    <InputWrapper label={label} error={error}>
+      <SelectField value={value} onChange={onChange} hasError={!!error}>
         <option value="">Select {label.toLowerCase()}</option>
         {options.map(opt => (
           <option key={opt.value} value={opt.value}>
@@ -26,8 +25,7 @@ const Select = ({ paddingY, label, value, onChange, options, error }: Props) => 
           </option>
         ))}
       </SelectField>
-      {error && <SelectError>{error}</SelectError>}
-    </SelectWrapper>
+    </InputWrapper>
   );
 };
 

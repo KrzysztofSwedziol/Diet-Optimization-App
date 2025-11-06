@@ -1,7 +1,5 @@
 package ki.agh.dyeti.controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import java.util.Map;
 import ki.agh.dyeti.dto.UserDTO;
@@ -28,11 +26,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody @Valid RegisterRequest req, HttpServletRequest request)
-            throws ServletException {
-        UserDTO dto = customUserDetailsService.register(req);
-        request.login(req.getUsername(), req.getPassword());
-        return ResponseEntity.status(HttpStatus.CREATED).body(dto);
+    public ResponseEntity<UserDTO> registerUser(@RequestBody @Valid RegisterRequest registerRequest) {
+        return ResponseEntity.ok(customUserDetailsService.register(registerRequest));
     }
 
     @GetMapping("/check")

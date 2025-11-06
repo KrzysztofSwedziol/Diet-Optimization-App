@@ -5,7 +5,6 @@ export { default as Products } from './Products/Products.tsx';
 export { default as Themes } from './Themes/Themes.tsx';
 export { default as Login } from './Auth/Login/Login.tsx';
 export { default as Signup } from './Auth/Signup/Signup.tsx';
-export { default as Account } from './Account/Account.tsx';
 export { default as GeneratePlan } from './GeneratePlan/GeneratePlan.tsx';
 export { default as SetConstraint } from './SetConstraints/SetConstraints.tsx';
 export { default as ChooseMethod } from './ChooseMethod/ChooseMethod.tsx';

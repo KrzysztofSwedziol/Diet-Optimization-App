@@ -57,7 +57,7 @@ create table if not exists recipes (
     recipe_name  text,
     description  text,
     steps        text,
-    owner_id   bigint
+    creator_id   bigint
 );
 
 -- RECIPES_PRODUCTS

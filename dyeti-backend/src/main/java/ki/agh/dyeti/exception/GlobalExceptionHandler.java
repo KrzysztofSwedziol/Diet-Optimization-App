@@ -56,10 +56,4 @@ public final class GlobalExceptionHandler {
     public ResponseEntity<?> handleIllegalState(IllegalStateException ex) {
         return errorResponse("", ex.getMessage(), HttpStatus.CONFLICT);
     }
-
-    @ExceptionHandler(WrongCurrentPasswordException.class)
-    public ResponseEntity<?> handleIllegalArgument(WrongCurrentPasswordException ex) {
-
-        return errorResponse("currentPassword", ex.getMessage(), HttpStatus.BAD_REQUEST);
-    }
 }
