@@ -1,7 +1,7 @@
 import { AppButton } from '@/components';
 import * as Ui from './AccountSidebar.styles.ts';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/components/providers/AuthProvider.tsx';
+import { useAuth } from '@/context/AuthProvider/AuthProvider.tsx';
 
 const SidebarFooter = () => {
   const navigate = useNavigate();

@@ -11,8 +11,16 @@ import {
   FiPlusSquare, // Add Product
 } from 'react-icons/fi';
 import { CardCfg } from '@/pages/Account/types.ts';
+import { FaFileSignature } from 'react-icons/fa';
 
 const CARDS: readonly CardCfg[] = [
+  {
+    key: 'generatePlan',
+    to: '/plans/generate',
+    icon: FaFileSignature,
+    title: 'Generate Plan',
+    description: 'Generate new Plan Based on your food preferences.',
+  },
   {
     key: 'myPlans',
     to: '/plans',
@@ -26,6 +34,13 @@ const CARDS: readonly CardCfg[] = [
     icon: FiPackage,
     title: 'My Products',
     description: 'Manage all products — add new ones or remove old ones.',
+  },
+  {
+    key: 'myPreferences',
+    to: '/preferences',
+    icon: FiSliders,
+    title: 'My Preferences',
+    description: 'Manage preferences applied to products.',
   },
   {
     key: 'addedProducts',
@@ -48,13 +63,7 @@ const CARDS: readonly CardCfg[] = [
     title: 'My Goals',
     description: 'Your weight and calorie targets.',
   },
-  {
-    key: 'myPreferences',
-    to: '/preferences',
-    icon: FiSliders,
-    title: 'My Preferences',
-    description: 'Manage preferences applied to products.',
-  },
+
   {
     key: 'addRecipe',
     to: '/recipes/new',

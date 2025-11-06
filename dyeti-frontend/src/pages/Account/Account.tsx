@@ -1,5 +1,5 @@
 import * as Ui from './Account.styles';
-import { useAuth } from '@/components/providers/AuthProvider';
+import { useAuth } from '@/context/AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import AccountSidebar from '@/pages/Account/components/sidebar/AccountSidebar.tsx';
