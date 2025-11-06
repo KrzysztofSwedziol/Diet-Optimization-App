@@ -14,12 +14,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-`;
-
 export const StatusContainer = styled.div`
   flex: 1;
   display: flex;

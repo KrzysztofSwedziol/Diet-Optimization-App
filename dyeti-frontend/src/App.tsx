@@ -1,7 +1,19 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
-import { Home, Plans, Products, Themes, Login, Signup, Account } from './pages/index.ts';
-import GeneratePlan from './pages/GeneratePlan/GeneratePlan.tsx';
+import {
+  Home,
+  Plans,
+  Products,
+  Themes,
+  Login,
+  Signup,
+  PlanDetails,
+  GeneratePlan,
+  SetConstraint,
+  ChooseMethod,
+  Account,
+} from '@/pages';
+import { PlanGenerationLayout, ProtectedRoute } from '@/components';
 
 function App() {
   return (
@@ -9,13 +21,21 @@ function App() {
       <Routes>
         <Route path={'/'} element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/themes" element={<Themes />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/plans/generate" element={<GeneratePlan />} />
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="/plans" element={<Plans />} />
+            <Route path="plans/:planId" element={<PlanDetails />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/themes" element={<Themes />} />
+            <Route path="/account" element={<Account />} />
+            <Route element={<PlanGenerationLayout />}>
+              <Route path="/plans/generate" element={<GeneratePlan />} />
+              <Route path="/plans/constraints" element={<SetConstraint />} />
+              <Route path="/plans/method" element={<ChooseMethod />} />
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

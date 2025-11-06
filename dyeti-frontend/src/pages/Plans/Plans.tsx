@@ -2,6 +2,7 @@ import { useGetPlans } from '@/api/plan/hooks';
 import * as Ui from './Plans.styles';
 import PlansTable from './components/PlansTable';
 import { Spinner } from '@/components';
+import Header from './components/Header';
 
 const Plans = () => {
   const { data: plans = [], isLoading, isError } = useGetPlans();
@@ -23,7 +24,7 @@ const Plans = () => {
 
   return (
     <Ui.Container>
-      <Ui.Title>Plans</Ui.Title>
+      <Header />
       <PlansTable plans={plans} />
     </Ui.Container>
   );

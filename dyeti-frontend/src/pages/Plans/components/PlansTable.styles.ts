@@ -25,3 +25,17 @@ export const Grid = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0;
+`;
+
+export const EmptyMessage = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.colors.neutrals[500]};
+  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  text-align: center;
+`;

@@ -1,16 +1,8 @@
 import { styled } from 'styled-components';
 
-export const Logo = styled.img`
-  width: 50%;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-`;
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: inherit;
-  width: 100%;
+export const FormGrid = styled.form`
+  display: grid;
+  row-gap: 16px;
 `;
 
 export const ForgotPassword = styled.a`
@@ -18,6 +10,7 @@ export const ForgotPassword = styled.a`
   color: ${({ theme }) => theme.colors.primary[700]};
 
   &:hover {
+    color: ${({ theme }) => theme.colors.primary[700]};
     text-decoration: underline;
   }
 `;
@@ -39,28 +32,12 @@ export const OptionsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin: 16px 0;
 `;
 
 export const Error = styled.p`
   color: ${({ theme }) => theme.colors.danger[500]};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
-`;
-export const Footer = styled.div`
-  text-align: center;
-  margin-top: 8px;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.neutrals[600]};
-
-  a {
-    color: ${({ theme }) => theme.colors.primary[700]};
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 export const Link = styled.a`

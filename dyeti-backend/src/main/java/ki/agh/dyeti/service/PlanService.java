@@ -13,7 +13,6 @@ import ki.agh.dyeti.model.*;
 import ki.agh.dyeti.repository.PlanRepository;
 import ki.agh.dyeti.security.ResourceAccessValidator;
 import ki.agh.dyeti.service.generator.PlanGenerator;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,16 +22,19 @@ public class PlanService {
     private final ProductPreferenceService productPreferenceService;
     private final ResourceAccessValidator resourceAccessValidator;
     private final PlanGenerator planGenerator;
+    private final RecipeService recipeService;
 
     public PlanService(
             PlanRepository planRepository,
             ProductPreferenceService productPreferenceService,
             ResourceAccessValidator resourceAccessValidator,
-            PlanGenerator planGenerator) {
+            PlanGenerator planGenerator,
+            RecipeService recipeService) {
         this.planRepository = planRepository;
         this.productPreferenceService = productPreferenceService;
         this.resourceAccessValidator = resourceAccessValidator;
         this.planGenerator = planGenerator;
+        this.recipeService = recipeService;
     }
 
     public List<PlanDTO> getUserPlans(Long userId) {
@@ -87,7 +89,6 @@ public class PlanService {
     }
 
     @Transactional
-    @Async
     public void startPlanGeneration(PlanRequestDTO planRequestDTO, User user) {
         Map<Product, Double> productPreferences =
                 productPreferenceService.getProductPreferencesMapByUserId(user.getId());
@@ -115,5 +116,10 @@ public class PlanService {
 
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
+        // recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
+    }
+
+    public boolean existsByName(Long userId, String name) {
+        return planRepository.findPlanByNameAndOwnerId(name, userId).isPresent();
     }
 }

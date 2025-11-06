@@ -2,43 +2,46 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import AUTH_MUTATION from '../auth.mutation';
 import AUTH_KEYS from '../auth.keys';
 
-import { User } from '../../types.ts';
-
-export const useCheckAuth = () =>
-  useQuery<User | null>({
-    queryKey: AUTH_KEYS.CHECK,
-    queryFn: AUTH_MUTATION.CHECK,
-    retry: false,
-    refetchOnWindowFocus: false,
-  });
+import { apiRequest } from '../../axios.ts';
+import { HttpMethod, User } from '../../types.ts';
 
 export const useLogIn = () => {
-  const qc = useQueryClient();
+  const queryClient = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.LOGIN,
     mutationFn: AUTH_MUTATION.LOGIN,
-    onSuccess: async () => {
-      await qc.fetchQuery({ queryKey: AUTH_KEYS.CHECK, queryFn: AUTH_MUTATION.CHECK });
+    onSuccess: data => {
+      queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
+      console.log('Login successful:', data.message);
+    },
+  });
+};
+export const useLogOut = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationKey: AUTH_KEYS.LOGOUT,
+    mutationFn: AUTH_MUTATION.LOGOUT,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
     },
   });
 };
 
 export const useRegister = () => {
-  const qc = useQueryClient();
+  const queryClient = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.REGISTER,
     mutationFn: AUTH_MUTATION.REGISTER,
-    onSuccess: user => qc.setQueryData(AUTH_KEYS.CHECK, user),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
+    },
   });
 };
 
-export const useLogOut = () => {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationKey: AUTH_KEYS.LOGOUT,
-    mutationFn: AUTH_MUTATION.LOGOUT,
-    onSuccess: () => {
-      qc.setQueryData<User | null>(AUTH_KEYS.CHECK, null);
-    },
+export const useCheckAuth = () => {
+  return useQuery<User>({
+    queryKey: AUTH_KEYS.CHECK,
+    queryFn: () => apiRequest<User>(HttpMethod.GET, '/auth/check'),
+    retry: false,
   });
 };

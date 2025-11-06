@@ -82,3 +82,38 @@ export type ChangePasswordRequest = {
   currentPassword: string;
   newPassword: string;
 };
+export type PlanGenerationRequest = {
+  name: string;
+  description?: string;
+  caloriesTarget: number;
+  carbsTarget: number;
+  proteinsTarget: number;
+  fatsTarget: number;
+};
+
+export type PlanApi = {
+  name: string;
+  description?: string | null;
+  planDate: string;
+  caloriesTarget: number;
+  proteinsTarget: number;
+  carbsTarget: number;
+  fatsTarget: number;
+  calories: number;
+  proteins: number;
+  carbs: number;
+  fats: number;
+};
+export type Plan = Omit<PlanApi, 'planDate'> & { planDate: Date };
+
+export type FieldErrors = Partial<Record<'name' | 'calories' | 'carbs' | 'protein' | 'fats' | 'method', string>>;
+export type GenerateResult =
+  | { ok: true; message: string }
+  | {
+      ok: false;
+      code: 'INVALID_INPUT' | 'UNSUPPORTED_METHOD' | 'NAME_TAKEN' | 'NETWORK';
+      message: string;
+      fieldErrors?: FieldErrors;
+    };
+
+export type GenerationMode = 'PRODUCT' | 'MEAL';
