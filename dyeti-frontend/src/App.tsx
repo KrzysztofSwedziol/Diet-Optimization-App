@@ -11,6 +11,7 @@ import {
   GeneratePlan,
   SetConstraint,
   ChooseMethod,
+  Account,
 } from '@/pages';
 import { PlanGenerationLayout, ProtectedRoute } from '@/components';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="plans/:planId" element={<PlanDetails />} />
             <Route path="/products" element={<Products />} />
             <Route path="/themes" element={<Themes />} />
+            <Route path="/account" element={<Account />} />
             <Route element={<PlanGenerationLayout />}>
               <Route path="/plans/generate" element={<GeneratePlan />} />
               <Route path="/plans/constraints" element={<SetConstraint />} />
