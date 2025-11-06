@@ -36,7 +36,7 @@ const InputWithSuffix = ({
         disabled={disabled}
         value={value}
         onChange={onChange}
-        hasError={!!error}
+        $haserror={!!error}
         textAlign={textAlign}
       />
       {suffix && <Suffix>{suffix}</Suffix>}
