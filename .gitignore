@@ -10,3 +10,5 @@ out/
 # VSCode
 .vscode/
 .history/
+
+miscellaneous/devops/free_ports.txt
