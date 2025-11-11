@@ -31,11 +31,11 @@ docker exec -it "$(docker ps -q -f name=dyeti-postgres)" bash
 
 kliknąć tu:  
 
-![db_where](screenshots/db_where.png)
+![db_where](../screenshots/db_where.png)
 
 I następnie tak uzupełnić:
 
-![db_config](screenshots/db_config.png)
+![db_config](../screenshots/db_config.png)
 
 ### tak uzupełnić
 
