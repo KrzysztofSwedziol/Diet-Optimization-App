@@ -19,7 +19,7 @@ services:
       - ./miscellaneous/postgres-database/init:/docker-entrypoint-initdb.d:ro
       - ./miscellaneous/postgres-database/data:/seed:ro
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U dyeti -d dyeti_db" ]
+      test: ["CMD-SHELL", "pg_isready -U dyeti -d dyeti_db"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -32,10 +32,11 @@ services:
     volumes:
       - ollama_models:/root/.ollama
     restart: unless-stopped
-    shm_size: '1g'
+    shm_size: "1g"
     command: ["serve"]
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsS http://localhost:11434/v1/models || exit 1"]
+      test:
+        ["CMD-SHELL", "curl -fsS http://localhost:11434/v1/models || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -47,7 +48,12 @@ services:
       - ollama
     volumes:
       - ollama_models:/root/.ollama
-    entrypoint: [ "bash", "-c", "sleep 5 && OLLAMA_HOST=http://ollama:11434 ollama pull mistral" ]
+    entrypoint:
+      [
+        "bash",
+        "-c",
+        "sleep 5 && OLLAMA_HOST=http://ollama:11434 ollama pull mistral",
+      ]
     restart: "no"
 
   backend-dev:
