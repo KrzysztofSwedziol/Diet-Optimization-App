@@ -105,7 +105,7 @@ alter table plan_product add foreign key (product_id) references products(id);
 alter table product_preference add foreign key (owner_id) references users(id);
 alter table product_preference add foreign key (product_id) references products(id);
 
-alter table recipes add foreign key (creator_id) references users(id);
+alter table recipes add foreign key (owner_id) references users(id);
 
 alter table recipes_products add foreign key (recipe_id) references recipes(id);
 alter table recipes_products add foreign key (product_id) references products(id);

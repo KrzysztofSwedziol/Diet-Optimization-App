@@ -28,13 +28,15 @@ public final class User implements UserDetails {
     private String email;
     private String password;
     private Integer age;
-    private Gender gender;
     private Integer height;
     private Integer weight;
     private Integer energyReq;
     private Integer proteinReq;
     private Integer carbsReq;
     private Integer fatReq;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     @Enumerated(EnumType.STRING)
     private Role role;
