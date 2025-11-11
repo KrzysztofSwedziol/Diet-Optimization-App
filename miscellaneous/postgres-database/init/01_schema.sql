@@ -83,14 +83,14 @@ create table if not exists users (
      email        text,
      password     text,
      age          integer,
-     gender       text,
+     gender       varchar(10), -- MALE / FEMALE
      height       integer,
      weight       integer,
      energy_req   integer,
      protein_req  integer,
      carbs_req    integer,
      fat_req      integer,
-     role         text
+     role         varchar(50)
 );
 
 -- Adding foreign key constraints to enforce relationships between tables
