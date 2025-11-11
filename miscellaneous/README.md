@@ -14,7 +14,7 @@ Volumens down
 docker compose down -v
 ```
 
-Zatrzymanie wszytskich konkenerów ( działających )\
+Zatrzymanie wszytskich konkenerów ( działających )
 ```bash
 docker stop $(docker ps -aq)
 ```
