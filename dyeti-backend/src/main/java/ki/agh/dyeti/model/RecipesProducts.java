@@ -1,9 +1,6 @@
 package ki.agh.dyeti.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import ki.agh.dyeti.model.util.RecipesProductsId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,5 +23,7 @@ public class RecipesProducts {
     private Long productId;
 
     private Double quantity;
+
+    @Enumerated(EnumType.STRING)
     private PortionType portionType;
 }
