@@ -1,81 +1,112 @@
-## Krok po kroku
+# HOW 2 RUN
+wszystkie komnedy tutaj są na windowsa  
+(poza dockerowymi, bo one wszędzie są takie same )
+## 1. Przygotowanie środowiska
 
-### 1. Uruchomić **Docker Desktop**  
+#### 1.1 Wolne porty
+Żeby uniknąć problemu z zajetymi portami i żeby nie szukać ich po ciemku,
+odsyłam do `miscellaneous/devops/README.md`
 
-( albo **Rancher Desktop**, czy jakikolwiek inny orkiestrator, który ogarnia Dockera )
+#### 1.2 Czyszczenie kontenerów
 
-### 2.
-w katalogu `\Diet-Optimization-App\miscellaneous\postgres-databse`
-
-```bash
-docker compose build
-```
-### 3.
-```bash
-docker compose up -d
-```
-
-### 4. ( dla testu  )
-wchodzenie do kontenera na windowsie:
-```bash
-docker exec -it $(docker ps -q -f "name=dyeti-postgres") bash
-```
-
-i na linuxie / macu:
-```bash
-docker exec -it "$(docker ps -q -f name=dyeti-postgres)" bash
-```
-( wychodzi się przez komedne exit z terminala )
-
-### 5. łączenie sie z Intelij
-
-kliknąć tu:  
-
-![db_where](screenshots/db_where.png)
-
-I następnie tak uzupełnić:
-
-![db_config](screenshots/db_config.png)
-
-### tak uzupełnić
-
-| Klucz    | Wartość                 |
-|----------|--------------------------|
-| Host     | 127.0.0.1                |
-| User     | dyeti                    |
-| Password | dyeti_pass               |
-| Port     | 55433                    |
-| Database | dyeti_db                 |
-| URL      | jdbc:postgresql://127.0.0.1:55433/dyeti_db |
-
-na screenie jest ssl disable, bez tego powinno działać, automatyczny URL powinen być okej
-
----
-Note:
-- 127.0.0.1 (nie localhost, bo zinterpretuje po swojemu i się nie będzie działać)
-- 55433 (taki duży, bo na mniejszych Bóg wie czemu nie chce działać)
-
-### 6. query
-**plusik → Query Console**
- 
-```sql
-select * from products
-```
-
-Powinno się ładnie wypisać. Jeśli nie, to wejść do kontenera ( punkt 4 ) i ręcznie odpalić
-`03_load_data.sh`
-
-```bash
-cd docker-entrypoint-initdb.d
-```
-```bash
-sh 02_load_data_1.sh 
-```
-
-### 7.
-
-usunięcie i zburzenie kontenera:
-
+Volumens down
 ```bash
 docker compose down -v
+```
+
+Zatrzymanie wszytskich konkenerów ( działających )
+```bash
+docker stop $(docker ps -aq)
+```
+Burzenie ich
+```bash
+docker rm -f $(docker ps -aq)
+```
+
+Opcja atomowa, niszczy wszystko, kontenery, volumeny i images z całego systemu  
+( ostrożnie )
+```bash
+docker system prune -a --volumes
+```
+
+## 2. Baza danych
+
+Zbudowanie i odpalanie kontenera
+```bash
+
+docker compose up -d --build postgres
+```
+
+Do weryfkacji czy działa okej odsyłam do `miscellaneous/postgres-database/README.md`
+
+## 3. Ollama
+
+```bash
+
+docker compose up -d ollama
+```
+
+Check czy działa
+```bash
+
+Invoke-WebRequest "http://localhost:49152/api/version" | Select-Object -ExpandProperty Content
+```
+
+Jeśli w terminalu zwróci nam:
+
+```json
+{"version":"0.9.0"}
+```
+
+To raczej jest okej
+
+## 4. Ollama init
+
+```bash
+
+docker compose up --build --no-deps ollama-init
+```
+
+jak wyświetli się na koncu takie coś:
+```text
+
+ollama-init exited with code 0
+```
+
+To znaczy że raczej jest okej
+
+Dodatkowy check (zważka na to, jaki jest numer portu w docker-compose):
+```bash
+Invoke-WebRequest -Method POST `
+  -Uri "http://localhost:49152/api/generate" `
+  -ContentType "application/json" `
+  -Body '{"model":"mistral","prompt":"ping"}'
+```
+
+Odpowiedź powinna wyglądać mniej więcej tak
+```text
+StatusCode        : 200
+StatusDescription : OK
+Content           : {123, 34, 109, 111...}
+RawContent        : HTTP/1.1 200 OK
+                    Transfer-Encoding: chunked
+                    Content-Type: application/x-ndjson
+                    Date: Tue, 11 Nov 2025 19:50:16 GMT
+
+                    {"model":"mistral","created_at":"2025-11-11T19:50:16.653034355Z","response":" He...
+Headers           : {[Transfer-Encoding, chunked], [Content-Type, application/x-ndjson], [Date, Tue, 11 Nov 2025 19:50:16 GMT]}
+RawContentLength  : 25318
+```
+
+## 5. Backend
+
+```bash
+
+docker compose --profile dev up -d --build backend-dev
+```
+
+## 6. Frontend
+
+```bash
+docker compose --profile dev up -d --build frontend-dev
 ```
