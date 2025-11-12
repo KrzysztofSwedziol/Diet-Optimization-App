@@ -109,7 +109,7 @@ export const DesktopNav = styled.nav`
   display: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    display: block;
+    display: flex;
     height: 100%;
   }
 `;
@@ -161,7 +161,13 @@ export const MobileMenu = styled.aside`
   }
 `;
 
+export const MobileNav = styled.nav`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const MobileNavList = styled(NavListBase)`
+  flex: 1;
   flex-direction: column;
 `;
 
