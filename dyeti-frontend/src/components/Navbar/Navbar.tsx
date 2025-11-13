@@ -1,21 +1,27 @@
 import { useState } from 'react';
 import * as Ui from './Navbar.styles';
 import dyetiLogo from '../../assets/dyeti-logo.svg';
+import { useAuth } from '@/context';
+import AuthSection from './components/AuthSection';
 
 type NavItem = {
   route: string;
   label: string;
+  protected?: boolean;
 };
 
 const navItems: NavItem[] = [
-  { route: '/', label: 'Home' },
-  { route: '/plans', label: 'My Plans' },
-  { route: '/products', label: 'Products' },
-  { route: '/account', label: 'Account' },
+  { route: '/', label: 'Home', protected: true },
+  { route: '/plans', label: 'My Plans', protected: true },
+  { route: '/products', label: 'Products', protected: true },
+  { route: '/account', label: 'Account', protected: true },
 ];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isLoggedIn } = useAuth();
+
+  const visibleNavItems = navItems.filter(item => !item.protected || isLoggedIn);
 
   return (
     <>
@@ -31,7 +37,7 @@ const Navbar = () => {
 
         <Ui.DesktopNav>
           <Ui.DesktopNavList>
-            {navItems.map(item => (
+            {visibleNavItems.map(item => (
               <li key={item.route}>
                 <Ui.DesktopNavLink to={item.route} end>
                   {item.label}
@@ -39,14 +45,15 @@ const Navbar = () => {
               </li>
             ))}
           </Ui.DesktopNavList>
+          <AuthSection />
         </Ui.DesktopNav>
       </Ui.Container>
 
       {isMenuOpen && (
         <Ui.MobileMenu>
-          <nav>
+          <Ui.MobileNav>
             <Ui.MobileNavList>
-              {navItems.map(item => (
+              {visibleNavItems.map(item => (
                 <li key={item.route}>
                   <Ui.MobileNavLink to={item.route} end>
                     {item.label}
@@ -54,7 +61,8 @@ const Navbar = () => {
                 </li>
               ))}
             </Ui.MobileNavList>
-          </nav>
+            <AuthSection />
+          </Ui.MobileNav>
         </Ui.MobileMenu>
       )}
     </>
