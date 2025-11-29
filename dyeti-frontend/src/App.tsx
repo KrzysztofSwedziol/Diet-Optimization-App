@@ -12,6 +12,7 @@ import {
   SetConstraint,
   ChooseMethod,
   Account,
+  Preferences,
 } from '@/pages';
 import { PlanGenerationLayout, ProtectedRoute } from '@/components';
 
@@ -27,6 +28,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/plans" element={<Plans />} />
             <Route path="plans/:planId" element={<PlanDetails />} />
+            <Route path="/preferences" element={<Preferences />} />
             <Route path="/products" element={<Products />} />
             <Route path="/themes" element={<Themes />} />
             <Route path="/account" element={<Account />} />
