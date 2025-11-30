@@ -1,10 +1,15 @@
-import { useGetProductsWithPreferences } from '@/api/product/hooks';
+import { useGetProductsWithPreferences, useUpdateProductPreference } from '@/api/product/hooks';
 import ProductsSearchBar from './components/ProductsSearchBar';
 import * as Ui from './Preferences.styles';
 import { Spinner } from '@/components';
+import ProductModal from './components/ProductModal';
+import { useState } from 'react';
+import { ProductWithPreference } from '@/types';
 
 const Preferences = () => {
   const { data: products, isLoading: isLoading, isError } = useGetProductsWithPreferences();
+  const { mutate: updateProductPreference } = useUpdateProductPreference();
+  const [selectedProduct, setSelectedProduct] = useState<ProductWithPreference | null>(null);
 
   if (isLoading)
     return (
@@ -25,12 +30,19 @@ const Preferences = () => {
 
   return (
     <Ui.Container>
-      <ProductsSearchBar products={products} />
+      <ProductsSearchBar products={products} onProductClick={setSelectedProduct} />
       {productsWithPreferences.map(({ product, preference }) => (
         <div key={product.id}>
           {product.name}: {preference}
         </div>
       ))}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onSavePreference={(id, preference) => updateProductPreference({ productId: id, preference })}
+        />
+      )}
     </Ui.Container>
   );
 };

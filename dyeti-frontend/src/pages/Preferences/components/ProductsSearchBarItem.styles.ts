@@ -45,26 +45,12 @@ export const FavoriteIcon = styled(MdFavoriteBorder).attrs({ size: 16 })`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const NutritionRow = styled.div`
-  display: flex;
-  gap: 16px;
-`;
-
-export const NutritionBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const NutritionLabel = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.xs};
+export const NutritionDescription = styled.p`
+  margin: 0;
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
   color: ${({ theme }) => theme.colors.neutrals[500]};
-  text-transform: uppercase;
-  white-space: nowrap;
 `;
 
-export const NutritionValue = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.md};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  color: ${({ theme }) => theme.colors.text};
-  white-space: nowrap;
+export const NutritionInfoContainer = styled.div`
+  max-width: 300px;
 `;

@@ -1,47 +1,36 @@
 import { ProductWithPreference } from '@/types';
 import * as Ui from './ProductsSearchBarItem.styles';
+import NutritionInfo from './NutritionInfo';
 
 type Props = {
   product: ProductWithPreference;
+  onClick: () => void;
 };
 
-const ProductsSearchBarItem = ({ product }: Props) => {
-  const p = product.product;
-  const showPreference = product.preference !== 0;
+const ProductsSearchBarItem = ({ product: productWithPreference, onClick }: Props) => {
+  const { product, preference } = productWithPreference;
+  const showPreference = productWithPreference.preference !== 0;
 
   return (
-    <Ui.Container>
+    <Ui.Container onClick={onClick}>
       <Ui.HeaderRow>
-        <Ui.Name>{p.name}</Ui.Name>
+        <Ui.Name>{product.name}</Ui.Name>
 
         {showPreference && (
           <Ui.Preference>
-            <Ui.FavoriteIcon /> {product.preference}
+            <Ui.FavoriteIcon /> {preference}
           </Ui.Preference>
         )}
       </Ui.HeaderRow>
-
-      <Ui.NutritionRow>
-        <Ui.NutritionBlock>
-          <Ui.NutritionLabel>Kcal</Ui.NutritionLabel>
-          <Ui.NutritionValue>{p.kcal100g}</Ui.NutritionValue>
-        </Ui.NutritionBlock>
-
-        <Ui.NutritionBlock>
-          <Ui.NutritionLabel>Protein</Ui.NutritionLabel>
-          <Ui.NutritionValue>{p.protein100g} g</Ui.NutritionValue>
-        </Ui.NutritionBlock>
-
-        <Ui.NutritionBlock>
-          <Ui.NutritionLabel>Carbs</Ui.NutritionLabel>
-          <Ui.NutritionValue>{p.carbs100g} g</Ui.NutritionValue>
-        </Ui.NutritionBlock>
-
-        <Ui.NutritionBlock>
-          <Ui.NutritionLabel>Fat</Ui.NutritionLabel>
-          <Ui.NutritionValue>{p.fat100g} g</Ui.NutritionValue>
-        </Ui.NutritionBlock>
-      </Ui.NutritionRow>
+      <Ui.NutritionDescription>Nutrition (per 100g):</Ui.NutritionDescription>
+      <Ui.NutritionInfoContainer>
+        <NutritionInfo
+          kcal={product.kcal100g}
+          protein={product.protein100g}
+          carbs={product.carbs100g}
+          fat={product.fat100g}
+        />
+      </Ui.NutritionInfoContainer>
     </Ui.Container>
   );
 };
