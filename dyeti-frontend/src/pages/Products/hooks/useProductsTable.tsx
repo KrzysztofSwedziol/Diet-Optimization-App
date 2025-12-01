@@ -11,7 +11,7 @@ import {
   getPaginationRowModel,
 } from '@tanstack/react-table';
 import { ProductWithPreference } from '@/types';
-import ProductPreferenceControl from '../components/ProductPreferenceControl';
+// import ProductPreferenceControl from '../components/ProductPreferenceControl';
 import ProductName from '../components/ProductName';
 
 type Props = {
@@ -31,12 +31,12 @@ const columns: ColumnDef<ProductWithPreference, ReactNode>[] = [
   { id: 'protein', header: 'Protein (100g)', accessorKey: 'product.protein100g' },
   { id: 'carbs', header: 'Carbs (100g)', accessorKey: 'product.carbs100g' },
   { id: 'fat', header: 'Fat (100g)', accessorKey: 'product.fat100g' },
-  {
-    id: 'preference',
-    header: 'Preference',
-    accessorKey: 'preference',
-    cell: info => <ProductPreferenceControl productWithPreference={info.row.original} />,
-  },
+  // {
+  //   id: 'preference',
+  //   header: 'Preference',
+  //   accessorKey: 'preference',
+  //   cell: info => <ProductPreferenceControl productWithPreference={info.row.original} />,
+  // },
 ];
 
 const hideColumnsBelow: Partial<Record<'md' | 'xl', string[]>> = {
