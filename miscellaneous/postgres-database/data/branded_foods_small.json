@@ -1,0 +1,6596 @@
+[
+  {
+    "usdaId": 344646,
+    "name": "kellogg apple jacks .9oz 100ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3862,
+      "name": "pouch",
+      "symbol": "pouch"
+    },
+    "gramsPerUnit": 25.0,
+    "kcal100g": 370.0,
+    "protein100g": 5.2,
+    "carbs100g": 87.8,
+    "fat100g": 3.7
+  },
+  {
+    "usdaId": 344922,
+    "name": "gardenburger gb veggie burgers black bean 3oz 48ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 1041,
+      "name": "patty",
+      "symbol": "patty"
+    },
+    "gramsPerUnit": 85.0,
+    "kcal100g": 112.0,
+    "protein100g": 10.8,
+    "carbs100g": 16.9,
+    "fat100g": 3.0
+  },
+  {
+    "usdaId": 345313,
+    "name": "keebler cones waffle cone 264ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 423.0,
+    "protein100g": 6.0,
+    "carbs100g": 88.0,
+    "fat100g": 5.0
+  },
+  {
+    "usdaId": 345315,
+    "name": "keebler cones waffle bowl 60ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 19.0,
+    "kcal100g": 424.0,
+    "protein100g": 6.5,
+    "carbs100g": 87.7,
+    "fat100g": 5.3
+  },
+  {
+    "usdaId": 345361,
+    "name": "sunshine krispy saltines .4oz - kelloggs",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 12.0,
+    "kcal100g": 416.0,
+    "protein100g": 10.1,
+    "carbs100g": 76.4,
+    "fat100g": 8.5
+  },
+  {
+    "usdaId": 345495,
+    "name": "keebler cones waffle cone 216ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 23.0,
+    "kcal100g": 423.0,
+    "protein100g": 6.0,
+    "carbs100g": 88.0,
+    "fat100g": 5.0
+  },
+  {
+    "usdaId": 345496,
+    "name": "keebler cones waffle cone confetti 198ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 23.0,
+    "kcal100g": 411.0,
+    "protein100g": 6.2,
+    "carbs100g": 87.4,
+    "fat100g": 4.1
+  },
+  {
+    "usdaId": 345497,
+    "name": "keebler cones waffle cone 198ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 23.0,
+    "kcal100g": 423.0,
+    "protein100g": 6.0,
+    "carbs100g": 88.0,
+    "fat100g": 5.0
+  },
+  {
+    "usdaId": 345819,
+    "name": "keebler cones cake 98.4oz - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 5.0,
+    "kcal100g": 397.0,
+    "protein100g": 8.8,
+    "carbs100g": 84.4,
+    "fat100g": 2.7
+  },
+  {
+    "usdaId": 345844,
+    "name": "keebler cones cake 600ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 5.0,
+    "kcal100g": 397.0,
+    "protein100g": 8.8,
+    "carbs100g": 84.4,
+    "fat100g": 2.7
+  },
+  {
+    "usdaId": 345845,
+    "name": "keebler cones cake 1000ct - kelloggs",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 5.0,
+    "kcal100g": 397.0,
+    "protein100g": 8.8,
+    "carbs100g": 84.4,
+    "fat100g": 2.7
+  },
+  {
+    "usdaId": 358228,
+    "name": "five cheese pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1050,
+      "name": "slice",
+      "symbol": "slice"
+    },
+    "gramsPerUnit": 57.5,
+    "kcal100g": 200.0,
+    "protein100g": 7.83,
+    "carbs100g": 28.7,
+    "fat100g": 5.22
+  },
+  {
+    "usdaId": 366522,
+    "name": "dr. oetker, instant mousse mix, strawberry - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 68.0,
+    "kcal100g": 471.0,
+    "protein100g": 5.88,
+    "carbs100g": 76.47,
+    "fat100g": 11.76
+  },
+  {
+    "usdaId": 366523,
+    "name": "dr. oetker, light mousses, instant dessert mix, dark chocolate - dr oetker",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 9.0,
+    "kcal100g": 444.0,
+    "protein100g": 11.11,
+    "carbs100g": 44.44,
+    "fat100g": 22.22
+  },
+  {
+    "usdaId": 373751,
+    "name": "dr oetker, mug cake instant cake mix, vanilla & dark chocolate - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 73.0,
+    "kcal100g": 438.0,
+    "protein100g": 5.48,
+    "carbs100g": 73.97,
+    "fat100g": 13.7
+  },
+  {
+    "usdaId": 373752,
+    "name": "dr oetker, mug cake instant cake mix, chocolate - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 85.0,
+    "kcal100g": 435.0,
+    "protein100g": 4.71,
+    "carbs100g": 75.29,
+    "fat100g": 10.59
+  },
+  {
+    "usdaId": 376068,
+    "name": "dr. oetker, ristorante, thin crust pizza vegetable - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 384.3843843843844,
+    "kcal100g": 219.0,
+    "protein100g": 6.25,
+    "carbs100g": 25.0,
+    "fat100g": 9.38
+  },
+  {
+    "usdaId": 376070,
+    "name": "dr. oetker, ristorante, thin crust pizza with pepperoni, mozzarella, pesto - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 360.3603603603604,
+    "kcal100g": 250.0,
+    "protein100g": 8.33,
+    "carbs100g": 25.0,
+    "fat100g": 13.33
+  },
+  {
+    "usdaId": 376071,
+    "name": "virtuoso thin + crispy crust pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 393.93939393939394,
+    "kcal100g": 223.0,
+    "protein100g": 6.92,
+    "carbs100g": 22.31,
+    "fat100g": 11.54
+  },
+  {
+    "usdaId": 376073,
+    "name": "mozzarella & pesto pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 326.0,
+    "kcal100g": 264.0,
+    "protein100g": 10.43,
+    "carbs100g": 25.77,
+    "fat100g": 13.5
+  },
+  {
+    "usdaId": 379879,
+    "name": "thin crust pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 339.33933933933935,
+    "kcal100g": 265.0,
+    "protein100g": 10.62,
+    "carbs100g": 23.89,
+    "fat100g": 14.16
+  },
+  {
+    "usdaId": 381715,
+    "name": "mousse - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 88.0,
+    "kcal100g": 455.0,
+    "protein100g": 9.09,
+    "carbs100g": 68.18,
+    "fat100g": 13.64
+  },
+  {
+    "usdaId": 381830,
+    "name": "hazelnut spread + breadsticks - nutella",
+    "unit": {
+      "usdaUnitId": 1059,
+      "name": "unit",
+      "symbol": "unit"
+    },
+    "gramsPerUnit": 52.0,
+    "kcal100g": 519.0,
+    "protein100g": 7.69,
+    "carbs100g": 65.38,
+    "fat100g": 26.92
+  },
+  {
+    "usdaId": 381842,
+    "name": "ellio's, pizzeria style thick crust pepperoni pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1050,
+      "name": "slice",
+      "symbol": "slice"
+    },
+    "gramsPerUnit": 74.0,
+    "kcal100g": 223.0,
+    "protein100g": 8.78,
+    "carbs100g": 29.73,
+    "fat100g": 7.43
+  },
+  {
+    "usdaId": 383404,
+    "name": "classic creme brilee instant dessert mix - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 104.0,
+    "kcal100g": 385.0,
+    "protein100g": 0.0,
+    "carbs100g": 88.46,
+    "fat100g": 3.85
+  },
+  {
+    "usdaId": 383410,
+    "name": "instant mousse mix - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 76.0,
+    "kcal100g": 421.0,
+    "protein100g": 0.0,
+    "carbs100g": 84.21,
+    "fat100g": 10.53
+  },
+  {
+    "usdaId": 390316,
+    "name": "nutella ferrero with breadsticks - nutella",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 52.0,
+    "kcal100g": 519.0,
+    "protein100g": 7.69,
+    "carbs100g": 65.38,
+    "fat100g": 26.92
+  },
+  {
+    "usdaId": 392004,
+    "name": "dr. oetker, black forest cake mix - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 564.516129032258,
+    "kcal100g": 314.0,
+    "protein100g": 2.86,
+    "carbs100g": 71.43,
+    "fat100g": 2.86
+  },
+  {
+    "usdaId": 395330,
+    "name": "dr oetker, instant dessert mix, creme caramel, with caramel sauce - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 104.0,
+    "kcal100g": 385.0,
+    "protein100g": 0.0,
+    "carbs100g": 88.46,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 395553,
+    "name": "dr. oetker, instant mousse mix, dark chocolate truffle - dr oetker",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 88.0,
+    "kcal100g": 455.0,
+    "protein100g": 9.09,
+    "carbs100g": 68.18,
+    "fat100g": 13.64
+  },
+  {
+    "usdaId": 397684,
+    "name": "knorr, bouillon, beef - knorr",
+    "unit": {
+      "usdaUnitId": 3299,
+      "name": "cube",
+      "symbol": "cube"
+    },
+    "gramsPerUnit": 10.0,
+    "kcal100g": 200.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 398015,
+    "name": "knorr, chinese style soup mix, corn & chicken - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 10.0,
+    "kcal100g": 333.0,
+    "protein100g": 6.67,
+    "carbs100g": 66.67,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 429986,
+    "name": "sprite, lemon-lime beverage mix - sprite",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.27777862548828,
+    "kcal100g": 196.0,
+    "protein100g": 0.0,
+    "carbs100g": 53.05,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 461469,
+    "name": "chicken soup mix - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 12.0,
+    "kcal100g": 333.0,
+    "protein100g": 5.56,
+    "carbs100g": 72.22,
+    "fat100g": 2.78
+  },
+  {
+    "usdaId": 465196,
+    "name": "organic bbq sauce - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 147.0,
+    "protein100g": 0.0,
+    "carbs100g": 41.18,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 468105,
+    "name": "sauce for roast dark - knorr",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 33.0,
+    "protein100g": 1.33,
+    "carbs100g": 5.33,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 476736,
+    "name": "happy cola gummy candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 4.0,
+    "kcal100g": 325.0,
+    "protein100g": 7.5,
+    "carbs100g": 72.5,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 476739,
+    "name": "happy hoppers gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 4.2,
+    "kcal100g": 357.0,
+    "protein100g": 7.14,
+    "carbs100g": 83.33,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 476741,
+    "name": "gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 10.0,
+    "kcal100g": 375.0,
+    "protein100g": 7.5,
+    "carbs100g": 82.5,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 478199,
+    "name": "truly instant brown gravy mix - knorr",
+    "unit": {
+      "usdaUnitId": 1002,
+      "name": "teaspoon",
+      "symbol": "teaspoon"
+    },
+    "gramsPerUnit": 3.0,
+    "kcal100g": 333.0,
+    "protein100g": 0.0,
+    "carbs100g": 66.67,
+    "fat100g": 8.33
+  },
+  {
+    "usdaId": 485196,
+    "name": "smoothie - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 65.0,
+    "protein100g": 2.15,
+    "carbs100g": 11.83,
+    "fat100g": 0.54
+  },
+  {
+    "usdaId": 486648,
+    "name": "gold-bears gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.294117647058824,
+    "kcal100g": 359.0,
+    "protein100g": 7.69,
+    "carbs100g": 79.49,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 491753,
+    "name": "drink mix - danone",
+    "unit": {
+      "usdaUnitId": 1048,
+      "name": "scoop",
+      "symbol": "scoop"
+    },
+    "gramsPerUnit": 35.0,
+    "kcal100g": 371.0,
+    "protein100g": 57.14,
+    "carbs100g": 14.29,
+    "fat100g": 11.43
+  },
+  {
+    "usdaId": 493669,
+    "name": "wish-bone, light vinaigrette dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 167.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 13.33
+  },
+  {
+    "usdaId": 493856,
+    "name": "supreme pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1050,
+      "name": "slice",
+      "symbol": "slice"
+    },
+    "gramsPerUnit": 62.0,
+    "kcal100g": 218.0,
+    "protein100g": 9.68,
+    "carbs100g": 29.84,
+    "fat100g": 6.45
+  },
+  {
+    "usdaId": 493952,
+    "name": "wish-bone, asian with sesame & ginger vinaigrette dressing, light - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 16.67,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 494460,
+    "name": "frogs gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 341.0,
+    "protein100g": 7.32,
+    "carbs100g": 75.61,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 494461,
+    "name": "gummi candy, raspberries - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 3.9,
+    "kcal100g": 359.0,
+    "protein100g": 2.56,
+    "carbs100g": 92.31,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 494950,
+    "name": "wish-bone, light dressing, italian - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 117.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 8.33
+  },
+  {
+    "usdaId": 494951,
+    "name": "wish-bone, italian dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 267.0,
+    "protein100g": 0.0,
+    "carbs100g": 13.33,
+    "fat100g": 23.33
+  },
+  {
+    "usdaId": 494952,
+    "name": "wish-bone, light italian dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 117.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 8.33
+  },
+  {
+    "usdaId": 494953,
+    "name": "wish-bone, robusto italian dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 267.0,
+    "protein100g": 0.0,
+    "carbs100g": 13.33,
+    "fat100g": 23.33
+  },
+  {
+    "usdaId": 494954,
+    "name": "wish-bone, mediterranean italian dressing with extra virgin olive oil - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 200.0,
+    "protein100g": 0.0,
+    "carbs100g": 13.33,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 494955,
+    "name": "wish-bone, house italian dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 367.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 494957,
+    "name": "light vinaigrette dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 23.33,
+    "fat100g": 13.33
+  },
+  {
+    "usdaId": 494964,
+    "name": "wish-bone, thousand island dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 433.0,
+    "protein100g": 0.0,
+    "carbs100g": 16.67,
+    "fat100g": 40.0
+  },
+  {
+    "usdaId": 494968,
+    "name": "dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 433.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 43.33
+  },
+  {
+    "usdaId": 494969,
+    "name": "wish-bone, creamy italian dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 367.0,
+    "protein100g": 3.33,
+    "carbs100g": 13.33,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 494970,
+    "name": "wish-bone, western, sweet & smooth dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 533.0,
+    "protein100g": 0.0,
+    "carbs100g": 40.0,
+    "fat100g": 40.0
+  },
+  {
+    "usdaId": 494971,
+    "name": "wish-bone, western, the original sweet & smooth dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 533.0,
+    "protein100g": 0.0,
+    "carbs100g": 40.0,
+    "fat100g": 40.0
+  },
+  {
+    "usdaId": 496356,
+    "name": "greek vinaigrette dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 200.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 496509,
+    "name": "half and half lemonade tea - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 19.0,
+    "protein100g": 0.0,
+    "carbs100g": 5.06,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 496510,
+    "name": "lemonade tea peach - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 30.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.75,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 496511,
+    "name": "hubert's, half & half, lemonade tea, original - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 34.0,
+    "protein100g": 0.0,
+    "carbs100g": 8.02,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 496512,
+    "name": "lemonade tea, original green tea - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 25.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.75,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 497751,
+    "name": "energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 497764,
+    "name": "ultra citron energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 497773,
+    "name": "rehab iced tea energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 4.0,
+    "protein100g": 0.0,
+    "carbs100g": 1.25,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 497825,
+    "name": "lo carb energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 6.0,
+    "protein100g": 0.0,
+    "carbs100g": 1.25,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 497965,
+    "name": "wish-bone, light honey dijon dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 20.0,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 497966,
+    "name": "wish-bone, light blue cheese dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 3.33,
+    "carbs100g": 6.67,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 498004,
+    "name": "wish-bone, vinaigrette dressing, balsamic italian - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 13.33,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 498071,
+    "name": "wish bone, creamy caesar dressing - lipton",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 502991,
+    "name": "bold & crispy crinkle fries - heinz",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 190.0,
+    "protein100g": 2.38,
+    "carbs100g": 26.19,
+    "fat100g": 8.33
+  },
+  {
+    "usdaId": 502992,
+    "name": "tater tots - heinz",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 7.166666666666667,
+    "kcal100g": 198.0,
+    "protein100g": 2.33,
+    "carbs100g": 24.42,
+    "fat100g": 10.47
+  },
+  {
+    "usdaId": 502993,
+    "name": "taquitos - heinz",
+    "unit": {
+      "usdaUnitId": 4128,
+      "name": "taquitos",
+      "symbol": "taquitos"
+    },
+    "gramsPerUnit": 34.0,
+    "kcal100g": 279.0,
+    "protein100g": 8.82,
+    "carbs100g": 39.71,
+    "fat100g": 10.29
+  },
+  {
+    "usdaId": 502994,
+    "name": "pizza snacks! - heinz",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 239.0,
+    "protein100g": 7.95,
+    "carbs100g": 37.5,
+    "fat100g": 6.82
+  },
+  {
+    "usdaId": 502996,
+    "name": "beef taquitos - heinz",
+    "unit": {
+      "usdaUnitId": 4128,
+      "name": "taquitos",
+      "symbol": "taquitos"
+    },
+    "gramsPerUnit": 28.33333333333333,
+    "kcal100g": 271.0,
+    "protein100g": 7.06,
+    "carbs100g": 43.53,
+    "fat100g": 8.24
+  },
+  {
+    "usdaId": 503022,
+    "name": "steak fajitas - heinz",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 226.0,
+    "kcal100g": 124.0,
+    "protein100g": 6.64,
+    "carbs100g": 17.7,
+    "fat100g": 3.1
+  },
+  {
+    "usdaId": 503035,
+    "name": "fettucini alfredo with broccoli florets in a creamy alfredo sauce - heinz",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 262.0,
+    "kcal100g": 95.0,
+    "protein100g": 3.82,
+    "carbs100g": 17.56,
+    "fat100g": 0.76
+  },
+  {
+    "usdaId": 503037,
+    "name": "gravy - heinz",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 240.0,
+    "kcal100g": 25.0,
+    "protein100g": 0.0,
+    "carbs100g": 5.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 503040,
+    "name": "dill relish - heinz",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 503041,
+    "name": "crinkle fries - heinz",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 214.0,
+    "protein100g": 2.38,
+    "carbs100g": 17.86,
+    "fat100g": 14.29
+  },
+  {
+    "usdaId": 503042,
+    "name": "real mayonnaise - heinz",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 643.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 71.43
+  },
+  {
+    "usdaId": 503047,
+    "name": "tasty american favorites chicken slider - heinz",
+    "unit": {
+      "usdaUnitId": 4038,
+      "name": "slider",
+      "symbol": "slider"
+    },
+    "gramsPerUnit": 70.0,
+    "kcal100g": 300.0,
+    "protein100g": 12.86,
+    "carbs100g": 30.0,
+    "fat100g": 12.86
+  },
+  {
+    "usdaId": 503049,
+    "name": "steakhouse fries potatoes - heinz",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 179.0,
+    "protein100g": 1.19,
+    "carbs100g": 19.05,
+    "fat100g": 9.52
+  },
+  {
+    "usdaId": 503057,
+    "name": "pizza snacks - heinz",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 239.0,
+    "protein100g": 7.95,
+    "carbs100g": 37.5,
+    "fat100g": 6.82
+  },
+  {
+    "usdaId": 503316,
+    "name": "irish blend energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 46.0,
+    "protein100g": 2.08,
+    "carbs100g": 7.08,
+    "fat100g": 0.83
+  },
+  {
+    "usdaId": 503783,
+    "name": "fantasy cookie company, assorted holiday cookies - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 500.0,
+    "protein100g": 3.57,
+    "carbs100g": 53.57,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 504036,
+    "name": "oreos, chocolate covered - oreo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 0.0,
+    "carbs100g": 71.43,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 504170,
+    "name": "monster energy, zero calorie energy drink - monster",
+    "unit": {
+      "usdaUnitId": 1019,
+      "name": "can",
+      "symbol": "can"
+    },
+    "gramsPerUnit": 500.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 504171,
+    "name": "monster, rehab peach tea + energy - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 4.0,
+    "protein100g": 0.0,
+    "carbs100g": 1.25,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 504222,
+    "name": "crisp wafers - kitkat",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 26.19
+  },
+  {
+    "usdaId": 504295,
+    "name": "tropical fantasy, premium lemonade, cherry blue - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.0,
+    "carbs100g": 5.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 504501,
+    "name": "williams & bennett, belgian milk chocolate drenched mini pretzels - fanta",
+    "unit": {
+      "usdaUnitId": 3872,
+      "name": "pretzels",
+      "symbol": "pretzels"
+    },
+    "gramsPerUnit": 4.666666666666667,
+    "kcal100g": 429.0,
+    "protein100g": 7.14,
+    "carbs100g": 42.86,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 504502,
+    "name": "williams & bennett, cookies, belgian chocolate drenched oreo - fanta",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 500.0,
+    "protein100g": 4.55,
+    "carbs100g": 63.64,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 504503,
+    "name": "williams & bennett, belgian chocolate oreo cookies - fanta",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 500.0,
+    "protein100g": 4.55,
+    "carbs100g": 63.64,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 504573,
+    "name": "cheetos, chester cheetos jumbo colmillos snacks, spicy cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.299999237060547,
+    "kcal100g": 541.0,
+    "protein100g": 7.07,
+    "carbs100g": 56.54,
+    "fat100g": 31.8
+  },
+  {
+    "usdaId": 504733,
+    "name": "williams & bennett, sandwich cookies, belgian milk chocolate drenched - fanta",
+    "unit": {
+      "usdaUnitId": 3249,
+      "name": "cookies",
+      "symbol": "cookies"
+    },
+    "gramsPerUnit": 5.8,
+    "kcal100g": 500.0,
+    "protein100g": 6.9,
+    "carbs100g": 65.52,
+    "fat100g": 24.14
+  },
+  {
+    "usdaId": 504734,
+    "name": "williams & bennett, belgian milk chocolate drenched mini caramels - fanta",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 4.875,
+    "kcal100g": 462.0,
+    "protein100g": 5.13,
+    "carbs100g": 71.79,
+    "fat100g": 17.95
+  },
+  {
+    "usdaId": 505309,
+    "name": "filled baking morsels - nestle",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 571.0,
+    "protein100g": 0.0,
+    "carbs100g": 57.14,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 505312,
+    "name": "bittersweet chocolate morsels - nestle",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 50.0,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 505313,
+    "name": "blondie mix - nestle",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 240.0,
+    "kcal100g": 433.0,
+    "protein100g": 3.33,
+    "carbs100g": 80.0,
+    "fat100g": 10.0
+  },
+  {
+    "usdaId": 505314,
+    "name": "milk chocolate peanut butter filled morsel blondie kit - nestle",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 1567.5675675675675,
+    "kcal100g": 414.0,
+    "protein100g": 3.45,
+    "carbs100g": 75.86,
+    "fat100g": 12.07
+  },
+  {
+    "usdaId": 505316,
+    "name": "holiday morsels - nestle",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 505447,
+    "name": "ultimates chocolate deluxe cookies - nestle",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 38.0,
+    "kcal100g": 474.0,
+    "protein100g": 5.26,
+    "carbs100g": 57.89,
+    "fat100g": 23.68
+  },
+  {
+    "usdaId": 505448,
+    "name": "turtle cookies with caramel, pecans & semi-sweet chocolate chips - nestle",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 38.0,
+    "kcal100g": 474.0,
+    "protein100g": 5.26,
+    "carbs100g": 55.26,
+    "fat100g": 26.32
+  },
+  {
+    "usdaId": 505449,
+    "name": "chocolate chip cookie dough - nestle",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 19.0,
+    "kcal100g": 474.0,
+    "protein100g": 5.26,
+    "carbs100g": 57.89,
+    "fat100g": 23.68
+  },
+  {
+    "usdaId": 505450,
+    "name": "nestle, toll house, holiday chocolate chip cookies - nestle",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 19.0,
+    "kcal100g": 474.0,
+    "protein100g": 5.26,
+    "carbs100g": 57.89,
+    "fat100g": 23.68
+  },
+  {
+    "usdaId": 505451,
+    "name": "gingerbread cookie dough sheets - nestle",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 440.0,
+    "protein100g": 4.0,
+    "carbs100g": 60.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 505489,
+    "name": "coffee creamer - nestle",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 233.0,
+    "protein100g": 0.0,
+    "carbs100g": 33.33,
+    "fat100g": 10.0
+  },
+  {
+    "usdaId": 505493,
+    "name": "arrowhead, mountain spring water, sparkling lemon - nestle",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 505494,
+    "name": "arrowhead, sparkling mountain spring water, watermelon lime - nestle",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 505568,
+    "name": "aero - nestle",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 42.0,
+    "kcal100g": 524.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 26.19
+  },
+  {
+    "usdaId": 506400,
+    "name": "root beer candy - lays",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 390.0,
+    "protein100g": 0.0,
+    "carbs100g": 100.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 506401,
+    "name": "tutti-frutti candy - lays",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 390.0,
+    "protein100g": 0.0,
+    "carbs100g": 100.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 506402,
+    "name": "handmade tropical candy - lays",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 390.0,
+    "protein100g": 0.0,
+    "carbs100g": 100.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 506644,
+    "name": "home style baked beans - heinz",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 260.0,
+    "kcal100g": 115.0,
+    "protein100g": 4.62,
+    "carbs100g": 23.08,
+    "fat100g": 0.38
+  },
+  {
+    "usdaId": 506645,
+    "name": "homestyle baked beans - heinz",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 260.0,
+    "kcal100g": 115.0,
+    "protein100g": 4.62,
+    "carbs100g": 22.31,
+    "fat100g": 0.77
+  },
+  {
+    "usdaId": 507164,
+    "name": "lasagna with meat & sauce - nestle",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 2734.939759036145,
+    "kcal100g": 123.0,
+    "protein100g": 7.05,
+    "carbs100g": 15.42,
+    "fat100g": 3.52
+  },
+  {
+    "usdaId": 507167,
+    "name": "korean-style bbq sauce & meatballs - nestle",
+    "unit": {
+      "usdaUnitId": 3613,
+      "name": "meatballs",
+      "symbol": "meatballs"
+    },
+    "gramsPerUnit": 28.33333333333333,
+    "kcal100g": 129.0,
+    "protein100g": 8.24,
+    "carbs100g": 16.47,
+    "fat100g": 3.53
+  },
+  {
+    "usdaId": 507540,
+    "name": "sauce 'n toss wing sauce - nestle",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 16.0,
+    "kcal100g": 156.0,
+    "protein100g": 0.0,
+    "carbs100g": 9.38,
+    "fat100g": 14.06
+  },
+  {
+    "usdaId": 509085,
+    "name": "crisp wafers in milk chocolate - kitkat",
+    "unit": {
+      "usdaUnitId": 3426,
+      "name": "four",
+      "symbol": "four"
+    },
+    "gramsPerUnit": 42.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 26.19
+  },
+  {
+    "usdaId": 509285,
+    "name": "madness marshmallow - fanta",
+    "unit": {
+      "usdaUnitId": 3604,
+      "name": "marshmallow",
+      "symbol": "marshmallow"
+    },
+    "gramsPerUnit": 35.0,
+    "kcal100g": 543.0,
+    "protein100g": 5.71,
+    "carbs100g": 91.43,
+    "fat100g": 17.14
+  },
+  {
+    "usdaId": 509593,
+    "name": "alpenmilch schokolade & lu kekse - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 516.0,
+    "protein100g": 6.4,
+    "carbs100g": 62.0,
+    "fat100g": 26.0
+  },
+  {
+    "usdaId": 510041,
+    "name": "curried quinoa blend - fanta",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 168.0,
+    "kcal100g": 381.0,
+    "protein100g": 14.29,
+    "carbs100g": 59.52,
+    "fat100g": 10.71
+  },
+  {
+    "usdaId": 510245,
+    "name": "potato chips - lays",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 35.400001525878906,
+    "kcal100g": 508.0,
+    "protein100g": 5.65,
+    "carbs100g": 56.5,
+    "fat100g": 28.25
+  },
+  {
+    "usdaId": 510344,
+    "name": "potato chips - pringles",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 67.0,
+    "kcal100g": 522.0,
+    "protein100g": 4.48,
+    "carbs100g": 52.24,
+    "fat100g": 34.33
+  },
+  {
+    "usdaId": 510757,
+    "name": "sirloin steak sandwich - kinder",
+    "unit": {
+      "usdaUnitId": 1078,
+      "name": "sandwich",
+      "symbol": "sandwich"
+    },
+    "gramsPerUnit": 177.0,
+    "kcal100g": 243.0,
+    "protein100g": 12.99,
+    "carbs100g": 30.51,
+    "fat100g": 7.34
+  },
+  {
+    "usdaId": 511385,
+    "name": "twix, milk chocolate covered caramel and biscuit bar - twix",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 495.0,
+    "protein100g": 4.5,
+    "carbs100g": 64.5,
+    "fat100g": 23.9
+  },
+  {
+    "usdaId": 511452,
+    "name": "kona blend energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 50.0,
+    "protein100g": 2.08,
+    "carbs100g": 8.75,
+    "fat100g": 0.83
+  },
+  {
+    "usdaId": 511453,
+    "name": "coffee + energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.83,
+    "carbs100g": 2.92,
+    "fat100g": 0.62
+  },
+  {
+    "usdaId": 511457,
+    "name": "energy iced tea drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 4.0,
+    "protein100g": 0.0,
+    "carbs100g": 1.25,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 511459,
+    "name": "ultra sunrise energy drink - monster",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 515317,
+    "name": "original aloe vera drink - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 36.0,
+    "protein100g": 0.0,
+    "carbs100g": 9.2,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 515320,
+    "name": "aloe vera drink - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 34.0,
+    "protein100g": 0.0,
+    "carbs100g": 8.4,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 517623,
+    "name": "mixed berry blast squeezables lowfat yogurt - danone",
+    "unit": {
+      "usdaUnitId": 3862,
+      "name": "pouch",
+      "symbol": "pouch"
+    },
+    "gramsPerUnit": 99.0,
+    "kcal100g": 81.0,
+    "protein100g": 4.04,
+    "carbs100g": 14.14,
+    "fat100g": 1.01
+  },
+  {
+    "usdaId": 521387,
+    "name": "revolution gelato - fanta",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 186.0,
+    "kcal100g": 183.0,
+    "protein100g": 3.23,
+    "carbs100g": 27.96,
+    "fat100g": 9.68
+  },
+  {
+    "usdaId": 522494,
+    "name": "loud salsa fiesta corn crisps - pringles",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 523008,
+    "name": "virtuoso classic crust pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1108,
+      "name": "pizza",
+      "symbol": "pizza"
+    },
+    "gramsPerUnit": 429.42942942942943,
+    "kcal100g": 294.0,
+    "protein100g": 11.19,
+    "carbs100g": 29.37,
+    "fat100g": 13.99
+  },
+  {
+    "usdaId": 523014,
+    "name": "white crisp wafers 'n creme - kitkat",
+    "unit": {
+      "usdaUnitId": 3426,
+      "name": "four",
+      "symbol": "four"
+    },
+    "gramsPerUnit": 42.0,
+    "kcal100g": 524.0,
+    "protein100g": 4.76,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 530380,
+    "name": "original macadamia milk - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 29.0,
+    "protein100g": 0.42,
+    "carbs100g": 2.92,
+    "fat100g": 2.08
+  },
+  {
+    "usdaId": 531057,
+    "name": "cheese pizza - dr oetker",
+    "unit": {
+      "usdaUnitId": 1050,
+      "name": "slice",
+      "symbol": "slice"
+    },
+    "gramsPerUnit": 57.5,
+    "kcal100g": 200.0,
+    "protein100g": 8.7,
+    "carbs100g": 28.7,
+    "fat100g": 5.22
+  },
+  {
+    "usdaId": 531144,
+    "name": "cookie bars - twix",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 500.0,
+    "protein100g": 4.55,
+    "carbs100g": 68.18,
+    "fat100g": 22.73
+  },
+  {
+    "usdaId": 532002,
+    "name": "mayonnaise - hellmanns",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 667.0,
+    "protein100g": 1.33,
+    "carbs100g": 0.0,
+    "fat100g": 73.33
+  },
+  {
+    "usdaId": 533607,
+    "name": "premium pink lemonade - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.0,
+    "carbs100g": 5.08,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 534658,
+    "name": "premium juice cocktail - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 38.0,
+    "protein100g": 0.0,
+    "carbs100g": 9.75,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 535009,
+    "name": "liquid seasoning original - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 18.0,
+    "kcal100g": 111.0,
+    "protein100g": 5.56,
+    "carbs100g": 22.22,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 536762,
+    "name": "mac & cheese snacks, made with real cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 27.0,
+    "kcal100g": 321.0,
+    "protein100g": 7.41,
+    "carbs100g": 33.33,
+    "fat100g": 16.05
+  },
+  {
+    "usdaId": 538652,
+    "name": "juice cocktail - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.0,
+    "carbs100g": 5.42,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 539789,
+    "name": "fanta, soda, raspberry & passionfruit - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 28.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.7,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 540260,
+    "name": "nescafe, excella, instant coffee, fuwa latte caramel - nescafe",
+    "unit": {
+      "usdaUnitId": 1055,
+      "name": "stick",
+      "symbol": "stick"
+    },
+    "gramsPerUnit": 7.0,
+    "kcal100g": 571.0,
+    "protein100g": 0.0,
+    "carbs100g": 71.43,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 540594,
+    "name": "energy drink - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 44.0,
+    "protein100g": 0.4,
+    "carbs100g": 11.2,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 541207,
+    "name": "red bull, total zero, the cherry edition energy drink, wild cherry - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.28,
+    "carbs100g": 0.28,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 541365,
+    "name": "total zero energy drink - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.4,
+    "carbs100g": 0.4,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 541366,
+    "name": "red bull, energy drink - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 45.0,
+    "protein100g": 0.28,
+    "carbs100g": 11.27,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 541735,
+    "name": "yellow energy drink - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 45.0,
+    "protein100g": 0.28,
+    "carbs100g": 11.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 541736,
+    "name": "the blue edition energy drink - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 45.0,
+    "protein100g": 0.28,
+    "carbs100g": 11.55,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 542066,
+    "name": "total zero - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.28,
+    "carbs100g": 0.28,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 542070,
+    "name": "sugarfree soda - red bull",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 3.0,
+    "protein100g": 0.28,
+    "carbs100g": 1.13,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 542364,
+    "name": "teriyaki marinade & sauce - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 167.0,
+    "protein100g": 0.0,
+    "carbs100g": 46.67,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 547998,
+    "name": "bbq sauce - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 147.0,
+    "protein100g": 0.0,
+    "carbs100g": 32.35,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 548245,
+    "name": "prime rib rub - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 549048,
+    "name": "breaded macaroni and cheese snacks - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 27.0,
+    "kcal100g": 296.0,
+    "protein100g": 7.41,
+    "carbs100g": 35.8,
+    "fat100g": 13.58
+  },
+  {
+    "usdaId": 550365,
+    "name": "cereal - oreo",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 30.0,
+    "kcal100g": 400.0,
+    "protein100g": 3.33,
+    "carbs100g": 83.33,
+    "fat100g": 5.0
+  },
+  {
+    "usdaId": 552589,
+    "name": "potato & egg salad - hellmanns",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 36.0,
+    "kcal100g": 106.0,
+    "protein100g": 0.56,
+    "carbs100g": 14.44,
+    "fat100g": 4.44
+  },
+  {
+    "usdaId": 553371,
+    "name": "100% alpine milk chocolate - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 529.0,
+    "protein100g": 5.33,
+    "carbs100g": 57.78,
+    "fat100g": 29.78
+  },
+  {
+    "usdaId": 553383,
+    "name": "red borsch - knorr",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.225806451612904,
+    "kcal100g": 343.0,
+    "protein100g": 0.0,
+    "carbs100g": 85.71,
+    "fat100g": 2.86
+  },
+  {
+    "usdaId": 554202,
+    "name": "cookies and creme cake - oreo",
+    "unit": {
+      "usdaUnitId": 1093,
+      "name": "cake",
+      "symbol": "cake"
+    },
+    "gramsPerUnit": 656.0,
+    "kcal100g": 427.0,
+    "protein100g": 2.44,
+    "carbs100g": 59.76,
+    "fat100g": 19.51
+  },
+  {
+    "usdaId": 554663,
+    "name": "hot cocoa mix - oreo",
+    "unit": {
+      "usdaUnitId": 1040,
+      "name": "packet",
+      "symbol": "packet"
+    },
+    "gramsPerUnit": 35.0,
+    "kcal100g": 429.0,
+    "protein100g": 5.71,
+    "carbs100g": 80.0,
+    "fat100g": 10.0
+  },
+  {
+    "usdaId": 554875,
+    "name": "williams & bennett, belgian milk chocolate drenched peanut butter dreams - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 500.0,
+    "protein100g": 6.67,
+    "carbs100g": 66.67,
+    "fat100g": 26.67
+  },
+  {
+    "usdaId": 565038,
+    "name": "chicken bouillon - knorr",
+    "unit": {
+      "usdaUnitId": 3299,
+      "name": "cube",
+      "symbol": "cube"
+    },
+    "gramsPerUnit": 10.0,
+    "kcal100g": 300.0,
+    "protein100g": 0.0,
+    "carbs100g": 20.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 567520,
+    "name": "macadamia milk - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.42,
+    "carbs100g": 0.42,
+    "fat100g": 2.08
+  },
+  {
+    "usdaId": 567549,
+    "name": "pommes sauce - knorr",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 367.0,
+    "protein100g": 3.33,
+    "carbs100g": 10.0,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 568812,
+    "name": "sweet cream topped with cocoa wafer bites - kinder",
+    "unit": {
+      "usdaUnitId": 1099,
+      "name": "egg",
+      "symbol": "egg"
+    },
+    "gramsPerUnit": 20.0,
+    "kcal100g": 550.0,
+    "protein100g": 10.0,
+    "carbs100g": 60.0,
+    "fat100g": 30.0
+  },
+  {
+    "usdaId": 570112,
+    "name": "farmhouse vegetable soup mix - knorr",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 30.0,
+    "protein100g": 0.9,
+    "carbs100g": 6.0,
+    "fat100g": 0.6
+  },
+  {
+    "usdaId": 572295,
+    "name": "bbq coleslaw dressing - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 433.0,
+    "protein100g": 0.0,
+    "carbs100g": 26.67,
+    "fat100g": 36.67
+  },
+  {
+    "usdaId": 572296,
+    "name": "creamy dressing - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 333.0,
+    "protein100g": 0.0,
+    "carbs100g": 23.33,
+    "fat100g": 26.67
+  },
+  {
+    "usdaId": 572297,
+    "name": "organic buttery steakhouse - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 400.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 40.0
+  },
+  {
+    "usdaId": 572298,
+    "name": "steak sauce - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 88.0,
+    "protein100g": 0.0,
+    "carbs100g": 17.65,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 572299,
+    "name": "organic roasted garlic caesar dressing - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 433.0,
+    "protein100g": 6.67,
+    "carbs100g": 6.67,
+    "fat100g": 43.33
+  },
+  {
+    "usdaId": 572300,
+    "name": "dressing - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 267.0,
+    "protein100g": 3.33,
+    "carbs100g": 36.67,
+    "fat100g": 11.67
+  },
+  {
+    "usdaId": 572301,
+    "name": "organic bbq ranch dressing - kinder",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 333.0,
+    "protein100g": 0.0,
+    "carbs100g": 20.0,
+    "fat100g": 26.67
+  },
+  {
+    "usdaId": 575007,
+    "name": "cocoa mix for a milk drink - nesquik",
+    "unit": {
+      "usdaUnitId": 1002,
+      "name": "teaspoon",
+      "symbol": "teaspoon"
+    },
+    "gramsPerUnit": 6.5,
+    "kcal100g": 338.0,
+    "protein100g": 7.69,
+    "carbs100g": 84.62,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 582536,
+    "name": "fruit salad gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 7.25,
+    "kcal100g": 345.0,
+    "protein100g": 3.45,
+    "carbs100g": 82.76,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 583269,
+    "name": "fuel energy drink - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.42,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 586316,
+    "name": "light ice cream - kitkat",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 215.0,
+    "protein100g": 4.62,
+    "carbs100g": 32.31,
+    "fat100g": 7.69
+  },
+  {
+    "usdaId": 587116,
+    "name": "soda - fanta",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 590001,
+    "name": "organic mild bbq sauce - kinder",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 176.0,
+    "protein100g": 0.0,
+    "carbs100g": 41.18,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 591427,
+    "name": "vanilla creamer raw macadamias & coconut cream - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 100.0,
+    "protein100g": 0.0,
+    "carbs100g": 13.33,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 592410,
+    "name": "gummy candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.666666666666666,
+    "kcal100g": 346.0,
+    "protein100g": 7.69,
+    "carbs100g": 76.92,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 593266,
+    "name": "s'witches' brew gummi candy - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 5.166666666666667,
+    "kcal100g": 323.0,
+    "protein100g": 6.45,
+    "carbs100g": 74.19,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 596080,
+    "name": "unsweetened vanilla creamer - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 67.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 601915,
+    "name": "sour streamers gummi candy, blue raspberry, cherry, orange, apple - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.5,
+    "kcal100g": 382.0,
+    "protein100g": 0.0,
+    "carbs100g": 91.18,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 601992,
+    "name": "sour cubes gummi candy, sour - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 7.0,
+    "kcal100g": 357.0,
+    "protein100g": 7.14,
+    "carbs100g": 82.14,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 604164,
+    "name": "sour cubes gummi candy, sour blood orange, sour dragonfruit, sour passionfruit, sour gooseberry, sour plum, sour mango - haribo",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 5.6,
+    "kcal100g": 357.0,
+    "protein100g": 7.14,
+    "carbs100g": 82.14,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 626586,
+    "name": "knorr, chinese style soup mix, corn & chicken, corn & chicken - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 10.0,
+    "kcal100g": 333.0,
+    "protein100g": 6.67,
+    "carbs100g": 66.67,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 640080,
+    "name": "chicken soup mix, sweet corn - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 12.0,
+    "kcal100g": 333.0,
+    "protein100g": 5.56,
+    "carbs100g": 72.22,
+    "fat100g": 2.78
+  },
+  {
+    "usdaId": 646310,
+    "name": "cookies & creme cake, cookies & creme - oreo",
+    "unit": {
+      "usdaUnitId": 1093,
+      "name": "cake",
+      "symbol": "cake"
+    },
+    "gramsPerUnit": 1056.3380281690145,
+    "kcal100g": 387.0,
+    "protein100g": 4.0,
+    "carbs100g": 54.67,
+    "fat100g": 16.0
+  },
+  {
+    "usdaId": 651544,
+    "name": "spicy cheese jumbo colmillos fangs, spicy cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.299999237060547,
+    "kcal100g": 541.0,
+    "protein100g": 7.07,
+    "carbs100g": 56.54,
+    "fat100g": 31.8
+  },
+  {
+    "usdaId": 659636,
+    "name": "crunchy cookie, delicious caramel, creamy chocolate cookie bars - twix",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 500.0,
+    "protein100g": 4.55,
+    "carbs100g": 68.18,
+    "fat100g": 22.73
+  },
+  {
+    "usdaId": 659752,
+    "name": "creme pie cookie pieces - oreo",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.46153846153846,
+    "kcal100g": 378.0,
+    "protein100g": 4.05,
+    "carbs100g": 45.95,
+    "fat100g": 21.62
+  },
+  {
+    "usdaId": 659836,
+    "name": "mayonnaise, roasted garlic ail roti - hellmanns",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 667.0,
+    "protein100g": 1.33,
+    "carbs100g": 0.0,
+    "fat100g": 73.33
+  },
+  {
+    "usdaId": 666392,
+    "name": "cola - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.99,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 669844,
+    "name": "root beer soda, root beer - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 44.0,
+    "protein100g": 0.0,
+    "carbs100g": 11.94,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 669848,
+    "name": "low calorie cream soda, cream - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 674794,
+    "name": "flavored juice beverage blend from concentrate, sparkling grapefruit - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 33.0,
+    "protein100g": 0.0,
+    "carbs100g": 8.61,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 675062,
+    "name": "cereal, cinnamon - kelloggs",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 38.66666666666666,
+    "kcal100g": 379.0,
+    "protein100g": 3.45,
+    "carbs100g": 89.66,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 675064,
+    "name": "pastry crisps, pumpkin spice - kelloggs",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 12.5,
+    "kcal100g": 400.0,
+    "protein100g": 4.0,
+    "carbs100g": 80.0,
+    "fat100g": 8.0
+  },
+  {
+    "usdaId": 675086,
+    "name": "toaster pastries, frosted strawberry - kelloggs",
+    "unit": {
+      "usdaUnitId": 3739,
+      "name": "pastry",
+      "symbol": "pastry"
+    },
+    "gramsPerUnit": 52.0,
+    "kcal100g": 385.0,
+    "protein100g": 3.85,
+    "carbs100g": 73.08,
+    "fat100g": 9.62
+  },
+  {
+    "usdaId": 676530,
+    "name": "fruit, nut & veggie bar - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 40.0,
+    "kcal100g": 400.0,
+    "protein100g": 7.5,
+    "carbs100g": 67.5,
+    "fat100g": 12.5
+  },
+  {
+    "usdaId": 676706,
+    "name": "fruit, nut & veggie bar, 5 fruits & veggie - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 40.0,
+    "kcal100g": 400.0,
+    "protein100g": 10.0,
+    "carbs100g": 62.5,
+    "fat100g": 15.0
+  },
+  {
+    "usdaId": 676846,
+    "name": "green machine apples, dates, mangoes, kale, broccoli fruit, nut & veggie bar, green machine - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 40.0,
+    "kcal100g": 400.0,
+    "protein100g": 10.0,
+    "carbs100g": 62.5,
+    "fat100g": 15.0
+  },
+  {
+    "usdaId": 677994,
+    "name": "wild cherry zero sugar cola, wild cherry - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 678258,
+    "name": "protein meal bar, strawberry - kelloggs",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 45.0,
+    "kcal100g": 378.0,
+    "protein100g": 26.67,
+    "carbs100g": 48.89,
+    "fat100g": 11.11
+  },
+  {
+    "usdaId": 678266,
+    "name": "cereal in a cup - kelloggs",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 80.0,
+    "kcal100g": 350.0,
+    "protein100g": 6.25,
+    "carbs100g": 85.0,
+    "fat100g": 1.88
+  },
+  {
+    "usdaId": 678268,
+    "name": "crispy glazed crunchy sweet cereal in a cup - kelloggs",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 42.0,
+    "kcal100g": 381.0,
+    "protein100g": 4.76,
+    "carbs100g": 90.48,
+    "fat100g": 1.19
+  },
+  {
+    "usdaId": 678270,
+    "name": "toaster pastries, frosted cherry - kelloggs",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 104.0,
+    "kcal100g": 394.0,
+    "protein100g": 3.85,
+    "carbs100g": 73.08,
+    "fat100g": 9.62
+  },
+  {
+    "usdaId": 678664,
+    "name": "zero calorie cola - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 678802,
+    "name": "banana honey nut crispy snack bars, banana honey nut - pepsi",
+    "unit": {
+      "usdaUnitId": 3045,
+      "name": "bars",
+      "symbol": "bars"
+    },
+    "gramsPerUnit": 13.333333333333334,
+    "kcal100g": 450.0,
+    "protein100g": 7.5,
+    "carbs100g": 67.5,
+    "fat100g": 17.5
+  },
+  {
+    "usdaId": 678804,
+    "name": "chewy granola bites, chocolate chip - pepsi",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 4.142857142857143,
+    "kcal100g": 414.0,
+    "protein100g": 6.9,
+    "carbs100g": 65.52,
+    "fat100g": 17.24
+  },
+  {
+    "usdaId": 678806,
+    "name": "apple cinnamon soft baked bars squares with fruit filling, apple cinnamon - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 60.0,
+    "kcal100g": 350.0,
+    "protein100g": 5.0,
+    "carbs100g": 70.0,
+    "fat100g": 7.5
+  },
+  {
+    "usdaId": 678808,
+    "name": "peanut butter soft baked bars squares with creamy filling, peanut butter - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 60.0,
+    "kcal100g": 417.0,
+    "protein100g": 10.0,
+    "carbs100g": 58.33,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 678980,
+    "name": "cinnamon cola, cinnamon - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 11.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 679030,
+    "name": "ultimate cheddar flavored snack mix, ultimate cheddar - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 464.0,
+    "protein100g": 7.14,
+    "carbs100g": 67.86,
+    "fat100g": 17.86
+  },
+  {
+    "usdaId": 679118,
+    "name": "granola bars, chocolate chip - pepsi",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 24.0,
+    "kcal100g": 417.0,
+    "protein100g": 4.17,
+    "carbs100g": 70.83,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 679124,
+    "name": "orange strawberry banana burst flavored drink, orange strawberry banana burst - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.42,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 679266,
+    "name": "orange strawberry banana blast drink, orange strawberry banana - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.42,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 679458,
+    "name": "peanut butter & honey granola bites, peanut butter & honey - pepsi",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 4.0,
+    "kcal100g": 438.0,
+    "protein100g": 9.38,
+    "carbs100g": 59.38,
+    "fat100g": 18.75
+  },
+  {
+    "usdaId": 680404,
+    "name": "unsweetened real brewed black tea, unsweetened - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 680406,
+    "name": "real brewed tea, sweet tea - pepsi",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 28.0,
+    "protein100g": 0.0,
+    "carbs100g": 7.6,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 711224,
+    "name": "wafer with fudge frozen dairy dessert cones, wafer with fudge - kitkat",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 95.0,
+    "kcal100g": 295.0,
+    "protein100g": 2.11,
+    "carbs100g": 44.21,
+    "fat100g": 12.63
+  },
+  {
+    "usdaId": 714450,
+    "name": "flavored candy canes - oreo",
+    "unit": {
+      "usdaUnitId": 3148,
+      "name": "cane",
+      "symbol": "cane"
+    },
+    "gramsPerUnit": 12.0,
+    "kcal100g": 375.0,
+    "protein100g": 0.0,
+    "carbs100g": 100.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 715610,
+    "name": "crunchy vanilla coating on chocolate flavored sandwich cookies, vanilla crunch - oreo",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 30.0,
+    "kcal100g": 433.0,
+    "protein100g": 6.67,
+    "carbs100g": 56.67,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 715612,
+    "name": "crunchy chocolate coating on chocolate flavored sandwich cookies, chocolate crunch - oreo",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 30.0,
+    "kcal100g": 433.0,
+    "protein100g": 3.33,
+    "carbs100g": 60.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 715756,
+    "name": "milk chocolate enrobed cookies, milk chocolate - oreo",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 24.0,
+    "kcal100g": 500.0,
+    "protein100g": 4.17,
+    "carbs100g": 70.83,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 717260,
+    "name": "milk chocolate with salted crackers ,,tuc\" - milka",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.45528455284553,
+    "kcal100g": 514.0,
+    "protein100g": 5.71,
+    "carbs100g": 60.0,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 718046,
+    "name": "mars chocolate minis favorites candy bars, chocolate - snickers",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.5,
+    "kcal100g": 471.0,
+    "protein100g": 5.88,
+    "carbs100g": 67.65,
+    "fat100g": 20.59
+  },
+  {
+    "usdaId": 718860,
+    "name": "unsweetened macadamia milk - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.42,
+    "carbs100g": 0.42,
+    "fat100g": 2.08
+  },
+  {
+    "usdaId": 719008,
+    "name": "unsweetened vanilla macadamia milk, unsweetened vanilla - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 21.0,
+    "protein100g": 0.42,
+    "carbs100g": 0.42,
+    "fat100g": 2.08
+  },
+  {
+    "usdaId": 720116,
+    "name": "mint hot cocoa mix, mint - oreo",
+    "unit": {
+      "usdaUnitId": 1040,
+      "name": "packet",
+      "symbol": "packet"
+    },
+    "gramsPerUnit": 35.0,
+    "kcal100g": 429.0,
+    "protein100g": 5.71,
+    "carbs100g": 80.0,
+    "fat100g": 10.0
+  },
+  {
+    "usdaId": 723242,
+    "name": "iced coffee - oreo",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 50.0,
+    "protein100g": 1.25,
+    "carbs100g": 9.17,
+    "fat100g": 1.04
+  },
+  {
+    "usdaId": 741440,
+    "name": "almond alpine darkmilk chocolate with extra cocoa, almond - milka",
+    "unit": {
+      "usdaUnitId": 4078,
+      "name": "squares",
+      "symbol": "squares"
+    },
+    "gramsPerUnit": 4.733333269755046,
+    "kcal100g": 563.0,
+    "protein100g": 7.04,
+    "carbs100g": 45.77,
+    "fat100g": 38.73
+  },
+  {
+    "usdaId": 771534,
+    "name": "gold peak diet tea bottle, 16.9 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771536,
+    "name": "simply orange w/ mango juice bottle, 52 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 50.0,
+    "protein100g": 0.83,
+    "carbs100g": 11.67,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771540,
+    "name": "blue sky organic root beer can, 12 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 33.0,
+    "protein100g": 0.0,
+    "carbs100g": 8.33,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771572,
+    "name": "gold peak lemon sweetened tea bottle, 64 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 33.0,
+    "protein100g": 0.0,
+    "carbs100g": 8.33,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771576,
+    "name": "fanta grapefruit soda bottle, 2 liters - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 11.39,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771582,
+    "name": "tum-e yummies fruit punch party bottle, 10.1 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 17.0,
+    "protein100g": 0.0,
+    "carbs100g": 4.29,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771584,
+    "name": "diet coke caffeine-free bottle, 20 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771586,
+    "name": "fanta grapefruit soda bottle, 16 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 11.25,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771592,
+    "name": "fanta berry soda bottle, 1.25 liters - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 11.39,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771594,
+    "name": "hubert's lemonade peach glass bottle, 16 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 120.0,
+    "protein100g": 0.0,
+    "carbs100g": 30.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771600,
+    "name": "fanta grapefruit soda can, 16 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771602,
+    "name": "hubert's lemonade watermelon bottle, 18 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 130.0,
+    "protein100g": 0.0,
+    "carbs100g": 34.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771618,
+    "name": "fuze iced tea honey & ginseng green tea bottle, 1 liter - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 200.0,
+    "protein100g": 0.0,
+    "carbs100g": 53.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771620,
+    "name": "dunkin' donuts cookies & cream iced coffee bottle, 13.7 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 71.0,
+    "protein100g": 1.95,
+    "carbs100g": 10.71,
+    "fat100g": 2.19
+  },
+  {
+    "usdaId": 771622,
+    "name": "gold peak diet tea bottles, 16.9 fl oz, 6 pack - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771748,
+    "name": "fanta apple soda bottle, 20 fl oz - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 47.0,
+    "protein100g": 0.0,
+    "carbs100g": 12.5,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 771784,
+    "name": "fanta orange soda cans, 7.5 fl oz, 8 pack - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 44.0,
+    "protein100g": 0.0,
+    "carbs100g": 12.44,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 772144,
+    "name": "coca-cola cherry zero cans, 7.5 fl oz, 6 pack - coca cola",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 772642,
+    "name": "vanilla original greek nonfat yogurt - danone",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 150.0,
+    "kcal100g": 53.0,
+    "protein100g": 8.0,
+    "carbs100g": 6.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 773094,
+    "name": "organic low moisture part skim mozzarella shredded cheese - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 286.0,
+    "protein100g": 25.0,
+    "carbs100g": 7.14,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 773102,
+    "name": "dairy free mint chip coconutmilk non-dairy frozen dessert - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 226.0,
+    "protein100g": 0.94,
+    "carbs100g": 24.53,
+    "fat100g": 14.15
+  },
+  {
+    "usdaId": 773116,
+    "name": "organic monterey jack shredded cheese - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 357.0,
+    "protein100g": 25.0,
+    "carbs100g": 0.0,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 773320,
+    "name": "hazelnut flavored coconutmilk creamer - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 167.0,
+    "protein100g": 0.0,
+    "carbs100g": 33.33,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 773328,
+    "name": "original organic coconutmilk creamer - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 100.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 6.67
+  },
+  {
+    "usdaId": 773330,
+    "name": "unsweetened vanilla cashewmilk beverage - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 17.0,
+    "protein100g": 0.42,
+    "carbs100g": 0.83,
+    "fat100g": 1.67
+  },
+  {
+    "usdaId": 773702,
+    "name": "blueberry yogurt - danone",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 150.0,
+    "kcal100g": 93.0,
+    "protein100g": 3.33,
+    "carbs100g": 14.0,
+    "fat100g": 3.0
+  },
+  {
+    "usdaId": 773704,
+    "name": "prune flavor lowfat yogurt drink - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 77.0,
+    "protein100g": 3.38,
+    "carbs100g": 12.56,
+    "fat100g": 1.69
+  },
+  {
+    "usdaId": 773706,
+    "name": "peach nonfat yogurt drink - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 53.0,
+    "protein100g": 4.83,
+    "carbs100g": 8.21,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 773708,
+    "name": "original toasted coconut vanilla nonfat yogurt - danone",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 150.0,
+    "kcal100g": 47.0,
+    "protein100g": 3.33,
+    "carbs100g": 8.67,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 773890,
+    "name": "organic milk - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 62.0,
+    "protein100g": 3.33,
+    "carbs100g": 5.0,
+    "fat100g": 3.33
+  },
+  {
+    "usdaId": 773896,
+    "name": "organic chocolate lowfat milk - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 62.0,
+    "protein100g": 3.33,
+    "carbs100g": 9.58,
+    "fat100g": 1.04
+  },
+  {
+    "usdaId": 773900,
+    "name": "organic 2% reduced fat milk - danone",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 54.0,
+    "protein100g": 3.33,
+    "carbs100g": 5.0,
+    "fat100g": 2.08
+  },
+  {
+    "usdaId": 773920,
+    "name": "plain triple zero blended nonfat greek yogurt - danone",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 225.0,
+    "kcal100g": 76.0,
+    "protein100g": 9.78,
+    "carbs100g": 8.89,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 780186,
+    "name": "hazelnut crunch, caramel burst, creamy mocha wafer bar collection - kitkat",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 17.5,
+    "kcal100g": 514.0,
+    "protein100g": 8.57,
+    "carbs100g": 60.0,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 912008,
+    "name": "hazelnut crunch, caramel burst, creamy mocha wafer bar collection, hazelnut crunch, caramel burst, creamy mocha - kitkat",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 17.5,
+    "kcal100g": 514.0,
+    "protein100g": 8.57,
+    "carbs100g": 60.0,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1041149,
+    "name": "dark chocolate flavour creme chocolate sandwich cookies, dark chocolate - oreo",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 483.0,
+    "protein100g": 3.45,
+    "carbs100g": 72.41,
+    "fat100g": 24.14
+  },
+  {
+    "usdaId": 1045005,
+    "name": "lemon-lime soda, lemon-lime - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 39.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1045007,
+    "name": "lemon-lime zero sugar soda, lemon-lime - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1045749,
+    "name": "chi tea latte spice flavored tea beverage mix and milk powder with sugar, chai tea latte - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 818.0,
+    "protein100g": 27.27,
+    "carbs100g": 109.09,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 1045969,
+    "name": "cappuccino 100% arabica capsules of roast & ground coffee and whole milk powder with sugar, cappuccino - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 500.0,
+    "protein100g": 23.53,
+    "carbs100g": 52.94,
+    "fat100g": 23.53
+  },
+  {
+    "usdaId": 1045971,
+    "name": "capsules of whole milk powder and instant coffee. - nescafe",
+    "unit": {
+      "usdaUnitId": 3162,
+      "name": "capsule",
+      "symbol": "capsule"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 429.0,
+    "protein100g": 21.43,
+    "carbs100g": 35.71,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 1046979,
+    "name": "chocolate candy bar, chocolate - oreo",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 561.0,
+    "protein100g": 4.88,
+    "carbs100g": 60.98,
+    "fat100g": 34.15
+  },
+  {
+    "usdaId": 1047967,
+    "name": "the original potato crisps, the original - pringles",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.46153846153846,
+    "kcal100g": 541.0,
+    "protein100g": 5.41,
+    "carbs100g": 56.76,
+    "fat100g": 32.43
+  },
+  {
+    "usdaId": 1077809,
+    "name": "skinny capsules of roast & ground coffee and skim milk powder, skinny - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 385.0,
+    "protein100g": 38.46,
+    "carbs100g": 53.85,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1092171,
+    "name": "chai tea latte spice flavored tea beverage mix and milk powder with sugar, chai tea latte spice - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 818.0,
+    "protein100g": 27.27,
+    "carbs100g": 109.09,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 1092189,
+    "name": "cafe au lait capsules of whole milk powder and instant coffee, cafe au lait - nescafe",
+    "unit": {
+      "usdaUnitId": 3162,
+      "name": "capsule",
+      "symbol": "capsule"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 429.0,
+    "protein100g": 21.43,
+    "carbs100g": 35.71,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 1092315,
+    "name": "cookies & creme chocolate candy bars, cookies & creme - oreo",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 561.0,
+    "protein100g": 4.88,
+    "carbs100g": 60.98,
+    "fat100g": 34.15
+  },
+  {
+    "usdaId": 1129605,
+    "name": "real mayonnaise made with cage free eggs - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 13.0,
+    "kcal100g": 692.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 76.92
+  },
+  {
+    "usdaId": 1137154,
+    "name": "cappuccino 100% arabica roast & ground coffee, cappuccino - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 500.0,
+    "protein100g": 23.53,
+    "carbs100g": 52.94,
+    "fat100g": 23.53
+  },
+  {
+    "usdaId": 1144131,
+    "name": "cookies & creme creme with cookie bits, chocolate cookie bars, milk chocolate. bars, cookies & creme - twix",
+    "unit": {
+      "usdaUnitId": 1022,
+      "name": "cookie",
+      "symbol": "cookie"
+    },
+    "gramsPerUnit": 20.0,
+    "kcal100g": 500.0,
+    "protein100g": 5.0,
+    "carbs100g": 65.0,
+    "fat100g": 30.0
+  },
+  {
+    "usdaId": 1152071,
+    "name": "spicy cheese flavor jumbo colmillos, spicy cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.299999237060547,
+    "kcal100g": 541.0,
+    "protein100g": 7.07,
+    "carbs100g": 56.54,
+    "fat100g": 31.8
+  },
+  {
+    "usdaId": 1153681,
+    "name": "taco flavored tortilla chips, taco - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1157633,
+    "name": "salsa fiesta flavored corn crisps, salsa fiesta - pringles",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1160103,
+    "name": "decaf 100% pure soluble coffee, decaf - nescafe",
+    "unit": {
+      "usdaUnitId": 1040,
+      "name": "packet",
+      "symbol": "packet"
+    },
+    "gramsPerUnit": 2.0,
+    "kcal100g": 250.0,
+    "protein100g": 0.0,
+    "carbs100g": 50.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1160577,
+    "name": "chai tea latte spice flavored tea beverage mix and milk powder with sugar, chai tea latte - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 818.0,
+    "protein100g": 27.27,
+    "carbs100g": 109.09,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 1160645,
+    "name": "skinny cappuccino capsules of roast & ground coffee and skim milk powder, skinny cappuccino - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 385.0,
+    "protein100g": 38.46,
+    "carbs100g": 53.85,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1162372,
+    "name": "chunky bar - kitkat",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 516.0,
+    "protein100g": 5.4,
+    "carbs100g": 65.1,
+    "fat100g": 25.6
+  },
+  {
+    "usdaId": 1165268,
+    "name": "milka chocolate-mixed unit oreo 1x6.170 oz - milka",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 526.0,
+    "protein100g": 5.26,
+    "carbs100g": 71.05,
+    "fat100g": 23.68
+  },
+  {
+    "usdaId": 1165979,
+    "name": "oreo cookies golden 1x12.2 oz - oreo",
+    "unit": {
+      "usdaUnitId": 3249,
+      "name": "cookies",
+      "symbol": "cookies"
+    },
+    "gramsPerUnit": 14.5,
+    "kcal100g": 517.0,
+    "protein100g": 3.45,
+    "carbs100g": 72.41,
+    "fat100g": 24.14
+  },
+  {
+    "usdaId": 1166084,
+    "name": "oreo thins cookies coconut 1x10.1 oz - oreo",
+    "unit": {
+      "usdaUnitId": 3249,
+      "name": "cookies",
+      "symbol": "cookies"
+    },
+    "gramsPerUnit": 7.25,
+    "kcal100g": 483.0,
+    "protein100g": 3.45,
+    "carbs100g": 72.41,
+    "fat100g": 20.69
+  },
+  {
+    "usdaId": 1166106,
+    "name": "oreo cookies limeade 1x12.200 oz - oreo",
+    "unit": {
+      "usdaUnitId": 3249,
+      "name": "cookies",
+      "symbol": "cookies"
+    },
+    "gramsPerUnit": 14.5,
+    "kcal100g": 483.0,
+    "protein100g": 3.45,
+    "carbs100g": 68.97,
+    "fat100g": 24.14
+  },
+  {
+    "usdaId": 1166127,
+    "name": "oreo cookies 1x0.78 oz - oreo",
+    "unit": {
+      "usdaUnitId": 3702,
+      "name": "pack",
+      "symbol": "pack"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 455.0,
+    "protein100g": 4.55,
+    "carbs100g": 72.73,
+    "fat100g": 20.45
+  },
+  {
+    "usdaId": 1166291,
+    "name": "nabisco oreo cookies double stuf 1x41 oz - oreo",
+    "unit": {
+      "usdaUnitId": 3249,
+      "name": "cookies",
+      "symbol": "cookies"
+    },
+    "gramsPerUnit": 58.0,
+    "kcal100g": 483.0,
+    "protein100g": 3.45,
+    "carbs100g": 72.41,
+    "fat100g": 24.14
+  },
+  {
+    "usdaId": 1166608,
+    "name": "milka chocolate bar oreo 1x34.56 oz - milka",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 561.0,
+    "protein100g": 4.88,
+    "carbs100g": 58.54,
+    "fat100g": 34.15
+  },
+  {
+    "usdaId": 1166646,
+    "name": "milka chocolate bar white 1x3.520 oz - milka",
+    "unit": {
+      "usdaUnitId": 3997,
+      "name": "sections",
+      "symbol": "sections"
+    },
+    "gramsPerUnit": 4.2,
+    "kcal100g": 548.0,
+    "protein100g": 4.76,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1167184,
+    "name": "milka biscuits 1x5.29 oz - milka",
+    "unit": {
+      "usdaUnitId": 4234,
+      "name": "wafer",
+      "symbol": "wafer"
+    },
+    "gramsPerUnit": 30.0,
+    "kcal100g": 533.0,
+    "protein100g": 6.67,
+    "carbs100g": 60.0,
+    "fat100g": 30.0
+  },
+  {
+    "usdaId": 1167217,
+    "name": "milka chocolate bar alpine milk 1x3.520 oz - milka",
+    "unit": {
+      "usdaUnitId": 3997,
+      "name": "sections",
+      "symbol": "sections"
+    },
+    "gramsPerUnit": 4.2,
+    "kcal100g": 548.0,
+    "protein100g": 7.14,
+    "carbs100g": 59.52,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1167890,
+    "name": "milka chocolate bar oreo 1x10.5 oz - milka",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.4,
+    "kcal100g": 548.0,
+    "protein100g": 4.76,
+    "carbs100g": 57.14,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 1169015,
+    "name": "milka chocolate bar oreo cookies and creme 1x1.44 oz - milka",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 561.0,
+    "protein100g": 4.88,
+    "carbs100g": 58.54,
+    "fat100g": 34.15
+  },
+  {
+    "usdaId": 1169102,
+    "name": "milka chocolate bar-minis oreo valentines day1x10.2 oz - milka",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 567.0,
+    "protein100g": 6.67,
+    "carbs100g": 60.0,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 1169108,
+    "name": "milka chocolate bar oreo 1x1.44 oz - milka",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 41.0,
+    "kcal100g": 561.0,
+    "protein100g": 4.88,
+    "carbs100g": 58.54,
+    "fat100g": 34.15
+  },
+  {
+    "usdaId": 1195723,
+    "name": "real mayonnaise - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 13.0,
+    "kcal100g": 692.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 76.92
+  },
+  {
+    "usdaId": 1196384,
+    "name": "hazelnut spread + pretzel sticks, hazelnut - nutella",
+    "unit": {
+      "usdaUnitId": 1059,
+      "name": "unit",
+      "symbol": "unit"
+    },
+    "gramsPerUnit": 52.0,
+    "kcal100g": 519.0,
+    "protein100g": 7.69,
+    "carbs100g": 69.23,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1215270,
+    "name": "hazelnut spread + breadsticks, hazelnut - nutella",
+    "unit": {
+      "usdaUnitId": 1059,
+      "name": "unit",
+      "symbol": "unit"
+    },
+    "gramsPerUnit": 52.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.69,
+    "carbs100g": 65.38,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1305682,
+    "name": "ice cream bars - twix",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 45.0,
+    "kcal100g": 378.0,
+    "protein100g": 4.44,
+    "carbs100g": 40.0,
+    "fat100g": 22.22
+  },
+  {
+    "usdaId": 1309686,
+    "name": "ice cream bars - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 50.0,
+    "kcal100g": 360.0,
+    "protein100g": 6.0,
+    "carbs100g": 36.0,
+    "fat100g": 22.0
+  },
+  {
+    "usdaId": 1311162,
+    "name": "hazelnut spread with cocoa mini cups - nutella",
+    "unit": {
+      "usdaUnitId": 3623,
+      "name": "mini",
+      "symbol": "mini"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 533.0,
+    "protein100g": 6.67,
+    "carbs100g": 60.0,
+    "fat100g": 30.0
+  },
+  {
+    "usdaId": 1312031,
+    "name": "candy bars & football tin - snickers",
+    "unit": {
+      "usdaUnitId": 3045,
+      "name": "bars",
+      "symbol": "bars"
+    },
+    "gramsPerUnit": 9.0,
+    "kcal100g": 472.0,
+    "protein100g": 8.33,
+    "carbs100g": 61.11,
+    "fat100g": 22.22
+  },
+  {
+    "usdaId": 1330328,
+    "name": "minis - mars",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 9.0,
+    "kcal100g": 472.0,
+    "protein100g": 8.33,
+    "carbs100g": 61.11,
+    "fat100g": 22.22
+  },
+  {
+    "usdaId": 1330457,
+    "name": "dark chocolate snack squares - mars",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.333333333333336,
+    "kcal100g": 441.0,
+    "protein100g": 8.82,
+    "carbs100g": 61.76,
+    "fat100g": 20.59
+  },
+  {
+    "usdaId": 1330564,
+    "name": "baked potato crisps, original - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 1.6470588235294117,
+    "kcal100g": 429.0,
+    "protein100g": 7.14,
+    "carbs100g": 78.57,
+    "fat100g": 12.5
+  },
+  {
+    "usdaId": 1331095,
+    "name": "maui onion flavored potato chips, maui onion - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.5555555555555556,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1331101,
+    "name": "crunchy cheese flavored snacks, crunchy cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1331102,
+    "name": "cheese flavored snacks puffs, cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.1538461538461537,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1331103,
+    "name": "cheese flavored crunchy snacks, cheese - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1331109,
+    "name": "cheese flavored snacks - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1331519,
+    "name": "kettle cooked potato chips, jalapeno - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1331521,
+    "name": "kettle cooked potato chips, mesquite bbq - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.5555555555555556,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1331963,
+    "name": "potato crisps, flamas - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332112,
+    "name": "potato crisps, jalapeno pepper jack - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332114,
+    "name": "buffalo wings with ranch flavored potato crisps, buffalo wings with ranch - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332115,
+    "name": "potato crisps, all-american cheeseburger - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332116,
+    "name": "chile limon flavored potato crisps, chile limon - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332117,
+    "name": "potato crisps, pizza - lays",
+    "unit": {
+      "usdaUnitId": 3281,
+      "name": "crisps",
+      "symbol": "crisps"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1332189,
+    "name": "crunchy cheddar jalapeno cheese flavored snacks, cheddar jalapeno - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1332226,
+    "name": "cheese flavored snacks, xxtra flamin' hot - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1333164,
+    "name": "chocolate candies, peanut - mars",
+    "unit": {
+      "usdaUnitId": 3715,
+      "name": "packs",
+      "symbol": "packs"
+    },
+    "gramsPerUnit": 18.0,
+    "kcal100g": 500.0,
+    "protein100g": 8.33,
+    "carbs100g": 58.33,
+    "fat100g": 27.78
+  },
+  {
+    "usdaId": 1333933,
+    "name": "twix, light ice cream, caramel - twix",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 130.0,
+    "kcal100g": 246.0,
+    "protein100g": 4.62,
+    "carbs100g": 32.31,
+    "fat100g": 10.77
+  },
+  {
+    "usdaId": 1333934,
+    "name": "twix, light ice cream, peanut butter - twix",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 130.0,
+    "kcal100g": 246.0,
+    "protein100g": 4.62,
+    "carbs100g": 29.23,
+    "fat100g": 12.31
+  },
+  {
+    "usdaId": 1333935,
+    "name": "snickers, light ice cream, rocky road - snickers",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 128.0,
+    "kcal100g": 234.0,
+    "protein100g": 4.69,
+    "carbs100g": 31.25,
+    "fat100g": 9.38
+  },
+  {
+    "usdaId": 1334102,
+    "name": "light ice cream - snickers",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 134.0,
+    "kcal100g": 224.0,
+    "protein100g": 4.48,
+    "carbs100g": 31.34,
+    "fat100g": 8.96
+  },
+  {
+    "usdaId": 1335681,
+    "name": "sprite, lemon-lime soda - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 42.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.83,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1336122,
+    "name": "crisp wafers in milk chocolate, milk chocolate - kitkat",
+    "unit": {
+      "usdaUnitId": 3403,
+      "name": "fingers",
+      "symbol": "fingers"
+    },
+    "gramsPerUnit": 10.666666666666666,
+    "kcal100g": 500.0,
+    "protein100g": 6.25,
+    "carbs100g": 65.62,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1336125,
+    "name": "peanut butter chocolate candies - mars",
+    "unit": {
+      "usdaUnitId": 3702,
+      "name": "pack",
+      "symbol": "pack"
+    },
+    "gramsPerUnit": 80.0,
+    "kcal100g": 525.0,
+    "protein100g": 10.0,
+    "carbs100g": 57.5,
+    "fat100g": 27.5
+  },
+  {
+    "usdaId": 1337158,
+    "name": "milk chocolate - mars",
+    "unit": {
+      "usdaUnitId": 3715,
+      "name": "packs",
+      "symbol": "packs"
+    },
+    "gramsPerUnit": 16.5,
+    "kcal100g": 485.0,
+    "protein100g": 6.06,
+    "carbs100g": 66.67,
+    "fat100g": 24.24
+  },
+  {
+    "usdaId": 1337159,
+    "name": "milk chocolate candies - mars",
+    "unit": {
+      "usdaUnitId": 3715,
+      "name": "packs",
+      "symbol": "packs"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 489.0,
+    "protein100g": 4.44,
+    "carbs100g": 71.11,
+    "fat100g": 22.22
+  },
+  {
+    "usdaId": 1337497,
+    "name": "kitkat, crisp wafers in milk chocolate - kitkat",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 26.19
+  },
+  {
+    "usdaId": 1337520,
+    "name": "silky smooth solid milk chocolate heart happy valentine's day - mars",
+    "unit": {
+      "usdaUnitId": 3485,
+      "name": "heart",
+      "symbol": "heart"
+    },
+    "gramsPerUnit": 129.012901290129,
+    "kcal100g": 535.0,
+    "protein100g": 6.98,
+    "carbs100g": 58.14,
+    "fat100g": 32.56
+  },
+  {
+    "usdaId": 1337568,
+    "name": "baked snack pretzel - mars",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 464.0,
+    "protein100g": 7.14,
+    "carbs100g": 71.43,
+    "fat100g": 17.86
+  },
+  {
+    "usdaId": 1337818,
+    "name": "doritos, tortilla chips, cool ranch, cool ranch - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1337822,
+    "name": "doritos, jaked 3d, tortilla snacks, jalapeno pepper jack, jalapeno pepper jack - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1337823,
+    "name": "doritos, tortilla chips, nacho cheese, nacho cheese - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338016,
+    "name": "m&m's, peanut - mars",
+    "unit": {
+      "usdaUnitId": 3715,
+      "name": "packs",
+      "symbol": "packs"
+    },
+    "gramsPerUnit": 18.0,
+    "kcal100g": 500.0,
+    "protein100g": 8.33,
+    "carbs100g": 58.33,
+    "fat100g": 27.78
+  },
+  {
+    "usdaId": 1338100,
+    "name": "french onion dip, french onion - lays",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 16.5,
+    "kcal100g": 182.0,
+    "protein100g": 3.03,
+    "carbs100g": 6.06,
+    "fat100g": 15.15
+  },
+  {
+    "usdaId": 1338179,
+    "name": "classic potato chips, classic - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1338180,
+    "name": "doritos, tortilla chips, taco, taco - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338181,
+    "name": "salsa verde flavored tortilla chips, salsa verde - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 67.86,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1338182,
+    "name": "doritos, tapatio, flavored tortilla chips, hot sauce, hot sauce - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338186,
+    "name": "salsa picante hot sauce flavored tortilla chips, salsa picante hot sauce - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338351,
+    "name": "m&m's, peanut chocolate candies - mars",
+    "unit": {
+      "usdaUnitId": 1016,
+      "name": "bottle",
+      "symbol": "bottle"
+    },
+    "gramsPerUnit": 99.09909909909908,
+    "kcal100g": 515.0,
+    "protein100g": 9.09,
+    "carbs100g": 60.61,
+    "fat100g": 27.27
+  },
+  {
+    "usdaId": 1338352,
+    "name": "m&m's, mega peanut chocolate candies - mars",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 524.0,
+    "protein100g": 9.52,
+    "carbs100g": 59.52,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338354,
+    "name": "candies - mars",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 476.0,
+    "protein100g": 4.76,
+    "carbs100g": 73.81,
+    "fat100g": 19.05
+  },
+  {
+    "usdaId": 1338355,
+    "name": "snickers, fun size crisper - mars",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 21.0,
+    "kcal100g": 476.0,
+    "protein100g": 4.76,
+    "carbs100g": 61.9,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 1338356,
+    "name": "dove, promises, sea salt caramel dark chocolate - mars",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.0,
+    "kcal100g": 500.0,
+    "protein100g": 5.0,
+    "carbs100g": 60.0,
+    "fat100g": 27.5
+  },
+  {
+    "usdaId": 1338357,
+    "name": "m&m's, milk chocolate candies - mars",
+    "unit": {
+      "usdaUnitId": 1016,
+      "name": "bottle",
+      "symbol": "bottle"
+    },
+    "gramsPerUnit": 100.0,
+    "kcal100g": 485.0,
+    "protein100g": 6.06,
+    "carbs100g": 72.73,
+    "fat100g": 18.18
+  },
+  {
+    "usdaId": 1338416,
+    "name": "potato chips, jalapeno cheddar - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.75,
+    "kcal100g": 464.0,
+    "protein100g": 7.14,
+    "carbs100g": 67.86,
+    "fat100g": 17.86
+  },
+  {
+    "usdaId": 1338417,
+    "name": "limon flavored potato chips, limon - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1338418,
+    "name": "doritos, jacked, corn chips, spicy street taco, spicy street taco - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1338419,
+    "name": "chile limon flavored potato chips, chile limon - lays",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1339186,
+    "name": "ice cream bar - twix",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 69.0,
+    "kcal100g": 362.0,
+    "protein100g": 2.9,
+    "carbs100g": 40.58,
+    "fat100g": 20.29
+  },
+  {
+    "usdaId": 1339190,
+    "name": "almond chocolate candies, almond - mars",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 524.0,
+    "protein100g": 9.52,
+    "carbs100g": 59.52,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1339192,
+    "name": "rich chocolate, creamy caramel, smooth nougat fun size bars, rich chocolate, creamy caramel - mars",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 471.0,
+    "protein100g": 5.88,
+    "carbs100g": 70.59,
+    "fat100g": 17.65
+  },
+  {
+    "usdaId": 1339193,
+    "name": "fun size milk chocolate candies, milk chocolate - mars",
+    "unit": {
+      "usdaUnitId": 3715,
+      "name": "packs",
+      "symbol": "packs"
+    },
+    "gramsPerUnit": 13.5,
+    "kcal100g": 481.0,
+    "protein100g": 3.7,
+    "carbs100g": 70.37,
+    "fat100g": 18.52
+  },
+  {
+    "usdaId": 1341915,
+    "name": "caramel, peanuts, peanut butter ice cream bars, caramel, peanuts, peanut butter - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 48.0,
+    "kcal100g": 375.0,
+    "protein100g": 6.25,
+    "carbs100g": 37.5,
+    "fat100g": 22.92
+  },
+  {
+    "usdaId": 1342259,
+    "name": "rich & creamy vanilla flavored ice cream with artificial flavor added and smooth caramel & crunchy cookies minis bars, rich & creamy vanilla - twix",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 22.0,
+    "kcal100g": 364.0,
+    "protein100g": 4.55,
+    "carbs100g": 40.91,
+    "fat100g": 22.73
+  },
+  {
+    "usdaId": 1342349,
+    "name": "snack size mini ice cream bars - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 24.0,
+    "kcal100g": 375.0,
+    "protein100g": 4.17,
+    "carbs100g": 37.5,
+    "fat100g": 20.83
+  },
+  {
+    "usdaId": 1359053,
+    "name": "probiotic yogurt - activia",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 113.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 14.16,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 1360052,
+    "name": "hazelnut spread + pretzel sticks - nutella",
+    "unit": {
+      "usdaUnitId": 1059,
+      "name": "unit",
+      "symbol": "unit"
+    },
+    "gramsPerUnit": 54.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.41,
+    "carbs100g": 66.67,
+    "fat100g": 24.07
+  },
+  {
+    "usdaId": 1361592,
+    "name": "real ketchup - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 17.0,
+    "kcal100g": 88.0,
+    "protein100g": 0.0,
+    "carbs100g": 23.53,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1369665,
+    "name": "crisp wafers in milk chocolate, chocolate covered strawberry - kitkat",
+    "unit": {
+      "usdaUnitId": 3403,
+      "name": "fingers",
+      "symbol": "fingers"
+    },
+    "gramsPerUnit": 10.666666666666666,
+    "kcal100g": 500.0,
+    "protein100g": 6.25,
+    "carbs100g": 65.62,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1370713,
+    "name": "miniatures crisp wafers in milk chocolate - kitkat",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.6,
+    "kcal100g": 488.0,
+    "protein100g": 6.98,
+    "carbs100g": 65.12,
+    "fat100g": 25.58
+  },
+  {
+    "usdaId": 1370721,
+    "name": "crisp wafers miniatures, milk chocolate - kitkat",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 8.6,
+    "kcal100g": 488.0,
+    "protein100g": 6.98,
+    "carbs100g": 65.12,
+    "fat100g": 25.58
+  },
+  {
+    "usdaId": 1371002,
+    "name": "blaze flavored tortilla chips, blaze - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1371005,
+    "name": "flavored tortilla chips, blaze - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1371014,
+    "name": "poppin' jalapeno flavored tortilla chips, poppin' jalapeno - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371019,
+    "name": "test flavor: 855 - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371185,
+    "name": "tortilla chips, nacho cheese - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 500.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371188,
+    "name": "cheese flavored snacks, flamin' hot - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 607.0,
+    "protein100g": 3.57,
+    "carbs100g": 53.57,
+    "fat100g": 39.29
+  },
+  {
+    "usdaId": 1371232,
+    "name": "flamin' hot chipotle ranch crunchy cheese flavored snacks, flamin' hot chipotle ranch - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 607.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 39.29
+  },
+  {
+    "usdaId": 1371260,
+    "name": "flavored snack mix, cool ranch - doritos",
+    "unit": {
+      "usdaUnitId": 1000,
+      "name": "cup",
+      "symbol": "cup"
+    },
+    "gramsPerUnit": 84.08408408408408,
+    "kcal100g": 536.0,
+    "protein100g": 10.71,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1371327,
+    "name": "spicy sweet chili flavored tortilla chips, spicy sweet chili - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1371708,
+    "name": "cheese flavored snacks, crunchy - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 607.0,
+    "protein100g": 3.57,
+    "carbs100g": 53.57,
+    "fat100g": 39.29
+  },
+  {
+    "usdaId": 1371709,
+    "name": "flavored tortilla chips, cool ranch - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371750,
+    "name": "puffs snack, cheese, flamin' hot - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 2.1538461538461537,
+    "kcal100g": 571.0,
+    "protein100g": 3.57,
+    "carbs100g": 57.14,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1371779,
+    "name": "white cheddar puffs cheese flavored snacks, white cheddar - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 0.875,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1371785,
+    "name": "crunchy, cheese flavored snacks - cheetos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.3333333333333333,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1371819,
+    "name": "bag of bones cheese flavored snacks, white cheddar - cheetos",
+    "unit": {
+      "usdaUnitId": 1043,
+      "name": "piece",
+      "symbol": "piece"
+    },
+    "gramsPerUnit": 1.037037037037037,
+    "kcal100g": 571.0,
+    "protein100g": 7.14,
+    "carbs100g": 53.57,
+    "fat100g": 35.71
+  },
+  {
+    "usdaId": 1371821,
+    "name": "flavored tortilla chips, hot - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371824,
+    "name": "jumpin' jack cheese flavored tortilla chips, jumpin' jack cheese - doritos",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 2.333333333333333,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 60.71,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1371829,
+    "name": "cool ranch flavored tortilla chips, cool ranch - doritos",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 28.0,
+    "kcal100g": 536.0,
+    "protein100g": 7.14,
+    "carbs100g": 64.29,
+    "fat100g": 28.57
+  },
+  {
+    "usdaId": 1381347,
+    "name": "mango pineapple vinaigrette - hellmanns",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 300.0,
+    "protein100g": 0.0,
+    "carbs100g": 36.67,
+    "fat100g": 16.67
+  },
+  {
+    "usdaId": 1381350,
+    "name": "real creamy pesto sauce & condiment - hellmanns",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 367.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 36.67
+  },
+  {
+    "usdaId": 1391451,
+    "name": "triple chocolate ice cream bar, triple chocolate - twix",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 357.0,
+    "protein100g": 2.86,
+    "carbs100g": 41.43,
+    "fat100g": 21.43
+  },
+  {
+    "usdaId": 1391452,
+    "name": "dark ice cream bar, dark - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 69.0,
+    "kcal100g": 362.0,
+    "protein100g": 5.8,
+    "carbs100g": 37.68,
+    "fat100g": 23.19
+  },
+  {
+    "usdaId": 1391455,
+    "name": "rich & creamy vanilla flavored ice cream with artificial flavor added and smooth caramel & crunchy cookies bars, vanilla - twix",
+    "unit": {
+      "usdaUnitId": 1094,
+      "name": "carton",
+      "symbol": "carton"
+    },
+    "gramsPerUnit": 224.0,
+    "kcal100g": 366.0,
+    "protein100g": 3.57,
+    "carbs100g": 41.07,
+    "fat100g": 20.98
+  },
+  {
+    "usdaId": 1391457,
+    "name": "triple chocolate ice cream bars, triple chocolate - twix",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 45.0,
+    "kcal100g": 356.0,
+    "protein100g": 4.44,
+    "carbs100g": 40.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 1391458,
+    "name": "dark chocolate-peanut butter ice cream bars, caramel, peanuts - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 49.0,
+    "kcal100g": 367.0,
+    "protein100g": 6.12,
+    "carbs100g": 36.73,
+    "fat100g": 22.45
+  },
+  {
+    "usdaId": 1406814,
+    "name": "hazelnut spread with cocoa, cocoa - nutella",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 18.5,
+    "kcal100g": 541.0,
+    "protein100g": 5.41,
+    "carbs100g": 59.46,
+    "fat100g": 29.73
+  },
+  {
+    "usdaId": 1413464,
+    "name": "vanilla flavored ice cream, vanilla - snickers",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 102.0,
+    "kcal100g": 235.0,
+    "protein100g": 3.92,
+    "carbs100g": 32.35,
+    "fat100g": 9.8
+  },
+  {
+    "usdaId": 1414741,
+    "name": "caramel flavored reduced fat ice cream* with twix cookie bar pieces and a chocolatey swirl, caramel - twix",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 97.0,
+    "kcal100g": 237.0,
+    "protein100g": 3.09,
+    "carbs100g": 31.96,
+    "fat100g": 11.34
+  },
+  {
+    "usdaId": 1415073,
+    "name": "ice cream bar - snickers",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 68.0,
+    "kcal100g": 368.0,
+    "protein100g": 5.88,
+    "carbs100g": 36.76,
+    "fat100g": 22.06
+  },
+  {
+    "usdaId": 1421503,
+    "name": "caramel, chocolate chips, vanilla ice cream, nougat whipped icing cake, caramel, chocolate chips, vanilla - snickers",
+    "unit": {
+      "usdaUnitId": 1093,
+      "name": "cake",
+      "symbol": "cake"
+    },
+    "gramsPerUnit": 972.9729729729728,
+    "kcal100g": 287.0,
+    "protein100g": 4.63,
+    "carbs100g": 35.19,
+    "fat100g": 14.81
+  },
+  {
+    "usdaId": 1427430,
+    "name": "cookies & creme ice cream bars, cookies & creme - twix",
+    "unit": {
+      "usdaUnitId": 1013,
+      "name": "bar",
+      "symbol": "bar"
+    },
+    "gramsPerUnit": 46.0,
+    "kcal100g": 370.0,
+    "protein100g": 4.35,
+    "carbs100g": 43.48,
+    "fat100g": 21.74
+  },
+  {
+    "usdaId": 1488422,
+    "name": "hazelnut spread with cocoa, hazelnut spread - nutella",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 18.5,
+    "kcal100g": 541.0,
+    "protein100g": 5.41,
+    "carbs100g": 59.46,
+    "fat100g": 29.73
+  },
+  {
+    "usdaId": 1583558,
+    "name": "chicken flavor bouillon cubes, chicken - knorr",
+    "unit": {
+      "usdaUnitId": 3299,
+      "name": "cube",
+      "symbol": "cube"
+    },
+    "gramsPerUnit": 12.0,
+    "kcal100g": 250.0,
+    "protein100g": 0.0,
+    "carbs100g": 16.67,
+    "fat100g": 25.0
+  },
+  {
+    "usdaId": 1619214,
+    "name": "shrimp bouillon, shrimp - knorr",
+    "unit": {
+      "usdaUnitId": 1002,
+      "name": "teaspoon",
+      "symbol": "teaspoon"
+    },
+    "gramsPerUnit": 4.0,
+    "kcal100g": 125.0,
+    "protein100g": 0.0,
+    "carbs100g": 25.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1621941,
+    "name": "original liquid seasoning, original - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 18.0,
+    "kcal100g": 111.0,
+    "protein100g": 5.56,
+    "carbs100g": 22.22,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1624783,
+    "name": "rich & creamy peanut butter ice cream with smooth caramel & peanuts ice cream cones, rich & creamy peanut butter ice cream with smooth caramel & peanuts - snickers",
+    "unit": {
+      "usdaUnitId": 3231,
+      "name": "cone",
+      "symbol": "cone"
+    },
+    "gramsPerUnit": 77.0,
+    "kcal100g": 325.0,
+    "protein100g": 5.19,
+    "carbs100g": 40.26,
+    "fat100g": 16.88
+  },
+  {
+    "usdaId": 1626083,
+    "name": "caramel flavored light ice cream with twix caramel cookie bar pieces and a chocolatey swirl, caramel - twix",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 246.0,
+    "protein100g": 4.62,
+    "carbs100g": 32.31,
+    "fat100g": 10.77
+  },
+  {
+    "usdaId": 1626092,
+    "name": "rich & creamy vanilla flavored ice cream bars, rich & creamy vanilla - twix",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 356.0,
+    "protein100g": 4.44,
+    "carbs100g": 40.0,
+    "fat100g": 20.0
+  },
+  {
+    "usdaId": 1641070,
+    "name": "potato & egg salad, potato & egg - hellmanns",
+    "unit": {
+      "usdaUnitId": 3687,
+      "name": "onz",
+      "symbol": "onz"
+    },
+    "gramsPerUnit": 36.0,
+    "kcal100g": 106.0,
+    "protein100g": 0.56,
+    "carbs100g": 14.44,
+    "fat100g": 4.44
+  },
+  {
+    "usdaId": 1649550,
+    "name": "avocado oil with a hint of lime mayonnaise dressing, avocado oil with a hint of lime - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 400.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 46.67
+  },
+  {
+    "usdaId": 1649551,
+    "name": "sunflower oil with a hint of lemon mayonnaise dressing, sunflower oil with a hint of lemon - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 400.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 46.67
+  },
+  {
+    "usdaId": 1649553,
+    "name": "avocado oil mayonnaise dressing, avocado oil - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 15.0,
+    "kcal100g": 400.0,
+    "protein100g": 0.0,
+    "carbs100g": 6.67,
+    "fat100g": 46.67
+  },
+  {
+    "usdaId": 1654342,
+    "name": "pommes sauce, pommes - knorr",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 367.0,
+    "protein100g": 3.33,
+    "carbs100g": 10.0,
+    "fat100g": 33.33
+  },
+  {
+    "usdaId": 1660280,
+    "name": "cocoa mix for a milk drink, cocoa - nesquik",
+    "unit": {
+      "usdaUnitId": 1002,
+      "name": "teaspoon",
+      "symbol": "teaspoon"
+    },
+    "gramsPerUnit": 6.5,
+    "kcal100g": 338.0,
+    "protein100g": 7.69,
+    "carbs100g": 84.62,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1667626,
+    "name": "low fat mayonnaise dressing, low fat - hellmanns",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 14.0,
+    "kcal100g": 107.0,
+    "protein100g": 0.0,
+    "carbs100g": 14.29,
+    "fat100g": 7.14
+  },
+  {
+    "usdaId": 1704024,
+    "name": "bbq flavour potato chips, bbq - pringles",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 536.0,
+    "protein100g": 3.57,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1730085,
+    "name": "salt & vinegar flavour potato chips, salt & vinegar - pringles",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 536.0,
+    "protein100g": 3.57,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1732245,
+    "name": "sour cream & onion flavour potato chips, sour cream & onion - pringles",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.8666666666666667,
+    "kcal100g": 536.0,
+    "protein100g": 3.57,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1736616,
+    "name": "the original potato chips, original - pringles",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.75,
+    "kcal100g": 536.0,
+    "protein100g": 3.57,
+    "carbs100g": 57.14,
+    "fat100g": 32.14
+  },
+  {
+    "usdaId": 1743005,
+    "name": "mestiza soup, mestiza - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 8.5,
+    "kcal100g": 353.0,
+    "protein100g": 11.76,
+    "carbs100g": 70.59,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 1743006,
+    "name": "chicken flavor with rice soup, chicken - knorr",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 8.5,
+    "kcal100g": 353.0,
+    "protein100g": 11.76,
+    "carbs100g": 70.59,
+    "fat100g": 5.88
+  },
+  {
+    "usdaId": 1743859,
+    "name": "pea cup a soup, pea - knorr",
+    "unit": {
+      "usdaUnitId": 3862,
+      "name": "pouch",
+      "symbol": "pouch"
+    },
+    "gramsPerUnit": 25.0,
+    "kcal100g": 400.0,
+    "protein100g": 12.0,
+    "carbs100g": 68.0,
+    "fat100g": 8.0
+  },
+  {
+    "usdaId": 1747694,
+    "name": "bbq flavor potato chips, bbq - pringles",
+    "unit": {
+      "usdaUnitId": 1023,
+      "name": "container",
+      "symbol": "container"
+    },
+    "gramsPerUnit": 19.0,
+    "kcal100g": 526.0,
+    "protein100g": 5.26,
+    "carbs100g": 57.89,
+    "fat100g": 31.58
+  },
+  {
+    "usdaId": 1747898,
+    "name": "mystery flavour potato chips, mystery - pringles",
+    "unit": {
+      "usdaUnitId": 1039,
+      "name": "package",
+      "symbol": "package"
+    },
+    "gramsPerUnit": 39.0,
+    "kcal100g": 513.0,
+    "protein100g": 5.13,
+    "carbs100g": 56.41,
+    "fat100g": 30.77
+  },
+  {
+    "usdaId": 1747909,
+    "name": "sour cream & onion flavour potato chips snack stacks, sour cream & onion - pringles",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 526.0,
+    "protein100g": 5.26,
+    "carbs100g": 57.89,
+    "fat100g": 31.58
+  },
+  {
+    "usdaId": 1748834,
+    "name": "hazelnut spread with cocoa, hazelnut with cocoa - nutella",
+    "unit": {
+      "usdaUnitId": 1001,
+      "name": "tablespoon",
+      "symbol": "tablespoon"
+    },
+    "gramsPerUnit": 18.5,
+    "kcal100g": 541.0,
+    "protein100g": 5.41,
+    "carbs100g": 59.46,
+    "fat100g": 29.73
+  },
+  {
+    "usdaId": 2181039,
+    "name": "sour cream & onion flavor potato chips, sour cream & onion - pringles",
+    "unit": {
+      "usdaUnitId": 1019,
+      "name": "can",
+      "symbol": "can"
+    },
+    "gramsPerUnit": 68.0,
+    "kcal100g": 529.0,
+    "protein100g": 4.41,
+    "carbs100g": 57.35,
+    "fat100g": 30.88
+  },
+  {
+    "usdaId": 2182451,
+    "name": "pizza flavored potato chips, pizza - pringles",
+    "unit": {
+      "usdaUnitId": 1083,
+      "name": "chips",
+      "symbol": "chips"
+    },
+    "gramsPerUnit": 1.9230769230769231,
+    "kcal100g": 520.0,
+    "protein100g": 4.0,
+    "carbs100g": 56.0,
+    "fat100g": 32.0
+  },
+  {
+    "usdaId": 2198824,
+    "name": "lemon-lime beverage mix kold pods, lemon-lime - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 196.0,
+    "protein100g": 0.0,
+    "carbs100g": 53.05,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2375687,
+    "name": "winter spiced cranberry zero sugar lemon-lime flavored soda, winter spiced cranberry - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 0.0,
+    "protein100g": 0.0,
+    "carbs100g": 0.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2528808,
+    "name": "vanilla lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 76.0,
+    "protein100g": 3.53,
+    "carbs100g": 12.94,
+    "fat100g": 1.47
+  },
+  {
+    "usdaId": 2528820,
+    "name": "strawberry lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528821,
+    "name": "vanilla flavor  lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528822,
+    "name": "strawberry and blueberry flavor lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528823,
+    "name": "vanilla  lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528826,
+    "name": "strawberry and strawberry banana lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528827,
+    "name": "black cherry and peach lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 13.27,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2528828,
+    "name": "strawberry flavor lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 11.83,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2528829,
+    "name": "vanilla lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 11.83,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2528830,
+    "name": "probiotic dailies cherry & blueberry flavor lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 11.83,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2528834,
+    "name": "strawberry lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 10.75,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2528835,
+    "name": "peach lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 65.0,
+    "protein100g": 3.23,
+    "carbs100g": 10.75,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2528837,
+    "name": "probiotic strawberry banana flavor yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 77.0,
+    "protein100g": 3.38,
+    "carbs100g": 12.08,
+    "fat100g": 1.69
+  },
+  {
+    "usdaId": 2530188,
+    "name": "lemon-lime soda - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 39.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.7,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2530197,
+    "name": "sprite mexico glass bottle, 355 ml - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 39.0,
+    "protein100g": 0.0,
+    "carbs100g": 10.42,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2530215,
+    "name": "ginger fridge pack cans - sprite",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 37.0,
+    "protein100g": 0.0,
+    "carbs100g": 9.58,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2562574,
+    "name": "strawberry syrup - nesquik",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 250.0,
+    "protein100g": 0.0,
+    "carbs100g": 70.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2562575,
+    "name": "chocolate syrup - nesquik",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 250.0,
+    "protein100g": 0.0,
+    "carbs100g": 65.0,
+    "fat100g": 0.0
+  },
+  {
+    "usdaId": 2563984,
+    "name": "strawberry and blueberry flavor lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 11.83,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2563985,
+    "name": "lemon ginger & honey ginger lowfat yogurt drink - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 75.0,
+    "protein100g": 3.23,
+    "carbs100g": 13.98,
+    "fat100g": 1.61
+  },
+  {
+    "usdaId": 2657615,
+    "name": "strawberry & pineapple lowfat yogurt - activia",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 80.0,
+    "protein100g": 3.54,
+    "carbs100g": 15.93,
+    "fat100g": 1.33
+  },
+  {
+    "usdaId": 2688148,
+    "name": "nesquik strawberry lowfat milk 14 fl oz bottle - nesquik",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 60.0,
+    "protein100g": 3.38,
+    "carbs100g": 9.66,
+    "fat100g": 0.97
+  },
+  {
+    "usdaId": 2688160,
+    "name": "nesquik vanilla lowfat milk 14 fl oz bottle - nesquik",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 60.0,
+    "protein100g": 3.38,
+    "carbs100g": 9.9,
+    "fat100g": 0.97
+  },
+  {
+    "usdaId": 2688161,
+    "name": "nescaf frothy coffee beverage, french vanilla artificially and naturally flavored 2lb pouch - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 423.0,
+    "protein100g": 1.92,
+    "carbs100g": 82.69,
+    "fat100g": 8.65
+  },
+  {
+    "usdaId": 2688162,
+    "name": "nescaf chocolate buttercrisp toffee artificially and naturally flavored frothy coffee beverage 6, 2lb pouches - nescafe",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 423.0,
+    "protein100g": 3.85,
+    "carbs100g": 80.77,
+    "fat100g": 9.62
+  },
+  {
+    "usdaId": 2688170,
+    "name": "nesquik fudge brownie lowfat milk 14 fl oz bottle - nesquik",
+    "unit": {
+      "usdaUnitId": 2048,
+      "name": "gram",
+      "symbol": "g"
+    },
+    "gramsPerUnit": 1.0,
+    "kcal100g": 63.0,
+    "protein100g": 3.38,
+    "carbs100g": 10.39,
+    "fat100g": 1.09
+  }
+]
