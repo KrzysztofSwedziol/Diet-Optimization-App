@@ -25,46 +25,46 @@ services:
       timeout: 3s
       retries: 10
 
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_models:/root/.ollama
-    restart: unless-stopped
-    shm_size: "1g"
-    command: ["serve"]
-    healthcheck:
-      test:
-        ["CMD-SHELL", "OLLAMA_HOST=http://localhost:11434 ollama list || exit 1"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-
-  ollama-init:
-    image: ollama/ollama:latest
-    container_name: ollama-init
-    depends_on:
-      ollama:
-        condition: service_healthy
-    volumes:
-      - ollama_models:/root/.ollama
-    entrypoint: >
-      bash -c '
-        echo "Pulling mistral...";
-        OLLAMA_HOST=http://ollama:11434 ollama pull mistral;
-      
-        echo "Verifying model installation...";
-        until OLLAMA_HOST=http://ollama:11434 ollama list | grep -q mistral; do
-          echo "Model not found yet, retrying...";
-          sleep 1;
-        done;
-      
-        echo "Model mistral is installed.";
-      '
-      restart: "no"
-    restart: "no"
+#  ollama:
+#    image: ollama/ollama:latest
+#    container_name: ollama
+#    ports:
+#      - "11434:11434"
+#    volumes:
+#      - ollama_models:/root/.ollama
+#    restart: unless-stopped
+#    shm_size: "1g"
+#    command: ["serve"]
+#    healthcheck:
+#      test:
+#        ["CMD-SHELL", "OLLAMA_HOST=http://localhost:11434 ollama list || exit 1"]
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#
+#  ollama-init:
+#    image: ollama/ollama:latest
+#    container_name: ollama-init
+#    depends_on:
+#      ollama:
+#        condition: service_healthy
+#    volumes:
+#      - ollama_models:/root/.ollama
+#    entrypoint: >
+#      bash -c '
+#        echo "Pulling mistral...";
+#        OLLAMA_HOST=http://ollama:11434 ollama pull mistral;
+#
+#        echo "Verifying model installation...";
+#        until OLLAMA_HOST=http://ollama:11434 ollama list | grep -q mistral; do
+#          echo "Model not found yet, retrying...";
+#          sleep 1;
+#        done;
+#
+#        echo "Model mistral is installed.";
+#      '
+#      restart: "no"
+#    restart: "no"
 
   backend-dev:
     profiles: ["dev"]
