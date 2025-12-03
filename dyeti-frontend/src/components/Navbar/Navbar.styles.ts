@@ -183,3 +183,17 @@ export const MobileNavLink = styled(NavLinkBase)`
     border-right: 4px solid ${({ theme }) => theme.colors.primary[600]};
   }
 `;
+
+export const Backdrop = styled.div`
+  position: fixed;
+  top: ${HEADER_HEIGHT};
+  left: 0;
+  width: 100vw;
+  height: calc(100dvh - ${HEADER_HEIGHT});
+  background: rgba(0, 0, 0, 0.3); // semi-transparent
+  z-index: 8;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
+`;

@@ -51,20 +51,23 @@ const Navbar = () => {
       </Ui.Container>
 
       {isMenuOpen && (
-        <Ui.MobileMenu>
-          <Ui.MobileNav>
-            <Ui.MobileNavList>
-              {visibleNavItems.map(item => (
-                <li key={item.route}>
-                  <Ui.MobileNavLink to={item.route} end>
-                    {item.label}
-                  </Ui.MobileNavLink>
-                </li>
-              ))}
-            </Ui.MobileNavList>
-            <AuthSection />
-          </Ui.MobileNav>
-        </Ui.MobileMenu>
+        <>
+          <Ui.Backdrop onClick={() => setIsMenuOpen(false)} />
+          <Ui.MobileMenu>
+            <Ui.MobileNav>
+              <Ui.MobileNavList>
+                {visibleNavItems.map(item => (
+                  <li key={item.route}>
+                    <Ui.MobileNavLink to={item.route} onClick={() => setIsMenuOpen(false)} end>
+                      {item.label}
+                    </Ui.MobileNavLink>
+                  </li>
+                ))}
+              </Ui.MobileNavList>
+              <AuthSection />
+            </Ui.MobileNav>
+          </Ui.MobileMenu>
+        </>
       )}
     </>
   );
