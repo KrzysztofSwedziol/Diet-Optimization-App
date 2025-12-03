@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useMemo, useState } from 'react
 import type { Mode } from '@/pages/SetConstraints/types.ts';
 import { calculateCalories, gramsFromCalories } from '@/pages/SetConstraints/utils.ts';
 import { INITIAL_CALORIES, KCAL_PER_G, PROPORTIONS } from '@/pages/SetConstraints/constants.ts';
-import type { FieldErrors, GenerateResult, GenerationMode, PlanGenerationRequest } from '@/api/types.ts';
+import type { FieldErrors, GenerateResult, PlanGenerationRequest } from '@/api/types.ts';
 import { useGenerateProductPlan } from '@/api/plans/hooks';
 import { MacroValues } from '@/components/MacroTable/types';
 
@@ -18,7 +18,7 @@ type PlanGenerationContextType = {
   setMacroValues: React.Dispatch<React.SetStateAction<MacroValues>>;
 
   isGenerating: boolean;
-  generatePlan: (method: GenerationMode) => Promise<GenerateResult>;
+  generatePlan: () => Promise<GenerateResult>;
 };
 
 const PlanGenerationContext = createContext<PlanGenerationContextType | undefined>(undefined);
@@ -64,49 +64,37 @@ export const PlanGenerationProvider = ({ children }: { children: React.ReactNode
     return { ok: true as const };
   }, [name, macroValues]);
 
-  const generatePlan = useCallback(
-    async (method: GenerationMode): Promise<GenerateResult> => {
-      const validated = validateFields();
-      if (!validated.ok) {
-        return {
-          ok: false,
-          code: 'INVALID_INPUT',
-          message: validated.message ?? 'Invalid input',
-          fieldErrors: validated.fieldErrors,
-        };
-      }
+  const generatePlan = useCallback(async (): Promise<GenerateResult> => {
+    const validated = validateFields();
+    if (!validated.ok) {
+      return {
+        ok: false,
+        code: 'INVALID_INPUT',
+        message: validated.message ?? 'Invalid input',
+        fieldErrors: validated.fieldErrors,
+      };
+    }
 
-      if (method === 'MEAL') {
-        return {
-          ok: false,
-          code: 'UNSUPPORTED_METHOD',
-          message: 'Meal-based generation is coming soon.',
-          fieldErrors: { method: 'Meal-based generation is coming soon.' },
-        };
-      }
+    setIsGenerating(true);
+    try {
+      const payload: PlanGenerationRequest = {
+        name: name.trim(),
+        description: description || undefined,
+        caloriesTarget: macroValues.calories,
+        proteinsTarget: macroValues.protein,
+        carbsTarget: macroValues.carbs,
+        fatsTarget: macroValues.fats,
+      };
 
-      setIsGenerating(true);
-      try {
-        const payload: PlanGenerationRequest = {
-          name: name.trim(),
-          description: description || undefined,
-          caloriesTarget: macroValues.calories,
-          proteinsTarget: macroValues.protein,
-          carbsTarget: macroValues.carbs,
-          fatsTarget: macroValues.fats,
-        };
+      await generateProductPlan(payload);
 
-        await generateProductPlan(payload);
-
-        return { ok: true, message: 'Plan generated successfully' };
-      } catch {
-        return { ok: false, code: 'NETWORK', message: 'Could not generate the plan. Please try again.' };
-      } finally {
-        setIsGenerating(false);
-      }
-    },
-    [validateFields, name, description, macroValues, generateProductPlan],
-  );
+      return { ok: true, message: 'Plan generated successfully' };
+    } catch {
+      return { ok: false, code: 'NETWORK', message: 'Could not generate the plan. Please try again.' };
+    } finally {
+      setIsGenerating(false);
+    }
+  }, [validateFields, name, description, macroValues, generateProductPlan]);
 
   const value = useMemo(
     () => ({

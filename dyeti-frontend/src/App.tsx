@@ -10,7 +10,6 @@ import {
   PlanDetails,
   GeneratePlan,
   SetConstraint,
-  ChooseMethod,
   Account,
   Preferences,
 } from '@/pages';
@@ -35,7 +34,6 @@ function App() {
             <Route element={<PlanGenerationLayout />}>
               <Route path="/plans/generate" element={<GeneratePlan />} />
               <Route path="/plans/constraints" element={<SetConstraint />} />
-              <Route path="/plans/method" element={<ChooseMethod />} />
             </Route>
           </Route>
         </Route>

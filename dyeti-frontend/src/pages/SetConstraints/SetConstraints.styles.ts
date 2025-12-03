@@ -5,3 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 8px;
 `;
+
+export const Error = styled.p`
+  color: ${({ theme }) => theme.colors.danger[500]};
+  font-size: ${({ theme }) => theme.typography.fontSize.sm};
+`;

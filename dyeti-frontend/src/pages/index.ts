@@ -9,4 +9,3 @@ export { default as Signup } from './Auth/Signup/Signup.tsx';
 export { default as Account } from './Account/Account.tsx';
 export { default as GeneratePlan } from './GeneratePlan/GeneratePlan.tsx';
 export { default as SetConstraint } from './SetConstraints/SetConstraints.tsx';
-export { default as ChooseMethod } from './ChooseMethod/ChooseMethod.tsx';
