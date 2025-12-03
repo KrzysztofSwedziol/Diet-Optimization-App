@@ -1,13 +1,13 @@
 import InputWrapper from '../InputWrapper';
 import { Shell, Suffix } from './InputWithSuffix.styles.ts';
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import { InputField } from '../Input/Input.styles.ts';
 
-type Props = {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   type?: string;
   placeholder?: string;
-  value: number;
+  value: number | string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   width?: string;
@@ -27,6 +27,7 @@ const InputWithSuffix = ({
   suffix,
   textAlign,
   disabled,
+  ...props
 }: Props) => (
   <InputWrapper label={label} error={error} width={width}>
     <Shell>
@@ -38,8 +39,9 @@ const InputWithSuffix = ({
         onChange={onChange}
         $haserror={!!error}
         textAlign={textAlign}
+        {...props}
       />
-      {suffix && <Suffix>{suffix}</Suffix>}
+      {suffix && <Suffix $disabled={disabled}>{suffix}</Suffix>}
     </Shell>
   </InputWrapper>
 );

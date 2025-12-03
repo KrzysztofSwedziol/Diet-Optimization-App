@@ -10,7 +10,7 @@ import * as Ui from './SetConstraints.styles.ts';
 
 type Props = {
   macroValues: MacroValues;
-  onChange: (key: MacroKey, v: string) => void;
+  onChange: (key: MacroKey, v: string | number) => void;
   mode: Mode;
 };
 

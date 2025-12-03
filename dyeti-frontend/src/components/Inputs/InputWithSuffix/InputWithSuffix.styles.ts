@@ -5,14 +5,13 @@ export const Shell = styled.div<{ $width?: string }>`
   width: ${({ $width }) => $width || '100%'};
 `;
 
-export const Suffix = styled.span<{ disabled?: boolean }>`
+export const Suffix = styled.span<{ $disabled?: boolean }>`
   position: absolute;
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
   font-family: ${({ theme }) => theme.typography.fontFamily};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.neutrals[700]};
+  color: ${({ theme, $disabled }) => ($disabled ? theme.colors.neutrals[400] : theme.colors.neutrals[700])};
   pointer-events: none;
-  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;

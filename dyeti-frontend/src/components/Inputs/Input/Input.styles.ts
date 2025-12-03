@@ -38,6 +38,13 @@ export const InputField = styled.input<{
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary[700]};
   }
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.neutrals[100]};
+    border-color: ${({ theme }) => theme.colors.neutrals[300]};
+    color: ${({ theme }) => theme.colors.neutrals[500]};
+    cursor: not-allowed;
+  }
 `;
 
 export const InputError = styled.span`
