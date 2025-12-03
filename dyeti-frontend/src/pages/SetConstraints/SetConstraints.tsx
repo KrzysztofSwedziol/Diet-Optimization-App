@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import SegmentedPicker from '../../components/SegmentedPicker/SegmentedPicker.tsx';
 import { useEffect, useRef } from 'react';
 import { Mode } from './types.ts';
@@ -12,8 +11,6 @@ import dyeti from '../../assets/dyeti-pencil.svg';
 import { usePlanGeneration } from '@/context';
 
 const SetConstraints = () => {
-  const navigate = useNavigate();
-
   const { mode, setMode, macroValues, setMacroValues } = usePlanGeneration();
   const modeRef = useRef<Mode>(mode);
   useEffect(() => {
@@ -48,14 +45,6 @@ const SetConstraints = () => {
     setMacroValues(prev => ({ ...prev, [key]: num }));
   };
 
-  const next = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    navigate('/plans/method');
-  };
-
-  const back = () => navigate(-1);
-
   return (
     <FullLayout
       title="Set Constraints"
@@ -64,14 +53,7 @@ const SetConstraints = () => {
     >
       <Ui.Container>
         <SegmentedPicker options={MODE_OPTIONS} value={mode} onChange={val => setMode(val as Mode)} />
-
-        <SetConstraintsForm
-          onSubmit={next}
-          macroValues={macroValues}
-          onChange={onChangeValue}
-          mode={mode}
-          onBack={back}
-        />
+        <SetConstraintsForm macroValues={macroValues} onChange={onChangeValue} mode={mode} />
       </Ui.Container>
     </FullLayout>
   );
