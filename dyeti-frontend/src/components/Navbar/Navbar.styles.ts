@@ -136,7 +136,7 @@ export const MobileMenu = styled.aside`
   top: ${HEADER_HEIGHT};
   left: 0;
   width: 250px;
-  height: calc(100vh - ${HEADER_HEIGHT});
+  height: calc(100dvh - ${HEADER_HEIGHT});
   background-color: ${({ theme }) => theme.colors.background};
   padding: 16px 0;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
