@@ -95,8 +95,7 @@ public class SecurityConfig {
            rozbić to na więcej configów
         */
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173");
-        config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOrigin("http://91.99.75.209:5173");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
