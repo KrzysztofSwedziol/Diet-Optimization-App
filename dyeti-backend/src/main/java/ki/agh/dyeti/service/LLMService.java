@@ -20,6 +20,7 @@ public class LLMService {
     private static final String URL = "http://ollama:11434/v1/completions";
     private static final String MODEL_NAME = "mistral";
     private static final String RECIPE_PROMPT_FILE_PATH = "LLM_resources/prompts/RecipePrompt";
+    private static final String MEAL_RECIPE_PROMPT_FILE_PATH = "LLM_resources/prompts/MealDivisionAndRecipePrompt";
 
     public LLMService(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
@@ -84,6 +85,33 @@ public class LLMService {
         }
         return response;
     }
+
+    //    public String generateMealsAndRecipes(Plan plan, int mealQuantity) throws IOException {
+    //        String basePrompt = readPromptFromResources(MEAL_RECIPE_PROMPT_FILE_PATH);
+    //
+    //        String productList = plan.getProducts().stream()
+    //                .map(pp -> {
+    //                    var p = pp.getProduct();
+    //                    String unit = p.getUnit() != null ? p.getUnit().getName() : "g";
+    //                    return "- " + p.getName() + ": " + pp.getQuantity() + unit;
+    //                })
+    //                .collect(Collectors.joining("\n"));
+    //
+    //        String finalPrompt =
+    //                basePrompt.replace("MEAL_COUNT", String.valueOf(mealQuantity)).replace("PRODUCT_LIST",
+    // productList);
+    //
+    //        System.out.println("Prompt for meals:");
+    //        System.out.println(finalPrompt);
+    //
+    //        String response = ask("mistral", finalPrompt);
+    //
+    //        if (response == null || response.isBlank()) {
+    //            throw new IllegalStateException("Empty response from LLM");
+    //        }
+    //
+    //        return response;
+    //    }
 
     private String readPromptFromResources(String filePath) throws IOException {
         ClassPathResource resource = new ClassPathResource(filePath);
