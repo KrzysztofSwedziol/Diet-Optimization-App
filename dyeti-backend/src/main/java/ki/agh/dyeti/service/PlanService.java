@@ -130,8 +130,7 @@ public class PlanService {
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
 
-        mealService.distributeProductsToMeals(generatedPlan, planRequestDTO.mealQuantity());
-        recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
+        //recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
     }
 
     public boolean existsByName(Long userId, String name) {
