@@ -44,8 +44,8 @@ export const StyledButton = styled.button<{
   ${({ fullwidth }) => fullwidth && 'width: 100%;'}
 
   &:hover {
+    background-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[200] : theme.colors.primary[700])};
     border-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : 'transparent')};
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 
     ${({ animation }) =>
       animation &&

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { useDebouncedCallback } from '@tanstack/react-pacer';
 import { clamp } from '@/utils/clamp';
 import { ProductWithPreference } from '@/types';
 
 import NutritionInfo from './NutritionInfo';
 import * as Ui from './ProductModal.styles';
+import { AppButton } from '@/components';
 
 type Props = {
   product: ProductWithPreference;
@@ -20,12 +20,9 @@ const ProductModal = ({ product: productWithPreference, onClose, onSavePreferenc
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => inputRef.current?.focus(), []);
 
-  const debouncedSave = useDebouncedCallback((value: number) => onSavePreference(product.id, value), { wait: 500 });
-
   const updateValue = (value: number) => {
     const clamped = clamp(value, 0, 10);
     setInputValue(String(clamped));
-    debouncedSave(clamped);
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,8 +37,13 @@ const ProductModal = ({ product: productWithPreference, onClose, onSavePreferenc
     if (inputValue.trim() === '') updateValue(0);
   };
 
-  const decrement = () => updateValue(Number(inputValue || 0) - 1);
-  const increment = () => updateValue(Number(inputValue || 0) + 1);
+  const decrement = () => updateValue(Number(inputValue) - 1);
+  const increment = () => updateValue(Number(inputValue) + 1);
+
+  const handleSave = () => {
+    onSavePreference(product.id, Number(inputValue));
+    onClose();
+  };
 
   return (
     <Ui.StyledModal open={!!product} onClose={onClose}>
@@ -89,7 +91,9 @@ const ProductModal = ({ product: productWithPreference, onClose, onSavePreferenc
             </Ui.StepButton>
           </Ui.PreferenceControl>
 
-          <Ui.Hint>Changes save automatically.</Ui.Hint>
+          <Ui.ButtonsContainer>
+            <AppButton onClick={handleSave}>Save</AppButton>
+          </Ui.ButtonsContainer>
         </Ui.Section>
       </Ui.Content>
     </Ui.StyledModal>
