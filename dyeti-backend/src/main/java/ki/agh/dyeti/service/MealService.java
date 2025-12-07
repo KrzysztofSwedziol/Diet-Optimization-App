@@ -65,51 +65,62 @@ public class MealService {
 
             //do testowania :
             String json = """
-            [
-              {
-                "orderInDay": 1,
-                "products": [
-                  { "name": "Banana", "amount": "120g" },
-                  { "name": "Oatmeal", "amount": "50g" }
-                ],
-                "recipes": [
-                  {
-                    "name": "Banana Oatmeal",
-                    "description": "A quick and healthy breakfast with banana and oatmeal.",
-                    "steps": ["Peel the banana and slice it.", "Mix with oatmeal in a bowl.", "Add a splash of milk and serve."]
-                  }
-                ]
-              },
-              {
-                "orderInDay": 2,
-                "products": [
-                  { "name": "Chicken Breast", "amount": "200g" },
-                  { "name": "Rice", "amount": "100g" },
-                  { "name": "Broccoli", "amount": "80g" }
-                ],
-                "recipes": [
-                  {
-                    "name": "Chicken and Rice with Broccoli",
-                    "description": "Hearty lunch with protein and veggies.",
-                    "steps": ["Cook the chicken until golden.", "Boil the rice.", "Steam the broccoli.", "Combine all ingredients and season."]
-                  }
-                ]
-              },
-              {
-                "orderInDay": 3,
-                "products": [
-                  { "name": "Apple", "amount": "150g" },
-                  { "name": "Yogurt", "amount": "100g" }
-                ],
-                "recipes": [
-                  {
-                    "name": "Apple Yogurt Snack",
-                    "description": "Simple and healthy snack.",
-                    "steps": ["Cut the apple into small pieces.", "Mix with yogurt.", "Serve chilled."]
-                  }
-                ]
-              }
-            ]
+                    [
+                       {
+                         "orderInDay": 1,
+                         "products": [
+                           { "name": "Bananas, overripe, raw", "amount": "120g" },
+                           { "name": "Yogurt, Greek, plain, nonfat", "amount": "150g" }
+                         ],
+                         "recipes": [
+                           {
+                             "name": "Banana Greek Yogurt Bowl",
+                             "description": "Quick breakfast with banana and Greek yogurt.",
+                             "steps": [
+                               "Slice the banana.",
+                               "Mix with Greek yogurt.",
+                               "Serve chilled."
+                             ]
+                           }
+                         ]
+                       },
+                       {
+                         "orderInDay": 2,
+                         "products": [
+                           { "name": "Onions, red, raw", "amount": "50g" },
+                           { "name": "Lettuce, cos or romaine, raw", "amount": "80g" }
+                         ],
+                         "recipes": [
+                           {
+                             "name": "Red Onion & Romaine Salad",
+                             "description": "Light lunch salad.",
+                             "steps": [
+                               "Slice red onion.",
+                               "Chop romaine lettuce.",
+                               "Mix and season."
+                             ]
+                           }
+                         ]
+                       },
+                       {
+                         "orderInDay": 3,
+                         "products": [
+                           { "name": "Bananas, ripe and slightly ripe, raw", "amount": "115g" },
+                           { "name": "Yogurt, Greek, strawberry, nonfat", "amount": "150g" }
+                         ],
+                         "recipes": [
+                           {
+                             "name": "Banana Strawberry Yogurt Snack",
+                             "description": "Sweet and healthy snack.",
+                             "steps": [
+                               "Slice the banana.",
+                               "Mix with strawberry yogurt.",
+                               "Enjoy."
+                             ]
+                           }
+                         ]
+                       }
+                     ]
             """;
 
             List<Meal> meals = createMealsFromJson(plan, json);
