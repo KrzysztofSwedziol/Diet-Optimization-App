@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext } from 'react';
 import { useCheckAuth, useLogIn, useLogOut, useRegister } from '@/api/auth/hooks';
 import { Gender, User } from '@/api/types.ts';
 
@@ -20,22 +20,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const logoutMutation = useLogOut();
   const registerMutation = useRegister();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    if (!isLoading) {
-      setIsLoggedIn(!!user);
-    }
-  }, [user, isLoading]);
+  const isLoggedIn = !!user;
 
   const login = async (username: string, password: string) => {
     await loginMutation.mutateAsync({ username, password });
-    setIsLoggedIn(true);
   };
 
   const logout = async () => {
     await logoutMutation.mutateAsync();
-    setIsLoggedIn(false);
   };
 
   const register = async (data: { username: string; email: string; password: string; gender: Gender }) => {

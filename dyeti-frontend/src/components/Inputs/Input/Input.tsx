@@ -1,6 +1,7 @@
-import { InputWrapper, InputLabel, InputField, InputError } from './Input.styles';
+import { InputHTMLAttributes } from 'react';
+import { InputWrapper, InputLabel, InputField, InputError, RequiredIndicator } from './Input.styles';
 
-type Props = {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   type?: string;
   placeholder?: string;
@@ -10,10 +11,13 @@ type Props = {
   paddingY?: number;
 };
 
-const Input = ({ label, type = 'text', placeholder, value, onChange, error, paddingY }: Props) => {
+const Input = ({ label, type = 'text', placeholder, value, onChange, error, paddingY, ...props }: Props) => {
   return (
     <InputWrapper $haserror={!!error}>
-      <InputLabel>{label}</InputLabel>
+      <InputLabel>
+        {label}
+        {props.required && <RequiredIndicator>*</RequiredIndicator>}
+      </InputLabel>
       <InputField
         paddingy={paddingY}
         type={type}
@@ -21,6 +25,7 @@ const Input = ({ label, type = 'text', placeholder, value, onChange, error, padd
         value={value}
         onChange={onChange}
         $haserror={!!error}
+        {...props}
       />
       {error && <InputError>{error}</InputError>}
     </InputWrapper>

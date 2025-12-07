@@ -1,4 +1,4 @@
-import { KCAL_PER_G } from './constants.ts';
+import { KCAL_PER_G } from '../constants/constants.ts';
 
 export const gramsFromCalories = (calories: number, proportion: number, kcalPerGram: number, decimals = 0) =>
   Number(((calories * proportion) / kcalPerGram).toFixed(decimals));

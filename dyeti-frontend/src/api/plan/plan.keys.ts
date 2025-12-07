@@ -6,6 +6,8 @@ const planKeys = {
 
   details: () => [...planKeys.all, 'detail'] as const,
   detail: (planId: number) => [...planKeys.details(), planId] as const,
+
+  available: (name: string) => [...planKeys.all, 'available', name] as const,
 };
 
 export default planKeys;

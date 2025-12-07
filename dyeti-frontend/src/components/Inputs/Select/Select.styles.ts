@@ -3,7 +3,6 @@ import { styled } from 'styled-components';
 export const SelectWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
 `;
 
 export const SelectLabel = styled.h1`

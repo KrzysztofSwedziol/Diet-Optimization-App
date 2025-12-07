@@ -3,7 +3,6 @@ import { styled } from 'styled-components';
 export const InputWrapper = styled.div<{ $haserror?: boolean }>`
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
 `;
 
 export const InputLabel = styled.h1`
@@ -52,4 +51,9 @@ export const InputError = styled.span`
   color: ${({ theme }) => theme.colors.danger[500]};
   margin: 2px;
   font-style: italic;
+`;
+
+export const RequiredIndicator = styled.span`
+  color: ${({ theme }) => theme.colors.danger[500]};
+  margin-left: 2px;
 `;

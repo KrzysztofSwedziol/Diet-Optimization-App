@@ -109,12 +109,12 @@ export const StepButton = styled.button`
 
   border: 1px solid ${({ theme }) => theme.colors.neutrals[300]};
   border-radius: 8px;
-  background: ${({ theme }) => theme.colors.primary[700]};
+  background: ${({ theme }) => theme.colors.primary[600]};
   cursor: pointer;
   color: white;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.primary[800]};
+    background: ${({ theme }) => theme.colors.primary[700]};
   }
 
   &:disabled {
@@ -126,8 +126,8 @@ export const StepButton = styled.button`
 export const MinusIcon = styled(FaMinus).attrs({ size: 18 })``;
 export const PlusIcon = styled(FaPlus).attrs({ size: 18 })``;
 
-export const Hint = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.xs};
-  color: ${({ theme }) => theme.colors.neutrals[500]};
-  margin: 0 auto;
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 8px;
 `;
