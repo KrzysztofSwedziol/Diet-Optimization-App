@@ -1,14 +1,14 @@
 import { Picker, Pill, Knob } from './SegmentedPicker.styles.ts';
 
-type Option = { value: string; label: string };
+type Option<T extends string> = { value: T; label: string };
 
-type Props = {
-  options: Option[]; // np. 2 pozycje
-  value: string; // wybrany value
-  onChange: (v: string) => void;
+type Props<T extends string> = {
+  options: readonly Option<T>[];
+  value: T;
+  onChange: (v: T) => void;
 };
 
-const SegmentedPicker = ({ options, value, onChange }: Props) => {
+const SegmentedPicker = <T extends string>({ options, value, onChange }: Props<T>) => {
   const idx = Math.max(
     0,
     options.findIndex(o => o.value === value),

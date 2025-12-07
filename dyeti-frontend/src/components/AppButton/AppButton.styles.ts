@@ -43,8 +43,10 @@ export const StyledButton = styled.button<{
 
   ${({ fullwidth }) => fullwidth && 'width: 100%;'}
 
+  transition: background-color 0.3s, border-color 0.3s;
+
   &:hover {
-    background-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[200] : theme.colors.primary[700])};
+    background-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[100] : theme.colors.primary[700])};
     border-color: ${({ theme, reversed }) => (reversed ? theme.colors.primary[600] : 'transparent')};
 
     ${({ animation }) =>
