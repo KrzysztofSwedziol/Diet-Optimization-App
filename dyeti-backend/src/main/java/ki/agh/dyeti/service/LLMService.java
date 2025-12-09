@@ -20,8 +20,10 @@ public class LLMService {
 
     @Value("${openai.api.key:}")
     private String openaiApiKey;
+
     private static final String OPENAI_URL = "https://api.openai.com/v1/chat/completions";
     private static final String OPENAI_MODEL = "gpt-4o";
+    private static final int OPENAI_MAX_TOKENS = 2000;
     private static final String MEAL_RECIPE_PROMPT_FILE_PATH = "LLM_resources/prompts/MealDivisionAndRecipePrompt";
 
     private static final String OLLAMA_URL = "http://ollama:11434/v1/completions";
@@ -34,9 +36,7 @@ public class LLMService {
     }
 
     public String askGPT(String prompt) {
-        String key = openaiApiKey != null && !openaiApiKey.isBlank()
-                ? openaiApiKey
-                : System.getenv("OPENAI_API_KEY");
+        String key = openaiApiKey != null && !openaiApiKey.isBlank() ? openaiApiKey : System.getenv("OPENAI_API_KEY");
 
         if (key == null || key.isBlank()) {
             throw new IllegalStateException("Missing OpenAI API key");
@@ -49,24 +49,31 @@ public class LLMService {
 
             Map<String, Object> body = new LinkedHashMap<>();
             body.put("model", OPENAI_MODEL);
-            body.put("messages", List.of(
-                    Map.of("role", "system", "content", "You output only valid JSON."),
-                    Map.of("role", "user", "content", prompt)
-            ));
+            body.put(
+                    "messages",
+                    List.of(
+                            Map.of("role", "system", "content", "You output only valid JSON."),
+                            Map.of("role", "user", "content", prompt)));
             body.put("temperature", 0.0);
-            body.put("max_tokens", 2000);
+            body.put("max_tokens", OPENAI_MAX_TOKENS);
 
             HttpEntity<Map<String, Object>> req = new HttpEntity<>(body, headers);
 
             Map<String, Object> res = restTemplate.postForObject(OPENAI_URL, req, Map.class);
-            if (res == null) return "";
+            if (res == null) {
+                return "";
+            }
 
             List<?> choices = (List<?>) res.get("choices");
-            if (choices == null || choices.isEmpty()) return "";
+            if (choices == null || choices.isEmpty()) {
+                return "";
+            }
 
             Map<?, ?> first = (Map<?, ?>) choices.get(0);
             Map<?, ?> msg = (Map<?, ?>) first.get("message");
-            if (msg == null) return "";
+            if (msg == null) {
+                return "";
+            }
 
             return Objects.toString(msg.get("content"), "");
 
@@ -121,9 +128,8 @@ public class LLMService {
                 })
                 .collect(Collectors.joining(",\n  "));
 
-        String finalPrompt = basePrompt
-                .replace("MEAL_COUNT", String.valueOf(mealCount))
-                .replace("PRODUCT_LIST", productListText);
+        String finalPrompt =
+                basePrompt.replace("MEAL_COUNT", String.valueOf(mealCount)).replace("PRODUCT_LIST", productListText);
 
         String response = askGPT(finalPrompt);
 

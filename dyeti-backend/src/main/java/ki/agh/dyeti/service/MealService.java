@@ -26,7 +26,10 @@ public class MealService {
     public MealService(
             MealRepository mealRepository,
             CurrentUserProvider currentUserProvider,
-            ProductRepository productRepository, LLMService llmService, ObjectMapper objectMapper, PlanRepository planRepository) {
+            ProductRepository productRepository,
+            LLMService llmService,
+            ObjectMapper objectMapper,
+            PlanRepository planRepository) {
         this.mealRepository = mealRepository;
         this.currentUserProvider = currentUserProvider;
         this.productRepository = productRepository;
@@ -60,11 +63,12 @@ public class MealService {
     }
 
     public void distributeProductsToMeals(Plan plan, int mealQuantity) {
-        //try {
-//            String json = llmService.generateMealsAndRecipesJson(plan, mealQuantity);
+        // try {
+        //            String json = llmService.generateMealsAndRecipesJson(plan, mealQuantity);
 
-            //do testowania :
-            String json = """
+        // do testowania :
+        String json =
+                """
                     [
                        {
                          "orderInDay": 1,
@@ -123,15 +127,15 @@ public class MealService {
                      ]
             """;
 
-            List<Meal> meals = createMealsFromJson(plan, json);
-            plan.getMeals().clear();
-            plan.getMeals().addAll(meals);
+        List<Meal> meals = createMealsFromJson(plan, json);
+        plan.getMeals().clear();
+        plan.getMeals().addAll(meals);
 
-            planRepository.save(plan);
+        planRepository.save(plan);
 
-//        }catch (IOException e) {
-//            throw new RuntimeException("Error while distributing products to meals", e);
-//        }
+        //        }catch (IOException e) {
+        //            throw new RuntimeException("Error while distributing products to meals", e);
+        //        }
     }
 
     public List<Meal> createMealsFromJson(Plan plan, String json) {
@@ -150,9 +154,11 @@ public class MealService {
                 List<MealProduct> mealProducts = new ArrayList<>();
                 for (JsonNode productNode : mealNode.path("products")) {
                     String productName = productNode.path("name").asText();
-                    double amount = extractAmountAsDouble(productNode.path("amount").asText());
+                    double amount =
+                            extractAmountAsDouble(productNode.path("amount").asText());
 
-                    Product product = productRepository.findByName(productName)
+                    Product product = productRepository
+                            .findByName(productName)
                             .orElseThrow(() -> new IllegalStateException("Product not found: " + productName));
 
                     MealProduct mp = MealProduct.builder()
@@ -186,7 +192,6 @@ public class MealService {
             throw new RuntimeException("Failed to create meals from JSON", e);
         }
     }
-
 
     private double extractAmountAsDouble(String txt) {
         try {
