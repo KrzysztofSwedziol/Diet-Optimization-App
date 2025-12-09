@@ -77,6 +77,8 @@ services:
     volumes:
       - ./dyeti-backend:/app
       - gradle_cache:/home/gradle/.gradle
+    env_file:
+      - ./dyeti-backend/.env
     environment:
       SERVER_PORT: 8081
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/dyeti_db
