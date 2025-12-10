@@ -1,5 +1,7 @@
 version: "3.9"
-
+#docker compose down -v - do usunięcia wszystkich volumów (przydatne)
+#docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
+#docker volume ls - sprawdzenie wszystkich wolumenów (jakbyśmy chcieli usunąć wszystko oprócz potężnej ollamy)
 services:
   postgres:
     build:
@@ -105,6 +107,8 @@ services:
     ports:
       - "8080:80"
     restart: unless-stopped
+    environment:
+      VITE_API_URL: ${BACKEND_URL}
 
 volumes:
   pg_data:
