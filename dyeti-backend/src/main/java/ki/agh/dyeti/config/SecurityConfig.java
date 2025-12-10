@@ -24,10 +24,15 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig {
     private final CustomUserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
+    private final List<String> allowedCorsOrigins;
 
-    public SecurityConfig(CustomUserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+    public SecurityConfig(
+            CustomUserDetailsService userDetailsService,
+            PasswordEncoder passwordEncoder,
+            @Value("${security.cors.allowed-origins}") List<String> allowedCorsOrigins) {
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
+        this.allowedCorsOrigins = allowedCorsOrigins;
     }
 
     @Bean
@@ -95,7 +100,7 @@ public class SecurityConfig {
            rozbić to na więcej configów
         */
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://91.99.75.209:5173");
+        config.setAllowedOrigins(allowedCorsOrigins);
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
