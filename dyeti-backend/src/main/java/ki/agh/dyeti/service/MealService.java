@@ -1,11 +1,11 @@
 package ki.agh.dyeti.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import ki.agh.dyeti.dto.MealDTO;
+import ki.agh.dyeti.dto.*;
 import ki.agh.dyeti.model.*;
 import ki.agh.dyeti.repository.MealRepository;
 import ki.agh.dyeti.repository.PlanRepository;
@@ -63,99 +63,43 @@ public class MealService {
     }
 
     public void distributeProductsToMeals(Plan plan, int mealQuantity) {
-        // try {
-        //            String json = llmService.generateMealsAndRecipesJson(plan, mealQuantity);
+        try {
+            String json = llmService.generateMealsAndRecipes(plan, mealQuantity);
 
-        // do testowania :
-        String json =
-                """
-                    [
-                       {
-                         "orderInDay": 1,
-                         "products": [
-                           { "name": "Bananas, overripe, raw", "amount": "120g" },
-                           { "name": "Yogurt, Greek, plain, nonfat", "amount": "150g" }
-                         ],
-                         "recipes": [
-                           {
-                             "name": "Banana Greek Yogurt Bowl",
-                             "description": "Quick breakfast with banana and Greek yogurt.",
-                             "steps": [
-                               "Slice the banana.",
-                               "Mix with Greek yogurt.",
-                               "Serve chilled."
-                             ]
-                           }
-                         ]
-                       },
-                       {
-                         "orderInDay": 2,
-                         "products": [
-                           { "name": "Onions, red, raw", "amount": "50g" },
-                           { "name": "Lettuce, cos or romaine, raw", "amount": "80g" }
-                         ],
-                         "recipes": [
-                           {
-                             "name": "Red Onion & Romaine Salad",
-                             "description": "Light lunch salad.",
-                             "steps": [
-                               "Slice red onion.",
-                               "Chop romaine lettuce.",
-                               "Mix and season."
-                             ]
-                           }
-                         ]
-                       },
-                       {
-                         "orderInDay": 3,
-                         "products": [
-                           { "name": "Bananas, ripe and slightly ripe, raw", "amount": "115g" },
-                           { "name": "Yogurt, Greek, strawberry, nonfat", "amount": "150g" }
-                         ],
-                         "recipes": [
-                           {
-                             "name": "Banana Strawberry Yogurt Snack",
-                             "description": "Sweet and healthy snack.",
-                             "steps": [
-                               "Slice the banana.",
-                               "Mix with strawberry yogurt.",
-                               "Enjoy."
-                             ]
-                           }
-                         ]
-                       }
-                     ]
-            """;
+            List<GeneratedMealDTO> generated = parseGeneratedMeals(json);
+            List<Meal> meals = createMealsFromDto(plan, generated);
+            plan.getMeals().clear();
+            plan.getMeals().addAll(meals);
 
-        List<Meal> meals = createMealsFromJson(plan, json);
-        plan.getMeals().clear();
-        plan.getMeals().addAll(meals);
+            planRepository.save(plan);
 
-        planRepository.save(plan);
-
-        //        }catch (IOException e) {
-        //            throw new RuntimeException("Error while distributing products to meals", e);
-        //        }
+        } catch (IOException e) {
+            throw new RuntimeException("Error while distributing products to meals", e);
+        }
     }
 
-    public List<Meal> createMealsFromJson(Plan plan, String json) {
-        List<Meal> meals = new ArrayList<>();
+    public List<GeneratedMealDTO> parseGeneratedMeals(String json) {
         try {
-            JsonNode root = objectMapper.readTree(json);
-            if (!root.isArray()) {
-                throw new IllegalStateException("Expected JSON array of meals");
-            }
+            MealResponseDTO response = objectMapper.readValue(json, MealResponseDTO.class);
+            return response.meals();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to parse LLM JSON to DTOs", e);
+        }
+    }
 
-            for (JsonNode mealNode : root) {
-                Meal meal = new Meal();
-                meal.setPlan(plan);
-                meal.setOrderInDay(mealNode.path("orderInDay").asInt(0));
+    public List<Meal> createMealsFromDto(Plan plan, List<GeneratedMealDTO> generatedMeals) {
+        List<Meal> meals = new ArrayList<>();
 
-                List<MealProduct> mealProducts = new ArrayList<>();
-                for (JsonNode productNode : mealNode.path("products")) {
-                    String productName = productNode.path("name").asText();
-                    double amount =
-                            extractAmountAsDouble(productNode.path("amount").asText());
+        for (GeneratedMealDTO gm : generatedMeals) {
+            Meal meal = new Meal();
+            meal.setPlan(plan);
+            meal.setOrderInDay(gm.orderInDay());
+
+            List<MealProduct> mealProducts = new ArrayList<>();
+            if (gm.products() != null) {
+                for (GeneratedProductDTO gp : gm.products()) {
+                    String productName = gp.name();
+                    double amount = extractAmountAsDouble(gp.amount());
 
                     Product product = productRepository
                             .findByName(productName)
@@ -169,28 +113,28 @@ public class MealService {
 
                     mealProducts.add(mp);
                 }
-                meal.setProducts(mealProducts);
+            }
+            meal.setProducts(mealProducts);
 
-                List<Recipe> recipes = new ArrayList<>();
-                for (JsonNode recipeNode : mealNode.path("recipes")) {
+            List<Recipe> recipes = new ArrayList<>();
+            if (gm.recipes() != null) {
+                for (GeneratedRecipeDTO gr : gm.recipes()) {
                     Recipe r = new Recipe();
-                    r.setRecipeName(recipeNode.path("name").asText());
-                    r.setDescription(recipeNode.path("description").asText(""));
-                    r.setSteps(recipeNode.path("steps").asText(""));
+                    r.setRecipeName(gr.name());
+                    r.setDescription(gr.description() == null ? "" : gr.description());
+                    List<String> stepsList = gr.steps() == null ? List.of() : gr.steps();
+                    r.setSteps(String.join("\n", stepsList));
                     r.setMeal(meal);
                     r.setOwner(plan.getOwner());
                     recipes.add(r);
                 }
-                meal.setRecipes(recipes);
-
-                meals.add(meal);
             }
+            meal.setRecipes(recipes);
 
-            return meals;
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to create meals from JSON", e);
+            meals.add(meal);
         }
+
+        return meals;
     }
 
     private double extractAmountAsDouble(String txt) {

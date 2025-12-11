@@ -111,8 +111,8 @@ public class PlanService {
 
         // Create Plan with targets but NO products yet
         Plan plan = Plan.builder()
-                .name("Generated Plan")
-                .description("Automatically generated diet plan")
+                .name(planRequestDTO.name())
+                .description(planRequestDTO.description())
                 .owner(user)
                 .caloriesTarget(planRequestDTO.caloriesTarget())
                 .proteinsTarget(planRequestDTO.proteinsTarget())
