@@ -1,11 +1,9 @@
 ﻿#!/bin/sh
 # Seed units and products from JSON into PostgreSQL
 
-#trap 'st=$?; echo "[seed] ERROR at ${BASH_SOURCE##*/}:${LINENO} → ${BASH_COMMAND} (exit=$st)" >&2' ERR
-
 DB_USER="${POSTGRES_USER:?missing POSTGRES_USER}"
 DB_NAME="${POSTGRES_DB:?missing POSTGRES_DB}"
-SEED_JSON="/seed/foundational_foods.json"
+SEED_JSON="/seed/combined_data.json"
 
 if [ ! -f "$SEED_JSON" ]; then
   echo "[seed] Not found $SEED_JSON, skipping."
@@ -23,7 +21,7 @@ psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" -c "
   );
 "
 
-# JSON → TSV → _stage_units
+# JSON -> TSV -> _stage_units
 jq -r '.[] | .unit as $u | [($u.name // ""), ($u.symbol // "")] | @tsv' "$SEED_JSON" \
 | sort -u \
 | psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" \
@@ -58,7 +56,7 @@ psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" -c "
   );
 "
 
-# JSON → TSV → _stage_products
+# JSON -> TSV -> _stage_products
 jq -r '
   .[] | .unit as $u |
   [
@@ -76,7 +74,7 @@ jq -r '
     -c "\copy _stage_products(name, unit_name, unit_symbol, grams_per_unit, kcal_100g, protein_100g, carbs_100g, fat_100g)
         from stdin with (format text, delimiter E'\t', null '')"
 
-# Map to unit_id and insert into products (owner_id = NULL → global products)
+# Map to unit_id and insert into products (owner_id = NULL -> global products)
 psql -v ON_ERROR_STOP=1 -U "$DB_USER" -d "$DB_NAME" -c "
   insert into products(name, unit_id, grams_per_unit, kcal_100g, protein_100g, carbs_100g, fat_100g, owner_id)
   select

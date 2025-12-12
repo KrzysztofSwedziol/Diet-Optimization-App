@@ -20,9 +20,14 @@ const getPlan = async (planId: number) => {
   }
 };
 
+const checkPlanNameAvailability = (name: string) => {
+  return apiRequest<boolean>(HttpMethod.GET, '/api/plans/available', null, { params: { name } });
+};
+
 const queries = {
   getPlans,
   getPlan,
+  checkPlanNameAvailability,
 };
 
 export default queries;

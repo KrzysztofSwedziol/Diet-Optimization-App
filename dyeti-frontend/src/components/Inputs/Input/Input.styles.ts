@@ -3,7 +3,6 @@ import { styled } from 'styled-components';
 export const InputWrapper = styled.div<{ $haserror?: boolean }>`
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
 `;
 
 export const InputLabel = styled.h1`
@@ -38,6 +37,13 @@ export const InputField = styled.input<{
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary[700]};
   }
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.neutrals[100]};
+    border-color: ${({ theme }) => theme.colors.neutrals[300]};
+    color: ${({ theme }) => theme.colors.neutrals[500]};
+    cursor: not-allowed;
+  }
 `;
 
 export const InputError = styled.span`
@@ -45,4 +51,9 @@ export const InputError = styled.span`
   color: ${({ theme }) => theme.colors.danger[500]};
   margin: 2px;
   font-style: italic;
+`;
+
+export const RequiredIndicator = styled.span`
+  color: ${({ theme }) => theme.colors.danger[500]};
+  margin-left: 2px;
 `;

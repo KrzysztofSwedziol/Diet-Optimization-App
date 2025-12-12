@@ -3,6 +3,8 @@ import planKeys from '../plan.keys';
 import planQueries from '../plan.queries';
 import planMutations from '../plan.mutations';
 import { Plan } from '@/types';
+import { PlanGenerationRequest } from '@/api/types';
+import { useCallback } from 'react';
 
 export const useGetPlans = () => {
   return useQuery({
@@ -16,6 +18,36 @@ export const useGetPlan = (planId: number) => {
     queryKey: planKeys.detail(planId),
     queryFn: () => planQueries.getPlan(planId),
     enabled: !!planId,
+  });
+};
+
+export const useCheckPlanNameAvailability = () => {
+  const queryClient = useQueryClient();
+
+  const checkPlanNameAvailability = useCallback(
+    async (name: string) => {
+      const isAvailable = await queryClient.fetchQuery<boolean>({
+        queryKey: planKeys.available(name),
+        queryFn: () => planQueries.checkPlanNameAvailability(name),
+        retry: false,
+      });
+
+      return isAvailable;
+    },
+    [queryClient],
+  );
+
+  return { checkPlanNameAvailability };
+};
+
+export const useGeneratePlan = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (data: PlanGenerationRequest) => planMutations.generatePlan(data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: planKeys.lists() });
+    },
   });
 };
 

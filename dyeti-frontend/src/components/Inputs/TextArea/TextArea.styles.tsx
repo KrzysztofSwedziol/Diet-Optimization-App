@@ -1,9 +1,7 @@
 import { styled } from 'styled-components';
-//style of TextArea = Input = Select tbh
+
 export const InputTextArea = styled.textarea<{ hasError?: boolean }>`
   padding: 8px;
-  margin-bottom: 8px;
-  min-height: 200px;
   color: ${({ theme }) => theme.colors.neutrals[900]};
   background: ${({ theme }) => theme.colors.background};
   border: ${({ theme }) => theme.borderWidth.normal} solid
@@ -12,6 +10,7 @@ export const InputTextArea = styled.textarea<{ hasError?: boolean }>`
   font-size: ${({ theme }) => theme.typography.fontSize.md};
   caret-color: ${({ theme }) => theme.colors.neutrals[700]};
   font-family: ${({ theme }) => theme.typography.fontFamily};
+  resize: vertical;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.neutrals[400]};
