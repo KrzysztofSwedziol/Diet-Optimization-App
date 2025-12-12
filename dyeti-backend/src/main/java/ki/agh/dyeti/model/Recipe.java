@@ -30,6 +30,10 @@ public class Recipe implements Ownable {
     private String steps;
 
     @ManyToOne
+    @JoinColumn(name = "meal_id")
+    private Meal meal;
+
+    @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;
 }

@@ -1,6 +1,7 @@
 version: "3.9"
 #docker compose down -v - do usunięcia wszystkich volumów (przydatne)
 #docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
+#docker volume ls  - sprawdzenie wszystkich wolumenów (jakbyśmy chcieli usunąć wszystko oprócz potężnej ollamy)
 services:
   postgres:
     build:
@@ -36,7 +37,7 @@ services:
     command: ["serve"]
     healthcheck:
       test:
-        ["CMD-SHELL", "curl -fsS http://localhost:11434/v1/models || exit 1"]
+        ["CMD-SHELL", "OLLAMA_HOST=http://localhost:11434 ollama list || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -45,15 +46,24 @@ services:
     image: ollama/ollama:latest
     container_name: ollama-init
     depends_on:
-      - ollama
+      ollama:
+        condition: service_healthy
     volumes:
       - ollama_models:/root/.ollama
-    entrypoint:
-      [
-        "bash",
-        "-c",
-        "sleep 5 && OLLAMA_HOST=http://ollama:11434 ollama pull mistral",
-      ]
+    entrypoint: >
+      bash -c '
+        echo "Pulling mistral...";
+        OLLAMA_HOST=http://ollama:11434 ollama pull mistral;
+      
+        echo "Verifying model installation...";
+        until OLLAMA_HOST=http://ollama:11434 ollama list | grep -q mistral; do
+          echo "Model not found yet, retrying...";
+          sleep 1;
+        done;
+      
+        echo "Model mistral is installed.";
+      '
+      restart: "no"
     restart: "no"
 
   backend-dev:
@@ -67,6 +77,8 @@ services:
     volumes:
       - ./dyeti-backend:/app
       - gradle_cache:/home/gradle/.gradle
+    env_file:
+      - ./dyeti-backend/.env
     environment:
       SERVER_PORT: 8081
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/dyeti_db
@@ -78,6 +90,11 @@ services:
       postgres:
         condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
   backend:
     profiles: ["prod"]
@@ -98,6 +115,11 @@ services:
       postgres:
         condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
   frontend-dev:
     profiles: ["dev"]
