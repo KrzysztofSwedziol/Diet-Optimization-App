@@ -50,13 +50,14 @@ public class SecurityConfig {
                 więc jak będziecie coś robić co chcecie żeby był dostęp bez logowania
                 to tu trzeba dodać to powinno też działać jak dacie "/**"
                 */
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login", "/auth/register", "/auth/check")
-                        .permitAll()
-                        // albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
-                        .requestMatchers("/admin/**")
-                        .hasAnyRole("ADMIN", "OWNER")
-                        .anyRequest()
-                        .authenticated())
+                .authorizeHttpRequests(
+                        auth -> auth.requestMatchers("/health", "/auth/login", "/auth/register", "/auth/check")
+                                .permitAll()
+                                // albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
+                                .requestMatchers("/admin/**")
+                                .hasAnyRole("ADMIN", "OWNER")
+                                .anyRequest()
+                                .authenticated())
                 .exceptionHandling(
                         exception -> exception.authenticationEntryPoint((request, response, authException) -> {
                             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

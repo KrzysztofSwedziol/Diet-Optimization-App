@@ -36,6 +36,8 @@ services:
     volumes:
       - ./dyeti-backend:/app
       - gradle_cache:/home/gradle/.gradle
+    env_file:
+      - ./dyeti-backend/.env
     environment:
       APP_NAME: ${APP_NAME:-dyeti-backend}
       SERVER_PORT: 8081
