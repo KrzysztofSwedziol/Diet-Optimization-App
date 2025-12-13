@@ -128,6 +128,8 @@ export const PlusIcon = styled(FaPlus).attrs({ size: 18 })``;
 
 export const ButtonsContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   justify-content: center;
   padding: 8px;
 `;

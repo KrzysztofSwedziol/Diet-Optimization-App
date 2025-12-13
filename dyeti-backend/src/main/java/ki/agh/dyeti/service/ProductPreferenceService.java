@@ -56,7 +56,9 @@ public class ProductPreferenceService {
 
         return products.stream()
                 .map(product -> new ProductPreferenceDTO(
-                        ProductDTO.fromEntity(product), preferenceMap.getOrDefault(product.getId(), 0.0)))
+                        ProductDTO.fromEntity(product),
+                        preferenceMap.getOrDefault(product.getId(), 0.0),
+                        preferenceMap.containsKey(product.getId())))
                 .collect(Collectors.toList());
     }
 
@@ -81,7 +83,7 @@ public class ProductPreferenceService {
                 .orElseThrow(() -> new IllegalStateException("Current user is not logged in"));
 
         if (productPreferenceDTO.preference() == null
-                || productPreferenceDTO.preference() <= ProductPreference.LOWEST_PREFERENCE
+                || productPreferenceDTO.preference() < ProductPreference.LOWEST_PREFERENCE
                 || productPreferenceDTO.preference() > ProductPreference.HIGHEST_PREFERENCE) {
             throw new IllegalArgumentException("Preference must be between 0 and 10");
         }
