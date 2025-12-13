@@ -8,7 +8,6 @@ import ki.agh.dyeti.dto.request.PlanUpdateDTO;
 import ki.agh.dyeti.model.User;
 import ki.agh.dyeti.service.PlanService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/plans")
-@PreAuthorize("hasRole('USER')")
 public class PlanController {
     private final PlanService planService;
 
@@ -51,7 +49,7 @@ public class PlanController {
 
     @GetMapping("/{id}")
     public PlanDTO getPlan(@PathVariable Long id) {
-        return planService.getPlan(id);
+        return planService.getPlanDTO(id);
     }
 
     @PutMapping("/{id}")
