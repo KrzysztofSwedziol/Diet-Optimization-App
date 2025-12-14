@@ -32,25 +32,6 @@ export const Content = styled.div`
   gap: 24px;
 `;
 
-export const StatusContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
-  min-height: 200px;
-  text-align: center;
-`;
-
-export const StatusText = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.colors.neutrals[700]};
-`;
-
 export const Grid = styled.div`
   margin-top: 16px;
   display: grid;
@@ -61,27 +42,6 @@ export const Grid = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     gap: 20px;
   }
-`;
-
-export const EmptyState = styled.div`
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-`;
-
-export const EmptyTitle = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  color: ${({ theme }) => theme.colors.neutrals[700]};
-`;
-
-export const EmptyDescription = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.neutrals[500]};
-  max-width: 280px;
 `;
 
 export const ProductSearchBarContainer = styled.div`
