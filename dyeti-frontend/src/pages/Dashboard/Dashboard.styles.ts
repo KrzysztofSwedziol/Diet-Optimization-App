@@ -6,9 +6,10 @@ export const DashboardGrid = styled.div`
   row-gap: 24px;
   width: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr 1fr 1fr auto 1fr auto;
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto 2fr auto;
     width: 100%;
   }
 `;
@@ -24,4 +25,15 @@ export const TitleWrapper = styled.div`
   grid-column: 1 / -1;
   display: flex;
   border-bottom: solid 2px ${({ theme }) => theme.colors.neutrals[700]};
+`;
+export const TitleWrapperLink = styled(TitleWrapper)`
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const IconArea = styled.div`
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
 `;

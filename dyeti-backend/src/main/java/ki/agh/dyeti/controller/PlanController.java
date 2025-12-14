@@ -49,6 +49,11 @@ public class PlanController {
         return planService.getUserPlans(user.getId());
     }
 
+    @GetMapping("/top/{limit}")
+    public List<PlanDTO> getTopUserPlans(@AuthenticationPrincipal User user, @PathVariable int limit) {
+        return planService.getTopUserPlans(user.getId(), limit);
+    }
+
     @GetMapping("/{id}")
     public PlanDTO getPlan(@PathVariable Long id) {
         return planService.getPlan(id);

@@ -1,6 +1,7 @@
 package ki.agh.dyeti.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import ki.agh.dyeti.model.util.Ownable;
@@ -38,6 +39,7 @@ public class Plan implements Ownable {
     private Double proteins;
     private Double carbs;
     private Double fats;
+    private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "plan", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default

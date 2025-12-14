@@ -1,10 +1,15 @@
 import { PageTitle } from '@/components';
 import * as Ui from './Dashboard.styles.ts';
 import { CardCfg } from '@/pages/Account/types.ts';
-import { FaFileSignature } from 'react-icons/fa';
+import { FaFileSignature, FaArrowRight } from 'react-icons/fa';
 import { FiPackage, FiSliders } from 'react-icons/fi';
 import DashboardCard from '@/pages/Dashboard/components/DashboardCard.tsx';
-const CARDS: readonly CardCfg[] = [
+import { useNavigate } from 'react-router-dom';
+import HorizontalCarousel from '@/pages/Dashboard/components/HorizontalCarousel.tsx';
+import { useGetTopPlans } from '@/api/plan/hooks';
+import PlanCard from '@/pages/Dashboard/components/PlanCard.tsx';
+
+const CARDS: CardCfg[] = [
   {
     key: 'generatePlan',
     to: '/plans/generate',
@@ -13,11 +18,11 @@ const CARDS: readonly CardCfg[] = [
     description: 'Generate new Plan Based on your food preferences.',
   },
   {
-    key: 'myProducts',
+    key: 'products',
     to: '/products',
     icon: FiPackage,
-    title: 'My Products',
-    description: 'Manage all products — add new ones or remove old ones.',
+    title: 'Products',
+    description: 'Browse all products (including your custom ones) - star or unstar them.',
   },
   {
     key: 'myPreferences',
@@ -28,6 +33,9 @@ const CARDS: readonly CardCfg[] = [
   },
 ] as const;
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const { data: plans = [], isLoading, isError } = useGetTopPlans(5);
+  console.log(isError, isLoading); //placeholder for eslint
   return (
     <Ui.PageContainer>
       <Ui.DashboardGrid>
@@ -37,7 +45,22 @@ const Dashboard = () => {
         {CARDS.map(({ key, to, icon, title, description }) => (
           <DashboardCard key={key} to={to} icon={icon} title={title} description={description} />
         ))}
+        <Ui.TitleWrapperLink onClick={() => navigate('/plans')}>
+          <PageTitle>Recent Plans</PageTitle>
+          <Ui.IconArea>
+            <FaArrowRight />
+          </Ui.IconArea>
+        </Ui.TitleWrapperLink>
+        <HorizontalCarousel
+          items={plans}
+          getKey={plan => plan.id}
+          renderItem={(plan, isActive) => <PlanCard plan={plan} isActive={isActive} />}
+        />
       </Ui.DashboardGrid>
+
+      <Ui.TitleWrapper>
+        <PageTitle>Dashboard User</PageTitle>
+      </Ui.TitleWrapper>
     </Ui.PageContainer>
   );
 };

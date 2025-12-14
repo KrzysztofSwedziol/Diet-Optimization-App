@@ -6,7 +6,7 @@
 *.bin
 *.lock
 out/
-
+.env
 # VSCode
 .vscode/
 .history/

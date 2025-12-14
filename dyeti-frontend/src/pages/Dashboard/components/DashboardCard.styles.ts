@@ -31,8 +31,8 @@ export const TileLink = styled('a')`
 `;
 
 export const IconArea = styled.div`
-  width: 100%; /* możesz dopasować 96–128px wg potrzeb */
-  border-radius: 12px; /* zaokrąglenie jak na szkicu */
+  width: 100%;
+  border-radius: 12px;
   display: grid;
   padding: 24px;
   place-items: center;
@@ -46,7 +46,6 @@ export const IconArea = styled.div`
   }
 `;
 
-/* Dół: tekst po lewej, strzałka po prawej */
 export const BottomRow = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
