@@ -66,10 +66,6 @@ const Dashboard = () => {
           </QueryState>
         </Ui.PlansContainer>
       </Ui.DashboardGrid>
-
-      <Ui.TitleWrapper>
-        <PageTitle>Dashboard User</PageTitle>
-      </Ui.TitleWrapper>
     </Ui.PageContainer>
   );
 };

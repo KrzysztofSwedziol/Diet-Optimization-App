@@ -29,7 +29,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  font-size: ${({ theme }) => theme.typography.fontSize.xl};
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   color: ${({ theme }) => theme.colors.primary[900]};
   margin: 0;

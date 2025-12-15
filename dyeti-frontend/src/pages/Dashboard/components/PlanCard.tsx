@@ -13,7 +13,9 @@ const PlanCard = ({ plan }: Props) => (
         <Ui.Title>{plan.name}</Ui.Title>
         <Ui.Calories>{formatNumber(plan.calories)} kcal</Ui.Calories>
       </Ui.Header>
-      <ProgressRing value={plan.calories} target={plan.caloriesTarget} unit={'kcal'} />
+
+      <ProgressRing value={plan.calories} target={plan.caloriesTarget} unit={'kcal'} size={150} thickness={20} />
+
       <NutrientsCard plan={plan} />
     </Ui.Link>
   </Ui.Container>
