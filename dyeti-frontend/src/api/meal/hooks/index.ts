@@ -17,8 +17,8 @@ export const useGenerateMeals = () => {
 
   return useMutation({
     mutationFn: (data: MealsGenerationRequest) => mutations.generateMeals(data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: keys.all });
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({ queryKey: keys.details(variables.planId) });
     },
   });
 };

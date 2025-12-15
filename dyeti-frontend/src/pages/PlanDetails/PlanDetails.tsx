@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom';
 import * as Ui from './PlanDetails.styles';
 import MealCard from './components/MealCard';
 import NutrientsCard from './components/NutrientsCard';
-import { useGetMealsByPlan } from '@/api/meal/hooks';
+import { useGenerateMeals, useGetMealsByPlan } from '@/api/meal/hooks';
 import ProductsCard from './components/ProductsCard';
+import EmptyMeals from './components/EmptyMeals';
 
 const PlanDetails = () => {
   const { planId: planIdString } = useParams<{ planId: string }>();
@@ -13,6 +14,8 @@ const PlanDetails = () => {
 
   const { data: plan, error, isLoading } = useGetPlan(planId);
   const { data: meals, isLoading: isLoadingMeals } = useGetMealsByPlan(planId);
+
+  const { mutateAsync: generateMeals, isPending: isGeneratingMeals } = useGenerateMeals();
 
   if (isLoading) {
     <Ui.StatusContainer>
@@ -53,14 +56,17 @@ const PlanDetails = () => {
             fatsTarget={plan.fatsTarget}
           />
         </Ui.NutrientsSection>
-        {!isLoadingMeals && meals && meals.length > 0 && (
-          <Ui.MealsSection>
-            <Ui.SectionTitle>Meals</Ui.SectionTitle>
-            {meals.map(meal => (
-              <MealCard key={meal.id} recipe={meal.recipes[0]} products={meal.products} />
-            ))}
-          </Ui.MealsSection>
-        )}
+        <Ui.MealsSection>
+          <Ui.SectionTitle>Meals</Ui.SectionTitle>
+          {!isLoadingMeals && meals && meals.length > 0 ? (
+            meals.map(meal => <MealCard key={meal.id} recipe={meal.recipes[0]} products={meal.products} />)
+          ) : (
+            <EmptyMeals
+              isGenerating={isGeneratingMeals}
+              onGenerateMeals={() => generateMeals({ planId, numberOfMeals: 3 })}
+            />
+          )}
+        </Ui.MealsSection>
       </Ui.Content>
     </Ui.Container>
   );
