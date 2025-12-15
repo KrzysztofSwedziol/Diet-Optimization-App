@@ -28,30 +28,41 @@ export const PlanInfo = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    'products'
+    'nutrients'
+    'meals ';
   gap: 16px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    flex-direction: row;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-areas:
+      'products nutrients'
+      'meals meals';
+    grid-template-columns: 3fr 2fr;
     gap: 32px;
   }
 `;
 
-export const MealsSection = styled.div`
-  flex: 1 1 0;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    flex: 3 1 0;
-  }
+export const ProductsSection = styled.div`
+  grid-area: products;
 `;
 
 export const NutrientsSection = styled.div`
-  flex: 1 1 0;
+  grid-area: nutrients;
+`;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    flex: 2 1 0;
-  }
+export const MealsSection = styled.div`
+  grid-area: meals;
+`;
+
+export const SectionTitle = styled.h2`
+  padding: 8px;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.primary[900]};
+  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  font-weight: bold;
+  /* text-transform: uppercase; */
 `;
 
 export const StatusContainer = styled.div`

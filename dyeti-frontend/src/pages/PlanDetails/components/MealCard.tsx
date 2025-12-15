@@ -1,17 +1,17 @@
-import { PlanProduct } from '@/types';
-import ProductEntry from './ProductEntry';
+import { MealProduct, Recipe } from '@/types';
 import * as Ui from './MealCard.styles';
 import { useState } from 'react';
+import ProductsList from './ProductsList';
 
 type Props = {
-  title: string;
-  products: PlanProduct[];
+  recipe: Recipe;
+  products: MealProduct[];
   isOpen?: boolean;
   defaultIsOpen?: boolean;
   onToggle?: () => void;
 };
 
-const MealCard = ({ title, products, isOpen: controlledIsOpen, defaultIsOpen = false, onToggle }: Props) => {
+const MealCard = ({ recipe, products, isOpen: controlledIsOpen, defaultIsOpen = false, onToggle }: Props) => {
   const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(defaultIsOpen);
 
   const isControlled = controlledIsOpen !== undefined;
@@ -27,18 +27,29 @@ const MealCard = ({ title, products, isOpen: controlledIsOpen, defaultIsOpen = f
   return (
     <Ui.Container>
       <Ui.Header onClick={handleToggle} $isOpen={isOpen}>
-        <Ui.Title>{title}</Ui.Title>
+        <Ui.Title>{recipe.recipeName}</Ui.Title>
         <Ui.ExpandIcon $isOpen={isOpen} />
       </Ui.Header>
       <Ui.Body $isOpen={isOpen}>
         <Ui.Content>
-          <Ui.Products $isOpen={isOpen}>
-            {products.map(({ product, quantity }) => (
-              <Ui.ProductContainer key={product.id}>
-                <ProductEntry product={product} quantity={quantity} />
-              </Ui.ProductContainer>
-            ))}
-          </Ui.Products>
+          <Ui.RecipeGrid>
+            <Ui.Description>{recipe.description}</Ui.Description>
+            <Ui.Ingredients>
+              <ProductsList products={products} />
+            </Ui.Ingredients>
+            <Ui.Steps>
+              Preparation:
+              <Ui.StepsList>
+                {recipe.steps.map((step, index) => (
+                  <Ui.StepItem key={index}>
+                    <Ui.StepText>
+                      <Ui.StepNumber>Step {index + 1}:</Ui.StepNumber> {step}
+                    </Ui.StepText>
+                  </Ui.StepItem>
+                ))}
+              </Ui.StepsList>
+            </Ui.Steps>
+          </Ui.RecipeGrid>
         </Ui.Content>
       </Ui.Body>
     </Ui.Container>

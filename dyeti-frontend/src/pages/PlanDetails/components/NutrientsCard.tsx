@@ -31,7 +31,6 @@ const NutrientsCard = ({
 
   return (
     <Ui.Container>
-      <Ui.Title>Nutrients</Ui.Title>
       <Ui.List>
         {nutrients.map(({ label, value, target, unit }) => {
           const progress = Math.min((value / target) * 100, 100);
