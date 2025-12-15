@@ -1,7 +1,7 @@
-import { PageTitle } from '@/components';
+import { EmptyState, PageTitle, QueryState } from '@/components';
 import * as Ui from './Dashboard.styles.ts';
 import { CardCfg } from '@/pages/Account/types.ts';
-import { FaFileSignature, FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaFileSignature } from 'react-icons/fa';
 import { FiPackage, FiSliders } from 'react-icons/fi';
 import DashboardCard from '@/pages/Dashboard/components/DashboardCard.tsx';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +35,6 @@ const CARDS: CardCfg[] = [
 const Dashboard = () => {
   const navigate = useNavigate();
   const { data: plans = [], isLoading, isError } = useGetTopPlans(5);
-  console.log(isError, isLoading); //placeholder for eslint
   return (
     <Ui.PageContainer>
       <Ui.DashboardGrid>
@@ -51,11 +50,21 @@ const Dashboard = () => {
             <FaArrowRight />
           </Ui.IconArea>
         </Ui.TitleWrapperLink>
-        <HorizontalCarousel
-          items={plans}
-          getKey={plan => plan.id}
-          renderItem={(plan, isActive) => <PlanCard plan={plan} isActive={isActive} />}
-        />
+        <Ui.PlansContainer>
+          <QueryState isError={isError} isLoading={isLoading} loadingText={'Loading recent plans...'}>
+            <EmptyState
+              isEmpty={plans.length === 0}
+              title={'No plans yet'}
+              description={'There is no new plans to show'}
+            >
+              <HorizontalCarousel
+                items={plans}
+                getKey={plan => plan.id}
+                renderItem={plan => <PlanCard plan={plan} />}
+              />
+            </EmptyState>
+          </QueryState>
+        </Ui.PlansContainer>
       </Ui.DashboardGrid>
 
       <Ui.TitleWrapper>

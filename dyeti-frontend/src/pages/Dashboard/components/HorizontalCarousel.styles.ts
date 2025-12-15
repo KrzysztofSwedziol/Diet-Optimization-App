@@ -2,7 +2,6 @@ import { css, styled } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-column: 1 / -1;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
@@ -18,56 +17,51 @@ export const Arrow = styled.button`
   font-size: 2rem;
   line-height: 1;
   color: ${({ theme }) => theme.colors.primary[900]};
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
 `;
 
 export const Track = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
   padding-top: 8px;
   width: 100%;
   height: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: stretch;
+  }
 `;
 
 export const Slide = styled.div<{ $variant: 'active' | 'side' }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 
   ${({ $variant }) =>
-    $variant === 'active'
-      ? css`
-          width: 100%;
-          opacity: 1;
-          transform: scale(1);
-        `
-      : css`
-          width: 35%;
-          opacity: 0.85;
-          transform: scale(0.94);
-          display: none;
-        `}
+    $variant === 'side' &&
+    css`
+      display: none;
+    `}
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     ${({ $variant }) =>
       $variant === 'side' &&
       css`
         display: flex;
-      `}
-
-    ${({ $variant }) =>
-      $variant === 'active' &&
-      css`
-        width: 60%;
       `}
   }
 `;
 
 export const Box = styled.div`
   width: 100%;
-  height: 100%;
+  height: 160px;
   border-radius: 12px;
-
   background: red;
   color: white;
 
