@@ -25,8 +25,9 @@ const columns: ColumnDef<ProductWithPreference, ReactNode>[] = [
     id: 'name',
     header: 'Name',
     accessorKey: 'product.name',
-    cell: info => <ProductName product={info.row.original.product} />,
+    cell: info => <ProductName product={info.row.original.product} favourite={info.row.original.favourite} />,
   },
+
   { id: 'calories', header: 'Calories (100g)', accessorKey: 'product.kcal100g' },
   { id: 'protein', header: 'Protein (100g)', accessorKey: 'product.protein100g' },
   { id: 'carbs', header: 'Carbs (100g)', accessorKey: 'product.carbs100g' },

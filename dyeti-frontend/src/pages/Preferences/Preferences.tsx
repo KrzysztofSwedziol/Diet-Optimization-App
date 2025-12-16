@@ -1,7 +1,11 @@
-import { useGetProductsWithPreferences, useUpdateProductPreference } from '@/api/product/hooks';
+import {
+  useDeleteProductPreference,
+  useGetProductsWithPreferences,
+  useUpdateProductPreference,
+} from '@/api/product/hooks';
 import ProductsSearchBar from './components/ProductsSearchBar';
 import * as Ui from './Preferences.styles';
-import { Spinner } from '@/components';
+import { PageTitle, Spinner } from '@/components';
 import ProductModal from './components/ProductModal';
 import { useState } from 'react';
 import { ProductWithPreference } from '@/types';
@@ -12,6 +16,7 @@ import WarningCard from './components/WarningCard';
 const Preferences = () => {
   const { data: products, isLoading: isLoading, isError } = useGetProductsWithPreferences();
   const { mutate: updateProductPreference } = useUpdateProductPreference();
+  const { mutate: deleteProductPreference } = useDeleteProductPreference();
   const [selectedProduct, setSelectedProduct] = useState<ProductWithPreference | null>(null);
 
   if (isLoading)
@@ -29,13 +34,15 @@ const Preferences = () => {
       </Ui.StatusContainer>
     );
 
-  const productsWithPreferences = products.filter(p => p.preference > 0);
+  const productsWithPreferences = products
+    .filter(p => p.preference > 0 || p.favourite)
+    .sort((a, b) => -(a.preference - b.preference));
 
   return (
     <Ui.Container>
       <Header />
       <Ui.Content>
-        {productsWithPreferences.length < 5 && (
+        {productsWithPreferences.filter(p => p.preference > 0).length < 5 && (
           <WarningCard
             title="⚠️ Add more preferences"
             description="To get the best personalized diet plan, please set preferences for at least 5 different products."
@@ -51,11 +58,24 @@ const Preferences = () => {
               <Ui.EmptyDescription>Search for a product above and set your first preference.</Ui.EmptyDescription>
             </Ui.EmptyState>
           ) : (
-            <Ui.Grid>
-              {productsWithPreferences.map(item => (
-                <ProductPreferenceCard key={item.product.id} item={item} onClick={setSelectedProduct} />
-              ))}
-            </Ui.Grid>
+            <div>
+              <PageTitle>Products with preferences</PageTitle>
+              <Ui.Grid>
+                {productsWithPreferences
+                  .filter(p => p.preference > 0)
+                  .map(item => (
+                    <ProductPreferenceCard key={item.product.id} item={item} onClick={setSelectedProduct} />
+                  ))}
+              </Ui.Grid>
+              <PageTitle>Recently used</PageTitle>
+              <Ui.Grid>
+                {productsWithPreferences
+                  .filter(p => p.preference == 0)
+                  .map(item => (
+                    <ProductPreferenceCard key={item.product.id} item={item} onClick={setSelectedProduct} />
+                  ))}
+              </Ui.Grid>
+            </div>
           )}
         </div>
       </Ui.Content>
@@ -64,6 +84,7 @@ const Preferences = () => {
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
           onSavePreference={(id, preference) => updateProductPreference({ productId: id, preference })}
+          onRemovePreference={id => deleteProductPreference(id)}
         />
       )}
     </Ui.Container>
