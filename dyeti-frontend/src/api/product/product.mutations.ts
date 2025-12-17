@@ -13,9 +13,17 @@ const updateProductPreference = async ({ productId, preference }: UpdateProductP
     throw error;
   }
 };
+const deleteProductPreference = async (productId: number) => {
+  try {
+    return await apiRequest<ProductWithPreference>(HttpMethod.DELETE, `/api/preference/${productId}`);
+  } catch (error) {
+    throw error;
+  }
+};
 
 const MUTATION = {
   UPDATE_PRODUCT_PREFERENCE: updateProductPreference,
+  DELETE_PRODUCT_PREFERENCE: deleteProductPreference,
 };
 
 export default MUTATION;

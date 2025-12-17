@@ -10,9 +10,10 @@ type Props = {
   product: ProductWithPreference;
   onClose: () => void;
   onSavePreference: (id: number, preference: number) => void;
+  onRemovePreference: (id: number) => void;
 };
 
-const ProductModal = ({ product: productWithPreference, onClose, onSavePreference }: Props) => {
+const ProductModal = ({ product: productWithPreference, onClose, onSavePreference, onRemovePreference }: Props) => {
   const { product, preference } = productWithPreference;
 
   const [inputValue, setInputValue] = useState(String(preference));
@@ -42,6 +43,10 @@ const ProductModal = ({ product: productWithPreference, onClose, onSavePreferenc
 
   const handleSave = () => {
     onSavePreference(product.id, Number(inputValue));
+    onClose();
+  };
+  const handleRemove = () => {
+    onRemovePreference(product.id);
     onClose();
   };
 
@@ -93,6 +98,10 @@ const ProductModal = ({ product: productWithPreference, onClose, onSavePreferenc
 
           <Ui.ButtonsContainer>
             <AppButton onClick={handleSave}>Save</AppButton>
+            <AppButton reversed onClick={handleRemove}>
+              {' '}
+              Remove
+            </AppButton>
           </Ui.ButtonsContainer>
         </Ui.Section>
       </Ui.Content>
