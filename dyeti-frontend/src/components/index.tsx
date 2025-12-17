@@ -15,3 +15,4 @@ export { default as SegmentedPicker } from './SegmentedPicker/SegmentedPicker';
 export { default as Stepper } from './Stepper/Stepper';
 export { default as EmptyState } from './EmptyState/EmptyState';
 export { default as QueryState } from './QueryState/QueryState';
+export { default as TutorialSidebar } from './TutorialSidebar/TutorialSidebar';

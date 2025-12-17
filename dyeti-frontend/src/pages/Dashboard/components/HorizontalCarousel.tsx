@@ -28,7 +28,7 @@ const HorizontalCarousel = <T,>({ items, renderItem }: Props<T>) => {
       <Ui.Track>
         <Ui.Slide $variant="side">{renderItem(items[prevIndex])}</Ui.Slide>
 
-        <Ui.Slide $variant="active">{renderItem(items[activeIndex])}</Ui.Slide>
+        <Ui.Slide $variant="isOpen">{renderItem(items[activeIndex])}</Ui.Slide>
 
         <Ui.Slide $variant="side">{renderItem(items[nextIndex])}</Ui.Slide>
       </Ui.Track>
