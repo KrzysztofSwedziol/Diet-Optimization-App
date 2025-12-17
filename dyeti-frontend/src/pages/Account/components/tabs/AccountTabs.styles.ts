@@ -193,7 +193,6 @@ export const IconArea = styled.div`
   }
 `;
 
-/* Dół: tekst po lewej, strzałka po prawej */
 export const BottomRow = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;

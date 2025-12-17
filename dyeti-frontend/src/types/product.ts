@@ -15,4 +15,5 @@ export type Product = {
 export type ProductWithPreference = {
   product: Product;
   preference: number;
+  favourite: boolean;
 };

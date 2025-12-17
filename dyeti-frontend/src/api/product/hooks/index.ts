@@ -48,3 +48,34 @@ export const useUpdateProductPreference = () => {
     },
   });
 };
+
+export const useDeleteProductPreference = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationKey: KEYS.DELETE_PRODUCT_PREFERENCE,
+    mutationFn: PRODUCT_MUTATIONS.DELETE_PRODUCT_PREFERENCE,
+    onMutate: async productId => {
+      await queryClient.cancelQueries({ queryKey: KEYS.GET_PRODUCTS_WITH_PREFERENCES });
+      const previousProducts = queryClient.getQueryData(KEYS.GET_PRODUCTS_WITH_PREFERENCES);
+      queryClient.setQueryData<ProductWithPreference[]>(KEYS.GET_PRODUCTS_WITH_PREFERENCES, old => {
+        if (!old) return old;
+        return old.map(product => {
+          if (product.product.id === productId) {
+            return { ...product, preference: 0, favourite: false };
+          }
+          return product;
+        });
+      });
+      return { previousProducts };
+    },
+    onError: (_err, _variables, context) => {
+      if (context?.previousProducts) {
+        queryClient.setQueryData(KEYS.GET_PRODUCTS_WITH_PREFERENCES, context.previousProducts);
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: KEYS.GET_PRODUCTS_WITH_PREFERENCES });
+    },
+  });
+};
