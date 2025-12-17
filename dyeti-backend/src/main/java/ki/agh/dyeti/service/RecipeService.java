@@ -34,7 +34,7 @@ public class RecipeService {
     @Transactional
     public void generateRecipeBasedOnPlan(Plan plan, User user) {
         try {
-            String llmResponse = llmService.recipeCreateAsk(plan);
+            String llmResponse = llmService.recipeCreateBasedOnPlan(plan);
             System.out.println("Response from LLM : ");
             System.out.println(llmResponse);
 

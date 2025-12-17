@@ -1,7 +1,10 @@
 package ki.agh.dyeti.config;
 
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 import ki.agh.dyeti.service.CustomUserDetailsService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,10 +27,18 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig {
     private final CustomUserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
+    private final List<String> allowedCorsOrigins;
 
-    public SecurityConfig(CustomUserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+    public SecurityConfig(
+            CustomUserDetailsService userDetailsService,
+            PasswordEncoder passwordEncoder,
+            @Value("${CORS_ALLOWED_ORIGINS:http://localhost:5173}") String corsOrigins) {
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
+        this.allowedCorsOrigins = Arrays.stream(corsOrigins.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList();
     }
 
     @Bean
@@ -39,13 +50,14 @@ public class SecurityConfig {
                 więc jak będziecie coś robić co chcecie żeby był dostęp bez logowania
                 to tu trzeba dodać to powinno też działać jak dacie "/**"
                 */
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/login", "/auth/register", "/auth/check")
-                        .permitAll()
-                        // albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
-                        .requestMatchers("/admin/**")
-                        .hasAnyRole("ADMIN", "OWNER")
-                        .anyRequest()
-                        .authenticated())
+                .authorizeHttpRequests(
+                        auth -> auth.requestMatchers("/health", "/auth/login", "/auth/register", "/auth/check")
+                                .permitAll()
+                                // albo wywalcie te 2 linie bo to ustawia że wszystkie inne endpointy wymagają auth
+                                .requestMatchers("/admin/**")
+                                .hasAnyRole("ADMIN", "OWNER")
+                                .anyRequest()
+                                .authenticated())
                 .exceptionHandling(
                         exception -> exception.authenticationEntryPoint((request, response, authException) -> {
                             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -95,8 +107,7 @@ public class SecurityConfig {
            rozbić to na więcej configów
         */
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173");
-        config.addAllowedOrigin("http://localhost:3000");
+        config.setAllowedOrigins(allowedCorsOrigins);
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

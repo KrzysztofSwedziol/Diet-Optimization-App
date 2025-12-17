@@ -45,6 +45,10 @@ public class Plan implements Ownable {
     @Builder.Default
     private List<PlanProduct> products = new ArrayList<>();
 
+    @OneToMany(mappedBy = "plan", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Meal> meals = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;

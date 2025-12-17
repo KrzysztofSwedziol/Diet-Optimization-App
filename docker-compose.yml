@@ -1,6 +1,7 @@
 version: "3.9"
 #docker compose down -v - do usunięcia wszystkich volumów (przydatne)
 #docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
+#docker volume ls - sprawdzenie wszystkich wolumenów (jakbyśmy chcieli usunąć wszystko oprócz potężnej ollamy)
 services:
   postgres:
     build:
@@ -9,52 +10,20 @@ services:
     container_name: dyeti-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: dyeti
-      POSTGRES_PASSWORD: dyeti_pass
-      POSTGRES_DB: dyeti_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "127.0.0.1:5432:5432" # exposed port is +49152, because non-ephemeral ports caused connection issues
+      - "127.0.0.1:5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
       - ./miscellaneous/postgres-database/init:/docker-entrypoint-initdb.d:ro
       - ./miscellaneous/postgres-database/data:/seed:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U dyeti -d dyeti_db"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       timeout: 3s
       retries: 10
-
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_models:/root/.ollama
-    restart: unless-stopped
-    shm_size: "1g"
-    command: ["serve"]
-    healthcheck:
-      test:
-        ["CMD-SHELL", "curl -fsS http://localhost:11434/v1/models || exit 1"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-
-  ollama-init:
-    image: ollama/ollama:latest
-    container_name: ollama-init
-    depends_on:
-      - ollama
-    volumes:
-      - ollama_models:/root/.ollama
-    entrypoint:
-      [
-        "bash",
-        "-c",
-        "sleep 5 && OLLAMA_HOST=http://ollama:11434 ollama pull mistral",
-      ]
-    restart: "no"
 
   backend-dev:
     profiles: ["dev"]
@@ -67,17 +36,26 @@ services:
     volumes:
       - ./dyeti-backend:/app
       - gradle_cache:/home/gradle/.gradle
+    env_file:
+      - ./dyeti-backend/.env
     environment:
+      APP_NAME: ${APP_NAME:-dyeti-backend}
       SERVER_PORT: 8081
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/dyeti_db
-      SPRING_DATASOURCE_USERNAME: dyeti
-      SPRING_DATASOURCE_PASSWORD: dyeti_pass
+      CORS_ALLOWED_ORIGINS: ${SPRING_CORS_ALLOWED_ORIGINS}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_PROFILES_ACTIVE: dev
       JAVA_TOOL_OPTIONS: "-Dspring.devtools.restart.enabled=true"
     depends_on:
       postgres:
         condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
   backend:
     profiles: ["prod"]
@@ -89,15 +67,21 @@ services:
       - "8081:8081"
     environment:
       SERVER_PORT: 8081
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/dyeti_db
-      SPRING_DATASOURCE_USERNAME: dyeti
-      SPRING_DATASOURCE_PASSWORD: dyeti_pass
+      CORS_ALLOWED_ORIGINS: ${SPRING_CORS_ALLOWED_ORIGINS}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_PROFILES_ACTIVE: prod
       JAVA_OPTS: "-Xms256m -Xmx512m"
     depends_on:
       postgres:
         condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
   frontend-dev:
     profiles: ["dev"]
@@ -114,6 +98,7 @@ services:
       - NODE_ENV=development
       - VITE_HOST=0.0.0.0
       - CHOKIDAR_USEPOLLING=true
+      - VITE_API_URL=${BACKEND_URL}
     restart: unless-stopped
 
   frontend:
@@ -125,9 +110,11 @@ services:
     ports:
       - "8080:80"
     restart: unless-stopped
+    environment:
+      VITE_API_URL: ${BACKEND_URL}
 
 volumes:
-  pgdata:
+  pg_data:
   ollama_models:
   gradle_cache:
   frontend_node_modules:

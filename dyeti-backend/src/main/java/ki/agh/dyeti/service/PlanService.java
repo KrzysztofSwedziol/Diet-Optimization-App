@@ -24,18 +24,21 @@ public class PlanService {
     private final ResourceAccessValidator resourceAccessValidator;
     private final PlanGenerator planGenerator;
     private final RecipeService recipeService;
+    private final MealService mealService;
 
     public PlanService(
             PlanRepository planRepository,
             ProductPreferenceService productPreferenceService,
             ResourceAccessValidator resourceAccessValidator,
             PlanGenerator planGenerator,
-            RecipeService recipeService) {
+            RecipeService recipeService,
+            MealService mealService) {
         this.planRepository = planRepository;
         this.productPreferenceService = productPreferenceService;
         this.resourceAccessValidator = resourceAccessValidator;
         this.planGenerator = planGenerator;
         this.recipeService = recipeService;
+        this.mealService = mealService;
     }
 
     public List<PlanDTO> getUserPlans(Long userId) {
@@ -55,7 +58,7 @@ public class PlanService {
         return planRepository.findAll().stream().map(PlanDTO::fromEntity).collect(Collectors.toList());
     }
 
-    public PlanDTO getPlan(Long id) {
+    public PlanDTO getPlanDTO(Long id) {
         Plan plan = planRepository
                 .findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
@@ -63,6 +66,16 @@ public class PlanService {
         resourceAccessValidator.validateOwnership(plan);
 
         return PlanDTO.fromEntity(plan);
+    }
+
+    public Plan getPlanById(Long id) {
+        Plan plan = planRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plan with id " + id + " not found"));
+
+        resourceAccessValidator.validateOwnership(plan);
+
+        return plan;
     }
 
     public PlanDTO updatePlan(Long id, PlanUpdateDTO planUpdateDTO) {
@@ -125,6 +138,7 @@ public class PlanService {
 
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
+
         // recipeService.generateRecipeBasedOnPlan(generatedPlan, user);
     }
 

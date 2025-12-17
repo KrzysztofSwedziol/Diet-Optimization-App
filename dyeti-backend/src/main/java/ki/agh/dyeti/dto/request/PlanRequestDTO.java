@@ -6,4 +6,5 @@ public record PlanRequestDTO(
         Double caloriesTarget,
         Double proteinsTarget,
         Double carbsTarget,
-        Double fatsTarget) {}
+        Double fatsTarget,
+        int mealQuantity) {}
