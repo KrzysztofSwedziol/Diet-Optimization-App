@@ -13,7 +13,7 @@ Rules:
 - Each meal should have between 1 and 7 ingredients.
 - Distribute calories evenly, slightly larger lunch if MEAL_COUNT > 2.
 - Use product names exactly as provided in the products list.
-- The "amount" field must be **a number only**, without units, without letters, without combining with product name.
+- The "amount" field must be *a number only*, without units, without letters, without combining with product name.
 - Do not invent new products.
 - Always return "recipes" as a list of recipe objects, even if there's only one recipe.
 - Output must be valid JSON only — no extra commentary or markdown.
@@ -54,16 +54,16 @@ Example of proper response :
           "name": "Banana Yogurt Parfait",
           "description": "A refreshing parfait made with bananas and Greek yogurt.",
           "steps": [
-            "Step 1: Slice the bananas.",
-            "Step 2: Layer yogurt and bananas in a bowl."
+            "Slice the bananas.",
+            "Layer yogurt and bananas in a bowl."
           ]
         },
         {
           "name": "Banana Milk Smoothie",
           "description": "A quick smoothie using bananas and milk.",
           "steps": [
-            "Step 1: Blend bananas with milk until smooth.",
-            "Step 2: Serve chilled."
+            "Blend bananas with milk until smooth.",
+            "Serve chilled."
           ]
         }
       ]
@@ -80,9 +80,9 @@ Example of proper response :
           "name": "Chicken and Rice with Broccoli",
           "description": "A simple lunch with chicken, rice, and steamed broccoli.",
           "steps": [
-            "Step 1: Cook the rice.",
-            "Step 2: Sauté the chicken until done.",
-            "Step 3: Steam broccoli and combine with rice and chicken."
+            "Cook the rice.",
+            "Sauté the chicken until done.",
+            "Steam broccoli and combine with rice and chicken."
           ]
         }
       ]
@@ -99,9 +99,9 @@ Example of proper response :
           "name": "Avocado Tomato Salad",
           "description": "A light and fresh salad with avocado, cherry tomatoes, and feta.",
           "steps": [
-            "Step 1: Dice avocado and tomatoes.",
-            "Step 2: Mix with feta cheese.",
-            "Step 3: Serve with a light dressing."
+            "Dice avocado and tomatoes.",
+            "Mix with feta cheese.",
+            "Serve with a light dressing."
           ]
         }
       ]
