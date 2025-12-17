@@ -4,7 +4,6 @@ import { MdExpandMore } from 'react-icons/md';
 export const Container = styled.div<{ isOpen: boolean; index: number }>`
   border-radius: ${({ theme }) => theme.borderRadius.md};
   overflow: hidden;
-  margin-bottom: 16px;
   box-shadow: ${({ theme }) => theme.shadows.sm};
   background-color: ${({ theme }) => theme.colors.background};
 

@@ -49,6 +49,6 @@ export const Content = styled.div`
 export const TutorialList = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 16px;
+  padding-top: 8px;
   gap: 8px;
 `;

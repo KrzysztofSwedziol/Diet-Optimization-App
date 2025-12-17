@@ -4,6 +4,7 @@ import { FaQuestion } from 'react-icons/fa';
 import { useState } from 'react';
 import { TUTORIALS } from './tutorials/tutorials.content.ts';
 import Tutorial from './components/Tutorial.tsx';
+import { PageTitle } from '@/components';
 
 const TutorialSidebar = () => {
   const { isLoggedIn } = useAuth();
@@ -11,6 +12,7 @@ const TutorialSidebar = () => {
   if (!isLoggedIn) return null;
   return (
     <Ui.Container isOpen={isOpen}>
+      <PageTitle>Tutorials: </PageTitle>
       <Ui.Blob onClick={() => setIsOpen(!isOpen)}>
         <FaQuestion />
       </Ui.Blob>
