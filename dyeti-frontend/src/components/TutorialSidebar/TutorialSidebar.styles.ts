@@ -6,7 +6,7 @@ export const Container = styled.div<{ isOpen?: boolean }>`
   right: 0;
   height: 100%;
 
-  background: ${({ theme }) => theme.colors.primary[700]};
+  background: ${({ theme }) => theme.colors.primary[600]};
   overflow: visible;
 
   display: flex;
@@ -29,7 +29,7 @@ export const Blob = styled.div`
   width: 40px;
   height: 40px;
   position: absolute;
-  background: ${({ theme }) => theme.colors.primary[700]};
+  background: ${({ theme }) => theme.colors.primary[600]};
   top: 100px;
   right: 100%;
   justify-content: center;
