@@ -12,15 +12,15 @@ const ProductEntry = ({ product, quantity }: Props) => {
   const { calories } = calculateNutrients(product, quantity);
 
   return (
-    <Ui.Container>
-      <Ui.ProductName to={`/products/${product.id}`}>{product.name}</Ui.ProductName>
+    <Ui.Row>
+      <Ui.Name>{product.name}</Ui.Name>
       <Ui.Details>
         <Ui.Quantity>
           {formatNumber(quantity)} {product.unit.symbol}
         </Ui.Quantity>
-        <Ui.Calories>&#40;{formatNumber(calories)} kcal&#41;</Ui.Calories>
+        <Ui.Calories>({formatNumber(calories)} kcal)</Ui.Calories>
       </Ui.Details>
-    </Ui.Container>
+    </Ui.Row>
   );
 };
 
