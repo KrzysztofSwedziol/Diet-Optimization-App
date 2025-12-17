@@ -20,7 +20,7 @@ const Tutorial = ({ tutorial, isSidebarOpen, index }: Props) => {
     setIsOpen(v => !v);
   };
   return (
-    <Ui.Container isOpen={isSidebarOpen} index={index}>
+    <Ui.Container $isOpen={isSidebarOpen} index={index}>
       <Ui.Header onClick={handleToggle} $isOpen={isOpen}>
         <Ui.Title>{tutorial.title}</Ui.Title>
         <Ui.ExpandIcon $isOpen={isOpen} />

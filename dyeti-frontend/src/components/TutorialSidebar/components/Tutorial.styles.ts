@@ -1,23 +1,23 @@
 import { styled } from 'styled-components';
 import { MdExpandMore } from 'react-icons/md';
 
-export const Container = styled.div<{ isOpen: boolean; index: number }>`
+export const Container = styled.div<{ $isOpen: boolean; index: number }>`
   border-radius: ${({ theme }) => theme.borderRadius.md};
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.sm};
   background-color: ${({ theme }) => theme.colors.background};
 
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-6px)')};
-  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
-  pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  transform: ${({ $isOpen }) => ($isOpen ? 'translateY(0)' : 'translateY(-6px)')};
+  visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
 
   transition:
     opacity 300ms ease,
     transform 300ms ease,
-    visibility 0ms linear ${({ isOpen }) => (isOpen ? '0ms' : '160ms')};
+    visibility 0ms linear ${({ $isOpen }) => ($isOpen ? '0ms' : '160ms')};
 
-  transition-delay: ${({ isOpen, index }) => (isOpen ? `${300 * (index + 1)}ms` : '0ms')};
+  transition-delay: ${({ $isOpen, index }) => ($isOpen ? `${300 * (index + 1)}ms` : '0ms')};
 `;
 
 export const Header = styled.div<{ $isOpen: boolean }>`

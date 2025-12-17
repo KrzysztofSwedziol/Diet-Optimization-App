@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.div<{ isOpen?: boolean }>`
+export const Container = styled.div<{ $isOpen?: boolean }>`
   position: absolute;
   top: 0;
   right: 0;
@@ -12,10 +12,10 @@ export const Container = styled.div<{ isOpen?: boolean }>`
   display: flex;
   flex-direction: column;
 
-  width: ${({ isOpen }) => (isOpen ? '20%' : '3px')};
-  min-width: ${({ isOpen }) => (isOpen ? '350px' : '3px')};
-  padding: ${({ isOpen }) => (isOpen ? '8px' : '0px')};
-  gap: ${({ isOpen }) => (isOpen ? '8px' : '0px')};
+  width: ${({ $isOpen }) => ($isOpen ? '20%' : '3px')};
+  min-width: ${({ $isOpen }) => ($isOpen ? '350px' : '3px')};
+  padding: ${({ $isOpen }) => ($isOpen ? '8px' : '0px')};
+  gap: ${({ $isOpen }) => ($isOpen ? '8px' : '0px')};
   z-index: 10;
   transition:
     width 300ms ease,

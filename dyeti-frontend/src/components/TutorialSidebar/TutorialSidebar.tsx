@@ -11,12 +11,12 @@ const TutorialSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   if (!isLoggedIn) return null;
   return (
-    <Ui.Container isOpen={isOpen}>
-      <PageTitle>Tutorials: </PageTitle>
+    <Ui.Container $isOpen={isOpen}>
       <Ui.Blob onClick={() => setIsOpen(!isOpen)}>
         <FaQuestion />
       </Ui.Blob>
       <Ui.Content>
+        <PageTitle>Tutorials: </PageTitle>
         <Ui.TutorialList>
           {TUTORIALS.map((t, index) => (
             <Tutorial key={index} tutorial={t} isSidebarOpen={isOpen} index={index} />
