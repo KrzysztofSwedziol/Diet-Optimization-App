@@ -1,4 +1,4 @@
-import { css, styled } from 'styled-components';
+import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -38,23 +38,14 @@ export const Track = styled.div`
 `;
 
 export const Slide = styled.div<{ $variant: 'active' | 'side' }>`
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 
-  ${({ $variant }) =>
-    $variant === 'side' &&
-    css`
-      display: none;
-    `}
+  display: ${({ $variant }) => ($variant === 'side' ? 'none' : 'flex')};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    ${({ $variant }) =>
-      $variant === 'side' &&
-      css`
-        display: flex;
-      `}
+    display: ${({ $variant }) => $variant === 'side' && 'flex'};
   }
 `;
 
