@@ -9,7 +9,7 @@ type Props = {
   isTutorialOpen: boolean;
   tutorialId: number;
 };
-const imgDir = 'tutorials/';
+const imgDir = '/tutorials/';
 const Step = ({ step, isTutorialOpen, tutorialId }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const Step = ({ step, isTutorialOpen, tutorialId }: Props) => {
     if (!isTutorialOpen) return;
     if (isOpen) {
       setIsDone(true);
-      localStorage.setItem(key, JSON.stringify(isDone));
+      localStorage.setItem(key, JSON.stringify(true));
     }
     setIsOpen(v => !v);
   };

@@ -33,7 +33,6 @@ export const Content = styled.div`
 `;
 
 export const Grid = styled.div`
-  margin-top: 16px;
   display: grid;
   gap: 16px;
 

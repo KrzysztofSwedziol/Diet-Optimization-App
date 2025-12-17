@@ -39,7 +39,6 @@ const Preferences = () => {
             <ProductsSearchBar products={products} onProductClick={setSelectedProduct} />
           </Ui.ProductSearchBarContainer>
           <PageTitle>Products with preferences</PageTitle>
-
           <EmptyState
             isEmpty={productsWithPreferences.filter(p => p.preference > 0).length === 0}
             title={'No preferences yet'}

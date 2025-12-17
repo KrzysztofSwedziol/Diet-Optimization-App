@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
 import {
-  Home,
   Plans,
   Products,
   Themes,
@@ -20,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<AppLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Dashboard />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
 

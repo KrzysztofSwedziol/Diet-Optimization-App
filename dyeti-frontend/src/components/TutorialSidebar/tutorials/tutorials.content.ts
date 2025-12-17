@@ -36,10 +36,62 @@ export const TUTORIALS = [
         id: 4,
         title: 'Open Preferences',
         description: 'Go to Preferences page via the navbar, or click the GO TO button below.',
-        step: 3,
+        step: 4,
         done: false,
         gotoLink: 'preferences',
         img: 'getting_started_4.png',
+      },
+      {
+        id: 5,
+        title: 'Recently used',
+        description:
+          "You’ll see all your starred products under the 'Recently used' section. If you don’t see any, you haven’t starred any products yet.",
+        step: 5,
+        done: false,
+        img: 'getting_started_5.png',
+      },
+      {
+        id: 6,
+        title: 'Set up preferences',
+        description:
+          'Click a product card to open the modal shown below. Rate your preference from 0 to 10 — higher scores make the algorithm include this product more often. Try including a variety of products to make your plan more interesting. When you’re done, click Save to store your choice. Click Remove to clear your rating and unstar the product (it will also disappear from Recently used).',
+        step: 6,
+        done: false,
+        img: 'getting_started_6.png',
+      },
+      {
+        id: 7,
+        title: 'Product with preferences',
+        description:
+          'In the Products preferences section, you’ll see all products that would be used when generating your Yeti-approved plan. If you don’t want a product to be included, set its preference to 0 — it will move to Recently used so you can enable it again later. To remove a product completely, click Remove.',
+        step: 7,
+        done: false,
+        img: 'getting_started_7.png',
+      },
+      {
+        id: 8,
+        title: 'Final step',
+        description:
+          "If you forgot to add a product, use the search bar to find it and set your preferences. Once you’ve completed the previous steps, you can move on to generating your first Yeti-approved plan. You can also check the 'Generating Plan' tutorial.",
+        step: 8,
+        done: false,
+        img: 'getting_started_8.png',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Generating Plan',
+    description: 'Finish this tutorial to get familiar with process of generating Yeti-approved diet plan',
+    steps: [
+      {
+        id: 1,
+        step: 1,
+        title: 'Open Plans',
+        description: 'Go to the Plans page and click "Create New Pan" button, or just use Go To button bellow',
+        gotoLink: 'plans/generate',
+        done: false,
+        img: '2_1.png',
       },
     ],
   },
