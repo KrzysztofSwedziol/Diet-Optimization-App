@@ -36,8 +36,6 @@ services:
     volumes:
       - ./dyeti-backend:/app
       - gradle_cache:/home/gradle/.gradle
-    env_file:
-      - ./dyeti-backend/.env
     environment:
       APP_NAME: ${APP_NAME:-dyeti-backend}
       SERVER_PORT: 8081
@@ -45,6 +43,7 @@ services:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
       SPRING_PROFILES_ACTIVE: dev
       JAVA_TOOL_OPTIONS: "-Dspring.devtools.restart.enabled=true"
     depends_on:
