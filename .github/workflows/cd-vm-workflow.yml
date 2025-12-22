@@ -43,7 +43,7 @@ jobs:
           printf '%s' "$VM_ENV" | sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            'cd test cat > .env'
+            'cd test && cat > .env'
 
       - name: Test on VM (password)
         env:
