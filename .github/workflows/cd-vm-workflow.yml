@@ -4,11 +4,9 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - main
       - develop
   push:
     branches:
-      - main
       - develop
       - feature/CD-workflow
 
@@ -37,6 +35,17 @@ jobs:
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
             "echo yes"
+      - name: Create ENV
+        env:
+          SSHPASS: ${{ secrets.VM_PASSWORD }}
+        run: |
+          sshpass -e ssh \
+            -o StrictHostKeyChecking=no \
+            "${{ secrets.VM_ADDRESS }}" \
+            cd ~/test && cat > .env <<\"EOF\"
+            ${{ secrets.VM_ENV }}
+            EOF
+            '"
 
       - name: Test on VM (password)
         env:
@@ -45,4 +54,6 @@ jobs:
           sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            "ls -la"
+            "ls -la" 
+            
+          
