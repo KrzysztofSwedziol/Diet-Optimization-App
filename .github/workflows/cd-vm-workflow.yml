@@ -42,7 +42,7 @@ jobs:
           sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            'cd ~/test && cat > .env <"EOF"
+            'cd ~/test && cat > .env <\"EOF\"
             ${{ secrets.VM_ENV }}
             EOF'
 
