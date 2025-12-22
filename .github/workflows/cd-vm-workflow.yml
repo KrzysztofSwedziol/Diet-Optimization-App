@@ -38,13 +38,12 @@ jobs:
       - name: Create ENV
         env:
           SSHPASS: ${{ secrets.VM_PASSWORD }}
+          VM_ENV: ${{ secrets.VM_ENV }}
         run: |
-          sshpass -e ssh \
+          printf '%s' "$VM_ENV" | sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            'cd ~/test && cat > .env <\"EOF\"
-            ${{ secrets.VM_ENV }}
-            EOF'
+            'cd test cat > .env'
 
       - name: Test on VM (password)
         env:
