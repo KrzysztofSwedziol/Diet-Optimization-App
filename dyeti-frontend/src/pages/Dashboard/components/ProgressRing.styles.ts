@@ -35,8 +35,6 @@ export const Ring = styled.div<{ $value: number; $size?: number; $thickness?: nu
   mask: radial-gradient(farthest-side, transparent calc(100% - ${({ $thickness = 6 }) => `${$thickness}px`}), #000 0);
 `;
 export const Container = styled.div`
-  flex: 1;
-  min-width: 0;
   justify-items: center;
   justify-content: center;
 `;

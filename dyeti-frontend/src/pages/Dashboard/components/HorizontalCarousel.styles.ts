@@ -29,7 +29,6 @@ export const Track = styled.div`
   gap: 32px;
   padding-top: 8px;
   width: 100%;
-  height: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr 2fr 1fr;
