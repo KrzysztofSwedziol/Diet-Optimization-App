@@ -26,15 +26,6 @@ jobs:
           mkdir -p ~/.ssh
           host="$(echo "${{ secrets.VM_ADDRESS }}" | awk -F'@' '{print $2}')"
           ssh-keyscan -H "$host" >> ~/.ssh/known_hosts
-
-      - name: Connect (password)
-        env:
-          SSHPASS: ${{ secrets.VM_PASSWORD }}
-        run: |
-          sshpass -e ssh \
-            -o StrictHostKeyChecking=no \
-            "${{ secrets.VM_ADDRESS }}" \
-            "echo yes"
       - name: Create ENV
         env:
           SSHPASS: ${{ secrets.VM_PASSWORD }}
@@ -43,15 +34,15 @@ jobs:
           printf '%s' "$VM_ENV" | sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            'cd test && cat > .env'
+            'cd /root/app/Diet-Optimization-App && cat > .env'
 
-      - name: Test on VM (password)
+      - name: Deploy App
         env:
           SSHPASS: ${{ secrets.VM_PASSWORD }}
         run: |
           sshpass -e ssh \
             -o StrictHostKeyChecking=no \
             "${{ secrets.VM_ADDRESS }}" \
-            "ls -la" 
+            "cd /root/scripts && sh run_dyeti.sh" 
             
           
