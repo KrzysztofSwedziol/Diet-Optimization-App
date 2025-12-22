@@ -5,9 +5,19 @@ on:
     types: [closed]
     branches:
       - develop
+    paths:
+      - 'dyeti-frontend/**'
+      - 'dyeti-backend/**'
+      - 'miscellaneous/**'
+      - 'docker-compose*.yml'
   push:
     branches:
       - develop
+    paths:
+      - 'dyeti-frontend/**'
+      - 'dyeti-backend/**'
+      - 'miscellaneous/**'
+      - 'docker-compose*.yml'
 jobs:
   deploy:
     if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
