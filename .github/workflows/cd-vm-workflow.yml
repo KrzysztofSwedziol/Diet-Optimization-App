@@ -8,8 +8,6 @@ on:
   push:
     branches:
       - develop
-      - feature/CD-workflow
-
 jobs:
   deploy:
     if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
