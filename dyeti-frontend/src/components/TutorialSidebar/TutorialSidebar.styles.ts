@@ -45,6 +45,11 @@ export const Content = styled.div`
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
 `;
 
 export const TutorialList = styled.div`

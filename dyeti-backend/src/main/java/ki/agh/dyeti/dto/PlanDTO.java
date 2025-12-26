@@ -16,6 +16,7 @@ public record PlanDTO(
         Double proteins,
         Double carbs,
         Double fats,
+        String createdAt,
         List<PlanProductDTO> products) {
     public static PlanDTO fromEntity(Plan plan) {
         return new PlanDTO(
@@ -30,6 +31,7 @@ public record PlanDTO(
                 plan.getProteins(),
                 plan.getCarbs(),
                 plan.getFats(),
+                plan.getCreatedAt().toString(),
                 plan.getProducts().stream().map(PlanProductDTO::fromEntity).collect(Collectors.toList()));
     }
 }

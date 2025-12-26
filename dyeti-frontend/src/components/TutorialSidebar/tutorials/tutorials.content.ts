@@ -119,6 +119,15 @@ export const TUTORIALS = [
         done: false,
         gotoLink: 'plans',
       },
+      {
+        id: 5,
+        step: 5,
+        title: 'AI Meals',
+        description:
+          "Click on your Generated plan to go to plan details. Scroll down and click 'Generate Meals' to create AI-generated meals and recipes. This can take a while, so please be patient and don’t refresh the page while generation is in progress. If everything finishes successfully - congratulations, you can enjoy your first Yeti-approved diet plan.",
+        done: false,
+        img: '2_5.png',
+      },
     ],
   },
 ] as const;
