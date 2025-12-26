@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { FaGraduationCap } from 'react-icons/fa6';
 
 export const Container = styled.div<{ $isOpen?: boolean }>`
   position: absolute;
@@ -52,3 +53,23 @@ export const TutorialList = styled.div`
   padding-top: 8px;
   gap: 8px;
 `;
+
+export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.typography.fontSize.xl};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
+`;
+export const TitleContainer = styled.div<{ $isOpen: boolean }>`
+  overflow: hidden;
+  display: inline-flex;
+  width: 100%;
+  gap: 8px;
+  padding-left: 8px;
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.neutrals[100]};
+  align-items: center;
+  color: ${({ theme }) => theme.colors.neutrals[100]};
+`;
+
+export const Icon = styled(FaGraduationCap).attrs({ size: 32 })``;

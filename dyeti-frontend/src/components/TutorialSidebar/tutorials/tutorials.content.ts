@@ -93,6 +93,32 @@ export const TUTORIALS = [
         done: false,
         img: '2_1.png',
       },
+      {
+        id: 2,
+        step: 2,
+        title: 'Name & Description',
+        description: 'Choose a name and description that match your plan. The plan name is required.',
+        done: false,
+        img: '2_2.png',
+      },
+      {
+        id: 3,
+        step: 3,
+        title: 'Set Constraints',
+        description:
+          'Set your calorie and macro targets for the plan. The algorithm will try to match these values as closely as possible. You can enter targets by calories or by macros. If you set calories only, the macro targets will be adjusted proportionally.',
+        done: false,
+        img: '2_3.png',
+      },
+      {
+        id: 4,
+        step: 4,
+        title: 'Generate',
+        description:
+          "Click the 'Generate' button and wait for your new plan — it may take a moment. Result will be available on Plans page. If it’s not there yet, wait a bit and refresh the page.",
+        done: false,
+        gotoLink: 'plans',
+      },
     ],
   },
 ] as const;
