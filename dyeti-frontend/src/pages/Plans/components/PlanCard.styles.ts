@@ -40,13 +40,13 @@ export const Title = styled.h2`
 
 export const Description = styled.p`
   font-size: ${({ theme }) => theme.typography.fontSize.md};
-  line-height: 1.2;
   color: ${({ theme }) => theme.colors.neutrals[600]};
   margin: 0;
 
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
   overflow: hidden;
   text-overflow: ellipsis;
 `;
