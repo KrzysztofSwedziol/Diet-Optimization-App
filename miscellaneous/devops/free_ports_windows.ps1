@@ -1,3 +1,5 @@
+# helper file, has nothing to do in the app
+
 param(
   [int] $Count = 10,
   [switch] $Random,
@@ -5,14 +7,11 @@ param(
   [switch] $VerifyBind = $true
 )
 
-# Wymuś domyślne true, jeśli przełączników nie podano
 if (-not $PSBoundParameters.ContainsKey('IncludeUdp')) { $IncludeUdp = $true }
 if (-not $PSBoundParameters.ContainsKey('VerifyBind')) { $VerifyBind = $true }
 
 $RangeStart = 49152
 $RangeEnd   = 65535
-
-# --- helpers (bez gadania do konsoli) ---
 
 function Get-ListeningTcp {
   try {
@@ -75,7 +74,6 @@ function Is-InExcluded($port, $ranges) {
   return $false
 }
 
-# --- main ---
 
 $used = [System.Collections.Generic.HashSet[int]]::new()
 foreach ($p in (Get-ListeningTcp)) { if ($p -ge $RangeStart -and $p -le $RangeEnd) { [void]$used.Add([int]$p) } }
@@ -85,14 +83,12 @@ foreach ($p in (Get-DockerPublishedPorts)) { if ($p -ge $RangeStart -and $p -le 
 $exTcp = Get-ExcludedRanges tcp
 $exUdp = if ($IncludeUdp) { Get-ExcludedRanges udp } else { @() }
 
-# Kandydaci
 $all = $RangeStart..$RangeEnd
 if ($Random) {
   $rnd = [System.Random]::new()
   $all = $all | Sort-Object { $rnd.Next() }
 }
 
-# Szukanie „absolutnie czystych”
 $found = New-Object System.Collections.Generic.List[int]
 
 foreach ($port in $all) {
@@ -128,13 +124,12 @@ foreach ($port in $all) {
   if ($found.Count -ge $Count) { break }
 }
 
-# Output dokładnie w żądanym formacie
 $path = Join-Path (Get-Location) "free_ports.txt"
 $outLines = @()
 
 if ($found.Count -gt 0) {
-  $outLines += $found[0]     # pierwsza linia: tylko pierwszy port
-  foreach ($p in $found) { $outLines += $p }  # potem każdy port osobno
+  $outLines += $found[0]
+  foreach ($p in $found) { $outLines += $p }
 } else {
   $outLines += "No clean ports found in range $RangeStart-$RangeEnd."
 }
