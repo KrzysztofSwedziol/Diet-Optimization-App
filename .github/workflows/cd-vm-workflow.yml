@@ -1,15 +1,6 @@
 name: Deploy on VM Norymberga
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - develop
-    paths:
-      - 'dyeti-frontend/**'
-      - 'dyeti-backend/**'
-      - 'miscellaneous/**'
-      - 'docker-compose*.yml'
   push:
     branches:
       - develop
@@ -18,9 +9,11 @@ on:
       - 'dyeti-backend/**'
       - 'miscellaneous/**'
       - 'docker-compose*.yml'
+concurrency:
+  group: deploy-develop
+  cancel-in-progress: false
 jobs:
   deploy:
-    if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +33,7 @@ jobs:
           VM_ENV: ${{ secrets.VM_ENV }}
         run: |
           printf '%s' "$VM_ENV" | sshpass -e ssh \
-            -o StrictHostKeyChecking=no \
+            -o StrictHostKeyChecking=yes \
             "${{ secrets.VM_ADDRESS }}" \
             'cd /root/app/Diet-Optimization-App && cat > .env'
 
@@ -49,7 +42,7 @@ jobs:
           SSHPASS: ${{ secrets.VM_PASSWORD }}
         run: |
           sshpass -e ssh \
-            -o StrictHostKeyChecking=no \
+            -o StrictHostKeyChecking=yes \
             "${{ secrets.VM_ADDRESS }}" \
             "cd /root/scripts && sh run_dyeti.sh" 
             
