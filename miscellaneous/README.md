@@ -1,5 +1,5 @@
 # HOW 2 RUN
-wszystkie komnedy tutaj są na windowsa  
+wszystkie komnedy tutaj są na windowsa serio 
 (poza dockerowymi, bo one wszędzie są takie same )
 ## 1. Przygotowanie środowiska
 
