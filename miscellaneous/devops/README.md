@@ -9,12 +9,6 @@
 .\free_ports_windows.ps1 -Count 10
 ```
 
-#### 2. wersja na Mac/Linux ( bash )
-```bash
-
-bash free_ports_posix.sh
-```
-
 #### Wolne porty zostaą zapisane do pliku `free_ports.txt`
 
 w `docker-compose.yaml` port hosta ( czyli ten na którym nam 
@@ -23,4 +17,13 @@ zależy żeby był wolny ) to ten "po lewej"
 ```yaml
     ports:
       - "127.0.0.1:<PORT_HOSTA>:5432"
+```
+## Anihilacja dockera
+
+usuwa wszystie volumeny, kontenery, cache itp w celu "czystego" startu
+
+( wersja na windows )
+```bash
+
+.\docker_nuke.ps1
 ```
