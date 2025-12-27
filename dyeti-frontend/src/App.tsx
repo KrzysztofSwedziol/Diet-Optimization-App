@@ -1,6 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppLayout from './components/AppLayout/AppLayout.tsx';
-import { Home, Plans, Products, Themes, Login, Signup, PlanDetails, GeneratePlan, Account, Preferences } from '@/pages';
+import {
+  Plans,
+  Products,
+  Themes,
+  Login,
+  Signup,
+  PlanDetails,
+  GeneratePlan,
+  Account,
+  Preferences,
+  Dashboard,
+} from '@/pages';
 import { ProtectedRoute } from '@/components';
 
 function App() {
@@ -8,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<AppLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Dashboard />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
 
@@ -20,6 +31,7 @@ function App() {
             <Route path="/themes" element={<Themes />} />
             <Route path="/account" element={<Account />} />
             <Route path="/plans/generate" element={<GeneratePlan />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Route>
       </Routes>

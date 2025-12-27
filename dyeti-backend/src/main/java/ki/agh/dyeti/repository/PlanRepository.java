@@ -10,4 +10,6 @@ public interface PlanRepository extends JpaRepository<Plan, Long> {
     Optional<Plan> findPlanByNameAndOwnerId(String name, Long ownerId);
 
     List<Plan> findByOwnerId(Long ownerId);
+
+    List<Plan> findByOwnerIdOrderByCreatedAtDesc(Long ownerId);
 }

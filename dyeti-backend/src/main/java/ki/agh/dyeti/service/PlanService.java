@@ -1,6 +1,7 @@
 package ki.agh.dyeti.service;
 
 import jakarta.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,13 @@ public class PlanService {
 
     public List<PlanDTO> getUserPlans(Long userId) {
         return planRepository.findByOwnerId(userId).stream()
+                .map(PlanDTO::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    public List<PlanDTO> getTopUserPlans(Long userId, int limit) {
+        return planRepository.findByOwnerIdOrderByCreatedAtDesc(userId).stream()
+                .limit(limit)
                 .map(PlanDTO::fromEntity)
                 .collect(Collectors.toList());
     }
@@ -126,6 +134,7 @@ public class PlanService {
 
         // Now generate the plan filling products etc, passing savedPlan with ID
         Plan generatedPlan = planGenerator.generate(savedPlan, productPreferences);
+        generatedPlan.setCreatedAt(LocalDateTime.now());
 
         // Save again to persist products with proper IDs
         planRepository.save(generatedPlan);
