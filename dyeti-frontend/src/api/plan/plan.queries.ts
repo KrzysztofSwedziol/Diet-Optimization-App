@@ -19,6 +19,14 @@ const getPlan = async (planId: number) => {
     throw error;
   }
 };
+const getTopPlans = async (limit: number) => {
+  try {
+    const response = await apiRequest<Plan[]>(HttpMethod.GET, `/api/plans/top/${limit}`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
 
 const checkPlanNameAvailability = (name: string) => {
   return apiRequest<boolean>(HttpMethod.GET, '/api/plans/available', null, { params: { name } });
@@ -28,6 +36,7 @@ const queries = {
   getPlans,
   getPlan,
   checkPlanNameAvailability,
+  getTopPlans,
 };
 
 export default queries;

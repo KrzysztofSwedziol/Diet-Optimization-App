@@ -17,5 +17,6 @@ export type Plan = {
   proteins: number;
   carbs: number;
   fats: number;
+  createdAt: string;
   products: PlanProduct[];
 };

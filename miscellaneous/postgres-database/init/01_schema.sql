@@ -25,7 +25,8 @@ create table if not exists plans (
      proteins          double precision,
      carbs             double precision,
      fats              double precision,
-     owner_id          bigint
+     owner_id          bigint,
+     created_at        timestamptz
 );
 
 -- PLAN_PRODUCT

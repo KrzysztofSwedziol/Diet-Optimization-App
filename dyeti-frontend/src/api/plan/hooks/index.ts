@@ -12,6 +12,13 @@ export const useGetPlans = () => {
     queryFn: planQueries.getPlans,
   });
 };
+export const useGetTopPlans = (limit: number) => {
+  return useQuery({
+    queryKey: planKeys.top(limit),
+    queryFn: () => planQueries.getTopPlans(limit),
+    enabled: limit > 0,
+  });
+};
 
 export const useGetPlan = (planId: number) => {
   return useQuery({
