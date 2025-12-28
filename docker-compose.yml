@@ -1,7 +1,9 @@
 version: "3.9"
-#docker compose down -v - do usunięcia wszystkich volumów (przydatne)
-#docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
-#docker volume ls - sprawdzenie wszystkich wolumenów (jakbyśmy chcieli usunąć wszystko oprócz potężnej ollamy)
+
+# full docker-cleanup scripts:
+#     - on local dev: /devops/docker_nuke.ps1
+#     - on deploy: /root/scripts/docker_nuke.sh
+
 services:
   postgres:
     build:
