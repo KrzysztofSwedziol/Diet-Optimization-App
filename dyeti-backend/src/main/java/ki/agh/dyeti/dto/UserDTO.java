@@ -7,14 +7,7 @@ import lombok.Builder;
 
 @Builder
 public record UserDTO(
-        Long id,
-        String username,
-        String email,
-        Integer age,
-        Gender gender,
-        Integer height,
-        Integer weight,
-        Role role) {
+        Long id, String username, String email, Integer age, Gender gender, Integer height, Integer weight, Role role) {
     public static UserDTO fromUser(User user) {
         return UserDTO.builder()
                 .id(user.getId())
