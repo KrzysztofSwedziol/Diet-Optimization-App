@@ -94,6 +94,21 @@ create table if not exists users (
      role         text
 );
 
+-- MEAL
+create table if not exists meal (
+    id            bigserial primary key,
+    order_in_day  integer not null,
+    plan_id       bigint not null
+);
+
+-- MEAL_PRODUCT
+create table if not exists meal_product (
+    id         bigserial primary key,
+    meal_id    bigint not null,
+    product_id bigint not null,
+    quantity   double precision not null
+);
+
 -- Adding foreign key constraints to enforce relationships between tables
 alter table products add foreign key (unit_id) references unit(id);
 alter table products add foreign key (owner_id) references users(id);
@@ -113,3 +128,8 @@ alter table recipes_products add foreign key (product_id) references products(id
 
 alter table plans_recipes add foreign key (plan_id) references plans(id);
 alter table plans_recipes add foreign key (recipe_id) references recipes(id);
+
+alter table meal add foreign key (plan_id) references plans(id);
+
+alter table meal_product add foreign key (meal_id) references meal(id);
+alter table meal_product add foreign key (product_id) references products(id);

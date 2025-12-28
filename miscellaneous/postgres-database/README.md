@@ -2,9 +2,11 @@
 
 ### 1. Uruchomić **Docker Desktop**  
 
-( albo **Rancher Desktop**, czy jakikolwiek inny orkiestrator, który ogarnia Dockera )
+( albo **Rancher Desktop**, czy jakikolwiek inny program, który ogarnia Dockera )
 
 ### 2.
+#### `!` deprecated `!` teraz jest to wszystko w jednym, głównym docker-compose
+
 w katalogu `\Diet-Optimization-App\miscellaneous\postgres-databse`
 
 ```bash

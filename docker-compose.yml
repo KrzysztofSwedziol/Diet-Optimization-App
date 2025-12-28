@@ -1,7 +1,9 @@
 version: "3.9"
-#docker compose down -v - do usunięcia wszystkich volumów (przydatne)
-#docker logs -f ollama-init - do podejrzenia logów w czasie rzeczywistym (przydatne jak chcemy obserwować progress bar instalacji)
-#docker volume ls - sprawdzenie wszystkich wolumenów (jakbyśmy chcieli usunąć wszystko oprócz potężnej ollamy)
+
+# full docker-cleanup scripts:
+#     - on local dev: /devops/docker_nuke.ps1
+#     - on deploy: /root/scripts/docker_nuke.sh
+
 services:
   postgres:
     build:
@@ -51,7 +53,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      test: [ "CMD-SHELL", "curl -f ${BACKEND_URL}/health || exit 1" ]
       interval: 10s
       timeout: 5s
       retries: 20
@@ -77,7 +79,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: [ "CMD-SHELL", "curl -f http://localhost:8081/health || exit 1" ]
+      test: [ "CMD-SHELL", "curl -f ${BACKEND_URL}/health || exit 1" ]
       interval: 10s
       timeout: 5s
       retries: 20
