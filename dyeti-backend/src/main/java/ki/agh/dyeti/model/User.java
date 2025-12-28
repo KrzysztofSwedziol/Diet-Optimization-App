@@ -30,10 +30,6 @@ public final class User implements UserDetails {
     private Integer age;
     private Integer height;
     private Integer weight;
-    private Integer energyReq;
-    private Integer proteinReq;
-    private Integer carbsReq;
-    private Integer fatReq;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;

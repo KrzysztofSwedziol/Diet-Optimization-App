@@ -14,10 +14,6 @@ public record UserDTO(
         Gender gender,
         Integer height,
         Integer weight,
-        Integer energyReq,
-        Integer proteinReq,
-        Integer carbsReq,
-        Integer fatReq,
         Role role) {
     public static UserDTO fromUser(User user) {
         return UserDTO.builder()
@@ -28,10 +24,6 @@ public record UserDTO(
                 .gender(user.getGender())
                 .height(user.getHeight())
                 .weight(user.getWeight())
-                .energyReq(user.getEnergyReq())
-                .proteinReq(user.getProteinReq())
-                .carbsReq(user.getCarbsReq())
-                .fatReq(user.getFatReq())
                 .role(user.getRole())
                 .build();
     }
