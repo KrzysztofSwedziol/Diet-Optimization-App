@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ProductWithPreference } from '@/types';
 import { SearchableDropdown } from '@/components/SearchableDropdown/SearchableDropdown';
 import ProductsSearchBarItem from './ProductsSearchBarItem';
+import Fuse from 'fuse.js';
 
 type Props = {
   products: ProductWithPreference[];
@@ -11,7 +12,17 @@ type Props = {
 const ProductsSearchBar = ({ products, onProductClick }: Props) => {
   const [query, setQuery] = useState('');
 
-  const filteredProducts = products.filter(({ product }) => product.name.toLowerCase().includes(query.toLowerCase()));
+  const fuse = useMemo(
+    () =>
+      new Fuse(products, {
+        keys: ['product.name'],
+        threshold: 0.3,
+        ignoreLocation: true,
+      }),
+    [products],
+  );
+
+  const filteredProducts = query ? fuse.search(query).map(result => result.item) : products;
 
   return (
     <SearchableDropdown
