@@ -3,22 +3,37 @@ import * as Ui from './ProductsTable.styles';
 import ProductsTableFilters from './ProductsTableFilters';
 import { useProductsTable } from '../hooks/useProductsTable';
 import { ProductWithPreference } from '@/types';
+import { useMemo, useState } from 'react';
+import Fuse from 'fuse.js';
 
 type Props = {
   products: ProductWithPreference[];
 };
 
 const ProductsTable = ({ products }: Props) => {
-  const { table, columns, sorting, setSorting } = useProductsTable({ products });
+  const [query, setQuery] = useState('');
 
-  const handleSearch = (query: string) => {
-    const currentFilter = table.getState().columnFilters.find(f => f.id === 'name')?.value ?? '';
-    if (currentFilter === query) return;
+  const fuse = useMemo(
+    () =>
+      new Fuse(products, {
+        keys: ['product.name'],
+        threshold: 0.3,
+        ignoreLocation: true,
+      }),
+    [products],
+  );
 
-    table.setColumnFilters(prev => {
-      const otherFilters = prev.filter(f => f.id !== 'name');
-      return query ? [...otherFilters, { id: 'name', value: query }] : otherFilters;
-    });
+  const filteredProducts = useMemo(() => {
+    if (!query) return products;
+    return fuse.search(query).map(result => result.item);
+  }, [query, fuse, products]);
+
+  const { table, columns, sorting, setSorting } = useProductsTable({
+    products: filteredProducts,
+  });
+
+  const handleSearch = (search: string) => {
+    setQuery(search);
   };
 
   return (
