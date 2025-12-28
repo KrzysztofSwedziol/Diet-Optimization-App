@@ -87,10 +87,6 @@ create table if not exists users (
      gender       text,
      height       integer,
      weight       integer,
-     energy_req   integer,
-     protein_req  integer,
-     carbs_req    integer,
-     fat_req      integer,
      role         text
 );
 
