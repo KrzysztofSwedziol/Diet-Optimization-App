@@ -10,19 +10,19 @@ export const useLogIn = () => {
   return useMutation({
     mutationKey: AUTH_KEYS.LOGIN,
     mutationFn: AUTH_MUTATION.LOGIN,
-    onSuccess: data => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
-      console.log('Login successful:', data.message);
     },
   });
 };
+
 export const useLogOut = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationKey: AUTH_KEYS.LOGOUT,
     mutationFn: AUTH_MUTATION.LOGOUT,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: AUTH_KEYS.CHECK });
+      queryClient.removeQueries({ queryKey: AUTH_KEYS.CHECK });
     },
   });
 };
