@@ -11,7 +11,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { route: '/', label: 'Home', protected: true },
+  { route: '/dashboard', label: 'Dashboard', protected: true },
   { route: '/plans', label: 'Plans', protected: true },
   { route: '/preferences', label: 'Preferences', protected: true },
   { route: '/products', label: 'Products', protected: true },
