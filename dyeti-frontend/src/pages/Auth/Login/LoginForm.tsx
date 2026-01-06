@@ -23,7 +23,7 @@ const LoginForm = () => {
 
     try {
       await login(username, password);
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       if (err instanceof Error) {
         setErrors({ global: `Invalid username or password: ${err.message}` });

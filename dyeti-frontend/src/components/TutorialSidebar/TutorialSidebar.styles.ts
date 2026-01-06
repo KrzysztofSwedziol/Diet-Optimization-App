@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { FaGraduationCap } from 'react-icons/fa6';
 
 export const Container = styled.div<{ $isOpen?: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100%;

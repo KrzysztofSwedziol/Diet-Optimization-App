@@ -46,7 +46,7 @@ const SignupForm = () => {
 
     try {
       await register({ email, username, password, gender });
-      navigate('/account');
+      navigate('/dashboard');
     } catch (err) {
       if (err instanceof Error) {
         setErrors({ global: `Registration failed: ${err.message}` });

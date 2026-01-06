@@ -11,6 +11,7 @@ import {
   Account,
   Preferences,
   Dashboard,
+  Home,
 } from '@/pages';
 import { ProtectedRoute } from '@/components';
 
@@ -19,11 +20,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<AppLayout />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<Home />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<Signup />} />
 
           <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="plans/:planId" element={<PlanDetails />} />
             <Route path="/preferences" element={<Preferences />} />

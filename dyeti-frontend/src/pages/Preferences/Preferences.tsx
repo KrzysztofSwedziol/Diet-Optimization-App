@@ -20,16 +20,15 @@ const Preferences = () => {
   const { mutate: deleteProductPreference } = useDeleteProductPreference();
   const [selectedProduct, setSelectedProduct] = useState<ProductWithPreference | null>(null);
 
-  const productsWithPreferences = products
-    .filter(p => p.preference > 0 || p.favourite)
-    .sort((a, b) => -(a.preference - b.preference));
+  const productsWithPreferences = products.filter(p => p.preference > 0).sort((a, b) => -(a.preference - b.preference));
+  const favoriteProducts = products.filter(p => p.favourite && p.preference === 0);
 
   return (
     <QueryState isLoading={isLoading} isError={isError || products.length === 0} loadingText={'Loading preferences...'}>
       <Ui.Container>
         <Header />
         <Ui.Content>
-          {productsWithPreferences.filter(p => p.preference > 0).length < 5 && (
+          {productsWithPreferences.length < 5 && (
             <WarningCard
               title="⚠️ Add more preferences"
               description="To get the best personalized diet plan, please set preferences for at least 5 different products."
@@ -40,7 +39,7 @@ const Preferences = () => {
           </Ui.ProductSearchBarContainer>
           <PageTitle>Products with preferences</PageTitle>
           <EmptyState
-            isEmpty={productsWithPreferences.filter(p => p.preference > 0).length === 0}
+            isEmpty={productsWithPreferences.length === 0}
             title={'No preferences yet'}
             description={'Search for a product above and set your first preference.'}
           >
@@ -53,20 +52,16 @@ const Preferences = () => {
             </Ui.Grid>
           </EmptyState>
 
-          <PageTitle>Recently used</PageTitle>
-          <EmptyState
-            isEmpty={productsWithPreferences.filter(p => p.preference == 0).length === 0}
-            title={'No Recently used'}
-            description={'There is no recently used products to display'}
-          >
-            <Ui.Grid>
-              {productsWithPreferences
-                .filter(p => p.preference == 0)
-                .map(item => (
+          {favoriteProducts.length > 0 && (
+            <>
+              <PageTitle>Recently used</PageTitle>
+              <Ui.Grid>
+                {favoriteProducts.map(item => (
                   <ProductPreferenceCard key={item.product.id} item={item} onClick={setSelectedProduct} />
                 ))}
-            </Ui.Grid>
-          </EmptyState>
+              </Ui.Grid>
+            </>
+          )}
         </Ui.Content>
         {selectedProduct && (
           <ProductModal
