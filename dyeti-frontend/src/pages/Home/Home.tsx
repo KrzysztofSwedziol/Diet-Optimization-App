@@ -1,10 +1,16 @@
-import { PageTitle } from '@/components';
 import * as Ui from './Home.styles';
+import CTASection from './components/CTASection';
+import ExampleSection from './components/ExampleSection';
+import HeroSection from './components/HeroSection';
+import InfoSection from './components/InfoSection';
 
 const Home = () => {
   return (
     <Ui.Container>
-      <PageTitle>Home</PageTitle>
+      <HeroSection />
+      <InfoSection />
+      <ExampleSection />
+      <CTASection />
     </Ui.Container>
   );
 };
