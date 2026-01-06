@@ -1,12 +1,35 @@
 import { AppButton, Spinner } from '@/components';
 import * as Ui from './EmptyMeals.styles';
+import { useState } from 'react';
 
 type Props = {
   isGenerating: boolean;
-  onGenerateMeals: () => void;
+  onGenerateMeals: (numberOfMeals: number) => void;
 };
 
 const EmptyMeals = ({ isGenerating, onGenerateMeals }: Props) => {
+  const [numberOfMeals, setNumberOfMeals] = useState(String(3));
+
+  const updateValue = (value: number) => {
+    const clamped = value < 1 ? 1 : value;
+    setNumberOfMeals(String(clamped));
+  };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = e.target.value;
+
+    if (raw === '') return setNumberOfMeals('');
+
+    if (/^\d+$/.test(raw)) updateValue(Number(raw));
+  };
+
+  const handleBlur = () => {
+    if (numberOfMeals.trim() === '') updateValue(1);
+  };
+
+  const decrement = () => updateValue(Number(numberOfMeals) - 1);
+  const increment = () => updateValue(Number(numberOfMeals) + 1);
+
   return (
     <Ui.Container>
       {isGenerating ? (
@@ -25,7 +48,16 @@ const EmptyMeals = ({ isGenerating, onGenerateMeals }: Props) => {
           </Ui.Header>
 
           <Ui.Actions>
-            <AppButton onClick={onGenerateMeals}>Generate Meals</AppButton>
+            <Ui.NumericInput>
+              <Ui.StepButton onClick={decrement} disabled={Number(numberOfMeals) <= 1}>
+                <Ui.MinusIcon />
+              </Ui.StepButton>
+              <Ui.Input value={numberOfMeals} type="number" min={1} onChange={handleInput} onBlur={handleBlur} />
+              <Ui.StepButton onClick={increment}>
+                <Ui.PlusIcon />
+              </Ui.StepButton>
+            </Ui.NumericInput>
+            <AppButton onClick={() => onGenerateMeals(Number(numberOfMeals))}>Generate Meals</AppButton>
           </Ui.Actions>
         </>
       )}

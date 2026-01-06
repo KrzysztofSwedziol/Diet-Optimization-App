@@ -63,7 +63,7 @@ const PlanDetails = () => {
           ) : (
             <EmptyMeals
               isGenerating={isGeneratingMeals}
-              onGenerateMeals={() => generateMeals({ planId, numberOfMeals: 3 })}
+              onGenerateMeals={numberOfMeals => generateMeals({ planId, numberOfMeals })}
             />
           )}
         </Ui.MealsSection>
