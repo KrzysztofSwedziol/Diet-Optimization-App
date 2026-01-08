@@ -17,6 +17,8 @@ const PlanDetails = () => {
 
   const { mutateAsync: generateMeals, isPending: isGeneratingMeals } = useGenerateMeals();
 
+  const filteredMeals = meals?.filter(meal => meal.recipes.length > 0 && meal.products.length > 0);
+
   if (isLoading) {
     <Ui.StatusContainer>
       <Spinner />
@@ -58,8 +60,8 @@ const PlanDetails = () => {
         </Ui.NutrientsSection>
         <Ui.MealsSection>
           <Ui.SectionTitle>Meals</Ui.SectionTitle>
-          {!isLoadingMeals && meals && meals.length > 0 ? (
-            meals.map(meal => <MealCard key={meal.id} recipe={meal.recipes[0]} products={meal.products} />)
+          {!isLoadingMeals && filteredMeals && filteredMeals.length > 0 ? (
+            filteredMeals.map(meal => <MealCard key={meal.id} recipe={meal.recipes[0]} products={meal.products} />)
           ) : (
             <EmptyMeals
               isGenerating={isGeneratingMeals}
