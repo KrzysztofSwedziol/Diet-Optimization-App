@@ -1,0 +1,77 @@
+import { useGetPlan } from '@/api/plan/hooks';
+import { PageDescription, Spinner } from '@/components';
+import { useParams } from 'react-router-dom';
+import * as Ui from './PlanDetails.styles';
+import MealCard from './components/MealCard';
+import NutrientsCard from './components/NutrientsCard';
+import { useGenerateMeals, useGetMealsByPlan } from '@/api/meal/hooks';
+import ProductsCard from './components/ProductsCard';
+import EmptyMeals from './components/EmptyMeals';
+
+const PlanDetails = () => {
+  const { planId: planIdString } = useParams<{ planId: string }>();
+  const planId = Number(planIdString);
+
+  const { data: plan, error, isLoading } = useGetPlan(planId);
+  const { data: meals, isLoading: isLoadingMeals } = useGetMealsByPlan(planId);
+
+  const { mutateAsync: generateMeals, isPending: isGeneratingMeals } = useGenerateMeals();
+
+  const filteredMeals = meals?.filter(meal => meal.recipes.length > 0 && meal.products.length > 0);
+
+  if (isLoading) {
+    <Ui.StatusContainer>
+      <Spinner />
+      <Ui.StatusText>Loading plan...</Ui.StatusText>
+    </Ui.StatusContainer>;
+  }
+
+  if (error || !plan) {
+    return (
+      <Ui.StatusContainer>
+        <Ui.StatusText>Oops! Something went wrong. Try again later.</Ui.StatusText>
+      </Ui.StatusContainer>
+    );
+  }
+
+  return (
+    <Ui.Container>
+      <Ui.PlanInfo>
+        <Ui.Title>{plan.name}</Ui.Title>
+        <PageDescription>{plan.description}</PageDescription>
+      </Ui.PlanInfo>
+      <Ui.Content>
+        <Ui.ProductsSection>
+          <Ui.SectionTitle>Products</Ui.SectionTitle>
+          <ProductsCard products={plan.products} />
+        </Ui.ProductsSection>
+        <Ui.NutrientsSection>
+          <Ui.SectionTitle>Nutrients</Ui.SectionTitle>
+          <NutrientsCard
+            calories={plan.calories}
+            proteins={plan.proteins}
+            carbs={plan.carbs}
+            fats={plan.fats}
+            caloriesTarget={plan.caloriesTarget}
+            proteinsTarget={plan.proteinsTarget}
+            carbsTarget={plan.carbsTarget}
+            fatsTarget={plan.fatsTarget}
+          />
+        </Ui.NutrientsSection>
+        <Ui.MealsSection>
+          <Ui.SectionTitle>Meals</Ui.SectionTitle>
+          {!isLoadingMeals && filteredMeals && filteredMeals.length > 0 ? (
+            filteredMeals.map(meal => <MealCard key={meal.id} recipe={meal.recipes[0]} products={meal.products} />)
+          ) : (
+            <EmptyMeals
+              isGenerating={isGeneratingMeals}
+              onGenerateMeals={numberOfMeals => generateMeals({ planId, numberOfMeals })}
+            />
+          )}
+        </Ui.MealsSection>
+      </Ui.Content>
+    </Ui.Container>
+  );
+};
+
+export default PlanDetails;

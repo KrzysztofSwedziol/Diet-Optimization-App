@@ -1,0 +1,49 @@
+name: Deploy on VM Norymberga
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'dyeti-frontend/**'
+      - 'dyeti-backend/**'
+      - 'miscellaneous/**'
+      - 'docker-compose*.yml'
+concurrency:
+  group: deploy-develop
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install sshpass
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+
+      - name: Add VM to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          host="$(echo "${{ secrets.VM_ADDRESS }}" | awk -F'@' '{print $2}')"
+          ssh-keyscan -H "$host" >> ~/.ssh/known_hosts
+      - name: Create ENV
+        env:
+          SSHPASS: ${{ secrets.VM_PASSWORD }}
+          VM_ENV: ${{ secrets.VM_ENV }}
+        run: |
+          printf '%s' "$VM_ENV" | sshpass -e ssh \
+            -o StrictHostKeyChecking=yes \
+            "${{ secrets.VM_ADDRESS }}" \
+            'cd /root/app/Diet-Optimization-App && cat > .env'
+
+      - name: Deploy App
+        env:
+          SSHPASS: ${{ secrets.VM_PASSWORD }}
+        run: |
+          sshpass -e ssh \
+            -o StrictHostKeyChecking=yes \
+            "${{ secrets.VM_ADDRESS }}" \
+            "cd /root/scripts && sh run_dyeti.sh" 
+            
+          

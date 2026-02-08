@@ -6,7 +6,11 @@
 *.bin
 *.lock
 out/
+*.env
 
+.env
 # VSCode
 .vscode/
 .history/
+
+miscellaneous/devops/free_ports.txt
